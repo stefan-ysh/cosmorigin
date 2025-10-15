@@ -123,5 +123,6 @@ module.exports = {
         },
       ],
     'import/no-unresolved': 0,
+    'import/no-cycle': 0,
   },
 };

@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import styles from '@/styles';
-import { TitleText, TypingText } from '@/components/index';
+import { TitleText, TypingText } from '@/components/CustomTexts';
 import { staggerContainer, fadeIn } from '@/utils/motion';
 
 const applications = [
@@ -43,7 +43,7 @@ const EnhancedWorld = () => (
     >
       <TypingText title="| 全球应用" textStyles="text-center" />
       <TitleText
-        title={
+        title={(
           <>
             赋能
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">
@@ -51,7 +51,7 @@ const EnhancedWorld = () => (
               多场景应用
             </span>
           </>
-        }
+        )}
         textStyles="text-center"
       />
 
@@ -105,7 +105,7 @@ const EnhancedWorld = () => (
           alt="全球应用地图"
           className="w-full h-full object-cover opacity-30"
         />
-        
+
         {/* 覆盖层 */}
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
 
