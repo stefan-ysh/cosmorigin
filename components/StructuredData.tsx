@@ -1,6 +1,6 @@
 import Script from 'next/script';
 
-const StructuredData = (): JSX.Element => {
+const StructuredData = () => {
   const organizationSchema = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
