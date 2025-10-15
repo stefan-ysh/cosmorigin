@@ -16,13 +16,13 @@ const About = (): JSX.Element => (
       viewport={{ once: false, amount: 0.25 }}
       className={`${styles.innerWidth} mx-auto ${styles.flexCenter} flex-col`}
     >
-      <TypingText title="| 关于星源光材" textStyles="text-center" />
+      <TypingText title="| 关于宇元光材" textStyles="text-center" />
 
       <motion.p
         variants={fadeIn('up', 'tween', 0.2, 1)}
         className="mt-[8px] font-normal sm:text-[32px] text-[20px] text-center text-secondary-white"
       >
-        <span className="font-extrabold">星源光材</span>
+        <span className="font-extrabold">宇元光材</span>
         扎根于发光材料与光电功能涂层领域，从前沿配方设计、晶体结构调控到量产工艺开发提供一站式解决方案。我们通过
         <span className="font-extrabold">高稳定性长余辉体系</span>
         、环保无稀土配方及智能化质量追溯平台，帮助照明、显示、安防及新消费品牌快速落地下一代发光应用。携手我们，让材料科学真正

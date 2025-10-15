@@ -21,7 +21,7 @@ const WhatsNew = (): JSX.Element => (
         className="flex-[0.95] flex justify-center flex-col"
       >
         <TypingText title="| 最新动态" />
-        <TitleText title={<>星源光材的最新进展</>} />
+        <TitleText title={<>宇元光材的最新进展</>} />
         <div className="mt-[48px] flex flex-wrap justify-between gap-[24px]">
           {newFeatures.map((feature) => (
             <NewFeatures key={feature.title} {...feature} />
