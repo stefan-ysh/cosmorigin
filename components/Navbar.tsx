@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-props-no-spreading */
 'use client';
 
 import { motion } from 'framer-motion';
