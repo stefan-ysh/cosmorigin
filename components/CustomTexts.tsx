@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { ReactNode } from 'react';
-import { textContainer, textVariant2 } from '../utils/motion';
+import { textContainer, textVariant2 } from '@/utils/motion';
 
 interface TypingTextProps {
   title: string;

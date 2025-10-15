@@ -1,9 +1,9 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import styles from '../styles';
-import { TitleText, TypingText } from '../components';
-import { staggerContainer, fadeIn } from '../utils/motion';
+import styles from '@/styles';
+import { TitleText, TypingText } from '@/components/index';
+import { staggerContainer, fadeIn } from '@/utils/motion';
 
 const World = (): JSX.Element => (
   <section className={`${styles.paddings} relative z-10`}>

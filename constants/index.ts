@@ -59,8 +59,8 @@ export const startingFeatures: string[] = [
 export const newFeatures: FeatureHighlight[] = [
   {
     imgUrl: '/vrpano.svg',
-    title: '无稀土长余辉矩阵',
-    subtitle: '全新释光体系，余辉持续8小时以上，同时满足RoHS与REACH环保标准。',
+    title: '高性能稀土长余辉矩阵',
+    subtitle: '采用稀土激活的先进释光体系，余辉持续8小时以上，同时满足RoHS与REACH环保标准。',
   },
   {
     imgUrl: '/headset.svg',

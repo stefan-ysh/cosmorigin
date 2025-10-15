@@ -1,8 +1,8 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import styles from '../styles';
-import { fadeIn, staggerContainer, zoomIn } from '../utils/motion';
+import styles from '@/styles';
+import { fadeIn, staggerContainer, zoomIn } from '@/utils/motion';
 
 const Feedback = (): JSX.Element => (
   <section className={`${styles.paddings} relative z-10`}>
@@ -23,7 +23,7 @@ const Feedback = (): JSX.Element => (
           <p className="mt-[8px] font-normal sm:text-[18px] text-[12px] sm:leading-[22px] leading-[16px] text-white">宇元光材首席科学家</p>
         </div>
         <p className="mt-[24px] font-normal sm:text-[24px] text-[18px] sm:leading-[45px] leading-[39px] text-white">
-          “通过复合晶格调控与智能化工艺，我们将长余辉性能提升了150%，同时实现无稀土化生产，让客户在保障亮度的同时兼顾可持续发展。”
+          "通过稀土激活的复合晶格调控与智能化工艺，我们将长余辉性能提升了150%，实现高效能发光的同时确保环保达标，让客户在保障亮度的同时兼顾可持续发展。"
         </p>
       </motion.div>
 

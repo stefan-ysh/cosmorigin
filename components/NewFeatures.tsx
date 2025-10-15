@@ -1,6 +1,6 @@
 'use client';
 
-import styles from '../styles';
+import styles from '@/styles';
 
 interface NewFeaturesProps {
   imgUrl: string;

@@ -2,10 +2,10 @@
 
 import { motion } from 'framer-motion';
 
-import styles from '../styles';
-import { insights } from '../constants';
-import { InsightCard, TitleText, TypingText } from '../components';
-import { staggerContainer } from '../utils/motion';
+import styles from '@/styles';
+import { insights } from '@/constants';
+import { InsightCard, TitleText, TypingText } from '@/components/index';
+import { staggerContainer } from '@/utils/motion';
 
 const Insights = (): JSX.Element => (
   <section className={`${styles.paddings} relative z-10`}>

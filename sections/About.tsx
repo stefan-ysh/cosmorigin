@@ -1,9 +1,9 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { TypingText } from '../components';
-import styles from '../styles';
-import { fadeIn, staggerContainer } from '../utils/motion';
+import { TypingText } from '@/components/index';
+import styles from '@/styles';
+import { fadeIn, staggerContainer } from '@/utils/motion';
 
 const About = (): JSX.Element => (
   <section className={`${styles.paddings} relative z-10`}>
@@ -24,8 +24,8 @@ const About = (): JSX.Element => (
       >
         <span className="font-extrabold">宇元光材</span>
         扎根于发光材料与光电功能涂层领域，从前沿配方设计、晶体结构调控到量产工艺开发提供一站式解决方案。我们通过
-        <span className="font-extrabold">高稳定性长余辉体系</span>
-        、环保无稀土配方及智能化质量追溯平台，帮助照明、显示、安防及新消费品牌快速落地下一代发光应用。携手我们，让材料科学真正
+        <span className="font-extrabold">高稳定性稀土长余辉体系</span>
+        、环保配方及智能化质量追溯平台，帮助照明、显示、安防及新消费品牌快速落地下一代发光应用。携手我们，让材料科学真正
         <span className="font-extrabold">照亮未来产业</span>
         。
       </motion.p>

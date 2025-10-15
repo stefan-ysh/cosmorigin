@@ -8,11 +8,11 @@ import Footer from './Footer';
 
 export {
   Navbar,
-  TitleText,
   TypingText,
+  TitleText,
+  ExploreCard,
   StartSteps,
   NewFeatures,
-  ExploreCard,
   InsightCard,
   Footer,
 };
