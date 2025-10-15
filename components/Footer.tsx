@@ -33,9 +33,9 @@ const Footer = () => (
         <div className="mb-[50px] h-[2px] bg-white opacity-10" />
 
         <div className="flex items-center justify-between flex-wrap gap-4">
-          <h4 className="font-extrabold text-[24px] text-white">宇元光材</h4>
+          <h4 className="font-extrabold text-[24px] text-white">宇元新材</h4>
           <p className="font-normal text-[14px] text-white opacity-50">
-            版权所有 © 2025 宇元光材 Lumitech. 保留所有权利。
+            版权所有 © 2025 宇元新材 Lumitech. 保留所有权利。
           </p>
 
           <div className="flex gap-4">

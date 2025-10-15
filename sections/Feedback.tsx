@@ -20,7 +20,7 @@ const Feedback = (): JSX.Element => (
         <div className="feedback-gradient" />
         <div>
           <h4 className="font-bold sm:text-[32px] text-[26px] sm:leading-[40px] leading-[36px] text-white">田甜</h4>
-          <p className="mt-[8px] font-normal sm:text-[18px] text-[12px] sm:leading-[22px] leading-[16px] text-white">宇元光材首席科学家</p>
+          <p className="mt-[8px] font-normal sm:text-[18px] text-[12px] sm:leading-[22px] leading-[16px] text-white">宇元新材首席科学家</p>
         </div>
         <p className="mt-[24px] font-normal sm:text-[24px] text-[18px] sm:leading-[45px] leading-[39px] text-white">
           "通过稀土激活的复合晶格调控与智能化工艺，我们将长余辉性能提升了150%，实现高效能发光的同时确保环保达标，让客户在保障亮度的同时兼顾可持续发展。"

@@ -18,7 +18,7 @@ const Hero = (): JSX.Element => (
           variants={textVariant(1.1)}
           className={styles.heroHeading}
         >
-          宇元光材 点亮未来
+          宇元新材 点亮未来
         </motion.h1>
         {/* <motion.div
           variants={textVariant(1.2)}
