@@ -5,10 +5,10 @@ import styles from '../styles';
 import { TitleText, TypingText } from '../components';
 import { staggerContainer, fadeIn } from '../utils/motion';
 
-const World = () => (
+const World = (): JSX.Element => (
   <section className={`${styles.paddings} relative z-10`}>
     <motion.div
-      variants={staggerContainer}
+      variants={staggerContainer()}
       initial="hidden"
       whileInView="show"
       viewport={{ once: false, amount: 0.25 }}
@@ -30,7 +30,6 @@ const World = () => (
       >
         <img src="/map.png" alt="map" className="w-full h-full object-cover" />
 
-        {/* Here We are displaying chararcters on the map */}
         <div className="absolute top-[32%] left-[62%] w-[88px] p-[6px] rounded-full bg-[#5d6680] flex flex-col items-center">
           <img src="/people-02.png" alt="深圳工厂" className="w-[70px] h-[70px]" />
           <p className="mt-[2px] text-[10px] text-white">深圳工厂</p>
@@ -52,8 +51,6 @@ const World = () => (
           <img src="/people-06.png" alt="东京技术支持" className="w-[70px] h-[70px]" />
           <p className="mt-[2px] text-[10px] text-white">东京技术支持</p>
         </div>
-        {/* Character on Map ends */}
-
       </motion.div>
     </motion.div>
   </section>

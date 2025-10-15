@@ -1,25 +1,41 @@
 module.exports = {
+  root: true,
   env: {
     browser: true,
     es2021: true,
   },
-  extends: [
-    'plugin:react/recommended',
-    'airbnb',
-  ],
+  parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
     },
-    ecmaVersion: 12,
+    ecmaVersion: 2020,
     sourceType: 'module',
+    project: undefined,
   },
+  settings: {
+    react: {
+      version: 'detect',
+    },
+    'import/resolver': {
+      node: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+      },
+    },
+  },
+  extends: [
+    'next/core-web-vitals',
+    'plugin:@typescript-eslint/recommended',
+    'airbnb',
+    'airbnb/hooks',
+  ],
   plugins: [
     'react',
+    '@typescript-eslint',
   ],
   rules: {
     'react/no-unescaped-entities': 0,
-    'eslintreact/no-danger': 0,
+    'react/no-danger': 0,
     'react/jsx-max-props-per-line': 0,
     'react/jsx-first-prop-new-line': 0,
     'no-console': 0,
@@ -30,12 +46,14 @@ module.exports = {
     'react/jsx-no-constructed-context-values': 0,
     'import/extensions': 0,
     'react/prop-types': 0,
+  'react/require-default-props': 0,
     'linebreak-style': 0,
     'react/state-in-constructor': 0,
     'import/prefer-default-export': 0,
     'react/react-in-jsx-scope': 'off',
     'react/jsx-props-no-spreading': 'off',
     'jsx-a11y/no-noninteractive-element-interactions': 'off',
+  '@next/next/no-img-element': 'off',
     'react/function-component-definition': [
       2,
       {
@@ -95,5 +113,14 @@ module.exports = {
         ],
       },
     ],
+      'no-unused-vars': 'off',
+      '@typescript-eslint/no-unused-vars': [
+        'error',
+        {
+          argsIgnorePattern: '^_',
+          varsIgnorePattern: '^_',
+        },
+      ],
+    'import/no-unresolved': 0,
   },
 };

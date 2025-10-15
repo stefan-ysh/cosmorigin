@@ -7,10 +7,10 @@ import { StartSteps, TitleText, TypingText } from '../components';
 
 import { startingFeatures } from '../constants';
 
-const GetStarted = () => (
+const GetStarted = (): JSX.Element => (
   <section className={`${styles.paddings} relative z-10`}>
     <motion.div
-      variants={staggerContainer}
+      variants={staggerContainer()}
       initial="hidden"
       whileInView="show"
       viewport={{ once: false, amount: 0.25 }}
@@ -29,11 +29,11 @@ const GetStarted = () => (
         <TypingText title="| 合作流程" />
         <TitleText title={<>三步启动联合研发</>} />
         <div className="mt-[31px] flex flex-col max-w-[370px] gap-[24px]">
-          {startingFeatures.map((features, index) => (
+          {startingFeatures.map((feature, index) => (
             <StartSteps
-              key={features}
+              key={feature}
               number={index + 1}
-              text={features}
+              text={feature}
             />
           ))}
         </div>

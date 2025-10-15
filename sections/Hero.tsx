@@ -4,10 +4,10 @@ import { motion } from 'framer-motion';
 import styles from '../styles';
 import { slideIn, staggerContainer, textVariant } from '../utils/motion';
 
-const Hero = () => (
+const Hero = (): JSX.Element => (
   <section className={`${styles.yPaddings} sm:pl-16 pl-6`}>
     <motion.div
-      variants={staggerContainer}
+      variants={staggerContainer()}
       initial="hidden"
       whileInView="show"
       viewport={{ once: false, amount: 0.25 }}
@@ -18,14 +18,14 @@ const Hero = () => (
           variants={textVariant(1.1)}
           className={styles.heroHeading}
         >
-          星源光材
+          星源光材 点亮未来
         </motion.h1>
-        <motion.div
+        {/* <motion.div
           variants={textVariant(1.2)}
           className="flex flex-row items-center justify-center"
         >
           <h1 className={styles.heroHeading}>点亮未来</h1>
-        </motion.div>
+        </motion.div> */}
       </div>
 
       <motion.div

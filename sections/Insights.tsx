@@ -7,24 +7,24 @@ import { insights } from '../constants';
 import { InsightCard, TitleText, TypingText } from '../components';
 import { staggerContainer } from '../utils/motion';
 
-const Insights = () => (
+const Insights = (): JSX.Element => (
   <section className={`${styles.paddings} relative z-10`}>
     <motion.div
-      variants={staggerContainer}
+      variants={staggerContainer()}
       initial="hidden"
       whileInView="show"
       viewport={{ once: false, amount: 0.25 }}
       className={`${styles.innerWidth} mx-auto flex flex-col`}
     >
-  <TypingText title="| 行业洞察" textStyles="text-center" />
-  <TitleText title="发光材料趋势洞察" textStyles="text-center" />
+      <TypingText title="| 行业洞察" textStyles="text-center" />
+      <TitleText title="发光材料趋势洞察" textStyles="text-center" />
 
       <div className="mt-[50px] flex flex-col gap-[30px]">
-        {insights.map((insight, i) => (
+        {insights.map((insight, index) => (
           <InsightCard
-            key={`Insight-${i + 1}`}
+            key={`Insight-${index + 1}`}
             {...insight}
-            index={i + 1}
+            index={index + 1}
           />
         ))}
       </div>
