@@ -1,0 +1,25 @@
+{
+  "name": "宇元新材 - 发光材料研发与制造",
+  "short_name": "宇元新材",
+  "description": "宇元新材专注长余辉与光电功能材料研发制造，提供面向照明、安全与显示领域的高性能发光解决方案。",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/metadroid-fav.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "lang": "zh-CN",
+  "dir": "ltr"
+}

@@ -7,6 +7,7 @@ import InsightCard from './InsightCard';
 import EnhancedWorld from './EnhancedWorld';
 import TechShowcase from './TechShowcase';
 import Footer from './Footer';
+import StructuredData from './StructuredData';
 
 export {
   Navbar,
@@ -19,4 +20,5 @@ export {
   NewFeatures,
   InsightCard,
   Footer,
+  StructuredData,
 };

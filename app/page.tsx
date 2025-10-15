@@ -1,8 +1,9 @@
-import { Footer, Navbar, TechShowcase, EnhancedWorld } from '@/components/index';
+import { Footer, Navbar, TechShowcase, EnhancedWorld, StructuredData } from '@/components/index';
 import { About, Explore, Feedback, GetStarted, Hero, Insights, WhatsNew, World } from '@/sections';
 
 const Page = (): JSX.Element => (
   <div className="bg-primary-black overflow-hidden">
+    <StructuredData />
     <Navbar />
     <Hero />
     <div className="relative">
