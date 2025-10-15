@@ -18,7 +18,11 @@ const Hero = (): JSX.Element => (
           variants={textVariant(1.1)}
           className={styles.heroHeading}
         >
-          宇元新材 点亮未来
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-cyan-400">
+            宇元新材
+            {" "}
+            点亮未来
+          </span>
         </motion.h1>
         {/* <motion.div
           variants={textVariant(1.2)}

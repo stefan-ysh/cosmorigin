@@ -15,14 +15,21 @@ const World = (): JSX.Element => (
       className={`${styles.innerWidth} mx-auto flex flex-col`}
     >
       <TypingText title="| 全球交付网络" textStyles="text-center" />
-      <TitleText
+      {/* <TitleText
         title={(
           <>
             我们的发光材料解决方案服务全球创新伙伴
           </>
         )}
         textStyles="text-center"
-      />
+      /> */}
+       <h2 className="text-4xl lg:text-6xl font-bold text-white mb-6 text-center mt-[8px]">
+          我们的发光材料解决方案
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">
+            {" "}
+            服务全球创新伙伴
+          </span>
+        </h2>
 
       <motion.div
         variants={fadeIn('up', 'tween', 0.3, 1)}

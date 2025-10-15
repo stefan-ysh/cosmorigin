@@ -4,6 +4,8 @@ import ExploreCard from './ExploreCard';
 import StartSteps from './StartSteps';
 import NewFeatures from './NewFeatures';
 import InsightCard from './InsightCard';
+import EnhancedWorld from './EnhancedWorld';
+import TechShowcase from './TechShowcase';
 import Footer from './Footer';
 
 export {
@@ -12,6 +14,8 @@ export {
   TitleText,
   ExploreCard,
   StartSteps,
+  EnhancedWorld,
+  TechShowcase,
   NewFeatures,
   InsightCard,
   Footer,

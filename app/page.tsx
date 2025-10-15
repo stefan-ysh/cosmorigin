@@ -1,4 +1,4 @@
-import { Footer, Navbar } from '@/components/index';
+import { Footer, Navbar, TechShowcase, EnhancedWorld } from '@/components/index';
 import { About, Explore, Feedback, GetStarted, Hero, Insights, WhatsNew, World } from '@/sections';
 
 const Page = (): JSX.Element => (
@@ -9,6 +9,11 @@ const Page = (): JSX.Element => (
       <About />
       <div className="gradient-03 z-0" />
       <Explore />
+    </div>
+    <div className="relative">
+      <TechShowcase />
+      <div className="gradient-03 z-0" />
+      <EnhancedWorld />
     </div>
 
     <div className="relative">

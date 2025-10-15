@@ -22,7 +22,14 @@ const Explore = (): JSX.Element => {
         className={`${styles.innerWidth} mx-auto flex flex-col`}
       >
         <TypingText title="| 核心产品平台" textStyles="text-center" />
-        <TitleText title={<>探索适配您场景的<br className="md:block hidden " />发光材料方案</>} textStyles="text-center" />
+        {/* <TitleText title={<>探索适配您场景的<br className="md:block hidden " />发光材料方案</>} textStyles="text-center" /> */}
+        <h2 className="text-4xl lg:text-6xl font-bold text-white mb-6 text-center mt-[8px]">
+            探索适配您场景的
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">
+              {" "}
+              发光材料方案
+            </span>
+          </h2>
 
         <div className="mt-[50px] flex lg:flex-row flex-col min-h-[70vh] gap-5">
           {exploreWorlds.map((world, index) => (
