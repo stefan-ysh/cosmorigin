@@ -18,6 +18,8 @@ const Head = (): JSX.Element => (
     <meta name="copyright" content="宇元新材" />
     <meta name="language" content="zh-CN" />
     <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+    {/* Baidu Verification */}
+    <meta name="baidu-site-verification" content="codeva-da22ppmgjE" />
     
     {/* Open Graph / Facebook */}
     <meta property="og:type" content="website" />
