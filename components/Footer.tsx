@@ -76,8 +76,8 @@ const Footer = () => (
               </div>
             </div>
             <div className="flex flex-col items-center gap-3 w-full">
-               <p className="font-normal text-[14px] text-white/70">微信公众号</p>
-               <img src="/wechat_official.jpg" alt="扬州宇元新材有限公司微信公众号二维码" className="w-40 h-40 object-contain p-1 rounded-md" />
+              <p className="font-normal text-[14px] text-white/70">微信公众号</p>
+              <img src="/wechat_official.jpg" alt="扬州宇元新材有限公司微信公众号二维码" className="w-40 h-40 object-contain p-1 rounded-md" />
             </div>
           </div>
         </div>
