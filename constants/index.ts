@@ -87,4 +87,30 @@ export const insights: InsightItem[] = [
   },
 ];
 
-export const socials: SocialLink[] = [];
+export const socials: SocialLink[] = [
+  // {
+  //   name: 'tiktok',
+  //   url: '/tiktok.svg',
+  //   link: 'https://www.tiktok.com/@cosmorigin',
+  // },
+  // {
+  //   name: 'wechat',
+  //   url: '/wechat.svg',
+  //   link: '#', // Placeholder link for WeChat
+  // },
+  // {
+  //   name: 'linkedin',
+  //   url: '/linkedin.svg',
+  //   link: 'https://www.linkedin.com/company/cosmorigin',
+  // },
+  // {
+  //   name: 'instagram',
+  //   url: '/instagram.svg',
+  //   link: 'https://www.instagram.com/cosmorigin',
+  // },
+  // {
+  //   name: 'facebook',
+  //   url: '/facebook.svg',
+  //   link: 'https://www.facebook.com/cosmorigin',
+  // },
+];

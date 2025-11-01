@@ -1,8 +1,8 @@
 import { Footer, Navbar, TechShowcase, EnhancedWorld, StructuredData } from '@/components/index';
 import { About, Explore, Feedback, GetStarted, Hero, Insights, WhatsNew, World } from '@/sections';
 
-const Page = (): JSX.Element => (
-  <div className="bg-primary-black overflow-hidden">
+const Page = () => (
+  <section className="bg-primary-black overflow-hidden">
     <StructuredData />
     <Navbar />
     <Hero />
@@ -29,7 +29,7 @@ const Page = (): JSX.Element => (
       <Feedback />
     </div>
     <Footer />
-  </div>
+  </section>
 );
 
 export default Page;
