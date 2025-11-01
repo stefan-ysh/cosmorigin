@@ -17,7 +17,7 @@ const RootLayout = ({ children }: RootLayoutProps): JSX.Element => (
     </head>
     <body>
       {children}
-      {/* <Analytics /> */}
+      <Analytics />
     </body>
   </html>
 );
