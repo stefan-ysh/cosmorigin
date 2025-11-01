@@ -1,5 +1,4 @@
 import '@/styles/globals.css';
-import { Analytics } from '@vercel/analytics/next';
 import { ReactNode } from 'react';
 
 interface RootLayoutProps {
@@ -17,7 +16,14 @@ const RootLayout = ({ children }: RootLayoutProps): JSX.Element => (
     </head>
     <body>
       {children}
-      <Analytics />
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+          `,
+        }}
+      />
+      <script defer src="https://cdn.vercel-insights.com/v1/script.debug.js" />
     </body>
   </html>
 );
