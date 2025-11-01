@@ -16,14 +16,6 @@ const RootLayout = ({ children }: RootLayoutProps): JSX.Element => (
     </head>
     <body>
       {children}
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `
-            window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-          `,
-        }}
-      />
-      <script defer src="https://cdn.vercel-insights.com/v1/script.debug.js" />
     </body>
   </html>
 );
