@@ -4,10 +4,10 @@ const StructuredData = () => {
   const organizationSchema = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    name: '宇元新材',
+    name: '扬州宇元新材有限公司',
     url: 'https://cosmorigin.com',
     logo: 'https://cosmorigin.com/logo.png',
-    description: '宇元新材专注长余辉与光电功能材料研发制造，提供面向照明、安全与显示领域的高性能发光解决方案。',
+    description: '扬州宇元新材有限公司专注长余辉与光电功能材料研发制造，提供面向照明、安全与显示领域的高性能发光解决方案。',
     address: {
       '@type': 'PostalAddress',
       addressCountry: 'CN',
@@ -28,9 +28,9 @@ const StructuredData = () => {
   const websiteSchema = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    name: '宇元新材',
+    name: '扬州宇元新材有限公司',
     url: 'https://cosmorigin.com',
-    description: '宇元新材专注长余辉与光电功能材料研发制造',
+    description: '扬州宇元新材有限公司专注长余辉与光电功能材料研发制造',
     inLanguage: 'zh-CN',
     potentialAction: {
       '@type': 'SearchAction',
@@ -42,21 +42,21 @@ const StructuredData = () => {
     },
   };
 
-  const productSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'Product',
-    name: '长余辉发光材料',
-    description: '高性能长余辉发光材料，适用于照明、安全标识、应急照明等领域',
-    brand: {
-      '@type': 'Brand',
-      name: '宇元新材',
-    },
-    manufacturer: {
-      '@type': 'Organization',
-      name: '宇元新材',
-    },
-    category: '发光材料',
-  };
+  // const productSchema = {
+  //   '@context': 'https://schema.org',
+  //   '@type': 'Product',
+  //   name: '长余辉发光材料',
+  //   description: '高性能长余辉发光材料，适用于照明、安全标识、应急照明等领域',
+  //   brand: {
+  //     '@type': 'Brand',
+  //     name: '宇元新材',
+  //   },
+  //   manufacturer: {
+  //     '@type': 'Organization',
+  //     name: '宇元新材',
+  //   },
+  //   category: '发光材料',
+  // };
 
   return (
     <>
@@ -74,13 +74,13 @@ const StructuredData = () => {
           __html: JSON.stringify(websiteSchema),
         }}
       />
-      <Script
+      {/* <Script
         id="product-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(productSchema),
         }}
-      />
+      /> */}
     </>
   );
 };
