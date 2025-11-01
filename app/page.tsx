@@ -1,10 +1,8 @@
 import { Footer, Navbar, TechShowcase, EnhancedWorld, StructuredData } from '@/components/index';
 import { About, Explore, Feedback, GetStarted, Hero, Insights, WhatsNew, World } from '@/sections';
-import { Analytics } from "@vercel/analytics/next"
 
 const Page = () => (
   <section className="bg-primary-black overflow-hidden">
-    <Analytics />
     <StructuredData />
     <Navbar />
     <Hero />

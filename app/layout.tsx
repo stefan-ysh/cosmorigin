@@ -1,5 +1,6 @@
 import '@/styles/globals.css';
 import { ReactNode } from 'react';
+import { Analytics } from "@vercel/analytics/next"
 
 interface RootLayoutProps {
   children: ReactNode;
@@ -16,6 +17,7 @@ const RootLayout = ({ children }: RootLayoutProps): JSX.Element => (
     </head>
     <body>
       {children}
+      <Analytics />
     </body>
   </html>
 );
