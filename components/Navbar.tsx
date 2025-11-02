@@ -15,9 +15,9 @@ const Navbar = () => (
     <div className={`${styles.innerWidth} mx-auto flex justify-between gap-8`}>
       <img src="/search.svg" alt="搜索" className="w-[24px] h-[24px] object-contain" />
 
-      <h2 className="font-extrabold text-[24px] text-white leading-[30px]">
+      <h1 className="font-extrabold text-[24px] text-white leading-[30px]">
         COSMORIGIN
-      </h2>
+      </h1>
 
       <img src="/menu.svg" alt="导航菜单" className="w-[24px] h-[24px] object-contain" />
     </div>

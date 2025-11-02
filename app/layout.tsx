@@ -17,11 +17,11 @@ const RootLayout = ({ children }: RootLayoutProps): JSX.Element => (
       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
       <meta
         name="description"
-        content="扬州宇元新材有限公司专注长余辉与光电功能材料研发制造，提供面向照明、安全与显示领域的高性能发光解决方案。我们致力于为客户提供创新的发光材料技术和定制化服务。"
+        content="扬州宇元新材有限公司专注长余辉与光电功能发光材料研发制造，提供面向照明、安全与显示领域的高性能发光解决方案。我们致力于为客户提供创新的发光材料技术和定制化服务。"
       />
       <meta
         name="keywords"
-        content="发光材料,长余辉材料,光电功能材料,荧光材料,夜光材料,发光涂料,发光薄膜,扬州源于新材,宇元新材,安全标识,应急照明,显示材料"
+        content="发光材料,长余辉材料,光电功能材料,荧光材料,夜光材料,发光涂料,发光薄膜,扬州源于新材,宇元新材,安全标识,应急照明,显示材料,yyxc,comsmorigin"
       />
       
       {/* Icons and Manifest */}
