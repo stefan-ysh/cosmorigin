@@ -56,7 +56,7 @@ const Footer = () => (
           </div>
 
           {/* Right Side: Socials and QR Code */}
-          <div className="w-full md:w-auto flex md:flex-row items-center md:items-end gap-8">
+          <div className="w-full sm:w-auto flex md:flex-row items-center md:items-end gap-8">
             <div className="flex flex-col items-center gap-4">
               <div className="flex gap-4">
                 {socials.map((social) => (

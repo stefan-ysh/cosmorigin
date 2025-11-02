@@ -1,5 +1,3 @@
-import Script from 'next/script';
-
 const StructuredData = () => {
   const organizationSchema = {
     '@context': 'https://schema.org',
@@ -42,45 +40,20 @@ const StructuredData = () => {
     },
   };
 
-  // const productSchema = {
-  //   '@context': 'https://schema.org',
-  //   '@type': 'Product',
-  //   name: '长余辉发光材料',
-  //   description: '高性能长余辉发光材料，适用于照明、安全标识、应急照明等领域',
-  //   brand: {
-  //     '@type': 'Brand',
-  //     name: '宇元新材',
-  //   },
-  //   manufacturer: {
-  //     '@type': 'Organization',
-  //     name: '宇元新材',
-  //   },
-  //   category: '发光材料',
-  // };
-
   return (
     <>
-      <Script
-        id="organization-schema"
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(organizationSchema),
         }}
       />
-      <Script
-        id="website-schema"
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(websiteSchema),
         }}
       />
-      {/* <Script
-        id="product-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(productSchema),
-        }}
-      /> */}
     </>
   );
 };
