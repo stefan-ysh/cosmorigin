@@ -1,16 +1,32 @@
 # 允许所有搜索引擎爬取
 User-agent: *
 Allow: /
+Crawl-delay: 1
 
 # 禁止爬取 API 路径
 Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
 
 # 特别针对百度爬虫
 User-agent: Baiduspider
 Allow: /
+Crawl-delay: 1
 
 # 特别针对谷歌爬虫
 User-agent: Googlebot
+Allow: /
+
+# 360搜索
+User-agent: 360Spider
+Allow: /
+
+# 搜狗搜索
+User-agent: Sogou web spider
+Allow: /
+
+# 必应搜索
+User-agent: bingbot
 Allow: /
 
 # Sitemap 位置
