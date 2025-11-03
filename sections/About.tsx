@@ -13,7 +13,7 @@ const About = (): JSX.Element => (
       variants={staggerContainer()}
       initial="hidden"
       whileInView="show"
-      viewport={{ once: false, amount: 0.25 }}
+      viewport={{ once: true, amount: 0.25 }}
       className={`${styles.innerWidth} mx-auto ${styles.flexCenter} flex-col`}
     >
       <TypingText title="| 关于宇元新材" textStyles="text-center" />
@@ -30,14 +30,15 @@ const About = (): JSX.Element => (
         。
       </motion.p>
 
+
       <motion.img
         variants={fadeIn('up', 'tween', 0.3, 1)}
         src="/arrow-down.svg"
         alt="arrow-down"
         className="w-[18px] h-[28px] object-contain mt-[28px]"
       />
-    </motion.div>
-  </section>
-);
+      </motion.div>
+    </section>
+  );
 
-export default About;
+  export default About;

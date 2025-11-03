@@ -32,6 +32,7 @@ export const TitleText = ({ title, textStyles }: TitleTextProps) => (
     variants={textVariant2}
     initial="hidden"
     whileInView="show"
+    viewport={{ once: true, amount: 0.25 }}
     className={`mt-[8px] font-bold md:text-[64px] text-[40px] text-white ${textStyles ?? ''}`.trim()}
   >
     {title}

@@ -11,7 +11,7 @@ const World = (): JSX.Element => (
       variants={staggerContainer()}
       initial="hidden"
       whileInView="show"
-      viewport={{ once: false, amount: 0.25 }}
+      viewport={{ once: true, amount: 0.25 }}
       className={`${styles.innerWidth} mx-auto flex flex-col`}
     >
       <TypingText title="| 全球交付网络" textStyles="text-center" />

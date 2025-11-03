@@ -10,7 +10,7 @@ const Feedback = (): JSX.Element => (
       variants={staggerContainer()}
       initial="hidden"
       whileInView="show"
-      viewport={{ once: false, amount: 0.25 }}
+      viewport={{ once: true, amount: 0.25 }}
       className={`${styles.innerWidth} mx-auto flex lg:flex-row flex-col gap-6`}
     >
       <motion.div
@@ -28,8 +28,8 @@ const Feedback = (): JSX.Element => (
       </motion.div>
 
       <motion.div
-        variants={fadeIn('left', 'tween', 0.2, 1)}
-        className="relative flex-1 flex justify-center items-center"
+        variants={fadeIn('left', 'tween', 0.3, 1)}
+        className="flex-[0.6] flex items-center justify-center"
       >
         <img src="/planet-09.png" alt="发光材料样品" className="w-full lg:h-[610px] h-auto min-h-[210px] object-cover rounded-[40px]" />
         <motion.div

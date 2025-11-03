@@ -10,7 +10,7 @@ const Hero = (): JSX.Element => (
       variants={staggerContainer()}
       initial="hidden"
       whileInView="show"
-      viewport={{ once: false, amount: 0.25 }}
+      viewport={{ once: true, amount: 0.25 }}
       className={`${styles.innerWidth2} mx-auto flex flex-col`}
     >
       <div className="relative z-10 flex flex-col items-center justify-center">
