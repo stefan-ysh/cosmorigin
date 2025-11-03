@@ -15,7 +15,7 @@ const Feedback = (): JSX.Element => (
     >
       <motion.div
         variants={fadeIn('right', 'tween', 0.2, 1)}
-        className="flex-[0.4] lg:max-w-[370px] flex justify-end lg:justify-center flex-col gradient-05 sm:p-8 p-4 rounded-[32px] border-[1px] border-[#6a6a6a] relative"
+        className="flex-1 lg:max-w-[370px] flex justify-end lg:justify-center flex-col gradient-05 sm:p-8 p-4 rounded-[32px] border-[1px] border-[#6a6a6a] relative"
       >
         <div className="feedback-gradient" />
         <div>
@@ -29,7 +29,7 @@ const Feedback = (): JSX.Element => (
 
       <motion.div
         variants={fadeIn('left', 'tween', 0.3, 1)}
-        className="flex-[0.6] flex items-center justify-center"
+        className="flex-1 flex items-center justify-center"
       >
         <img src="/planet-09.png" alt="发光材料样品" className="w-full lg:h-[610px] h-auto min-h-[210px] object-cover rounded-[40px]" />
         <motion.div
