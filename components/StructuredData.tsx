@@ -4,13 +4,13 @@ const StructuredData = () => {
     "@type": "Organization",
     "name": "扬州宇元新材有限公司",
     "alternateName": "宇元新材",
-    "description": "专注发光材料研发与生产的科技企业，提供长余辉发光粉、夜光粉、荧光材料的配方设计、晶体结构调控及量产工艺开发",
+    "description": "专注新型柔性发光材料研发与生产，全球首个纳米级连续生产自发光材料",
     "url": "https://cosmorigin.com",
     "logo": "https://cosmorigin.com/logo.png",
     "foundingDate": "2014",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "江苏省扬州市",
+      "streetAddress": "江苏省扬州市邢江区开发西路213号609室",
       "addressLocality": "扬州",
       "addressRegion": "江苏省",
       "postalCode": "225000",
@@ -18,8 +18,9 @@ const StructuredData = () => {
     },
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "+86-514-12345678",
+      "telephone": "+86-185-7841-2005",
       "contactType": "技术咨询",
+      "email": "contact@cosmorigin.com",
       "areaServed": "CN",
       "availableLanguage": ["zh-CN", "en"]
     },
@@ -27,12 +28,13 @@ const StructuredData = () => {
       "https://www.tiktok.com/@cosmorigin"
     ],
     "knowsAbout": [
-      "发光材料研发",
-      "长余辉发光粉",
-      "稀土发光材料",
-      "配方设计",
-      "晶体结构调控",
-      "量产工艺开发"
+      "柔性发光材料",
+      "发光油漆",
+      "发光纤维丝",
+      "发光膜",
+      "汽车发光应用",
+      "智慧农业发光",
+      "应急救援发光"
     ]
   };
 
@@ -51,31 +53,28 @@ const StructuredData = () => {
 
   const researchServiceSchema = {
     "@context": "https://schema.org",
-    "@type": "ResearchProject",
-    "name": "发光材料研发服务",
-    "description": "提供发光材料配方设计、晶体结构调控、量产工艺开发的全流程研发服务",
+    "@type": "Service",
+    "name": "发光材料定制服务",
+    "description": "提供发光油漆、发光纤维丝、发光膜的定制化解决方案",
     "provider": {
       "@type": "Organization",
       "name": "扬州宇元新材有限公司"
     },
-    "specialty": [
-      "高稳定性稀土长余辉体系",
-      "环保配方开发",
-      "智能化质量追溯",
-      "量产工艺优化"
-    ]
+    "areaServed": "CN",
+    "serviceType": "材料研发与生产"
   };
 
   const productSchema = {
     "@context": "https://schema.org",
     "@type": "Product",
-    "name": "长余辉发光粉系列",
-    "description": "高性能稀土长余辉发光粉，具有高亮度、长余辉、环保无毒特性",
+    "name": "柔性发光材料系列",
+    "description": "全球首个米级连续生产自发光材料，包括发光油漆、发光纤维丝、发光膜，3260小时水下稳定性认证，支持多色定制",
     "brand": {
       "@type": "Brand",
       "name": "宇元新材"
     },
     "category": "发光材料",
+    "material": "柔性光纤维/光漆/光膜",
     "offers": {
       "@type": "Offer",
       "availability": "https://schema.org/InStock",

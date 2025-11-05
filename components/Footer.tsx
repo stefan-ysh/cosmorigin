@@ -41,7 +41,7 @@ const Footer = () => (
             <div className="flex items-start gap-3 text-white/80">
               <MapPin className="w-5 h-5 mt-1 flex-shrink-0" />
               <p className="font-normal text-[16px]">
-                中国江苏省扬州高新技术产业开发区开发西路 213 号 609 室
+                江苏省扬州市邢江区开发西路213号609室
               </p>
             </div>
             <div className="flex items-center gap-3 text-white/80">

@@ -11,17 +11,17 @@ const RootLayout = ({ children }: RootLayoutProps): JSX.Element => (
   <html lang="zh-CN">
     <head>
       {/* Title */}
-      <title>宇元新材 - 发光材料专家 | 长余辉发光粉研发与生产</title>
+      <title>宇元新材 - 发光材料专家 | 发光材料研发与生产</title>
       
       {/* Basic Meta Tags */}
       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
       <meta
         name="description"
-        content="扬州宇元新材专注发光材料研发与生产，提供长余辉发光粉、夜光粉、荧光材料、稀土发光材料的配方设计、晶体结构调控及量产工艺开发。定制发光涂料、发光油墨、发光薄膜，广泛应用于安全标识、应急照明、装饰材料、纺织印花等领域。十年研发经验，ISO认证，一站式解决方案。"
+        content="扬州宇元新材专注新型柔性发光材料研发与生产，提供发光油漆、发光纤维丝、发光膜等产品。全球首个纳米级连续生产自发光材料，3260小时水下稳定性认证。产品广泛应用于汽车内外饰、智慧农业、应急救援、公共交通等领域。支持任意图案定制与多色光谱调节。"
       />
       <meta
         name="keywords"
-        content="发光材料,发光粉,长余辉发光粉,夜光粉,荧光粉,稀土发光材料,蓄光型发光材料,发光涂料,发光油墨,发光薄膜,夜光材料,荧光材料,光致发光材料,长余辉材料,安全标识材料,应急照明材料,发光纺织,发光印花,发光装饰材料,环保发光材料,高亮度发光粉,长效发光材料,发光材料厂家,发光粉生产厂家,宇元新材,扬州发光材料,江苏发光材料,中国发光材料"
+        content="发光材料,发光油漆,发光纤维丝,发光膜,柔性发光材料,自发光材料,夜光材料,汽车发光,智慧农业,应急救援,发光雨布,RMAF温室,电致发光线,3D打印发光,发光手办,宇元新材,扬州发光材料,水下发光,防水发光织物"
       />
       
       {/* Icons and Manifest */}
@@ -46,10 +46,10 @@ const RootLayout = ({ children }: RootLayoutProps): JSX.Element => (
       {/* Open Graph / Facebook */}
       <meta property="og:type" content="website" />
       <meta property="og:url" content="https://cosmorigin.com/" />
-      <meta property="og:title" content="宇元新材 - 发光材料专家 | 长余辉发光粉研发与生产" />
+      <meta property="og:title" content="宇元新材 - 发光材料专家 | 发光材料研发与生产" />
       <meta
         property="og:description"
-        content="专注发光材料研发与生产，提供长余辉发光粉、夜光粉、荧光材料的配方设计、晶体结构调控及量产工艺开发。十年研发经验，ISO认证，一站式解决方案。"
+        content="全球首个米级连续生产自发光材料，提供发光油漆、发光纤维丝、发光膜。3260小时水下稳定性认证，支持多色定制。"
       />
       <meta property="og:image" content="https://cosmorigin.com/og-image.jpg" />
       <meta property="og:locale" content="zh_CN" />
@@ -58,10 +58,10 @@ const RootLayout = ({ children }: RootLayoutProps): JSX.Element => (
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:url" content="https://cosmorigin.com/" />
-      <meta name="twitter:title" content="宇元新材 - 发光材料专家 | 长余辉发光粉研发与生产" />
+      <meta name="twitter:title" content="宇元新材 - 发光材料专家 | 发光材料研发与生产" />
       <meta
         name="twitter:description"
-        content="专注发光材料研发与生产，提供配方设计、晶体结构调控及量产工艺开发。十年研发经验，ISO认证，一站式解决方案。"
+        content="专注发光材料研发与生产，提供全系列发光产品。高亮度、环保无毒，支持定制化解决方案。"
       />
       <meta name="twitter:image" content="https://cosmorigin.com/og-image.jpg" />
       

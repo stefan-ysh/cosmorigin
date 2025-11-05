@@ -23,10 +23,12 @@ const About = (): JSX.Element => (
         className="mt-[8px] font-normal sm:text-[32px] text-[20px] text-center text-secondary-white"
       >
         <span className="font-extrabold">宇元新材</span>
-        扎根于发光材料与光电功能涂层领域，从前沿配方设计、晶体结构调控到量产工艺开发提供一站式解决方案。我们通过
-        <span className="font-extrabold">高稳定性稀土长余辉体系</span>
-        、环保配方及智能化质量追溯平台，帮助照明、显示、安防及新消费品牌快速落地下一代发光应用。携手我们，让材料科学真正
-        <span className="font-extrabold">照亮未来产业</span>
+        始终秉持着创新、品质与服务的核心价值观，专注于新型柔性发光材料的研发与生产。我们提供
+        <span className="font-extrabold">发光油漆、发光纤维丝、发光膜</span>
+        等核心产品，致力于让柔性发光材料融入生活的关键场景。我们深耕
+        <span className="font-extrabold">汽车、机器人、无人机及快消DIY</span>
+        四大核心领域，通过技术创新与品质打磨，携手客户
+        <span className="font-extrabold">重新定义发光材料的边界</span>
         。
       </motion.p>
 

@@ -32,7 +32,7 @@ const Feedback = (): JSX.Element => (
           <p className="mt-[8px] font-normal sm:text-[18px] text-[12px] sm:leading-[22px] leading-[16px] text-white">宇元新材首席科学家</p>
         </div>
         <p className="mt-[24px] font-normal sm:text-[24px] text-[18px] sm:leading-[45px] leading-[39px] text-white">
-          "通过稀土激活的复合晶格调控与智能化工艺，我们将长余辉性能提升了150%，实现高效能发光的同时确保环保达标，让客户在保障亮度的同时兼顾可持续发展。"
+          "我们专注于发光材料的深度研发，通过精准的配方设计和严格的质量控制，为客户提供稳定可靠的发光解决方案。每一款产品都经过严格测试，确保在各种应用场景下都能展现出色的发光性能。"
         </p>
       </motion.div>
 
