@@ -18,8 +18,17 @@ const Feedback = (): JSX.Element => (
         className="flex-1 lg:max-w-[370px] flex justify-end lg:justify-center flex-col gradient-05 sm:p-8 p-4 rounded-[32px] border-[1px] border-[#6a6a6a] relative"
       >
         <div className="feedback-gradient" />
-        <div>
-          <h4 className="font-bold sm:text-[32px] text-[26px] sm:leading-[40px] leading-[36px] text-white">田甜</h4>
+        <div className="relative z-10">
+          <a 
+            href="https://www.tiantian.group" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-block relative z-10"
+          >
+            <h4 className="font-bold sm:text-[32px] text-[26px] sm:leading-[40px] leading-[36px] text-white hover:text-cyan-400 transition-colors cursor-pointer">
+              田甜
+            </h4>
+          </a>
           <p className="mt-[8px] font-normal sm:text-[18px] text-[12px] sm:leading-[22px] leading-[16px] text-white">宇元新材首席科学家</p>
         </div>
         <p className="mt-[24px] font-normal sm:text-[24px] text-[18px] sm:leading-[45px] leading-[39px] text-white">
