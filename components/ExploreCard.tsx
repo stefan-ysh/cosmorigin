@@ -13,7 +13,7 @@ interface ExploreCardProps {
   handleClick: (id: string) => void;
 }
 
-const ExploreCard = ({ id, imgUrl, title, index, active, handleClick }: ExploreCardProps) => (
+const ExploreCard = ({ id, imgUrl, title, alt, index, active, handleClick }: ExploreCardProps) => (
   <motion.div
     variants={fadeIn('right', 'spring', index * 0.5, 0.75)}
     className={`relative ${
@@ -23,7 +23,8 @@ const ExploreCard = ({ id, imgUrl, title, index, active, handleClick }: ExploreC
   >
     <img
       src={imgUrl}
-      alt={title}
+      alt={alt}
+      title={title}
       className="absolute w-full h-full object-cover rounded-[24px]"
     />
 
@@ -32,7 +33,7 @@ const ExploreCard = ({ id, imgUrl, title, index, active, handleClick }: ExploreC
         {title}
       </h3>
     ) : (
-      <div className="absolute bottom-0 p-8 justify-start w-full flex-col bg-[rgba(0,0,0,0.5)] rounded-b-[24px]">
+      <div className="absolute bottom-0 p-8 justify-start w-full bg-[rgba(0,0,0,0.1)] rounded-b-[24px] flex flex-row items-baseline gap-10">
         <div className={`${styles.flexCenter} w-[60px] h-[60px] glassmorphism mb-[16px] rounded-[12px]`}>
           <img
             src="/headset.svg"
@@ -40,7 +41,6 @@ const ExploreCard = ({ id, imgUrl, title, index, active, handleClick }: ExploreC
             className="w-1/2 h-1/2 object-contain"
           />
         </div>
-        <p className="font-normal text-[16px] leading-[20.16px] text-white">了解更多方案</p>
         <h2 className="mt-[24px] font-semibold sm:text-[32px] text-[24px] text-white">
           {title}
         </h2>

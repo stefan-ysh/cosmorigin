@@ -20,7 +20,7 @@ const GetStarted = (): JSX.Element => (
         variants={planetVariants('left')}
         className={`${styles.flexCenter} flex-1`}
       >
-        <img src="/get-started.png" alt="联合研发流程示意" className="w-[90%] h-[90%] object-content" />
+        <img src="/宇元新材发光材料母粒.png" alt="联合研发流程示意" className="w-[90%] h-[90%] object-contain" />
       </motion.div>
       <motion.div
         variants={fadeIn('left', 'tween', 0.2, 1)}

@@ -2,6 +2,7 @@ export interface ExploreWorld {
   id: string;
   imgUrl: string;
   title: string;
+  alt: string;
 }
 
 export interface FeatureHighlight {
@@ -25,18 +26,21 @@ export interface SocialLink {
 export const exploreWorlds: ExploreWorld[] = [
   {
     id: 'world-1',
-    imgUrl: '/planet-01.png',
+    imgUrl: '/发光油漆.jpg',
     title: '发光油漆',
+    alt: '发光油漆效果图片',
   },
   {
     id: 'world-2',
-    imgUrl: '/planet-02.png',
+    imgUrl: '/发光纤维丝.jpg',
     title: '发光纤维丝',
+    alt: '发光纤维丝效果图片',
   },
   {
     id: 'world-3',
-    imgUrl: '/planet-03.png',
+    imgUrl: '/发光膜.jpg',
     title: '发光膜',
+    alt: '发光膜效果图片',
   },
 ];
 
@@ -61,17 +65,17 @@ export const newFeatures: FeatureHighlight[] = [
 
 export const insights: InsightItem[] = [
   {
-    imgUrl: '/planet-06.png',
+    imgUrl: '/发光材料在汽车内外饰中的应用.png',
     title: '汽车内外饰：从功能到情感的光影革命',
     subtitle: '主动安全增强、轻量化设计、无声发光美学，让危险提前"被看见"，从北极圈到沙漠，光始终在线。',
   },
   {
-    imgUrl: '/planet-07.png',
+    imgUrl: '/发光材料在农业中的应用.png',
     title: '智慧农业：RMAF温室的24小时光补偿',
     subtitle: '621nm红光补偿使小麦叶绿素含量提升39.4%，实现光转换-光存储-光释放的完整循环，精准农业光照管理的突破。',
   },
   {
-    imgUrl: '/planet-08.png',
+    imgUrl: '/发光材料在应急救援中的应用.png',
     title: '应急救援：深海到高空的全场景守护',
     subtitle: '3260小时水下浸泡后荧光强度保持85%，热致发光防护服、防水织物，为救援场景提供主动安全保障。',
   },

@@ -21,11 +21,11 @@ const RootLayout = ({ children }: RootLayoutProps): JSX.Element => (
       />
       <meta
         name="keywords"
-        content="发光材料,发光油漆,发光纤维丝,发光膜,柔性发光材料,自发光材料,夜光材料,汽车发光,智慧农业,应急救援,发光雨布,RMAF温室,电致发光线,3D打印发光,发光手办,宇元新材,扬州发光材料,水下发光,防水发光织物"
+        content="发光油漆,发光纤维丝,发光膜,柔性发光材料,自发光材料,发光材料与器件国家重点实验室，夜光材料,汽车发光,cosmic origin,cosmorigin,发光雨布,RMAF温室,电致发光线,3D打印发光,发光手办,宇元新材,扬州发光材料,水下发光,防水发光织物"
       />
       
       {/* Icons and Manifest */}
-      <link rel="icon" href="/metadroid-fav.png" sizes="any" />
+      <link rel="icon" href="/cosmorigin-logo.png" sizes="any" />
       <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
       <link rel="manifest" href="/manifest.json" />
       <link rel="canonical" href="https://cosmorigin.com" />

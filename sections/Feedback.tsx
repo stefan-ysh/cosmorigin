@@ -40,7 +40,7 @@ const Feedback = (): JSX.Element => (
         variants={fadeIn('left', 'tween', 0.3, 1)}
         className="flex-1 flex items-center justify-center"
       >
-        <img src="/planet-09.png" alt="发光材料样品" className="w-full lg:h-[610px] h-auto min-h-[210px] object-cover rounded-[40px]" />
+        <img src="/宇元新材发光材料制成的3D打印辅材.jpg" alt="发光材料样品" className="w-full lg:h-[610px] h-auto min-h-[210px] object-cover rounded-[40px]" />
         <motion.div
           variants={zoomIn(0.4, 1)}
           className="lg:block hidden absolute -left-[10%] top-[3%]"

@@ -34,7 +34,7 @@ const WhatsNew = (): JSX.Element => (
         className={`flex-1 ${styles.flexCenter}`}
       >
         <img
-          src="/whats-new.png"
+          src="/宇元新材发光材料制成的圣诞树.png"
           alt="最新动态图示"
           className="w-[90%] h-[90%] object-contain"
         />
