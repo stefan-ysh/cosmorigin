@@ -8,6 +8,7 @@ interface ExploreCardProps {
   id: string;
   imgUrl: string;
   title: string;
+  alt: string;
   index: number;
   active: string;
   handleClick: (id: string) => void;
