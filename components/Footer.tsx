@@ -84,7 +84,7 @@ const Footer = () => (
         </div>
       </div>
       <p className="w-full text-center font-normal text-[14px] text-white opacity-50">
-        Copyright © 2025 Cosmorigin. All rights reserved.
+        Copyright © 2025 Cosmorigin. All rights reserved.<a href="http://beian.miit.gov.cn/" className="ml-2" target="_blank">苏 IPC备2025217439-1</a>
       </p>
     </div>
   </motion.footer>
