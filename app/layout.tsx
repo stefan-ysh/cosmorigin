@@ -1,5 +1,8 @@
 import { Analytics } from "@vercel/analytics/next"
 import { ReactNode } from 'react';
+import Footer from '@/components/Footer';
+
+import Navbar from '@/components/Navbar';
 
 import '@/styles/globals.css';
 
@@ -76,9 +79,11 @@ const RootLayout = ({ children }: RootLayoutProps): JSX.Element => (
       <meta name="googlebot" content="index, follow" />
       <meta name="bingbot" content="index, follow" />
     </head>
-    <body>
+    <body className="bg-primary-black text-white antialiased">
+      <Navbar />
       {children}
       <Analytics />
+      <Footer />
     </body>
   </html>
 );

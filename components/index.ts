@@ -8,6 +8,7 @@ import EnhancedWorld from './EnhancedWorld';
 import TechShowcase from './TechShowcase';
 import Footer from './Footer';
 import StructuredData from './StructuredData';
+import PagePlaceholder from './PagePlaceholder';
 
 export {
   Navbar,
@@ -21,4 +22,5 @@ export {
   InsightCard,
   Footer,
   StructuredData,
+  PagePlaceholder,
 };

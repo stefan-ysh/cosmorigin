@@ -1,10 +1,9 @@
-import { Footer, Navbar, TechShowcase, EnhancedWorld, StructuredData } from '@/components/index';
+import { Footer, TechShowcase, EnhancedWorld, StructuredData } from '@/components/index';
 import { About, Explore, Feedback, GetStarted, Hero, Insights, WhatsNew, World } from '@/sections';
 
 const Page = () => (
   <section className="bg-primary-black overflow-hidden">
     <StructuredData />
-    <Navbar />
     <Hero />
     <div className="relative">
       <About />
@@ -28,7 +27,6 @@ const Page = () => (
       <div className="gradient-04 z-0" />
       <Feedback />
     </div>
-    <Footer />
   </section>
 );
 

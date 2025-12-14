@@ -112,12 +112,12 @@ const EnhancedWorld = () => (
         {/* 统计数据 */}
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            <div>
+            {/* <div>
               <div className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">
                 50+
               </div>
-              <div className="text-gray-400 mt-2">合作客户</div>
-            </div>
+              <div className="text-gray-400 mt-2">意向客户</div>
+            </div> */}
             <div>
               <div className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">
                 100+

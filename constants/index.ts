@@ -23,6 +23,14 @@ export interface SocialLink {
   link: string;
 }
 
+export interface SocialChannel {
+  label: string;
+  description: string;
+  href?: string;
+  qrImage?: string;
+  qrAlt?: string;
+}
+
 export const exploreWorlds: ExploreWorld[] = [
   {
     id: 'world-1',
@@ -42,6 +50,12 @@ export const exploreWorlds: ExploreWorld[] = [
     title: '发光膜',
     alt: '发光膜效果图片',
   },
+  {
+    id: 'world-4',
+    imgUrl: '/宇元新材发光材料制成的3D打印辅材.jpg',
+    title: '3D 打印辅材',
+    alt: '3D 打印辅材效果图片',
+  },
 ];
 
 export const startingFeatures: string[] = [
@@ -60,6 +74,11 @@ export const newFeatures: FeatureHighlight[] = [
     imgUrl: '/headset.svg',
     title: '任意图案化/多色发光技术',
     subtitle: '支持个性化图案定制与多色光谱调节，灵活匹配交通警示、艺术装饰、品牌LOGO等多元场景需求。',
+  },
+  {
+    imgUrl: '/grid.svg',
+    title: '3D 打印辅材发布',
+    subtitle: '兼容 SLA/FDM 的自发光材料，可直接打印复杂光效件，缩短小批量验证与展示件制作周期。',
   },
 ];
 
@@ -107,4 +126,39 @@ export const socials: SocialLink[] = [
   //   url: '/facebook.svg',
   //   link: 'https://www.facebook.com/cosmorigin',
   // },
+];
+
+export const socialChannels: SocialChannel[] = [
+  {
+    label: '抖音',
+    description: '打开抖音搜索“宇元新材”获取实验日常与路演直播。',
+    href: 'https://www.douyin.com/user/MS4wLjABAAAAW8PITDZWj78rNFg9ClL_FiRcuQctfITZMrAJexDJZRsPIVEqnO0mzYFHTnjFtrWV',
+  },
+  {
+    label: 'TikTok',
+    description: '@cosmorigin，面向海外的材料动态与案例拆解。',
+    href: 'https://www.tiktok.com/@cosmorigin',
+  },
+  {
+    label: '微信公众号',
+    description: '宇元新材材料研究院——每月推送技术白皮书与活动预约。',
+    qrImage: '/wechat_official.jpg',
+    qrAlt: '宇元新材微信公众号二维码',
+  },
+  {
+    label: '微信视频号',
+    description: '宇元新材官方视频号，跟进新材料 Demo 直播。',
+    qrImage: '/video_offical.jpg',
+    qrAlt: '宇元新材微信视频号二维码',
+  },
+  {
+    label: '微博',
+    description: '@宇元新材，关注行业观点与展会快讯。',
+    href: 'https://weibo.com/u/8414991697',
+  },
+  {
+    label: '小红书',
+    description: '@宇元新材，记录材料灵感与落地案例。',
+    href: 'https://xhslink.com/m/67pnAGQHGS8',
+  },
 ];
