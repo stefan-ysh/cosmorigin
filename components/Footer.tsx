@@ -84,9 +84,19 @@ const Footer = () => (
         </div>
       </div>
       <p className="w-full text-center font-normal text-[14px] text-white opacity-50">
-        Copyright © 2025 Cosmorigin. All rights reserved.<a href="http://beian.miit.gov.cn/" className="ml-2" target="_blank">苏 IPC备2025217439-1</a>
+        Copyright © 2025 Cosmorigin. All rights reserved.
       </p>
     </div>
+    <p className="w-full text-center font-normal text-[12px] text-white opacity-50 flex items-center justify-center gap-2 mt-5">
+      <img src="./备案图标.png" className="w-4 h-4" />{" "}
+      <a
+        href="https://beian.mps.gov.cn/#/query/webSearch?code=32100302011598"
+        rel="noreferrer"
+        target="_blank"
+      >
+        苏公网安备32100302011598号
+      </a>
+    </p>
   </motion.footer>
 );
 
