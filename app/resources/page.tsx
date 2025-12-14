@@ -2,15 +2,26 @@ import type { Metadata } from 'next';
 
 import Link from 'next/link';
 
+import JsonLd from '@/components/JsonLd';
 import PagePlaceholder from '@/components/PagePlaceholder';
+import { absoluteUrl, buildOpenGraph, buildTwitter, defaultRobots } from '@/lib/seo';
+
+const pagePath = '/resources';
+const pageTitle = '资料中心 | 白皮书与检测报告';
+const pageDescription =
+  '集中发布产品手册、性能测试、认证证书、品牌素材与协议文档，方便合作伙伴快速下载并评估发光材料能力。';
+const canonicalUrl = absoluteUrl(pagePath);
 
 export const metadata: Metadata = {
-  title: '资料中心 | 白皮书与检测报告',
-  description:
-    '集中发布产品手册、性能测试、认证证书、媒体素材与 API/控制协议，方便合作伙伴一键下载。',
+  title: pageTitle,
+  description: pageDescription,
+  keywords: ['发光材料白皮书', '检测报告下载', '宇元新材资料中心', '产品手册', '品牌素材'],
   alternates: {
-    canonical: 'https://cosmorigin.com/resources',
+    canonical: canonicalUrl,
   },
+  openGraph: buildOpenGraph(pageTitle, pageDescription, pagePath),
+  twitter: buildTwitter(pageTitle, pageDescription),
+  robots: defaultRobots,
 };
 
 const downloads = [
@@ -32,8 +43,24 @@ const downloads = [
   },
 ];
 
+const resourcesSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: pageTitle,
+  url: canonicalUrl,
+  description: pageDescription,
+  hasPart: downloads.map((download) => ({
+    '@type': 'DigitalDocument',
+    name: download.title,
+    description: download.description,
+    encodingFormat: download.type,
+    url: download.href ? absoluteUrl(download.href) : undefined,
+  })),
+};
+
 const ResourcesPage = (): JSX.Element => (
   <main className="bg-primary-black text-white">
+    <JsonLd data={resourcesSchema} />
     <section className="px-6 py-20">
       <div className="mx-auto max-w-6xl">
         <p className="text-sm uppercase tracking-[0.3em] text-white/60">RESOURCES</p>

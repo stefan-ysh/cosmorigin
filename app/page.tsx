@@ -1,5 +1,25 @@
+import type { Metadata } from 'next';
+
 import { Footer, TechShowcase, EnhancedWorld, StructuredData } from '@/components/index';
 import { About, Explore, Feedback, GetStarted, Hero, Insights, WhatsNew, World } from '@/sections';
+import { absoluteUrl, buildOpenGraph, buildTwitter, defaultRobots } from '@/lib/seo';
+
+const pagePath = '/';
+const pageTitle = '宇元新材 | 柔性发光材料与原创解决方案';
+const pageDescription =
+  '宇元新材专注柔性发光材料研发，提供发光油漆、发光纤维丝、发光膜及行业解决方案，覆盖交通、农业、应急与文旅场景。';
+
+export const metadata: Metadata = {
+  title: pageTitle,
+  description: pageDescription,
+  keywords: ['柔性发光材料', '发光油漆', '发光纤维丝', '发光薄膜', '自发光解决方案'],
+  alternates: {
+    canonical: absoluteUrl(pagePath),
+  },
+  openGraph: buildOpenGraph(pageTitle, pageDescription, pagePath),
+  twitter: buildTwitter(pageTitle, pageDescription),
+  robots: defaultRobots,
+};
 
 const Page = () => (
   <section className="bg-primary-black overflow-hidden">

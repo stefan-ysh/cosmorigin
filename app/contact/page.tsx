@@ -2,16 +2,26 @@ import type { Metadata } from 'next';
 
 import Link from 'next/link';
 
+import JsonLd from '@/components/JsonLd';
 import PagePlaceholder from '@/components/PagePlaceholder';
 import { socialChannels } from '@/constants';
+import { absoluteUrl, buildOpenGraph, buildTwitter, defaultRobots } from '@/lib/seo';
+
+const pagePath = '/contact';
+const pageTitle = '联系宇元新材 | 商务与技术支持';
+const pageDescription = '通过电话、邮箱或表单与宇元新材取得联系，预约材料样品、技术研讨或联合研发。';
+const canonicalUrl = absoluteUrl(pagePath);
 
 export const metadata: Metadata = {
-  title: '联系宇元新材 | 商务与技术支持',
-  description:
-    '通过电话、邮箱或表单与宇元新材取得联系，预约材料样品、技术研讨或联合研发。',
+  title: pageTitle,
+  description: pageDescription,
+  keywords: ['联系宇元新材', '发光材料咨询', '发光材料专家', '商务对接', '技术支持'],
   alternates: {
-    canonical: 'https://cosmorigin.com/contact',
+    canonical: canonicalUrl,
   },
+  openGraph: buildOpenGraph(pageTitle, pageDescription, pagePath),
+  twitter: buildTwitter(pageTitle, pageDescription),
+  robots: defaultRobots,
 };
 
 const channels = [
@@ -32,8 +42,37 @@ const channels = [
   },
 ];
 
+const contactSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ContactPage',
+  name: pageTitle,
+  url: canonicalUrl,
+  description: pageDescription,
+  mainEntity: {
+    '@type': 'Organization',
+    name: '扬州宇元新材有限公司',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: '江苏省扬州市邗江区开发西路 213 号 609 室',
+      addressLocality: '扬州',
+      addressRegion: '江苏省',
+      postalCode: '225000',
+      addressCountry: 'CN',
+    },
+    telephone: '+86-185-7841-2005',
+    contactPoint: channels.map((channel) => ({
+      '@type': 'ContactPoint',
+      contactType: channel.title,
+      description: channel.description,
+      email: channel.contact,
+      availableLanguage: ['zh-CN'],
+    })),
+  },
+};
+
 const ContactPage = (): JSX.Element => (
   <main className="bg-primary-black text-white">
+    <JsonLd data={contactSchema} />
     <section className="px-6 py-20">
       <div className="mx-auto max-w-6xl">
         <p className="text-sm uppercase tracking-[0.3em] text-white/60">CONTACT</p>

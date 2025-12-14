@@ -2,15 +2,26 @@ import type { Metadata } from 'next';
 
 import Image from 'next/image';
 
+import JsonLd from '@/components/JsonLd';
 import PagePlaceholder from '@/components/PagePlaceholder';
+import { absoluteUrl, buildOpenGraph, buildTwitter, defaultRobots } from '@/lib/seo';
+
+const pagePath = '/about';
+const pageTitle = '关于宇元新材 | 公司概览与技术底座';
+const pageDescription =
+  '了解宇元新材的使命、团队与研发体系。我们专注柔性发光材料的原创技术，持续投入中试产线与联合实验室建设。';
+const canonicalUrl = absoluteUrl(pagePath);
 
 export const metadata: Metadata = {
-  title: '关于宇元新材 | 公司概览与技术底座',
-  description:
-    '了解宇元新材的使命、团队与研发体系。我们专注柔性发光材料的原创技术，持续投入中试产线与联合实验室建设。',
+  title: pageTitle,
+  description: pageDescription,
+  keywords: ['宇元新材', '发光材料团队', '柔性发光技术', '材料实验室', '扬州发光企业'],
   alternates: {
-    canonical: 'https://cosmorigin.com/about',
+    canonical: canonicalUrl,
   },
+  openGraph: buildOpenGraph(pageTitle, pageDescription, pagePath),
+  twitter: buildTwitter(pageTitle, pageDescription),
+  robots: defaultRobots,
 };
 
 const milestones = [
@@ -35,8 +46,59 @@ const leadership = [
   },
 ];
 
+const aboutSchemas = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'AboutPage',
+    name: pageTitle,
+    url: canonicalUrl,
+    description: pageDescription,
+    breadcrumb: {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: '首页', item: absoluteUrl('/') },
+        { '@type': 'ListItem', position: 2, name: '关于我们', item: canonicalUrl },
+      ],
+    },
+    mainEntity: {
+      '@type': 'Organization',
+      name: '扬州宇元新材有限公司',
+      foundingDate: '2014',
+      numberOfEmployees: '50+',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: '江苏省扬州市邗江区开发西路 213 号 609 室',
+        addressLocality: '扬州',
+        addressRegion: '江苏省',
+        postalCode: '225000',
+        addressCountry: 'CN',
+      },
+      contactPoint: {
+        '@type': 'ContactPoint',
+        telephone: '+86-185-7841-2005',
+        email: 'contact@cosmorigin.com',
+        contactType: 'sales',
+        areaServed: 'CN',
+        availableLanguage: ['zh-CN', 'en'],
+      },
+    },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: '发展里程碑',
+    itemListElement: milestones.map((milestone, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: milestone.content,
+      startDate: milestone.year,
+    })),
+  },
+];
+
 const AboutPage = (): JSX.Element => (
   <main className="bg-primary-black text-white">
+    <JsonLd data={aboutSchemas} />
     <section className="px-6 py-20">
       <div className="mx-auto flex max-w-6xl flex-col gap-10 lg:flex-row">
         <div className="flex-1">

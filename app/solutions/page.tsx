@@ -1,14 +1,25 @@
 import type { Metadata } from 'next';
 
+import JsonLd from '@/components/JsonLd';
 import PagePlaceholder from '@/components/PagePlaceholder';
+import { absoluteUrl, buildOpenGraph, buildTwitter, defaultRobots } from '@/lib/seo';
+
+const pagePath = '/solutions';
+const pageTitle = '行业解决方案 | 交通、农业、应急与文旅应用';
+const pageDescription =
+  '宇元新材面向交通出行、智慧农业、应急救援与文旅艺术等行业提供发光材料解决方案，整合材料、结构、电控与交付流程。';
+const canonicalUrl = absoluteUrl(pagePath);
 
 export const metadata: Metadata = {
-  title: '行业解决方案 | 交通、农业、应急与文旅应用',
-  description:
-    '宇元新材提供覆盖交通出行、智慧农业、应急救援、文旅艺术等行业的发光解决方案，结合材料、结构与控制策略。',
+  title: pageTitle,
+  description: pageDescription,
+  keywords: ['行业发光方案', '交通发光解决方案', '智慧农业补光', '应急照明材料', '文旅夜游发光'],
   alternates: {
-    canonical: 'https://cosmorigin.com/solutions',
+    canonical: canonicalUrl,
   },
+  openGraph: buildOpenGraph(pageTitle, pageDescription, pagePath),
+  twitter: buildTwitter(pageTitle, pageDescription),
+  robots: defaultRobots,
 };
 
 const solutionTracks = [
@@ -45,8 +56,56 @@ const workflow = [
   '规模部署：结合质量追溯与远程维护，确保长期稳定运行。',
 ];
 
+const solutionSchemas = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: '行业解决方案',
+    url: canonicalUrl,
+    itemListElement: solutionTracks.map((track, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: track.title,
+      item: {
+        '@type': 'Service',
+        serviceType: track.title,
+        description: `${track.pain} ${track.plan}`,
+        provider: {
+          '@type': 'Organization',
+          name: '扬州宇元新材有限公司',
+        },
+        areaServed: 'CN',
+        hasOfferCatalog: {
+          '@type': 'OfferCatalog',
+          name: track.title,
+          itemListElement: [
+            {
+              '@type': 'ListItem',
+              position: 1,
+              name: track.plan,
+            },
+          ],
+        },
+      },
+    })),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name: '联合交付流程',
+    description: '宇元新材与合作伙伴共创、验证、交付与部署发光方案的 workflow。',
+    step: workflow.map((step, index) => ({
+      '@type': 'HowToStep',
+      position: index + 1,
+      name: `Step ${index + 1}`,
+      text: step,
+    })),
+  },
+];
+
 const SolutionsPage = (): JSX.Element => (
   <main className="bg-primary-black text-white">
+    <JsonLd data={solutionSchemas} />
     <section className="px-6 py-20">
       <div className="mx-auto max-w-6xl">
         <p className="text-sm uppercase tracking-[0.3em] text-white/60">SOLUTIONS</p>

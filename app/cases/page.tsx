@@ -1,16 +1,25 @@
 import type { Metadata } from 'next';
 
-import Link from 'next/link';
-
+import JsonLd from '@/components/JsonLd';
 import PagePlaceholder from '@/components/PagePlaceholder';
+import { absoluteUrl, buildOpenGraph, buildTwitter, defaultRobots } from '@/lib/seo';
+
+const pagePath = '/cases';
+const pageTitle = '案例展示与合作实绩';
+const pageDescription =
+  '沉淀汽车、农业、应急、文旅等真实案例，呈现目标、材料方案与阶段性数据，帮助合作伙伴评估发光材料落地可行性。';
+const canonicalUrl = absoluteUrl(pagePath);
 
 export const metadata: Metadata = {
-  title: '案例成精与合作实绩',
-  description:
-    '沉淀汽车、农业、应急、文旅等真实案例，展示目标、方案、材料清单与验证结果，帮助合作伙伴快速评估落地可行性。',
+  title: pageTitle,
+  description: pageDescription,
+  keywords: ['发光材料案例', '汽车发光项目', '智慧农业案例', '应急照明案例', '文旅发光案例'],
   alternates: {
-    canonical: 'https://cosmorigin.com/cases',
+    canonical: canonicalUrl,
   },
+  openGraph: buildOpenGraph(pageTitle, pageDescription, pagePath),
+  twitter: buildTwitter(pageTitle, pageDescription),
+  robots: defaultRobots,
 };
 
 const caseStudies = [
@@ -37,8 +46,35 @@ const caseStudies = [
   },
 ];
 
+const caseStudySchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: pageTitle,
+  url: canonicalUrl,
+  itemListElement: caseStudies.map((item, index) => ({
+    '@type': 'ListItem',
+    position: index + 1,
+    item: {
+      '@type': 'CaseStudy',
+      name: item.title,
+      description: item.challenge,
+      text: item.result,
+      learningOutcome: item.outcome,
+      audience: {
+        '@type': 'Audience',
+        audienceType: item.client,
+      },
+      provider: {
+        '@type': 'Organization',
+        name: '扬州宇元新材有限公司',
+      },
+    },
+  })),
+};
+
 const CasesPage = (): JSX.Element => (
   <main className="bg-primary-black text-white">
+    <JsonLd data={caseStudySchema} />
     <section className="px-6 py-20">
       <div className="mx-auto max-w-6xl">
         <p className="text-sm uppercase tracking-[0.3em] text-white/60">CASES</p>

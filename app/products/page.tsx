@@ -3,15 +3,26 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 
+import JsonLd from '@/components/JsonLd';
 import PagePlaceholder from '@/components/PagePlaceholder';
+import { absoluteUrl, buildOpenGraph, buildTwitter, defaultRobots } from '@/lib/seo';
+
+const pagePath = '/products';
+const pageTitle = '产品矩阵 | 发光油漆、纤维丝、薄膜与 3D 打印辅材';
+const pageDescription =
+  '浏览宇元新材的核心产品：发光油漆、发光纤维丝、发光膜以及 3D 打印辅材，支持定制光谱与多场景应用。';
+const canonicalUrl = absoluteUrl(pagePath);
 
 export const metadata: Metadata = {
-  title: '产品矩阵 | 发光油漆、纤维丝、薄膜与 3D 打印辅材',
-  description:
-    '浏览宇元新材的核心产品：发光油漆、发光纤维丝、发光膜以及全新 3D 打印辅材，支持定制光谱与多场景应用。',
+  title: pageTitle,
+  description: pageDescription,
+  keywords: ['发光油漆', '发光纤维丝', '发光膜', '自发光材料', '产品矩阵'],
   alternates: {
-    canonical: 'https://cosmorigin.com/products',
+    canonical: canonicalUrl,
   },
+  openGraph: buildOpenGraph(pageTitle, pageDescription, pagePath),
+  twitter: buildTwitter(pageTitle, pageDescription),
+  robots: defaultRobots,
 };
 
 interface ProductVariant {
@@ -143,8 +154,40 @@ const productDetails: ProductDetail[] = [
 //   },
 ];
 
+const productCollectionSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: pageTitle,
+  url: canonicalUrl,
+  description: pageDescription,
+  hasPart: productDetails.map((product) => ({
+    '@type': 'Product',
+    name: product.name,
+    description: product.overview,
+    category: '发光材料',
+    brand: {
+      '@type': 'Brand',
+      name: '宇元新材',
+    },
+    image: absoluteUrl(product.image),
+    additionalProperty: [
+      { '@type': 'PropertyValue', name: '典型应用', value: product.applications },
+      { '@type': 'PropertyValue', name: '亮度区间', value: product.brightness },
+      { '@type': 'PropertyValue', name: '供货形态', value: product.supply },
+    ],
+    offers: {
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'CNY',
+      availability: product.status === '可订购' ? 'https://schema.org/InStock' : 'https://schema.org/PreOrder',
+      itemCondition: 'https://schema.org/NewCondition',
+    },
+  })),
+};
+
 const ProductsPage = (): JSX.Element => (
   <main className="bg-primary-black text-white">
+    <JsonLd data={productCollectionSchema} />
     <section className="px-6 py-20">
       <div className="mx-auto max-w-6xl">
         <p className="text-sm uppercase tracking-[0.3em] text-white/60">PRODUCTS</p>
