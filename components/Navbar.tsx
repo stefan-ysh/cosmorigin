@@ -1,29 +1,29 @@
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
-import Link from 'next/link';
-import { AnimatePresence, motion } from 'framer-motion';
+import { useEffect, useState } from "react";
+import Link from "next/link";
+import { AnimatePresence, motion } from "framer-motion";
 
-import styles from '@/styles';
-import { navVariants } from '@/utils/motion';
+import styles from "@/styles";
+import { navVariants } from "@/utils/motion";
 
 const navLinks = [
-  { label: '首页', href: '/' },
-  { label: '关于我们', href: '/about' },
-  { label: '产品矩阵', href: '/products' },
-  { label: '行业方案', href: '/solutions' },
-  { label: '案例展示', href: '/cases' },
-  { label: '资料中心', href: '/resources' },
+  { label: "首页", href: "/" },
+  { label: "关于我们", href: "/about" },
+  { label: "产品矩阵", href: "/products" },
+  { label: "行业方案", href: "/solutions" },
+  { label: "案例展示", href: "/cases" },
+  { label: "资料中心", href: "/resources" },
 ];
 
 const Navbar = () => {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
 
   useEffect(() => {
-    if (typeof document === 'undefined') return;
-    document.body.classList.toggle('overflow-hidden', isMobileOpen);
+    if (typeof document === "undefined") return;
+    document.body.classList.toggle("overflow-hidden", isMobileOpen);
     return () => {
-      document.body.classList.remove('overflow-hidden');
+      document.body.classList.remove("overflow-hidden");
     };
   }, [isMobileOpen]);
 
@@ -36,8 +36,13 @@ const Navbar = () => {
       className={`${styles.xPaddings} py-8 relative z-50`}
     >
       <div className="pointer-events-none absolute inset-0 w-[50%] gradient-01" />
-      <div className={`${styles.innerWidth} mx-auto flex items-center justify-between gap-8`}>
-        <Link href="/" className="font-extrabold text-[24px] leading-[30px] text-white">
+      <div
+        className={`${styles.innerWidth} mx-auto flex items-center justify-between gap-8`}
+      >
+        <Link
+          href="/"
+          className="font-extrabold text-[24px] leading-[30px] text-white"
+        >
           COSMORIGIN
         </Link>
 
@@ -68,7 +73,11 @@ const Navbar = () => {
             className="inline-flex items-center justify-center rounded-full border border-white/20 p-2 lg:hidden"
           >
             <span className="sr-only">打开导航菜单</span>
-            <img src="/menu.svg" alt="导航菜单" className="h-[24px] w-[24px] object-contain" />
+            <img
+              src="/menu.svg"
+              alt="导航菜单"
+              className="h-[24px] w-[24px] object-contain"
+            />
           </button>
         </div>
       </div>
@@ -84,15 +93,43 @@ const Navbar = () => {
             transition={{ duration: 0.2 }}
             className="fixed inset-0 z-[60] lg:hidden"
           >
+            <div className="footer-gradient z-30 -right-1/2 bottom-0"></div>
             <motion.div
-              initial={{ x: '100%' }}
+              initial={{ x: "100%" }}
               animate={{ x: 0 }}
-              exit={{ x: '100%' }}
-              transition={{ type: 'spring', stiffness: 260, damping: 30 }}
-              className="relative flex h-full w-3/5 flex-col gap-6 bg-[#0E0E10] px-6 pb-12 pt-10 shadow-2xl"
+              exit={{ x: "100%" }}
+              transition={{ type: "spring", stiffness: 260, damping: 30 }}
+              className="relative flex h-full w-[100%] flex-col gap-6 bg-[#0E0E10] px-6 pb-12 pt-10 shadow-2xl"
             >
-            
-
+              <div className="flex items-center justify-between">
+                <Link
+                  href="/"
+                  onClick={() => setIsMobileOpen(false)}
+                  className="text-lg font-bold tracking-[0.3em] text-white"
+                >
+                  COSMORIGIN
+                </Link>
+                <button
+                  type="button"
+                  onClick={() => setIsMobileOpen(false)}
+                  className="rounded-full border border-white/20 p-2"
+                >
+                  <span className="sr-only">关闭导航菜单</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    className="h-5 w-5 text-white"
+                    aria-hidden
+                  >
+                    <path
+                      d="M6 6l12 12M18 6L6 18"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                    />
+                  </svg>
+                </button>
+              </div>
               <nav className="flex flex-1 flex-col gap-4">
                 {navLinks.map((link) => (
                   <Link
@@ -104,6 +141,13 @@ const Navbar = () => {
                     {link.label}
                   </Link>
                 ))}
+                <Link
+                  href="/contact"
+                  onClick={() => setIsMobileOpen(false)}
+                  className="text-base font-semibold uppercase tracking-[0.25em] text-white/80 transition hover:text-white"
+                >
+                  联系专家
+                </Link>
               </nav>
             </motion.div>
           </motion.div>
