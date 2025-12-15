@@ -201,7 +201,11 @@ const ProductsPage = (): JSX.Element => (
     </section>
 
     <section className="px-6 pb-20">
-      <div className="mx-auto max-w-6xl space-y-10">
+      <div className="mx-auto max-w-6xl space-y-6">
+        <div className="flex flex-col gap-3">
+          <p className="text-xs uppercase tracking-[0.4em] text-white/50">全部产品</p>
+          <div className="h-[1px] w-full bg-white/10" />
+        </div>
         {productDetails.map((product) => (
           <article key={product.name} className="rounded-3xl border border-white/10 bg-white/5 p-8">
             <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">

@@ -113,13 +113,17 @@ const SolutionsPage = (): JSX.Element => (
           针对行业痛点的发光一体化方案
         </h1>
         <p className="mt-6 text-lg text-white/70">
-          我们将材料、结构、电控与算法打包成行业方案，既能快速验证，也能直连后续量产。每个方案都配有 KPI 追踪与交付手册，帮助合作伙伴复制成功经验。
+          我们将材料、结构、电控与算法打包成行业方案，既能快速验证，也能直连后续量产。
         </p>
       </div>
     </section>
 
     <section className="px-6 pb-16">
       <div className="mx-auto max-w-6xl grid gap-6">
+        <div className="flex flex-col gap-3">
+          <p className="text-xs uppercase tracking-[0.4em] text-white/50">全部方案</p>
+          <div className="h-[1px] w-full bg-white/10" />
+        </div>
         {solutionTracks.map((track) => (
           <article key={track.title} className="rounded-3xl border border-white/10 bg-white/5 p-8">
             <h2 className="text-2xl font-semibold">{track.title}</h2>

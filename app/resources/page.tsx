@@ -75,6 +75,11 @@ const ResourcesPage = (): JSX.Element => (
 
     <section className="px-6 pb-16">
       <div className="mx-auto max-w-6xl grid gap-6">
+        <div className="flex flex-col gap-3">
+          <p className="text-xs uppercase tracking-[0.4em] text-white/50">全部资料</p>
+          <div className="h-[1px] w-full bg-white/10" />
+        </div>
+
         {downloads.map((file) => (
           <article key={file.title} className="rounded-3xl border border-white/10 bg-white/5 p-8">
             <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">

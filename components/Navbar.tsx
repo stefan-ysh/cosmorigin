@@ -13,6 +13,7 @@ const navLinks = [
   { label: "产品矩阵", href: "/products" },
   { label: "行业方案", href: "/solutions" },
   { label: "案例展示", href: "/cases" },
+  { label: "新闻动态", href: "/news" },
   { label: "资料中心", href: "/resources" },
 ];
 
