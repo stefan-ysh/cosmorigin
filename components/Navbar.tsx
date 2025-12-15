@@ -74,14 +74,10 @@ const Navbar = () => {
             aria-controls="mobile-nav"
             aria-expanded={isMobileOpen}
             onClick={() => setIsMobileOpen(true)}
-            className="inline-flex items-center justify-center rounded-full border border-black/10 p-2 text-black dark:border-white/20 dark:text-white lg:hidden"
+            className="inline-flex items-center justify-center rounded-full border border-black/10 p-2 dark:border-white/20 lg:hidden"
           >
             <span className="sr-only">打开导航菜单</span>
-            <img
-              src="/menu.svg"
-              alt="导航菜单"
-              className="h-[24px] w-[24px] object-contain"
-            />
+            <div className=" w-3 h-3 flex items-center justify-center">···</div>
           </button>
         </div>
       </div>

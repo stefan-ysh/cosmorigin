@@ -63,7 +63,16 @@ const showcasePairs = [
     dark: "/playground/8.jpg",
     description: "柔性材质，适用于曲面及复杂造型表面。",
   },
+  {
+    id: "8",
+    label: "发光膜",
+    light: "/playground/15.jpg",
+    dark: "/playground/16.jpg",
+    description: " 发光膜制成的花束，营造温馨浪漫氛围。",
+  },
 ] as const;
+
+const FLOATING_SWITCH_THRESHOLD = 320;
 
 const ModeSwitch = ({
   checked,
@@ -98,11 +107,22 @@ const ModeSwitch = ({
 
 const PlaygroundSurface = () => {
   const [mode, setMode] = useState<Theme>("light");
+  const [floatingVisible, setFloatingVisible] = useState(false);
 
   useEffect(() => {
     setMode(resolveInitialTheme());
     const unsubscribe = subscribeToThemeChanges(setMode);
     return unsubscribe;
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setFloatingVisible(window.scrollY >= FLOATING_SWITCH_THRESHOLD);
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const handleModeChange = (
@@ -182,6 +202,26 @@ const PlaygroundSurface = () => {
           </article>
         ))}
       </div>
+
+      {floatingVisible && (
+        <button
+          type="button"
+          aria-label={mode === "dark" ? "切换到开灯" : "切换到关灯"}
+          onClick={(event) =>
+            handleModeChange(mode === "dark" ? "light" : "dark", event)
+          }
+          className="fixed bottom-24 right-6 z-[65] flex items-center gap-3 rounded-full border border-foreground/20 bg-background/90 px-4 py-3 text-xs font-semibold uppercase tracking-[0.35em] text-foreground shadow-[0_20px_45px_rgba(0,0,0,0.25)] backdrop-blur"
+        >
+          <span>{mode === "dark" ? "开灯" : "关灯"}</span>
+          <span
+            className={`inline-flex h-6 w-10 items-center rounded-full border border-foreground/30 bg-foreground/10 p-1 transition ${
+              mode === "dark" ? "justify-end bg-foreground/70" : "justify-start"
+            }`}
+          >
+            <span className="h-4 w-4 rounded-full bg-background" />
+          </span>
+        </button>
+      )}
     </div>
   );
 };
