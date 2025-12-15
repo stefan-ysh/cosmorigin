@@ -9,6 +9,7 @@ import TechShowcase from './TechShowcase';
 import Footer from './Footer';
 import StructuredData from './StructuredData';
 import PagePlaceholder from './PagePlaceholder';
+import BackToTop from './BackToTop';
 
 export {
   Navbar,
@@ -23,4 +24,5 @@ export {
   Footer,
   StructuredData,
   PagePlaceholder,
+  BackToTop,
 };

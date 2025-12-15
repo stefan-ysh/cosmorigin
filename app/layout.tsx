@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { Analytics } from '@vercel/analytics/next';
 import { ReactNode } from 'react';
 
+import BackToTop from '@/components/BackToTop';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import { buildOpenGraph, buildTwitter, defaultRobots } from '@/lib/seo';
@@ -81,6 +82,7 @@ const RootLayout = ({ children }: RootLayoutProps): JSX.Element => (
     <body className="bg-primary-black text-white antialiased">
       <Navbar />
       {children}
+      <BackToTop />
       <Analytics />
       <Footer />
     </body>
