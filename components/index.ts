@@ -10,6 +10,7 @@ import Footer from './Footer';
 import StructuredData from './StructuredData';
 import PagePlaceholder from './PagePlaceholder';
 import BackToTop from './BackToTop';
+import ThemeToggle from './ThemeToggle';
 
 export {
   Navbar,
@@ -25,4 +26,5 @@ export {
   StructuredData,
   PagePlaceholder,
   BackToTop,
+  ThemeToggle,
 };

@@ -1,0 +1,31 @@
+<svg width="960" height="600" viewBox="0 0 960 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="archLightBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fbfcff" />
+      <stop offset="50%" stop-color="#eef2ff" />
+      <stop offset="100%" stop-color="#fdf9ff" />
+    </linearGradient>
+    <linearGradient id="archLightBeam" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffd089" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#fff3d1" stop-opacity="0" />
+    </linearGradient>
+    <linearGradient id="archLightLines" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ff9c57" />
+      <stop offset="100%" stop-color="#ffcc6c" />
+    </linearGradient>
+  </defs>
+  <rect width="960" height="600" fill="url(#archLightBg)" />
+  <rect x="180" y="100" width="600" height="400" rx="60" fill="#ffffff" opacity="0.7" />
+  <rect x="210" y="130" width="540" height="340" rx="48" fill="#f7f9ff" />
+  <rect x="240" y="160" width="480" height="280" rx="38" fill="#fff" opacity="0.9" />
+  <rect x="300" y="200" width="360" height="220" rx="24" fill="#fcf3df" />
+  <rect x="300" y="200" width="360" height="220" rx="24" fill="url(#archLightBeam)" />
+  <path d="M240 380H720" stroke="#fdd9ae" stroke-width="10" stroke-linecap="round" />
+  <path d="M260 340H700" stroke="#ffb978" stroke-width="6" stroke-linecap="round" />
+  <path d="M280 300H680" stroke="url(#archLightLines)" stroke-width="12" stroke-linecap="round" />
+  <path d="M320 260H640" stroke="#ff7f7f" stroke-width="6" stroke-linecap="round" opacity="0.6" />
+  <circle cx="480" cy="250" r="42" fill="#fff6da" />
+  <circle cx="480" cy="250" r="32" fill="#ffe29a" />
+  <path d="M360 420L420 320L540 320L600 420Z" fill="#fff5d6" stroke="#ffc36e" stroke-width="3" />
+  <text x="260" y="170" font-family="'Eudoxus Sans', 'Inter', sans-serif" font-size="26" fill="#444c7d">建筑立面 / 开灯效果</text>
+</svg>

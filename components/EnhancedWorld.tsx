@@ -70,7 +70,7 @@ const EnhancedWorld = () => (
               </div>
 
               {/* 标题 */}
-              <h3 className="text-2xl font-bold text-white mb-2">
+              <h3 className="text-2xl font-bold text-cyan-700 mb-2">
                 {app.title}
               </h3>
 

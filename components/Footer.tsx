@@ -6,8 +6,22 @@ import { MapPin, Mail, Phone } from 'lucide-react';
 import { socials } from '@/constants';
 import styles from '@/styles';
 import { footerVariants } from '@/utils/motion';
-
-const Footer = () => (
+import { useEffect } from 'react';
+import {
+  Theme,
+  resolveInitialTheme,
+  subscribeToThemeChanges,
+} from "@/lib/theme";
+import { useState } from 'react';
+  
+const Footer = () => {
+  const [mode, setMode] = useState<Theme>("light");
+  useEffect(() => {
+    setMode(resolveInitialTheme());
+    const unsubscribe = subscribeToThemeChanges(setMode);
+    return unsubscribe;
+  }, []);
+  return (
   <motion.footer
     variants={footerVariants}
     initial="hidden"
@@ -17,19 +31,9 @@ const Footer = () => (
   >
     <div className="footer-gradient" />
     <div className={`${styles.innerWidth} mx-auto flex flex-col gap-8`}>
-      <div className="flex items-center justify-between flex-wrap gap-5">
-        <h4 className="font-bold md:text-[64px] text-[44px] text-white">
-          携手点亮可持续未来
-        </h4>
-        <button type="button" className="flex items-center h-fit py-4 px-6 bg-[#25618B] rounded-[32px] gap-[12px]">
-          <img
-            src="/headset.svg"
-            alt="联系团队"
-            className="w-[24px] h-[24px] object-contain"
-          />
-          <span className="font-normal text-[16px] text-white">预约技术交流</span>
-        </button>
-      </div>
+      <h4 className="font-bold md:text-[64px] text-[44px] text-white">
+        携手点亮可持续未来
+      </h4>
 
       <div className="flex flex-col">
         <div className="mb-12 h-[2px] bg-white opacity-10" />
@@ -78,7 +82,7 @@ const Footer = () => (
             </div>
             <div className="flex flex-col items-center gap-3 w-full">
               <p className="font-normal text-[14px] text-white/70">微信公众号</p>
-              <img src="/wechat_official.jpg" alt="扬州宇元新材有限公司微信公众号二维码" className="w-40 h-40 object-contain p-1 rounded-md" />
+              <img src={ mode === "light" ? "/wechat_official_light.png" : "/wechat_official_dark.png"} alt="扬州宇元新材有限公司微信公众号二维码" className="w-40 h-40 object-contain p-1 rounded-md" />
             </div>
           </div>
         </div>
@@ -88,7 +92,7 @@ const Footer = () => (
       </p>
     </div>
     <p className="w-full text-center font-normal text-[12px] text-white opacity-50 flex items-center justify-center gap-2 mt-5">
-      <img src="./备案图标.png" className="w-4 h-4" />{" "}
+      <img alt="备案图标" src="./备案图标.png" className="w-4 h-4" />{" "}
       <a
         href="https://beian.mps.gov.cn/#/query/webSearch?code=32100302011598"
         rel="noreferrer"
@@ -98,6 +102,7 @@ const Footer = () => (
       </a>
     </p>
   </motion.footer>
-);
+  );
+};
 
 export default Footer;

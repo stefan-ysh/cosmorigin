@@ -1,0 +1,36 @@
+<svg width="960" height="600" viewBox="0 0 960 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="archDarkBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#010109" />
+      <stop offset="60%" stop-color="#05031a" />
+      <stop offset="100%" stop-color="#090c22" />
+    </linearGradient>
+    <linearGradient id="archDarkBeam" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ff825a" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#ffa45f" stop-opacity="0" />
+    </linearGradient>
+    <linearGradient id="archDarkLines" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ff4d00" />
+      <stop offset="100%" stop-color="#ffbb00" />
+    </linearGradient>
+    <radialGradient id="archDarkGlow" cx="0.5" cy="0.3" r="0.6">
+      <stop offset="0%" stop-color="#ff7a33" stop-opacity="0.85" />
+      <stop offset="100%" stop-color="#ff7a33" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="960" height="600" fill="url(#archDarkBg)" />
+  <rect width="960" height="600" fill="url(#archDarkGlow)" />
+  <rect x="200" y="120" width="560" height="360" rx="52" fill="#050914" stroke="#ff9c42" stroke-width="2" opacity="0.85" />
+  <rect x="230" y="150" width="500" height="300" rx="40" fill="#080d1f" />
+  <rect x="260" y="180" width="440" height="240" rx="32" fill="#0b1128" />
+  <rect x="320" y="220" width="320" height="180" rx="24" fill="#130a0b" />
+  <rect x="320" y="220" width="320" height="180" rx="24" fill="url(#archDarkBeam)" />
+  <path d="M260 380H700" stroke="url(#archDarkLines)" stroke-width="16" stroke-linecap="round" />
+  <path d="M280 340H680" stroke="#ffb347" stroke-width="10" stroke-linecap="round" />
+  <path d="M300 300H660" stroke="#ff6f31" stroke-width="6" stroke-linecap="round" />
+  <path d="M340 260H620" stroke="#ffd25d" stroke-width="8" stroke-linecap="round" opacity="0.7" />
+  <circle cx="480" cy="255" r="40" fill="#ff8a3c" />
+  <circle cx="480" cy="255" r="28" fill="#ffc35a" />
+  <path d="M360 420L420 300L540 300L600 420Z" fill="#141414" stroke="#ff9e42" stroke-width="3" />
+  <text x="280" y="170" font-family="'Eudoxus Sans', 'Inter', sans-serif" font-size="26" fill="#ffd9bd">建筑立面 / 关灯效果</text>
+</svg>

@@ -252,12 +252,12 @@ const AboutPage = (): JSX.Element => (
       </div>
     </section>
 
-    <PagePlaceholder
+    {/* <PagePlaceholder
       eyebrow="NEXT"
       title="开放更深入的参观与共创"
       description="欢迎预约来访我们的产线与实验室，也可以与技术、商务团队探讨联合研发项目。"
       cta={{ label: "预约参观", href: "/contact" }}
-    />
+    /> */}
   </main>
 );
 

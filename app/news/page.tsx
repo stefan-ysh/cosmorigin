@@ -169,12 +169,12 @@ const NewsPage = (): JSX.Element => (
       </div>
     </section>
 
-    <PagePlaceholder
+    {/* <PagePlaceholder
       eyebrow="SUBSCRIBE"
       title="希望第一时间获知新材料发布？"
       description="订阅宇元新材的季度简报，获取实验数据、合作案例与行业洞察。"
       cta={{ label: '联系团队获取简报', href: '/contact' }}
-    />
+    /> */}
   </main>
 );
 

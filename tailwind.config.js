@@ -10,10 +10,12 @@ module.exports = {
   ],
   mode: 'jit',
   theme: {
-  	extend: {
-  		colors: {
-  			'primary-black': '#1A232E',
-  			'secondary-white': '#c7c7c7',
+	extend: {
+		colors: {
+			'primary-black': 'hsl(var(--background))',
+			'secondary-white': 'hsl(var(--muted-foreground))',
+			'pure-white': '#ffffff',
+			'pure-black': '#000000',
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {

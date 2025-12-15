@@ -12,7 +12,7 @@ const pageDescription =
 export const metadata: Metadata = {
   title: pageTitle,
   description: pageDescription,
-  keywords: ['柔性发光材料', '发光油漆', '发光纤维丝', '发光薄膜', '自发光解决方案'],
+  keywords: ['扬州宇元新材有限公司', '宇元新材', '发光材料与器件国家重点实验室', '柔性发光材料', '发光油漆', '发光纤维丝', '发光薄膜', '自发光解决方案'],
   alternates: {
     canonical: absoluteUrl(pagePath),
   },

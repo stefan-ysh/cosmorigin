@@ -1,0 +1,30 @@
+<svg width="960" height="600" viewBox="0 0 960 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="mobLightBg" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#eef5ff" />
+      <stop offset="100%" stop-color="#ffffff" />
+    </linearGradient>
+    <linearGradient id="mobLightAccent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#a5b4fc" />
+      <stop offset="100%" stop-color="#7dd3fc" />
+    </linearGradient>
+    <radialGradient id="mobLightGlow" cx="0.5" cy="0.5" r="0.7">
+      <stop offset="0%" stop-color="#c1f1ff" stop-opacity="0.7" />
+      <stop offset="100%" stop-color="#c1f1ff" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="960" height="600" fill="url(#mobLightBg)" />
+  <rect width="960" height="600" fill="url(#mobLightGlow)" />
+  <rect x="160" y="120" width="640" height="360" rx="80" fill="#ffffff" stroke="#d6e8ff" stroke-width="4" />
+  <rect x="200" y="160" width="560" height="280" rx="60" fill="#f8fbff" />
+  <rect x="220" y="190" width="520" height="220" rx="52" fill="#eef7ff" />
+  <rect x="260" y="220" width="440" height="180" rx="40" fill="#ffffff" />
+  <path d="M260 320H700" stroke="#dae9ff" stroke-width="14" stroke-linecap="round" />
+  <path d="M280 280H680" stroke="url(#mobLightAccent)" stroke-width="16" stroke-linecap="round" />
+  <path d="M320 360H640" stroke="#c3e3ff" stroke-width="10" stroke-linecap="round" />
+  <circle cx="360" cy="300" r="34" fill="#ffffff" stroke="#7dd3fc" stroke-width="4" />
+  <circle cx="600" cy="300" r="34" fill="#ffffff" stroke="#a5b4fc" stroke-width="4" />
+  <rect x="360" y="400" width="240" height="40" rx="20" fill="#dff4ff" />
+  <rect x="380" y="405" width="200" height="30" rx="15" fill="#7dd3fc" opacity="0.5" />
+  <text x="220" y="150" font-family="'Eudoxus Sans', 'Inter', sans-serif" font-size="24" fill="#24325f">座舱氛围 / 开灯效果</text>
+</svg>

@@ -127,8 +127,8 @@ export const planetVariants = (direction: Direction): Variants => ({
     rotate: 0,
     transition: {
       type: 'spring',
-      duration: 1.8,
-      delay: 0.5,
+      duration: 1,
+      delay: 0.2,
     },
   },
 });

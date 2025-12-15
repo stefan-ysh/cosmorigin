@@ -160,12 +160,12 @@ const SolutionsPage = (): JSX.Element => (
       </div>
     </section>
 
-    <PagePlaceholder
+    {/* <PagePlaceholder
       eyebrow="NEXT"
       title="需要对应行业的案例与测试数据？"
       description="我们可以根据具体场景提供对标案例、材料清单与 KPI 追踪表。"
       cta={{ label: '预约方案共创', href: '/contact' }}
-    />
+    /> */}
   </main>
 );
 

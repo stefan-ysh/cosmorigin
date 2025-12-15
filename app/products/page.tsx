@@ -224,9 +224,9 @@ const ProductsPage = (): JSX.Element => (
                   href="https://m.tb.cn/h.7Xxt7HwwRy9u8k8"
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center justify-center rounded-full bg-white px-5 py-2 text-sm font-semibold text-primary-black transition hover:bg-white/80"
+                  className="inline-flex items-center justify-center rounded-full bg-white px-5 py-2 text-sm font-semibold text-foreground transition hover:bg-white/80"
                 >
-                  淘宝询价
+                  询价
                 </a>
               </div>
             </div>
@@ -308,12 +308,12 @@ const ProductsPage = (): JSX.Element => (
       </div>
     </section>
 
-    <PagePlaceholder
+    {/* <PagePlaceholder
       eyebrow="NEXT"
       title="需要定制化？"
       description="若要评估特殊光谱、不同驱动模式或极端环境表现，请联系团队获取材料白皮书与测试计划。"
       cta={{ label: '预约技术讨论', href: '/contact' }}
-    />
+    /> */}
   </main>
 );
 

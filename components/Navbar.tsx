@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 
+import ThemeToggle from "@/components/ThemeToggle";
 import styles from "@/styles";
 import { navVariants } from "@/utils/motion";
 
@@ -15,6 +16,7 @@ const navLinks = [
   { label: "案例展示", href: "/cases" },
   { label: "新闻动态", href: "/news" },
   { label: "资料中心", href: "/resources" },
+  { label: "效果查看", href: "/playground" },
 ];
 
 const Navbar = () => {
@@ -42,7 +44,7 @@ const Navbar = () => {
       >
         <Link
           href="/"
-          className="font-extrabold text-[24px] leading-[30px] text-white"
+          className="font-extrabold text-[24px] leading-[30px] text-foreground"
         >
           COSMORIGIN
         </Link>
@@ -52,7 +54,7 @@ const Navbar = () => {
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm font-semibold uppercase tracking-[0.2em] text-white/70 transition hover:text-white"
+              className="text-sm font-semibold uppercase tracking-[0.2em] text-foreground/70 transition hover:text-foreground"
             >
               {link.label}
             </Link>
@@ -60,9 +62,10 @@ const Navbar = () => {
         </div>
 
         <div className="flex items-center gap-4">
+          <ThemeToggle />
           <Link
             href="/contact"
-            className="hidden rounded-full border border-white/30 px-5 py-2 text-sm font-semibold text-white transition hover:border-white md:inline-flex"
+            className="hidden rounded-full border border-black/20 px-5 py-2 text-sm font-semibold text-black transition hover:border-black/50 dark:border-white/40 dark:text-white dark:hover:border-white md:inline-flex"
           >
             联系专家
           </Link>
@@ -71,7 +74,7 @@ const Navbar = () => {
             aria-controls="mobile-nav"
             aria-expanded={isMobileOpen}
             onClick={() => setIsMobileOpen(true)}
-            className="inline-flex items-center justify-center rounded-full border border-white/20 p-2 lg:hidden"
+            className="inline-flex items-center justify-center rounded-full border border-black/10 p-2 text-black dark:border-white/20 dark:text-white lg:hidden"
           >
             <span className="sr-only">打开导航菜单</span>
             <img
@@ -100,26 +103,26 @@ const Navbar = () => {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", stiffness: 260, damping: 30 }}
-              className="relative flex h-full w-[100%] flex-col gap-6 bg-[#0E0E10] px-6 pb-12 pt-10 shadow-2xl"
+              className="relative flex h-full w-[100%] flex-col gap-6 bg-background px-6 pb-12 pt-10 text-foreground shadow-2xl"
             >
               <div className="flex items-center justify-between">
                 <Link
                   href="/"
                   onClick={() => setIsMobileOpen(false)}
-                  className="text-lg font-bold tracking-[0.3em] text-white"
+                  className="text-lg font-bold tracking-[0.3em]"
                 >
                   COSMORIGIN
                 </Link>
                 <button
                   type="button"
                   onClick={() => setIsMobileOpen(false)}
-                  className="rounded-full border border-white/20 p-2"
+                  className="rounded-full border border-black/20 p-2 text-black dark:border-white/30 dark:text-white"
                 >
                   <span className="sr-only">关闭导航菜单</span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
-                    className="h-5 w-5 text-white"
+                    className="h-5 w-5"
                     aria-hidden
                   >
                     <path
@@ -137,7 +140,7 @@ const Navbar = () => {
                     key={link.href}
                     href={link.href}
                     onClick={() => setIsMobileOpen(false)}
-                    className="text-base font-semibold uppercase tracking-[0.25em] text-white/80 transition hover:text-white"
+                    className="text-base font-semibold uppercase tracking-[0.25em] text-foreground/80 transition hover:text-foreground"
                   >
                     {link.label}
                   </Link>
@@ -145,11 +148,31 @@ const Navbar = () => {
                 <Link
                   href="/contact"
                   onClick={() => setIsMobileOpen(false)}
-                  className="text-base font-semibold uppercase tracking-[0.25em] text-white/80 transition hover:text-white"
+                  className="text-base font-semibold uppercase tracking-[0.25em] text-foreground/80 transition hover:text-foreground"
                 >
                   联系专家
                 </Link>
               </nav>
+              <div className="space-y-5 border-t border-black/10 pt-6 dark:border-white/20">
+                <div className="space-y-3">
+                  <p className="text-xs uppercase tracking-[0.3em] text-foreground/70">
+                    主题模式
+                  </p>
+                  <ThemeToggle />
+                </div>
+                <div className="space-y-3">
+                  <p className="text-xs uppercase tracking-[0.3em] text-foreground/70">
+                    联系我们
+                  </p>
+                  <Link
+                    href="/contact"
+                    onClick={() => setIsMobileOpen(false)}
+                    className="inline-flex items-center justify-center rounded-full border border-foreground/40 px-5 py-2 text-sm font-semibold text-foreground transition hover:border-foreground"
+                  >
+                    预约产品顾问
+                  </Link>
+                </div>
+              </div>
             </motion.div>
           </motion.div>
         )}

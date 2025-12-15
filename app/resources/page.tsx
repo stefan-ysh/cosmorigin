@@ -101,12 +101,12 @@ const ResourcesPage = (): JSX.Element => (
       </div>
     </section>
 
-    <PagePlaceholder
+    {/* <PagePlaceholder
       eyebrow="NEXT"
       title="需要其他认证或数据？"
       description="若需 RoHS/REACH、阻燃、车规可靠性等完整报告，请向我们索取并签署 NDA。"
       cta={{ label: '邮件索取资料', href: 'mailto:contact@cosmorigin.com' }}
-    />
+    /> */}
   </main>
 );
 

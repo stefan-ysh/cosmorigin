@@ -121,12 +121,12 @@ const CasesPage = (): JSX.Element => (
       </div>
     </section>
 
-    <PagePlaceholder
+    {/* <PagePlaceholder
       eyebrow="NEXT"
       title="需要更多行业案例？"
       description="我们正在整理更多交通、文化与公共安全项目的详细报告，可根据 NDA 提供。"
       cta={{ label: '预约案例讲解', href: '/contact' }}
-    />
+    /> */}
   </main>
 );
 

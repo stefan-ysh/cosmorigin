@@ -34,15 +34,8 @@ const ExploreCard = ({ id, imgUrl, title, alt, index, active, handleClick }: Exp
         {title}
       </h3>
     ) : (
-      <div className="absolute bottom-0 p-8 justify-start w-full bg-[rgba(0,0,0,0.1)] rounded-b-[24px] flex flex-row items-baseline gap-10">
-        <div className={`${styles.flexCenter} w-[60px] h-[60px] glassmorphism mb-[16px] rounded-[12px]`}>
-          <img
-            src="/headset.svg"
-            alt="了解产品"
-            className="w-1/2 h-1/2 object-contain"
-          />
-        </div>
-        <h2 className="mt-[24px] font-semibold sm:text-[32px] text-[24px] text-white">
+      <div className="absolute bottom-5 p-8 pb-0 justify-start w-full flex flex-row items-baseline gap-10">
+        <h2 className="mt-[24px] font-semibold sm:text-[30px] text-[22px] text-slate-400">
           {title}
         </h2>
       </div>

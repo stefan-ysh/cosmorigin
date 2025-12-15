@@ -14,14 +14,9 @@ const Hero = (): JSX.Element => (
       className={`${styles.innerWidth2} mx-auto flex flex-col`}
     >
       <div className="relative z-10 flex flex-col items-center justify-center">
-        <motion.h1
-          variants={textVariant(1.1)}
-          className={styles.heroHeading}
-        >
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-cyan-400">
-            宇元新材
-            {" "}
-            点亮未来
+        <motion.h1 variants={textVariant(1.1)} className={styles.heroHeading}>
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-slate-500 via-slate-700 to-blue-500 dark:from-white dark:via-cyan-200 dark:to-cyan-400 drop-shadow-[0_12px_45px_rgba(15,23,42,0.35)] dark:drop-shadow-[0_20px_60px_rgba(4,167,255,0.35)]">
+            宇元新材 点亮未来
           </span>
         </motion.h1>
         {/* <motion.div
