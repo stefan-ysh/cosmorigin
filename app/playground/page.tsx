@@ -1,14 +1,37 @@
 import { Metadata } from "next";
+
 import PlaygroundSurface from "@/components/PlaygroundSurface";
 import styles from "@/styles";
+import {
+  absoluteUrl,
+  buildOpenGraph,
+  buildTwitter,
+  defaultRobots,
+} from "@/lib/seo";
+
+const pagePath = "/playground";
+const pageTitle = "效果查看 Playground | 开灯/关灯实时模拟";
+const pageDescription =
+  "在 Playground 中预览宇元新材发光材料的开灯/关灯表现，辅助快速评估灯效。";
+const canonicalUrl = absoluteUrl(pagePath);
 
 export const metadata: Metadata = {
-  title: "效果查看 - 宇元新材发光体验场",
-  description:
-    "进入效果查看 Playground，自由切换开灯 / 关灯模式，查看宇元新材在温室、建筑立面、智能座舱等场景的发光表现。",
+  title: pageTitle,
+  description: pageDescription,
+  keywords: [
+    "发光效果预览",
+    "开灯关灯模拟",
+    "柔性发光体验",
+    "扬州宇元新材有限公司产品发光效果预览",
+    "宇元新材 playground",
+    "发光材料 demo",
+  ],
   alternates: {
-    canonical: "/playground",
+    canonical: canonicalUrl,
   },
+  openGraph: buildOpenGraph(pageTitle, pageDescription, pagePath),
+  twitter: buildTwitter(pageTitle, pageDescription),
+  robots: defaultRobots,
 };
 
 const PlaygroundPage = () => (
