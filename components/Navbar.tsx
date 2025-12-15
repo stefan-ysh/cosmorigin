@@ -36,9 +36,9 @@ const Navbar = () => {
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.25 }}
-      className={`${styles.xPaddings} py-8 relative z-50`}
+      className={`${styles.xPaddings} py-5 relative z-50 border-b border-x-cyan-300`}
     >
-      <div className="pointer-events-none absolute inset-0 w-[50%] gradient-01" />
+      {/* <div className="pointer-events-none absolute inset-0 w-[50%] gradient-01" /> */}
       <div
         className={`${styles.innerWidth} mx-auto flex items-center justify-between gap-8`}
       >
@@ -49,12 +49,12 @@ const Navbar = () => {
           COSMORIGIN
         </Link>
 
-        <div className="hidden flex-1 items-center justify-center gap-8 lg:flex">
+        <div className="hidden flex-1 items-center justify-center gap-5 lg:flex">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm font-semibold uppercase tracking-[0.2em] text-foreground/70 transition hover:text-foreground"
+              className="text-xs md:text-sm font-semibold uppercase tracking-[0.2em] text-foreground/70 transition hover:text-foreground hover:border-b"
             >
               {link.label}
             </Link>

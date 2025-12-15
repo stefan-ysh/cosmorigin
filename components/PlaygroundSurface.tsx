@@ -210,7 +210,7 @@ const PlaygroundSurface = () => {
           onClick={(event) =>
             handleModeChange(mode === "dark" ? "light" : "dark", event)
           }
-          className="fixed bottom-24 right-6 z-[65] flex items-center gap-3 rounded-full border border-foreground/20 bg-background/90 px-4 py-3 text-xs font-semibold uppercase tracking-[0.35em] text-foreground shadow-[0_20px_45px_rgba(0,0,0,0.25)] backdrop-blur"
+          className="fixed bottom-24 right-6 z-[65] flex flex-col items-center gap-3 rounded-2xl border border-foreground/20 bg-background/90 px-2 py-3 text-xs font-semibold uppercase tracking-[0.35em] text-foreground shadow-[0_20px_45px_rgba(0,0,0,0.25)] backdrop-blur"
         >
           <span>{mode === "dark" ? "开灯" : "关灯"}</span>
           <span

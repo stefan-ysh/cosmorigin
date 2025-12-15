@@ -22,15 +22,15 @@ const Footer = () => {
     return unsubscribe;
   }, []);
   return (
-  <motion.footer
-    variants={footerVariants}
-    initial="hidden"
-    whileInView="show"
-    viewport={{ once: true, amount: 0.25 }}
-    className={`${styles.xPaddings} py-8 relative`}
+  <div
+    // variants={footerVariants}
+    // initial="hidden"
+    // whileInView="show"
+    // viewport={{ once: true, amount: 0.25 }}
+    className={`${styles.xPaddings} py-2 relative border-t border-x-cyan-300`}
   >
-    <div className="footer-gradient" />
-    <div className={`${styles.innerWidth} mx-auto flex flex-col gap-8`}>
+    {/* <div className="footer-gradient" /> */}
+    <div className={`${styles.innerWidth} mx-auto flex flex-col gap-2`}>
       <h4 className="font-bold md:text-[64px] text-[44px] text-white">
         携手点亮可持续未来
       </h4>
@@ -101,7 +101,7 @@ const Footer = () => {
         苏公网安备32100302011598号
       </a>
     </p>
-  </motion.footer>
+  </div>
   );
 };
 

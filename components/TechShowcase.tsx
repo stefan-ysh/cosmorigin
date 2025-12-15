@@ -126,7 +126,7 @@ const TechShowcase = () => (
                 </motion.div>
 
                 {/* 标题 */}
-                <h3 className="text-xl font-bold text-white mb-3">
+                <h3 className="text-xl font-bold text-slate-500 mb-3">
                   {feature.title}
                 </h3>
 
