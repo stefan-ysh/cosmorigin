@@ -32,6 +32,8 @@ const applications = [
   },
 ];
 
+import Image from 'next/image';
+
 const EnhancedWorld = () => (
   <section className={`${styles.paddings} relative`}>
     <motion.div
@@ -100,10 +102,12 @@ const EnhancedWorld = () => (
         variants={fadeIn('up', 'tween', 0.8, 1)}
         className="relative mt-[100px] h-[500px] rounded-3xl overflow-hidden"
       >
-        <img
+        <Image
           src="/map.png"
           alt="全球应用地图"
-          className="w-full h-full object-cover opacity-30"
+          fill
+          className="object-cover opacity-30"
+          sizes="(max-width: 1280px) 100vw, 1280px"
         />
 
         {/* 覆盖层 */}
