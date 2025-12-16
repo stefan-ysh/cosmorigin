@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 
 import Link from 'next/link';
 
@@ -143,15 +144,19 @@ const ContactPage = (): JSX.Element => (
                   <p className="text-xs text-white/60">{channel.description}</p>
                   {channel.qrImage && (
                     <>
-                      <img
+                      <Image
                         src={channel.qrImage}
                         alt={channel.qrAlt ?? `${channel.label} 二维码`}
+                        width={200}
+                        height={200}
                         className="mx-auto w-3/5 rounded-xl border border-white/15 object-contain md:hidden"
                       />
                       <div className="pointer-events-none absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 rounded-2xl border border-white/15 bg-black/70 p-2 opacity-0 transition duration-300 group-hover:opacity-100 md:block">
-                        <img
+                        <Image
                           src={channel.qrImage}
                           alt={channel.qrAlt ?? `${channel.label} 二维码`}
+                          width={192}
+                          height={192}
                           className="h-48 w-48 rounded-lg object-contain"
                         />
                       </div>

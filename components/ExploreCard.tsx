@@ -14,6 +14,8 @@ interface ExploreCardProps {
   handleClick: (id: string) => void;
 }
 
+import Image from 'next/image';
+
 const ExploreCard = ({ id, imgUrl, title, alt, index, active, handleClick }: ExploreCardProps) => (
   <motion.div
     variants={fadeIn('right', 'spring', index * 0.5, 0.75)}
@@ -22,11 +24,13 @@ const ExploreCard = ({ id, imgUrl, title, alt, index, active, handleClick }: Exp
     } flex items-center justify-center min-w-[170px] h-[700px] transition-[flex] duration-700 ease-out-flex cursor-pointer`}
     onClick={() => handleClick(id)}
   >
-    <img
+    <Image
       src={imgUrl}
       alt={alt}
       title={title}
+      fill
       className="absolute w-full h-full object-cover rounded-[24px]"
+      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
     />
 
     {active !== id ? (

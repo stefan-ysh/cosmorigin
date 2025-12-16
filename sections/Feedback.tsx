@@ -4,6 +4,8 @@ import { motion } from 'framer-motion';
 import styles from '@/styles';
 import { fadeIn, staggerContainer, zoomIn } from '@/utils/motion';
 
+import Image from 'next/image';
+
 const Feedback = (): JSX.Element => (
   <section className={`${styles.paddings} relative z-10`}>
     <motion.div
@@ -19,9 +21,9 @@ const Feedback = (): JSX.Element => (
       >
         <div className="feedback-gradient" />
         <div className="relative z-10">
-          <a 
-            href="https://www.tiantian.group" 
-            target="_blank" 
+          <a
+            href="https://www.tiantian.group"
+            target="_blank"
             rel="noopener noreferrer"
             className="inline-block relative z-10"
           >
@@ -38,14 +40,29 @@ const Feedback = (): JSX.Element => (
 
       <motion.div
         variants={fadeIn('left', 'tween', 0.3, 1)}
-        className="flex-1 flex items-center justify-center"
+        className="flex-1 flex items-center justify-center relative"
       >
-        <img src="/宇元新材发光材料制成的3D打印辅材.jpg" alt="发光材料样品" className="w-full lg:h-[610px] h-auto min-h-[210px] object-cover rounded-[40px]" />
+        <div className="w-full lg:h-[610px] h-auto min-h-[210px] relative rounded-[40px] overflow-hidden">
+          <Image
+            src="/宇元新材发光材料制成的3D打印辅材.jpg"
+            alt="发光材料样品"
+            fill
+            className="object-cover"
+            sizes="(max-width: 768px) 100vw, 50vw"
+          />
+        </div>
         <motion.div
           variants={zoomIn(0.4, 1)}
           className="lg:block hidden absolute -left-[10%] top-[3%]"
         >
-          <img src="/stamp.png" alt="stamp" className="md:w-[170px] w-[115px]  md:h-[170px] h-[115px] object-contain" />
+          <div className="md:w-[170px] w-[115px] md:h-[170px] h-[115px] relative">
+            <Image
+              src="/stamp.png"
+              alt="stamp"
+              fill
+              className="object-contain"
+            />
+          </div>
         </motion.div>
       </motion.div>
     </motion.div>

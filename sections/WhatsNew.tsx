@@ -7,6 +7,8 @@ import { newFeatures } from '@/constants';
 import { NewFeatures, TitleText, TypingText } from '@/components/index';
 import { planetVariants, staggerContainer, fadeIn } from '@/utils/motion';
 
+import Image from 'next/image';
+
 const WhatsNew = (): JSX.Element => (
   <section className={`${styles.paddings} relative z-10`}>
     <motion.div
@@ -33,11 +35,15 @@ const WhatsNew = (): JSX.Element => (
         variants={planetVariants('right')}
         className={`flex-1 ${styles.flexCenter}`}
       >
-        <img
-          src="/宇元新材发光材料制成的圣诞树.png"
-          alt="最新动态图示"
-          className="w-[90%] h-[90%] object-contain"
-        />
+        <div className="w-[90%] h-[90%] relative aspect-square">
+          <Image
+            src="/宇元新材发光材料制成的圣诞树.png"
+            alt="最新动态图示"
+            fill
+            className="object-contain"
+            sizes="(max-width: 768px) 100vw, 50vw"
+          />
+        </div>
       </motion.div>
     </motion.div>
   </section>

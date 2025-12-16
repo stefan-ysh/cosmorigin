@@ -76,9 +76,6 @@ export const metadata: Metadata = {
 
 const RootLayout = ({ children }: RootLayoutProps): JSX.Element => (
   <html lang="zh-CN">
-    <head>
-      <link rel="stylesheet" href="https://stijndv.com/fonts/Eudoxus-Sans.css" />
-    </head>
     <body className="bg-primary-black text-white antialiased">
       <Navbar />
       {children}

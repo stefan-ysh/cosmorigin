@@ -4,6 +4,8 @@ import { motion } from 'framer-motion';
 import styles from '@/styles';
 import { slideIn, staggerContainer, textVariant } from '@/utils/motion';
 
+import Image from 'next/image';
+
 const Hero = (): JSX.Element => (
   <section className={`${styles.yPaddings} sm:pl-16 pl-6`}>
     <motion.div
@@ -19,12 +21,6 @@ const Hero = (): JSX.Element => (
             宇元新材 点亮未来
           </span>
         </motion.h1>
-        {/* <motion.div
-          variants={textVariant(1.2)}
-          className="flex flex-row items-center justify-center"
-        >
-          <h1 className={styles.heroHeading}>点亮未来</h1>
-        </motion.div> */}
       </div>
 
       <motion.div
@@ -32,21 +28,31 @@ const Hero = (): JSX.Element => (
         className="relative w-full lg:-mt-[30px] md:-mt-[18px] -mt-[15px]  2xl:pl-[280px]"
       >
         <div className="absolute w-full h-[300px] hero-gradient rounded-tl-[140px] z-[0] sm:-top-[20px] -top-[10px]" />
-        <img
-          src="/cover.png"
-          alt="高性能发光材料"
-          className="w-full sm:h-[500px] h-[350px] object-cover rounded-tl-[140px] z-10 relative"
-        />
+        <div className="w-full sm:h-[500px] h-[350px] rounded-tl-[140px] z-10 relative overflow-hidden">
+          <Image
+            src="/cover.png"
+            alt="高性能发光材料"
+            fill
+            className="object-cover"
+            priority
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
+          />
+        </div>
 
         <a href="#explore">
           <div className="w-full flex justify-end sm:-mt-[70px] -mt-[50px] pr-[40px] relative z-10 2xl:-ml-[100px]">
-            <motion.img
-              src="/stamp.png"
-              alt="stamp"
-              className="sm:w-[155px] w-[100px] sm:h-[155px] h-[100px] object-contain "
+            <motion.div
               animate={{ rotate: 360 }}
               transition={{ repeat: Infinity, duration: 7, repeatType: 'loop' }}
-            />
+              className="sm:w-[155px] w-[100px] sm:h-[155px] h-[100px] relative"
+            >
+              <Image
+                src="/stamp.png"
+                alt="stamp"
+                fill
+                className="object-contain"
+              />
+            </motion.div>
           </div>
         </a>
       </motion.div>

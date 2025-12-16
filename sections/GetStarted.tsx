@@ -7,6 +7,8 @@ import { StartSteps, TitleText, TypingText } from '@/components/index';
 
 import { startingFeatures } from '@/constants';
 
+import Image from 'next/image';
+
 const GetStarted = (): JSX.Element => (
   <section className={`${styles.paddings} relative z-10`}>
     <motion.div
@@ -20,7 +22,15 @@ const GetStarted = (): JSX.Element => (
         variants={planetVariants('left')}
         className={`${styles.flexCenter} flex-1`}
       >
-        <img src="/宇元新材发光材料母粒.png" alt="联合研发流程示意" className="w-[90%] h-[90%] object-contain" />
+        <div className="w-[90%] h-[90%] relative aspect-square">
+          <Image
+            src="/宇元新材发光材料母粒.png"
+            alt="联合研发流程示意"
+            fill
+            className="object-contain"
+            sizes="(max-width: 768px) 100vw, 50vw"
+          />
+        </div>
       </motion.div>
       <motion.div
         variants={fadeIn('left', 'tween', 0.2, 1)}
