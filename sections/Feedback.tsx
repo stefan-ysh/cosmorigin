@@ -27,13 +27,13 @@ const Feedback = (): JSX.Element => (
             rel="noopener noreferrer"
             className="inline-block relative z-10"
           >
-            <h4 className="font-bold sm:text-[32px] text-[26px] sm:leading-[40px] leading-[36px] text-white hover:text-cyan-400 transition-colors cursor-pointer">
+            <h4 className="font-bold sm:text-[32px] text-[26px] sm:leading-[40px] leading-[36px] text-foreground hover:text-cyan-400 transition-colors cursor-pointer">
               田甜
             </h4>
           </a>
-          <p className="mt-[8px] font-normal sm:text-[18px] text-[12px] sm:leading-[22px] leading-[16px] text-white">宇元新材首席科学家</p>
+          <p className="mt-[8px] font-normal sm:text-[18px] text-[12px] sm:leading-[22px] leading-[16px] text-muted-foreground">宇元新材首席科学家</p>
         </div>
-        <p className="mt-[24px] font-normal sm:text-[24px] text-[18px] sm:leading-[45px] leading-[39px] text-white">
+        <p className="mt-[24px] font-normal sm:text-[24px] text-[18px] sm:leading-[45px] leading-[39px] text-foreground">
           "我们专注于发光材料的深度研发，通过精准的配方设计和严格的质量控制，为客户提供稳定可靠的发光解决方案。每一款产品都经过严格测试，确保在各种应用场景下都能展现出色的发光性能。"
         </p>
       </motion.div>
@@ -51,19 +51,6 @@ const Feedback = (): JSX.Element => (
             sizes="(max-width: 768px) 100vw, 50vw"
           />
         </div>
-        <motion.div
-          variants={zoomIn(0.4, 1)}
-          className="lg:block hidden absolute -left-[10%] top-[3%]"
-        >
-          <div className="md:w-[170px] w-[115px] md:h-[170px] h-[115px] relative">
-            <Image
-              src="/stamp.png"
-              alt="stamp"
-              fill
-              className="object-contain"
-            />
-          </div>
-        </motion.div>
       </motion.div>
     </motion.div>
   </section>

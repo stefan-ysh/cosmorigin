@@ -28,34 +28,34 @@ const Footer = () => {
       // initial="hidden"
       // whileInView="show"
       // viewport={{ once: true, amount: 0.25 }}
-      className={`${styles.xPaddings} py-2 relative border-t border-x-cyan-300`}
+      className={`${styles.xPaddings} py-2 relative border-none`}
     >
       {/* <div className="footer-gradient" /> */}
       <div className={`${styles.innerWidth} mx-auto flex flex-col gap-2`}>
-        <h4 className="font-bold md:text-[64px] text-[44px] text-white">
+        <h4 className="font-bold md:text-[64px] text-[44px] text-foreground">
           携手点亮可持续未来
         </h4>
 
         <div className="flex flex-col">
-          <div className="mb-12 h-[2px] bg-white opacity-10" />
+          <div className="mb-12 h-[2px] bg-border opacity-50" />
 
           <div className="flex flex-col lg:flex-row items-start justify-between flex-wrap gap-10">
             {/* Left Side: Company Info */}
             <div className="flex flex-col gap-8 lg:w-1/2">
-              <h4 className="font-extrabold text-[24px] text-white">扬州宇元新材有限公司</h4>
-              <div className="flex items-start gap-3 text-white/80">
+              <h4 className="font-extrabold text-[24px] text-foreground">扬州宇元新材有限公司</h4>
+              <div className="flex items-start gap-3 text-muted-foreground">
                 <MapPin className="w-5 h-5 mt-1 flex-shrink-0" />
                 <p className="font-normal text-[16px]">
                   江苏省扬州市邢江区开发西路213号609室
                 </p>
               </div>
-              <div className="flex items-center gap-3 text-white/80">
+              <div className="flex items-center gap-3 text-muted-foreground">
                 <Mail className="w-5 h-5 flex-shrink-0" />
-                <a href="mailto:contact@cosmorigin.com" className="font-normal text-[16px] hover:text-white">
+                <a href="mailto:contact@cosmorigin.com" className="font-normal text-[16px] hover:text-foreground">
                   contact@cosmorigin.com
                 </a>
               </div>
-              <div className="flex items-center gap-3 text-white/80">
+              <div className="flex items-center gap-3 text-muted-foreground">
                 <Phone className="w-5 h-5 flex-shrink-0" />
                 <p className="font-normal text-[16px]">+86 185 7841 2005</p>
               </div>
@@ -85,7 +85,7 @@ const Footer = () => {
                 </div>
               </div>
               <div className="flex flex-col items-center gap-3 w-full">
-                <p className="font-normal text-[14px] text-white/70">微信公众号</p>
+                <p className="font-normal text-[14px] text-muted-foreground">微信公众号</p>
                 <div className="w-40 h-40 relative">
                   <Image
                     src={mode === "light" ? "/wechat_official_light.png" : "/wechat_official_dark.png"}
@@ -98,11 +98,11 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <p className="w-full text-center font-normal text-[14px] text-white opacity-50">
+        <p className="w-full text-center font-normal text-[14px] opacity-50">
           Copyright © 2025 Cosmorigin. All rights reserved.
         </p>
       </div>
-      <p className="w-full text-center font-normal text-[12px] text-white opacity-50 flex items-center justify-center gap-2 mt-5">
+      <p className="w-full text-center font-normal text-[12px] opacity-50 flex items-center justify-center gap-2 mt-5">
         <Image
           alt="备案图标"
           src="/备案图标.png"

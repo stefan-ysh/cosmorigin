@@ -11,26 +11,22 @@
 }
 
 .gradient-01 {
-  background-image: linear-gradient(
-    270deg,
-    hsl(295deg 76% 51%) 0%,
-    hsl(284deg 70% 73%) 26%,
-    hsl(257deg 70% 86%) 39%,
-    hsl(202deg 92% 90%) 50%,
-    hsl(215deg 77% 81%) 61%,
-    hsl(221deg 73% 70%) 74%,
-    hsl(220deg 76% 51%) 100%
-  );
+  background-image: linear-gradient(270deg,
+      hsl(295deg 76% 51%) 0%,
+      hsl(284deg 70% 73%) 26%,
+      hsl(257deg 70% 86%) 39%,
+      hsl(202deg 92% 90%) 50%,
+      hsl(215deg 77% 81%) 61%,
+      hsl(221deg 73% 70%) 74%,
+      hsl(220deg 76% 51%) 100%);
   filter: blur(125px);
 }
 
 .hero-gradient {
-  background: linear-gradient(
-    97.86deg,
-    #a509ff 0%,
-    #34acc7 53.65%,
-    #a134c7 100%
-  );
+  background: linear-gradient(97.86deg,
+      #a509ff 0%,
+      #34acc7 53.65%,
+      #a134c7 100%);
 }
 
 .gradient-02 {
@@ -77,11 +73,9 @@
 }
 
 .gradient-05 {
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.04) 0%,
-    rgba(255, 255, 255, 0) 100%
-  );
+  background: linear-gradient(180deg,
+      rgba(255, 255, 255, 0.04) 0%,
+      rgba(255, 255, 255, 0) 100%);
 }
 
 .feedback-gradient {
@@ -141,6 +135,7 @@
     --surface-strong: 210 28% 94%;
     --surface-soft: 210 28% 97%;
   }
+
   .dark {
     --background: 224 53% 6%;
     --foreground: 208 35% 96%;
@@ -173,6 +168,7 @@
 
 @layer base {
   @media (prefers-reduced-motion: no-preference) {
+
     ::view-transition-old(root),
     ::view-transition-new(root) {
       animation: none;
@@ -182,10 +178,8 @@
     .theme-transitioning::view-transition-new(root),
     .theme-transitioning::view-transition-old(root) {
       animation-duration: var(--theme-transition-duration, 0.9s);
-      animation-timing-function: var(
-        --transition-timing,
-        cubic-bezier(0.4, 0, 0.2, 1)
-      );
+      animation-timing-function: var(--transition-timing,
+          cubic-bezier(0.4, 0, 0.2, 1));
       animation-fill-mode: both;
     }
 
@@ -212,9 +206,6 @@
 @layer base {
   * {
     @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
   }
 }
 
@@ -264,9 +255,11 @@
   0% {
     transform: rotate(-1deg) translateY(0);
   }
+
   50% {
     transform: rotate(1deg) translateY(-6px);
   }
+
   100% {
     transform: rotate(-1deg) translateY(0);
   }
@@ -277,9 +270,11 @@
     transform: translateY(-10%) scale(0.8);
     opacity: 0;
   }
+
   10% {
     opacity: 0.7;
   }
+
   100% {
     transform: translateY(110%) scale(1.1);
     opacity: 0;
@@ -303,106 +298,5 @@
 }
 
 @layer utilities {
-  .text-white {
-    color: hsl(var(--foreground)) !important;
-  }
-
-  .text-white\/50 {
-    color: hsl(var(--foreground) / 0.5) !important;
-  }
-
-  .text-white\/60 {
-    color: hsl(var(--foreground) / 0.6) !important;
-  }
-
-  .text-white\/70 {
-    color: hsl(var(--foreground) / 0.7) !important;
-  }
-
-  .text-white\/80 {
-    color: hsl(var(--foreground) / 0.8) !important;
-  }
-
-  .text-black {
-    color: hsl(var(--foreground)) !important;
-  }
-
-  .border-white {
-    border-color: hsl(var(--border)) !important;
-  }
-
-  .border-white\/5 {
-    border-color: hsl(var(--border) / 0.25) !important;
-  }
-
-  .border-white\/10 {
-    border-color: hsl(var(--border) / 0.35) !important;
-  }
-
-  .border-white\/15 {
-    border-color: hsl(var(--border) / 0.45) !important;
-  }
-
-  .border-white\/20 {
-    border-color: hsl(var(--border) / 0.55) !important;
-  }
-
-  .border-white\/25 {
-    border-color: hsl(var(--border) / 0.65) !important;
-  }
-
-  .border-white\/30 {
-    border-color: hsl(var(--border) / 0.75) !important;
-  }
-
-  .border-white\/40 {
-    border-color: hsl(var(--border) / 0.85) !important;
-  }
-
-  .border-white\/60 {
-    border-color: hsl(var(--border)) !important;
-  }
-
-  .border-black\/10,
-  .border-black\/20,
-  .border-black\/40,
-  .border-black\/50 {
-    border-color: hsl(var(--border) / 0.5) !important;
-  }
-
-  .bg-white {
-    background-color: hsl(var(--card)) !important;
-  }
-
-  .bg-white\/5 {
-    background-color: hsl(var(--card) / 0.6) !important;
-  }
-
-  .bg-white\/10 {
-    background-color: hsl(var(--card) / 0.75) !important;
-  }
-
-  .bg-white\/15 {
-    background-color: hsl(var(--card) / 0.85) !important;
-  }
-
-  .bg-white\/40 {
-    background-color: hsl(var(--card) / 0.95) !important;
-  }
-
-  .bg-white\/80 {
-    background-color: hsl(var(--card)) !important;
-  }
-
-  .text-white\/40 {
-    color: hsl(var(--foreground) / 0.4) !important;
-  }
-
-  .text-white\/90 {
-    color: hsl(var(--foreground) / 0.9) !important;
-  }
-
-  .border-white\/35 {
-    border-color: hsl(var(--border) / 0.8) !important;
-  }
+  /* Removed overridden utilities to use standard Tailwind/Theme colors */
 }

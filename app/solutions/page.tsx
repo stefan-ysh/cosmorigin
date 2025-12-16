@@ -104,15 +104,15 @@ const solutionSchemas = [
 ];
 
 const SolutionsPage = (): JSX.Element => (
-  <main className="bg-primary-black text-white">
+  <main className="bg-background text-foreground">
     <JsonLd data={solutionSchemas} />
     <section className="px-6 py-20">
       <div className="mx-auto max-w-6xl">
-        <p className="text-sm uppercase tracking-[0.3em] text-white/60">SOLUTIONS</p>
+        <p className="text-sm uppercase tracking-[0.3em] text-muted-foreground">SOLUTIONS</p>
         <h1 className="mt-4 text-4xl font-semibold leading-tight sm:text-5xl">
           针对行业痛点的发光一体化方案
         </h1>
-        <p className="mt-6 text-lg text-white/70">
+        <p className="mt-6 text-lg text-muted-foreground">
           我们将材料、结构、电控与算法打包成行业方案，既能快速验证，也能直连后续量产。
         </p>
       </div>
@@ -121,24 +121,24 @@ const SolutionsPage = (): JSX.Element => (
     <section className="px-6 pb-16">
       <div className="mx-auto max-w-6xl grid gap-6">
         <div className="flex flex-col gap-3">
-          <p className="text-xs uppercase tracking-[0.4em] text-white/50">全部方案</p>
-          <div className="h-[1px] w-full bg-white/10" />
+          <p className="text-xs uppercase tracking-[0.4em] text-muted-foreground/50">全部方案</p>
+          <div className="h-[1px] w-full bg-card" />
         </div>
         {solutionTracks.map((track) => (
-          <article key={track.title} className="rounded-3xl border border-white/10 bg-white/5 p-8">
+          <article key={track.title} className="rounded-3xl border border-border bg-card/50 p-8">
             <h2 className="text-2xl font-semibold">{track.title}</h2>
             <div className="mt-4 grid gap-4 md:grid-cols-3">
               <div>
-                <p className="text-xs uppercase tracking-[0.3em] text-white/50">痛点</p>
-                <p className="mt-2 text-white/80">{track.pain}</p>
+                <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground/50">痛点</p>
+                <p className="mt-2 text-foreground/80">{track.pain}</p>
               </div>
               <div>
-                <p className="text-xs uppercase tracking-[0.3em] text-white/50">解决路径</p>
-                <p className="mt-2 text-white/80">{track.plan}</p>
+                <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground/50">解决路径</p>
+                <p className="mt-2 text-foreground/80">{track.plan}</p>
               </div>
               <div>
-                <p className="text-xs uppercase tracking-[0.3em] text-white/50">关键指标</p>
-                <p className="mt-2 text-white/80">{track.kpi}</p>
+                <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground/50">关键指标</p>
+                <p className="mt-2 text-foreground/80">{track.kpi}</p>
               </div>
             </div>
           </article>
@@ -147,13 +147,13 @@ const SolutionsPage = (): JSX.Element => (
     </section>
 
     <section className="px-6 pb-20">
-      <div className="mx-auto max-w-6xl rounded-3xl border border-white/10 bg-white/5 p-8">
+      <div className="mx-auto max-w-6xl rounded-3xl border border-border bg-card/50 p-8">
         <h3 className="text-2xl font-semibold">联合交付流程</h3>
         <div className="mt-8 grid gap-6 md:grid-cols-2">
           {workflow.map((step, index) => (
-            <div key={step} className="rounded-2xl border border-dashed border-white/20 p-6">
-              <p className="text-sm uppercase tracking-[0.3em] text-white/60">Step {index + 1}</p>
-              <p className="mt-3 text-white/80">{step}</p>
+            <div key={step} className="rounded-2xl border border-dashed border-border/50 p-6">
+              <p className="text-sm uppercase tracking-[0.3em] text-muted-foreground">Step {index + 1}</p>
+              <p className="mt-3 text-foreground/80">{step}</p>
             </div>
           ))}
         </div>

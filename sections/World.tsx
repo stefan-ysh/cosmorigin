@@ -25,7 +25,7 @@ const World = (): JSX.Element => (
         )}
         textStyles="text-center"
       /> */}
-      <h2 className="text-4xl lg:text-6xl font-bold text-white mb-6 text-center mt-[8px]">
+      <h2 className="text-4xl lg:text-6xl font-bold text-foreground mb-6 text-center mt-[8px]">
         我们的发光材料解决方案
         <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">
           {" "}

@@ -138,20 +138,20 @@ const productDetails: ProductDetail[] = [
     image: '/宇元新材发光膜产品图无背景.png',
     imageAlt: '宇元新材发光薄膜贴合样张',
   },
-//   {
-//     name: '3D 打印辅材（NEW）',
-//     status: '内测中',
-//     overview: '兼容 SLA/FDM · 自发光填充粒子 · 耐温 120°C',
-//     applications: '复杂光效件、小批量功能验证、教育展示',
-//     brightness: '体发光 4-6 h',
-//     supply: '线材/树脂',
-//     certification: '正在申请 UL94/CSA',
-//     keyParameters: '可与常规耗材混合打印 · 支持回收再造粒',
-//     variants: additiveVariants,
-//     extraNote: '报名内测可获得驱动设置与打印参数指导',
-//     image: '/宇元新材发光材料制成的3D打印辅材.jpg',
-//     imageAlt: '宇元新材发光 3D 打印辅材样件',
-//   },
+  //   {
+  //     name: '3D 打印辅材（NEW）',
+  //     status: '内测中',
+  //     overview: '兼容 SLA/FDM · 自发光填充粒子 · 耐温 120°C',
+  //     applications: '复杂光效件、小批量功能验证、教育展示',
+  //     brightness: '体发光 4-6 h',
+  //     supply: '线材/树脂',
+  //     certification: '正在申请 UL94/CSA',
+  //     keyParameters: '可与常规耗材混合打印 · 支持回收再造粒',
+  //     variants: additiveVariants,
+  //     extraNote: '报名内测可获得驱动设置与打印参数指导',
+  //     image: '/宇元新材发光材料制成的3D打印辅材.jpg',
+  //     imageAlt: '宇元新材发光 3D 打印辅材样件',
+  //   },
 ];
 
 const productCollectionSchema = {
@@ -186,15 +186,15 @@ const productCollectionSchema = {
 };
 
 const ProductsPage = (): JSX.Element => (
-  <main className="bg-primary-black text-white">
+  <main className="bg-background text-foreground">
     <JsonLd data={productCollectionSchema} />
     <section className="px-6 py-20">
       <div className="mx-auto max-w-6xl">
-        <p className="text-sm uppercase tracking-[0.3em] text-white/60">PRODUCTS</p>
+        <p className="text-sm uppercase tracking-[0.3em] text-muted-foreground">PRODUCTS</p>
         <h1 className="mt-4 text-4xl font-semibold leading-tight sm:text-5xl">
           模块化产品矩阵，适配从探索到量产的全周期
         </h1>
-        <p className="mt-6 text-lg text-white/70">
+        <p className="mt-6 text-lg text-muted-foreground">
           每一款材料都可按光谱、亮度、封装方式定制。通过标准化验证包与快速打样体系，确保 6-8 周内完成项目首批交付。
         </p>
       </div>
@@ -203,20 +203,20 @@ const ProductsPage = (): JSX.Element => (
     <section className="px-6 pb-20">
       <div className="mx-auto max-w-6xl space-y-6">
         <div className="flex flex-col gap-3">
-          <p className="text-xs uppercase tracking-[0.4em] text-white/50">全部产品</p>
-          <div className="h-[1px] w-full bg-white/10" />
+          <p className="text-xs uppercase tracking-[0.4em] text-muted-foreground/50">全部产品</p>
+          <div className="h-[1px] w-full bg-card" />
         </div>
         {productDetails.map((product) => (
-          <article key={product.name} className="rounded-3xl border border-white/10 bg-white/5 p-8">
+          <article key={product.name} className="rounded-3xl border border-border bg-card/50 p-8">
             <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
               <div>
-                <p className="text-sm uppercase tracking-[0.3em] text-white/60">{product.status}</p>
+                <p className="text-sm uppercase tracking-[0.3em] text-muted-foreground">{product.status}</p>
                 <h2 className="text-3xl font-semibold">{product.name}</h2>
               </div>
               <div className="flex flex-wrap gap-3">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center rounded-full border border-white/30 px-5 py-2 text-sm font-semibold text-white transition hover:border-white"
+                  className="inline-flex items-center justify-center rounded-full border border-border px-5 py-2 text-sm font-semibold text-foreground transition hover:border-foreground"
                 >
                   联系顾问
                 </Link>
@@ -224,7 +224,7 @@ const ProductsPage = (): JSX.Element => (
                   href="https://m.tb.cn/h.7Xxt7HwwRy9u8k8"
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center justify-center rounded-full bg-white px-5 py-2 text-sm font-semibold text-foreground transition hover:bg-white/80"
+                  className="inline-flex items-center justify-center rounded-full bg-primary px-5 py-2 text-sm font-semibold text-primary-foreground transition hover:bg-primary/90"
                 >
                   询价
                 </a>
@@ -248,12 +248,12 @@ const ProductsPage = (): JSX.Element => (
               <div className="space-y-6">
                 <div className="grid gap-4 md:grid-cols-2">
                   <div>
-                    <p className="text-xs uppercase tracking-[0.3em] text-white/50">核心参数</p>
-                    <p className="mt-2 text-white/80">{product.overview}</p>
+                    <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground/50">核心参数</p>
+                    <p className="mt-2 text-foreground/80">{product.overview}</p>
                   </div>
                   <div>
-                    <p className="text-xs uppercase tracking-[0.3em] text-white/50">典型应用</p>
-                    <p className="mt-2 text-white/80">{product.applications}</p>
+                    <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground/50">典型应用</p>
+                    <p className="mt-2 text-foreground/80">{product.applications}</p>
                   </div>
                 </div>
 
@@ -274,25 +274,25 @@ const ProductsPage = (): JSX.Element => (
                     label: '关键参数',
                     value: product.keyParameters,
                   }].map((item) => (
-                    <div key={`${product.name}-${item.label}`} className="rounded-2xl border border-white/10 bg-white/5 p-4">
-                      <p className="text-xs uppercase tracking-[0.3em] text-white/50">{item.label}</p>
-                      <p className="mt-2 text-sm text-white/80">{item.value}</p>
+                    <div key={`${product.name}-${item.label}`} className="rounded-2xl border border-border bg-card/50 p-4">
+                      <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground/50">{item.label}</p>
+                      <p className="mt-2 text-sm text-foreground/80">{item.value}</p>
                     </div>
                   ))}
                 </div>
 
-                <div className="overflow-x-auto rounded-2xl border border-white/10 bg-primary-black/30">
-                  <table className="min-w-full text-left text-sm text-white/80">
+                <div className="overflow-x-auto rounded-2xl border border-border bg-primary-black/30">
+                  <table className="min-w-full text-left text-sm text-foreground/80">
                     <thead>
-                      <tr className="text-white">
+                      <tr className="text-foreground">
                         <th className="px-5 py-3">规格/型号</th>
                         <th className="px-5 py-3">关键参数</th>
                       </tr>
                     </thead>
                     <tbody>
                       {product.variants.map((variant) => (
-                        <tr key={`${product.name}-${variant.model}`} className="border-t border-white/5">
-                          <td className="px-5 py-3 whitespace-nowrap font-medium text-white">{variant.model}</td>
+                        <tr key={`${product.name}-${variant.model}`} className="border-t border-border">
+                          <td className="px-5 py-3 whitespace-nowrap font-medium text-foreground">{variant.model}</td>
                           <td className="px-5 py-3">{variant.spec}</td>
                         </tr>
                       ))}
@@ -300,7 +300,7 @@ const ProductsPage = (): JSX.Element => (
                   </table>
                 </div>
 
-                {product.extraNote && <p className="text-xs text-white/60">{product.extraNote}</p>}
+                {product.extraNote && <p className="text-xs text-muted-foreground">{product.extraNote}</p>}
               </div>
             </div>
           </article>

@@ -59,15 +59,15 @@ const resourcesSchema = {
 };
 
 const ResourcesPage = (): JSX.Element => (
-  <main className="bg-primary-black text-white">
+  <main className="bg-background text-foreground">
     <JsonLd data={resourcesSchema} />
     <section className="px-6 py-20">
       <div className="mx-auto max-w-6xl">
-        <p className="text-sm uppercase tracking-[0.3em] text-white/60">RESOURCES</p>
+        <p className="text-sm uppercase tracking-[0.3em] text-muted-foreground">RESOURCES</p>
         <h1 className="mt-4 text-4xl font-semibold leading-tight sm:text-5xl">
           技术资料与品牌资产集中下载
         </h1>
-        <p className="mt-6 text-lg text-white/70">
+        <p className="mt-6 text-lg text-muted-foreground">
           这里提供产品手册、性能测试、品牌视觉与开发文档，帮助合作伙伴快速了解材料能力或开展二次设计。
         </p>
       </div>
@@ -76,24 +76,24 @@ const ResourcesPage = (): JSX.Element => (
     <section className="px-6 pb-16">
       <div className="mx-auto max-w-6xl grid gap-6">
         <div className="flex flex-col gap-3">
-          <p className="text-xs uppercase tracking-[0.4em] text-white/50">全部资料</p>
-          <div className="h-[1px] w-full bg-white/10" />
+          <p className="text-xs uppercase tracking-[0.4em] text-muted-foreground/50">全部资料</p>
+          <div className="h-[1px] w-full bg-card" />
         </div>
 
         {downloads.map((file) => (
-          <article key={file.title} className="rounded-3xl border border-white/10 bg-white/5 p-8">
+          <article key={file.title} className="rounded-3xl border border-border bg-card/50 p-8">
             <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
               <div>
-                <p className="text-sm uppercase tracking-[0.3em] text-white/60">{file.type}</p>
+                <p className="text-sm uppercase tracking-[0.3em] text-muted-foreground">{file.type}</p>
                 <h2 className="text-2xl font-semibold">{file.title}</h2>
-                <p className="mt-2 text-white/70">{file.description}</p>
+                <p className="mt-2 text-muted-foreground">{file.description}</p>
               </div>
               {file.href ? (
-                <Link href={file.href} className="inline-flex items-center rounded-full border border-white/30 px-5 py-2 text-sm font-semibold text-white transition hover:border-white">
+                <Link href={file.href} className="inline-flex items-center rounded-full border border-border px-5 py-2 text-sm font-semibold text-foreground transition hover:border-foreground">
                   下载
                 </Link>
               ) : (
-                <span className="rounded-full border border-dashed border-white/30 px-5 py-2 text-sm text-white/50">即将上线</span>
+                <span className="rounded-full border border-dashed border-border px-5 py-2 text-sm text-muted-foreground/50">即将上线</span>
               )}
             </div>
           </article>

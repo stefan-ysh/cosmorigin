@@ -73,13 +73,13 @@ const caseStudySchema = {
 };
 
 const CasesPage = (): JSX.Element => (
-  <main className="bg-primary-black text-white">
+  <main className="bg-background text-foreground">
     <JsonLd data={caseStudySchema} />
     <section className="px-6 py-20">
       <div className="mx-auto max-w-6xl">
-        <p className="text-sm uppercase tracking-[0.3em] text-white/60">CASES</p>
+        <p className="text-sm uppercase tracking-[0.3em] text-muted-foreground">CASES</p>
         <h1 className="mt-4 text-4xl font-semibold leading-tight sm:text-5xl">推进中的联合验证项目</h1>
-        <p className="mt-6 text-lg text-white/70">
+        <p className="mt-6 text-lg text-muted-foreground">
           我们以“材料 + 方案 + 交付”三位一体的方式服务客户，以下项目均处在验证/试装阶段，持续记录目标、执行路径与阶段性指标，方便及时复盘。
         </p>
       </div>
@@ -88,32 +88,32 @@ const CasesPage = (): JSX.Element => (
     <section className="px-6 pb-16">
       <div className="mx-auto max-w-6xl grid gap-6">
         <div className="flex flex-col gap-3">
-          <p className="text-xs uppercase tracking-[0.4em] text-white/50">全部案例</p>
-          <div className="h-[1px] w-full bg-white/10" />
+          <p className="text-xs uppercase tracking-[0.4em] text-muted-foreground/50">全部案例</p>
+          <div className="h-[1px] w-full bg-card" />
         </div>
         {caseStudies.map((item) => (
-          <article key={item.title} className="rounded-3xl border border-white/10 bg-white/5 p-8">
+          <article key={item.title} className="rounded-3xl border border-border bg-card/50 p-8">
             <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
               <div>
-                <p className="text-sm uppercase tracking-[0.3em] text-white/60">{item.client}</p>
+                <p className="text-sm uppercase tracking-[0.3em] text-muted-foreground">{item.client}</p>
                 <h2 className="text-2xl font-semibold">{item.title}</h2>
               </div>
-              <button disabled className="hidden inline-flex items-center rounded-full border border-white/30 px-5 py-2 text-sm transition ">
+              <button disabled className="hidden inline-flex items-center rounded-full border border-border px-5 py-2 text-sm transition ">
                 获取完整报告
               </button>
             </div>
             <div className="mt-6 grid gap-4 md:grid-cols-3">
               <div>
-                <p className="text-xs uppercase tracking-[0.3em] text-white/50">场景需求</p>
-                <p className="mt-2 text-white/80">{item.challenge}</p>
+                <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground/50">场景需求</p>
+                <p className="mt-2 text-foreground/80">{item.challenge}</p>
               </div>
               <div>
-                <p className="text-xs uppercase tracking-[0.3em] text-white/50">解决方案</p>
-                <p className="mt-2 text-white/80">{item.result}</p>
+                <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground/50">解决方案</p>
+                <p className="mt-2 text-foreground/80">{item.result}</p>
               </div>
               <div>
-                <p className="text-xs uppercase tracking-[0.3em] text-white/50">阶段进展</p>
-                <p className="mt-2 text-white/80">{item.outcome}</p>
+                <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground/50">阶段进展</p>
+                <p className="mt-2 text-foreground/80">{item.outcome}</p>
               </div>
             </div>
           </article>

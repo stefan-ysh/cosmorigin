@@ -99,15 +99,15 @@ const newsroomSchema = {
 };
 
 const NewsPage = (): JSX.Element => (
-  <main className="bg-primary-black text-white">
+  <main className="bg-background text-foreground">
     <JsonLd data={newsroomSchema} />
     <section className="px-6 py-20">
       <div className="mx-auto max-w-6xl">
-        <p className="text-sm uppercase tracking-[0.3em] text-white/60">NEWSROOM</p>
+        <p className="text-sm uppercase tracking-[0.3em] text-muted-foreground">NEWSROOM</p>
         <h1 className="mt-4 text-4xl font-semibold leading-tight sm:text-5xl">
           记录发光技术走向产业的每一步
         </h1>
-        <p className="mt-6 text-lg text-white/70">
+        <p className="mt-6 text-lg text-muted-foreground">
           我们定期分享产线节点、客户共创、行业发布与技术洞察，也欢迎媒体与合作伙伴引用这些公开信息。
         </p>
       </div>
@@ -116,24 +116,24 @@ const NewsPage = (): JSX.Element => (
     <section className="px-6 pb-20">
       <div className="mx-auto max-w-6xl space-y-6">
         <div className="flex flex-col gap-3">
-          <p className="text-xs uppercase tracking-[0.4em] text-white/50">全部动态</p>
-          <div className="h-[1px] w-full bg-white/10" />
+          <p className="text-xs uppercase tracking-[0.4em] text-muted-foreground/50">全部动态</p>
+          <div className="h-[1px] w-full bg-card" />
         </div>
         <div className="grid gap-6">
           {newsItems.map((item) => {
             const isExternal = item.href?.startsWith('http');
             return (
-              <article key={`${item.title}-${item.date}`} className="rounded-3xl border border-white/10 bg-white/5 p-6 transition hover:border-white/30">
+              <article key={`${item.title}-${item.date}`} className="rounded-3xl border border-border bg-card/50 p-6 transition hover:border-border">
                 <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
-                  <div className="flex flex-wrap items-center gap-3 text-white/70">
-                    <span className="text-lg font-semibold text-white">{item.date}</span>
-                    <span className="h-1 w-1 rounded-full bg-white/40" aria-hidden />
-                    <span className="text-xs uppercase tracking-[0.4em] text-white/60">{item.category}</span>
+                  <div className="flex flex-wrap items-center gap-3 text-muted-foreground">
+                    <span className="text-lg font-semibold text-foreground">{item.date}</span>
+                    <span className="h-1 w-1 rounded-full bg-accent/40" aria-hidden />
+                    <span className="text-xs uppercase tracking-[0.4em] text-muted-foreground">{item.category}</span>
                     {item.location && (
-                      <span className="rounded-full border border-white/15 px-3 py-1 text-xs text-white/70">{item.location}</span>
+                      <span className="rounded-full border border-border px-3 py-1 text-xs text-muted-foreground">{item.location}</span>
                     )}
                     {item.highlight && (
-                      <span className="rounded-full border border-white/25 px-3 py-1 text-xs font-semibold text-white">
+                      <span className="rounded-full border border-border px-3 py-1 text-xs font-semibold text-foreground">
                         {item.highlight}
                       </span>
                     )}
@@ -144,24 +144,24 @@ const NewsPage = (): JSX.Element => (
                         href={item.href}
                         target="_blank"
                         rel="noreferrer"
-                        className="text-sm font-semibold text-white/80 underline-offset-4 hover:text-white"
+                        className="text-sm font-semibold text-foreground/80 underline-offset-4 hover:text-foreground"
                       >
                         查看详情 ↗
                       </a>
                     ) : (
                       <Link
                         href={item.href}
-                        className="text-sm font-semibold text-white/80 underline-offset-4 hover:text-white"
+                        className="text-sm font-semibold text-foreground/80 underline-offset-4 hover:text-foreground"
                       >
                         查看详情 →
                       </Link>
                     )
                   ) : (
-                    <span className="text-sm text-white/50">完整稿件整理中</span>
+                    <span className="text-sm text-muted-foreground/50">完整稿件整理中</span>
                   )}
                 </div>
-                <h2 className="mt-4 text-2xl font-semibold text-white">{item.title}</h2>
-                <p className="mt-3 text-base text-white/70">{item.summary}</p>
+                <h2 className="mt-4 text-2xl font-semibold text-foreground">{item.title}</h2>
+                <p className="mt-3 text-base text-muted-foreground">{item.summary}</p>
               </article>
             );
           })}

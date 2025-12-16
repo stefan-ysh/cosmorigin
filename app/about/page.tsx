@@ -125,18 +125,18 @@ const aboutSchemas = [
 ];
 
 const AboutPage = (): JSX.Element => (
-  <main className="bg-primary-black text-white">
+  <main className="bg-background text-foreground">
     <JsonLd data={aboutSchemas} />
     <section className="px-6 py-20">
       <div className="mx-auto flex max-w-6xl flex-col gap-10 lg:flex-row">
         <div className="flex-1">
-          <p className="text-sm uppercase tracking-[0.3em] text-white/60">
+          <p className="text-sm uppercase tracking-[0.3em] text-muted-foreground">
             ABOUT
           </p>
           <h1 className="mt-4 text-4xl font-semibold leading-tight sm:text-5xl">
             以原创材料技术点亮更高效的光环境
           </h1>
-          <p className="mt-6 text-lg text-white/70">
+          <p className="mt-6 text-lg text-muted-foreground">
             宇元新材，品牌名取意“Cosmos +
             Origin”，象征“宇宙的源头”，寓意探索光之本源，开启无限可能。
             <br />
@@ -148,7 +148,7 @@ const AboutPage = (): JSX.Element => (
             我们坚持以创新为驱动，持续推动柔性发光技术的突破与应用拓展，为全球客户提供高效、低碳、可定制化的光电解决方案，让光更自由、更智能、更融合。
           </p>
         </div>
-        <div className="flex w-full flex-1 items-center justify-center rounded-3xl border border-white/10 bg-white/5 p-8">
+        <div className="flex w-full flex-1 items-center justify-center rounded-3xl border border-border bg-card/50 p-8">
           <div className="grid w-full grid-cols-2 gap-6">
             {[
               { label: "研发投入策略", value: "持续高占比投入（数据更新中）" },
@@ -157,10 +157,10 @@ const AboutPage = (): JSX.Element => (
               { label: "交付版图", value: "服务国内外多个重点城市" },
             ].map((item) => (
               <div key={item.label}>
-                <p className="text-2xl font-semibold text-white/80">
+                <p className="text-2xl font-semibold text-foreground/80">
                   {item.value}
                 </p>
-                <p className="mt-1 text-sm text-white/60">{item.label}</p>
+                <p className="mt-1 text-sm text-muted-foreground">{item.label}</p>
               </div>
             ))}
           </div>
@@ -169,18 +169,18 @@ const AboutPage = (): JSX.Element => (
     </section>
 
     <section className="px-6 pb-20">
-      <div className="mx-auto max-w-6xl rounded-3xl border border-white/10 bg-white/5 p-10">
+      <div className="mx-auto max-w-6xl rounded-3xl border border-border bg-card/50 p-10">
         <h2 className="text-2xl font-semibold">发展里程碑</h2>
         <div className="mt-8 grid gap-8 md:grid-cols-2">
           {milestones.map((item) => (
             <div
               key={item.year}
-              className="rounded-2xl border border-white/10 p-6"
+              className="rounded-2xl border border-border p-6"
             >
-              <p className="text-sm uppercase tracking-[0.2em] text-white/50">
+              <p className="text-sm uppercase tracking-[0.2em] text-muted-foreground/50">
                 {item.year}
               </p>
-              <p className="mt-3 text-lg text-white/80">{item.content}</p>
+              <p className="mt-3 text-lg text-foreground/80">{item.content}</p>
             </div>
           ))}
         </div>
@@ -189,23 +189,23 @@ const AboutPage = (): JSX.Element => (
 
     <section className="px-6 pb-20">
       <div className="mx-auto max-w-6xl grid gap-10 lg:grid-cols-2">
-        <div className="rounded-3xl border border-white/10 bg-white/5 p-8">
+        <div className="rounded-3xl border border-border bg-card/50 p-8">
           <h3 className="text-2xl font-semibold">团队与治理</h3>
-          <p className="mt-4 text-white/70">
+          <p className="mt-4 text-muted-foreground">
             多学科团队覆盖材料、结构、电控与供应链管理，并由产业顾问委员会持续迭代技术路线与行业策略。
           </p>
           <div className="mt-8 space-y-6">
             {leadership.map((item) => (
               <div key={item.title}>
                 <p className="text-lg font-semibold">{item.title}</p>
-                <p className="text-sm text-white/70">{item.detail}</p>
+                <p className="text-sm text-muted-foreground">{item.detail}</p>
               </div>
             ))}
           </div>
         </div>
-        <div className="rounded-3xl border border-white/10 bg-white/5 p-8">
+        <div className="rounded-3xl border border-border bg-card/50 p-8">
           <h3 className="text-2xl font-semibold">产研基地</h3>
-          <p className="mt-4 text-white/70">
+          <p className="mt-4 text-muted-foreground">
             扬州智能制造中心负责卷对卷涂布、纤维编织与模块封装，南京应用实验室聚焦材料验证与联合研发，海外服务中心负责小批量交付与培训。
           </p>
           <div className="mt-8 grid gap-4">
@@ -217,7 +217,7 @@ const AboutPage = (): JSX.Element => (
             ].map((capability) => (
               <div
                 key={capability}
-                className="rounded-2xl border border-dashed border-white/20 p-4 text-sm text-white/70"
+                className="rounded-2xl border border-dashed border-border/50 p-4 text-sm text-muted-foreground"
               >
                 {capability}
               </div>
@@ -229,9 +229,9 @@ const AboutPage = (): JSX.Element => (
 
     <section className="px-6 pb-32">
       <div className="mx-auto max-w-6xl grid gap-8 lg:grid-cols-2">
-        <div className="rounded-3xl border border-white/10 bg-white/5 p-8">
+        <div className="rounded-3xl border border-border bg-card/50 p-8">
           <h3 className="text-2xl font-semibold">社会责任与可持续</h3>
-          <ul className="mt-6 space-y-4 text-sm text-white/70">
+          <ul className="mt-6 space-y-4 text-sm text-muted-foreground">
             <li>
               •
               低能耗光源：与传统照明相比更高效，助力户外装置延长寿命（详细数据上线中）。
@@ -246,7 +246,7 @@ const AboutPage = (): JSX.Element => (
             </li>
           </ul>
         </div>
-        <div className="overflow-hidden rounded-3xl border border-white/10 bg-white/5 flex items-center justify-center">
+        <div className="overflow-hidden rounded-3xl border border-border bg-card/50 flex items-center justify-center">
           <Image
             src="/宇元新材发光材料制成的圣诞树.png"
             alt="宇元新材产线"

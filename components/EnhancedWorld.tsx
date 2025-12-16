@@ -65,19 +65,19 @@ const EnhancedWorld = () => (
             variants={fadeIn('up', 'spring', index * 0.2, 1)}
             className="group relative"
           >
-            <div className="relative h-full p-8 bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-3xl overflow-hidden transition-all duration-300 hover:border-emerald-500/50 hover:shadow-[0_0_30px_rgba(0,255,136,0.2)]">
+            <div className="relative h-full p-8 bg-card border border-border rounded-3xl overflow-hidden transition-all duration-300 hover:border-emerald-500/50 hover:shadow-lg">
               {/* 图标 */}
               <div className="text-6xl mb-4 transform group-hover:scale-110 transition-transform duration-300">
                 {app.icon}
               </div>
 
               {/* 标题 */}
-              <h3 className="text-2xl font-bold text-cyan-700 mb-2">
+              <h3 className="text-2xl font-bold text-primary mb-2">
                 {app.title}
               </h3>
 
               {/* 描述 */}
-              <p className="text-gray-400">{app.description}</p>
+              <p className="text-muted-foreground">{app.description}</p>
 
               {/* 装饰性渐变 */}
               <div
@@ -111,7 +111,7 @@ const EnhancedWorld = () => (
         />
 
         {/* 覆盖层 */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
 
         {/* 统计数据 */}
         <div className="absolute inset-0 flex items-center justify-center">

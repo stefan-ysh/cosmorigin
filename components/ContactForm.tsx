@@ -1,6 +1,10 @@
 "use client";
 
 import { ChangeEvent, FormEvent, useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
 
 interface FormState {
   name: string;
@@ -57,16 +61,16 @@ const ContactForm = () => {
 
   return (
     <section className="px-6 pb-20">
-      <div className="mx-auto max-w-6xl rounded-3xl border border-white/10 bg-white/5 p-8">
+      <div className="mx-auto max-w-6xl rounded-3xl border border-border bg-card/5 p-8">
         <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
           <div>
-            <p className="text-sm uppercase tracking-[0.3em] text-white/60">INQUIRY</p>
+            <p className="text-sm uppercase tracking-[0.3em] text-muted-foreground">INQUIRY</p>
             <h2 className="mt-2 text-2xl font-semibold">预约沟通表单</h2>
-            <p className="mt-2 text-white/70">填写需求后我们会在 24 小时内通过邮箱或电话回复，并可同步推送到企业微信/CRM。</p>
+            <p className="mt-2 text-muted-foreground">填写需求后我们会在 24 小时内通过邮箱或电话回复，并可同步推送到企业微信/CRM。</p>
           </div>
           {status !== "idle" && feedback && (
             <p
-              className={`text-sm font-semibold ${status === "success" ? "text-emerald-300" : "text-red-300"}`}
+              className={`text-sm font-semibold ${status === "success" ? "text-emerald-500" : "text-destructive"}`}
               role="status"
             >
               {feedback}
@@ -76,95 +80,80 @@ const ContactForm = () => {
 
         <form className="mt-8 grid gap-6 md:grid-cols-2" onSubmit={handleSubmit}>
           <div className="flex flex-col gap-2">
-            <label htmlFor="name" className="text-sm text-white/70">
-              姓名 / 联系人 *
-            </label>
-            <input
+            <Label htmlFor="name">姓名 / 联系人 *</Label>
+            <Input
               id="name"
               name="name"
               required
               value={form.name}
               onChange={handleChange("name")}
-              className="rounded-2xl border border-white/10 bg-transparent px-4 py-3 text-white focus:border-white/40 focus:outline-none"
               placeholder="如：李先生"
             />
           </div>
 
           <div className="flex flex-col gap-2">
-            <label htmlFor="company" className="text-sm text-white/70">
-              公司 / 机构
-            </label>
-            <input
+            <Label htmlFor="company">公司 / 机构</Label>
+            <Input
               id="company"
               name="company"
               value={form.company}
               onChange={handleChange("company")}
-              className="rounded-2xl border border-white/10 bg-transparent px-4 py-3 text-white focus:border-white/40 focus:outline-none"
               placeholder="如：XX 设计事务所"
             />
           </div>
 
           <div className="flex flex-col gap-2">
-            <label htmlFor="contact" className="text-sm text-white/70">
-              邮箱 / 电话 *
-            </label>
-            <input
+            <Label htmlFor="contact">邮箱 / 电话 *</Label>
+            <Input
               id="contact"
               name="contact"
+              type="email"
               required
               value={form.contact}
               onChange={handleChange("contact")}
-              className="rounded-2xl border border-white/10 bg-transparent px-4 py-3 text-white focus:border-white/40 focus:outline-none"
-              placeholder="contact@company.com / 185xxxx"
+              placeholder="contact@company.com"
             />
           </div>
 
           <div className="flex flex-col gap-2">
-            <label htmlFor="projectType" className="text-sm text-white/70">
-              需求类型
-            </label>
+            <Label htmlFor="projectType">项目类型</Label>
             <select
               id="projectType"
               name="projectType"
               value={form.projectType}
               onChange={handleChange("projectType")}
-              className="rounded-2xl border border-white/10 bg-primary-black px-4 py-3 text-white focus:border-white/40 focus:outline-none"
+              className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
             >
-              {['商务合作', '联合研发', '样品/测试', '媒体/品牌合作'].map((type) => (
-                <option key={type} value={type} className="bg-primary-black text-white">
-                  {type}
-                </option>
-              ))}
+              <option value="商务合作">商务合作</option>
+              <option value="技术咨询">技术咨询</option>
+              <option value="产品定制">产品定制</option>
+              <option value="研发支持">研发支持</option>
+              <option value="其他">其他</option>
             </select>
           </div>
 
           <div className="md:col-span-2 flex flex-col gap-2">
-            <label htmlFor="message" className="text-sm text-white/70">
-              需求描述 *
-            </label>
-            <textarea
+            <Label htmlFor="message">需求描述 *</Label>
+            <Textarea
               id="message"
               name="message"
               required
-              rows={5}
               value={form.message}
               onChange={handleChange("message")}
-              className="rounded-2xl border border-white/10 bg-transparent px-4 py-3 text-white focus:border-white/40 focus:outline-none"
               placeholder="请说明应用场景、时间节点与希望解决的问题"
+              rows={4}
             />
           </div>
 
           <div className="md:col-span-2">
-            <button
+            <Button
               type="submit"
               disabled={status === "loading"}
-              className="w-full rounded-full border border-white/25 py-3 text-sm font-semibold text-white transition hover:border-white disabled:cursor-not-allowed disabled:opacity-70"
+              className="w-full"
+              size="lg"
             >
               {status === "loading" ? "提交中..." : "提交需求"}
-            </button>
-            <p className="mt-3 text-center text-xs text-white/60">
-              提交即代表您同意我们以邮件或电话方式联系，并可选择接收材料更新简报。
-            </p>
+            </Button>
           </div>
         </form>
       </div>

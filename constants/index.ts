@@ -66,17 +66,17 @@ export const startingFeatures: string[] = [
 
 export const newFeatures: FeatureHighlight[] = [
   {
-    imgUrl: '/vrpano.svg',
+    imgUrl: 'first',
     title: '全球首个纳米级连续生产自发光材料',
     subtitle: '突破传统间歇生产模式，3260小时水下稳定性认证，荧光强度保持85%以上，铅泄漏远低于安全标准。',
   },
   {
-    imgUrl: '/headset.svg',
+    imgUrl: 'multiple',
     title: '任意图案化/多色发光技术',
     subtitle: '支持个性化图案定制与多色光谱调节，灵活匹配交通警示、艺术装饰、品牌LOGO等多元场景需求。',
   },
   {
-    imgUrl: '/grid.svg',
+    imgUrl: '3D',
     title: '3D 打印辅材发布',
     subtitle: '兼容 SLA/FDM 的自发光材料，可直接打印复杂光效件，缩短小批量验证与展示件制作周期。',
   },

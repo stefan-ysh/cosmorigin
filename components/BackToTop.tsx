@@ -1,47 +1,39 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
-import { ArrowUp } from "lucide-react";
-
-const SHOW_THRESHOLD = 240;
+import { useEffect, useState } from "react";
+import { ChevronUp } from "lucide-react";
+import styles from "@/styles";
 
 const BackToTop = () => {
-  const [visible, setVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      const shouldShow = window.scrollY >= SHOW_THRESHOLD;
-      setVisible(shouldShow);
+      setIsVisible(window.scrollY > 500);
     };
 
-    handleScroll();
-    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToTop = useCallback(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }, []);
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
+  if (!isVisible) return null;
 
   return (
-    <AnimatePresence>
-      {visible && (
-        <motion.button
-          key="back-to-top"
-          type="button"
-          aria-label="返回顶部"
-          onClick={scrollToTop}
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: 40 }}
-          transition={{ type: "spring", stiffness: 260, damping: 25 }}
-          className="fixed bottom-6 right-6 z-[70] rounded-full border border-white/20 bg-white/5 p-4 text-white shadow-[0_10px_35px_rgba(0,0,0,0.35)] backdrop-blur-lg transition hover:border-white/40 hover:bg-white/10"
-        >
-          <ArrowUp className="h-6 w-6" />
-        </motion.button>
-      )}
-    </AnimatePresence>
+    <button
+      type="button"
+      onClick={scrollToTop}
+      className={`${styles.floatingFab} fixed bottom-10 right-6 z-50`}
+      aria-label="返回顶部"
+    >
+      <ChevronUp className="h-5 w-5" />
+    </button>
   );
 };
 

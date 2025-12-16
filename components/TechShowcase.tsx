@@ -88,7 +88,7 @@ const TechShowcase = () => (
       >
         <TypingText title="| 核心技术" textStyles="text-center" />
 
-        <h2 className="text-4xl lg:text-6xl font-bold text-white mb-6 text-center mt-[8px]">
+        <h2 className="text-4xl lg:text-6xl font-bold text-foreground mb-6 text-center mt-[8px]">
           领先的
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">
             {' '}
@@ -115,18 +115,18 @@ const TechShowcase = () => (
               whileHover={{ y: -10 }}
               className="group relative"
             >
-              <div className="relative h-full p-6 bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-2xl overflow-hidden transition-all duration-300 group-hover:border-emerald-500/50">
+              <div className="relative h-full p-6 bg-card border border-border rounded-2xl overflow-hidden transition-all duration-300 group-hover:border-emerald-500/50 group-hover:shadow-lg">
                 {/* 图标 */}
                 <motion.div
                   className={`inline-flex items-center justify-center w-16 h-16 mb-4 bg-gradient-to-br ${colors.from} ${colors.to} rounded-xl ${colors.shadow} shadow-lg`}
                   whileHover={{ rotate: 360 }}
                   transition={{ duration: 0.6 }}
                 >
-                  <div className="text-white">{feature.icon}</div>
+                  <div className="text-foreground">{feature.icon}</div>
                 </motion.div>
 
                 {/* 标题 */}
-                <h3 className="text-xl font-bold text-slate-500 mb-3">
+                <h3 className="text-xl font-bold text-muted-foreground mb-3">
                   {feature.title}
                 </h3>
 
@@ -151,7 +151,7 @@ const TechShowcase = () => (
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className="relative p-8 bg-gradient-to-br from-gray-900 via-gray-800 to-black border border-emerald-500/20 rounded-3xl overflow-hidden"
+        className="relative p-8 bg-card border border-border rounded-3xl overflow-hidden shadow-lg"
       >
         {/* 背景网格动画 */}
         <div className="absolute inset-0 opacity-5">
@@ -172,7 +172,7 @@ const TechShowcase = () => (
             </motion.div>
             <div className="text-gray-400">余辉持续时间</div>
             <motion.div
-              className="mt-4 h-2 bg-gray-700 rounded-full overflow-hidden"
+              className="mt-4 h-2 bg-secondary rounded-full overflow-hidden"
               initial={{ width: 0 }}
               whileInView={{ width: '100%' }}
               viewport={{ once: true }}
@@ -200,7 +200,7 @@ const TechShowcase = () => (
             </motion.div>
             <div className="text-gray-400">发光效率提升</div>
             <motion.div
-              className="mt-4 h-2 bg-gray-700 rounded-full overflow-hidden"
+              className="mt-4 h-2 bg-secondary rounded-full overflow-hidden"
               initial={{ width: 0 }}
               whileInView={{ width: '100%' }}
               viewport={{ once: true }}
@@ -228,7 +228,7 @@ const TechShowcase = () => (
             </motion.div>
             <div className="text-gray-400">环保标准达标</div>
             <motion.div
-              className="mt-4 h-2 bg-gray-700 rounded-full overflow-hidden"
+              className="mt-4 h-2 bg-secondary rounded-full overflow-hidden"
               initial={{ width: 0 }}
               whileInView={{ width: '100%' }}
               viewport={{ once: true }}

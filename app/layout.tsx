@@ -76,7 +76,7 @@ export const metadata: Metadata = {
 
 const RootLayout = ({ children }: RootLayoutProps): JSX.Element => (
   <html lang="zh-CN">
-    <body className="bg-primary-black text-white antialiased">
+    <body className="bg-background text-foreground antialiased">
       <Navbar />
       {children}
       <BackToTop />
