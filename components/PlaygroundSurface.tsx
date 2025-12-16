@@ -172,7 +172,9 @@ const PlaygroundSurface = () => {
       </div>
 
       <div className="grid gap-10 lg:grid-cols-3">
-        {showcasePairs.map((pair) => (
+        {showcasePairs.map((pair) => {
+          const isHeroCard = pair.id === "agriculture";
+          return (
           <article
             key={pair.id}
             className="group flex flex-col gap-6 rounded-3xl border border-foreground/10 bg-card/70 p-6 shadow-xl shadow-black/5 transition hover:-translate-y-1 hover:shadow-2xl"
@@ -187,20 +189,35 @@ const PlaygroundSurface = () => {
               <p className="text-sm text-foreground/70">{pair.description}</p>
             </div>
             <div className="relative overflow-hidden rounded-2xl border border-foreground/10 bg-black/5">
-              <Image
-                src={mode === "light" ? pair.light : pair.dark}
-                alt={`${pair.label} ${mode === "light" ? "开灯" : "关灯"}效果`}
-                width={960}
-                height={600}
-                className="h-auto w-full object-cover"
-                priority={pair.id === "agriculture"}
-              />
+              <div className="relative aspect-[4/3] w-full">
+                <Image
+                  src={pair.light}
+                  alt={`${pair.label} 开灯效果`}
+                  fill
+                  sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                  className={`object-cover transition-opacity duration-500 ${
+                    mode === "light" ? "opacity-100" : "opacity-0"
+                  }`}
+                  priority={isHeroCard}
+                />
+                <Image
+                  src={pair.dark}
+                  alt={`${pair.label} 关灯效果`}
+                  fill
+                  sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                  className={`object-cover transition-opacity duration-500 ${
+                    mode === "dark" ? "opacity-100" : "opacity-0"
+                  }`}
+                  priority={isHeroCard}
+                />
+              </div>
               <div className="pointer-events-none absolute inset-0 opacity-0 transition group-hover:opacity-100">
                 <div className="h-full w-full bg-gradient-to-br from-transparent via-black/20 to-black/60" />
               </div>
             </div>
           </article>
-        ))}
+        );
+        })}
       </div>
 
       {floatingVisible && (
