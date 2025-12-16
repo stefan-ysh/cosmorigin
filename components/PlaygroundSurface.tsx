@@ -73,6 +73,13 @@ const showcasePairs = [
     dark: "/playground/16.jpg",
     description: " 发光膜制成的花束，营造温馨浪漫氛围。",
   },
+  {
+    id: "9",
+    label: "发光圣诞装饰",
+    light: "/playground/17.jpg",
+    dark: "/playground/18.jpg",
+    description: "宇元新材发光材料打印出的节日装饰。",
+  },
 ] as const;
 
 const FLOATING_SWITCH_THRESHOLD = 320;

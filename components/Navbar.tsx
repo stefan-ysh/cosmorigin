@@ -14,11 +14,8 @@ const navLinks = [
   { label: "首页", href: "/" },
   { label: "关于我们", href: "/about" },
   { label: "产品矩阵", href: "/products" },
-  { label: "行业方案", href: "/solutions" },
-  { label: "案例展示", href: "/cases" },
-  { label: "新闻动态", href: "/news" },
-  { label: "资料中心", href: "/resources" },
-  { label: "效果查看", href: "/playground" },
+  { label: "解决方案", href: "/solutions" },
+  { label: "光效体验", href: "/playground" },
 ];
 
 const Navbar = () => {
@@ -55,7 +52,7 @@ const Navbar = () => {
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ type: "spring", stiffness: 260, damping: 30 }}
-            className="relative flex h-full w-full flex-col gap-6 bg-background px-6 pb-12 pt-5 text-foreground shadow-2xl"
+            className="relative flex h-full w-full flex-col gap-6 bg-background px-6 pb-5 pt-5 text-foreground shadow-2xl"
           >
             <div className="flex items-center justify-between">
               <Link
@@ -85,16 +82,16 @@ const Navbar = () => {
                   {link.label}
                 </Link>
               ))}
+            </nav>
+            <div className="flex gap-4 border-t border-foreground/10 pt-6 dark:border-white/20 justify-between">
+              <ThemeToggle />
               <Link
                 href="/contact"
                 onClick={() => setIsMobileOpen(false)}
-                className="text-base font-semibold uppercase tracking-[0.25em] text-foreground/80 transition hover:text-foreground"
+                className="inline-flex items-center justify-center rounded-full border border-border px-5 py-3 text-sm font-semibold tracking-[0.3em] text-foreground"
               >
-                联系专家
+                联系我们
               </Link>
-            </nav>
-            <div className="space-y-5 border-t border-foreground/10 pt-6 dark:border-white/20">
-              <ThemeToggle />
             </div>
           </motion.div>
         </motion.div>
@@ -138,9 +135,9 @@ const Navbar = () => {
             <ThemeToggle />
             <Link
               href="/contact"
-              className="hidden rounded-full border border-border px-5 py-2 text-sm font-semibold text-foreground transition hover:border-foreground/50 md:inline-flex"
+              className="hidden rounded-full border border-border px-5 py-2 text-sm font-semibold text-foreground transition hover:border-foreground/60 md:inline-flex"
             >
-              联系专家
+              联系我们
             </Link>
             <button
               type="button"

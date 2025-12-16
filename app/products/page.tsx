@@ -8,7 +8,7 @@ import PagePlaceholder from '@/components/PagePlaceholder';
 import { absoluteUrl, buildOpenGraph, buildTwitter, defaultRobots } from '@/lib/seo';
 
 const pagePath = '/products';
-const pageTitle = '产品矩阵 | 发光油漆、纤维丝、薄膜与 3D 打印辅材';
+const pageTitle = '产品 | 发光油漆、纤维丝、薄膜与 3D 打印辅材';
 const pageDescription =
   '浏览宇元新材的核心产品：发光油漆、发光纤维丝、发光膜以及 3D 打印辅材，支持定制光谱与多场景应用。';
 const canonicalUrl = absoluteUrl(pagePath);
@@ -16,7 +16,7 @@ const canonicalUrl = absoluteUrl(pagePath);
 export const metadata: Metadata = {
   title: pageTitle,
   description: pageDescription,
-  keywords: ['发光油漆', '发光纤维丝', '发光膜', '自发光材料', '产品矩阵'],
+  keywords: ['发光油漆', '发光纤维丝', '发光膜', '自发光材料', '产品'],
   alternates: {
     canonical: canonicalUrl,
   },
@@ -192,7 +192,7 @@ const ProductsPage = (): JSX.Element => (
       <div className="mx-auto max-w-6xl">
         <p className="text-sm uppercase tracking-[0.3em] text-muted-foreground">PRODUCTS</p>
         <h1 className="mt-4 text-4xl font-semibold leading-tight sm:text-5xl">
-          模块化产品矩阵，适配从探索到量产的全周期
+          模块化产品，适配从探索到量产的全周期
         </h1>
         <p className="mt-6 text-lg text-muted-foreground">
           每一款材料都可按光谱、亮度、封装方式定制。通过标准化验证包与快速打样体系，确保 6-8 周内完成项目首批交付。
