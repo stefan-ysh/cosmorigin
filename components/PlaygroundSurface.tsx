@@ -1,9 +1,11 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { useEffect, useState } from "react";
 import type { MouseEvent } from "react";
+import { motion } from "framer-motion";
+
+import {Sun, Moon} from "lucide-react";
 
 import {
   Theme,
@@ -177,7 +179,7 @@ const PlaygroundSurface = () => {
           return (
           <article
             key={pair.id}
-            className="group flex flex-col gap-6 rounded-3xl border border-foreground/10 bg-card/70 p-6 shadow-xl shadow-black/5 transition hover:-translate-y-1 hover:shadow-2xl"
+            className="group flex flex-col gap-6 rounded-3xl border border-foreground/10 bg-card/70 p-6 shadow-xl shadow-black/5 transition"
           >
             <div className="space-y-3">
               <p className="text-xs uppercase tracking-[0.4em] text-foreground/50">
@@ -211,7 +213,7 @@ const PlaygroundSurface = () => {
                   priority={isHeroCard}
                 />
               </div>
-              <div className="pointer-events-none absolute inset-0 opacity-0 transition group-hover:opacity-100">
+              <div className="pointer-events-none absolute inset-0 opacity-0 transition">
                 <div className="h-full w-full bg-gradient-to-br from-transparent via-black/20 to-black/60" />
               </div>
             </div>
@@ -221,23 +223,21 @@ const PlaygroundSurface = () => {
       </div>
 
       {floatingVisible && (
-        <button
+        <motion.button
+          key="switch-mode"
           type="button"
-          aria-label={mode === "dark" ? "切换到开灯" : "切换到关灯"}
+          aria-label="切换模式"
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 40 }}
+          transition={{ type: "spring", stiffness: 260, damping: 25 }}
           onClick={(event) =>
             handleModeChange(mode === "dark" ? "light" : "dark", event)
           }
-          className="fixed bottom-24 right-6 z-[65] flex flex-col items-center gap-3 rounded-2xl border border-foreground/20 bg-background/90 px-2 py-3 text-xs font-semibold uppercase tracking-[0.35em] text-foreground shadow-[0_20px_45px_rgba(0,0,0,0.25)] backdrop-blur"
+          className="fixed bottom-24 right-6 z-[65] flex flex-col items-center p-4 rounded-full text-xs font-semibold uppercase border border-white/20 bg-white/5 tracking-[0.35em] text-foreground shadow-[0_10px_35px_rgba(0,0,0,0.35)] backdrop-blur"
         >
-          <span>{mode === "dark" ? "开灯" : "关灯"}</span>
-          <span
-            className={`inline-flex h-6 w-10 items-center rounded-full border border-foreground/30 bg-foreground/10 p-1 transition ${
-              mode === "dark" ? "justify-end bg-foreground/70" : "justify-start"
-            }`}
-          >
-            <span className="h-4 w-4 rounded-full bg-background" />
-          </span>
-        </button>
+          {mode === "dark" ? <Sun className="h-6 w-6" /> : <Moon className="h-6 w-6" />}
+        </motion.button>
       )}
     </div>
   );

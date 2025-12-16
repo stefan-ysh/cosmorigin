@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
+import { Menu, X, Moon, Sun } from "lucide-react";
 
 import ThemeToggle from "@/components/ThemeToggle";
 import styles from "@/styles";
@@ -74,10 +75,11 @@ const Navbar = () => {
             aria-controls="mobile-nav"
             aria-expanded={isMobileOpen}
             onClick={() => setIsMobileOpen(true)}
-            className="inline-flex items-center justify-center rounded-full border border-black/10 p-2 dark:border-white/20 lg:hidden"
+            className="inline-flex items-center justify-center rounded-full lg:hidden"
           >
             <span className="sr-only">打开导航菜单</span>
-            <div className=" w-3 h-3 flex items-center justify-center">···</div>
+            <Menu className="w-5 h-5 text-foreground" />
+            {/* <div className=" w-3 h-3 flex items-center justify-center">···</div> */}
           </button>
         </div>
       </div>
@@ -93,13 +95,13 @@ const Navbar = () => {
             transition={{ duration: 0.2 }}
             className="fixed inset-0 z-[60] lg:hidden"
           >
-            <div className="footer-gradient z-30 -right-1/2 bottom-0"></div>
+            <div className="footer-gradient z-30 -right-1/2 bottom-0">111</div>
             <motion.div
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", stiffness: 260, damping: 30 }}
-              className="relative flex h-full w-[100%] flex-col gap-6 bg-background px-6 pb-12 pt-10 text-foreground shadow-2xl"
+              className="relative flex h-full w-[100%] flex-col gap-6 bg-background px-6 pb-12 pt-5 text-foreground shadow-2xl"
             >
               <div className="flex items-center justify-between">
                 <Link
@@ -112,22 +114,10 @@ const Navbar = () => {
                 <button
                   type="button"
                   onClick={() => setIsMobileOpen(false)}
-                  className="rounded-full border border-black/20 p-2 text-black dark:border-white/30 dark:text-white"
+                  className="rounded-full p-2 text-black dark:border-white/30 dark:text-white"
                 >
                   <span className="sr-only">关闭导航菜单</span>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    className="h-5 w-5"
-                    aria-hidden
-                  >
-                    <path
-                      d="M6 6l12 12M18 6L6 18"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                    />
-                  </svg>
+                  <X className="w-5 h-5" />
                 </button>
               </div>
               <nav className="flex flex-1 flex-col gap-4">
@@ -150,24 +140,7 @@ const Navbar = () => {
                 </Link>
               </nav>
               <div className="space-y-5 border-t border-black/10 pt-6 dark:border-white/20">
-                <div className="space-y-3">
-                  <p className="text-xs uppercase tracking-[0.3em] text-foreground/70">
-                    主题模式
-                  </p>
                   <ThemeToggle />
-                </div>
-                <div className="space-y-3">
-                  <p className="text-xs uppercase tracking-[0.3em] text-foreground/70">
-                    联系我们
-                  </p>
-                  <Link
-                    href="/contact"
-                    onClick={() => setIsMobileOpen(false)}
-                    className="inline-flex items-center justify-center rounded-full border border-foreground/40 px-5 py-2 text-sm font-semibold text-foreground transition hover:border-foreground"
-                  >
-                    预约产品顾问
-                  </Link>
-                </div>
               </div>
             </motion.div>
           </motion.div>
