@@ -69,6 +69,7 @@ const StructuredData = () => {
     "@type": "Product",
     "name": "柔性发光材料系列",
     "description": "全球首个米级连续生产自发光材料，包括发光油漆、发光纤维丝、发光膜，3260小时水下稳定性认证，支持多色定制",
+    "image": "https://cosmorigin.com/cosmorigin-logo.png",
     "brand": {
       "@type": "Brand",
       "name": "宇元新材"
@@ -78,14 +79,75 @@ const StructuredData = () => {
     "offers": {
       "@type": "Offer",
       "availability": "https://schema.org/InStock",
-      "price": "面议",
-      "priceCurrency": "CNY"
+      "price": "50",
+      "priceCurrency": "CNY",
+      "url": "https://cosmorigin.com/products"
     },
+    "hasVariant": [
+      {
+        "@type": "Product",
+        "name": "发光油漆",
+        "url": "https://cosmorigin.com/products"
+      },
+      {
+        "@type": "Product",
+        "name": "发光纤维丝",
+        "url": "https://cosmorigin.com/products"
+      },
+      {
+        "@type": "Product",
+        "name": "发光膜",
+        "url": "https://cosmorigin.com/products"
+      }
+    ],
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "4.8",
       "reviewCount": "150"
     }
+  };
+
+  // 百度推荐使用数组形式的 SiteNavigationElement
+  const navSchemaItems = [
+    {
+      "@context": "https://schema.org",
+      "@type": "SiteNavigationElement",
+      "name": "解决方案",
+      "url": "https://cosmorigin.com/solutions"
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "SiteNavigationElement",
+      "name": "产品",
+      "url": "https://cosmorigin.com/products"
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "SiteNavigationElement",
+      "name": "案例",
+      "url": "https://cosmorigin.com/cases"
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "SiteNavigationElement",
+      "name": "关于我们",
+      "url": "https://cosmorigin.com/about"
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "SiteNavigationElement",
+      "name": "联系",
+      "url": "https://cosmorigin.com/contact"
+    }
+  ];
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "首页", "item": "https://cosmorigin.com" },
+      { "@type": "ListItem", "position": 2, "name": "解决方案", "item": "https://cosmorigin.com/solutions" }
+    ]
   };
 
   return (
@@ -105,6 +167,17 @@ const StructuredData = () => {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+      />
+      {navSchemaItems.map((item, index) => (
+        <script
+          key={index}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(item) }}
+        />
+      ))}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
     </>
   );
