@@ -161,4 +161,9 @@ export const socialChannels: SocialChannel[] = [
     description: '@宇元新材，记录材料灵感与落地案例。',
     href: 'https://xhslink.com/m/67pnAGQHGS8',
   },
+  {
+    label: 'Shopify',
+    description: '宇元新材国际站，服务全球客户。',
+    href: 'https://shop.cosmorigin.com',
+  },
 ];
