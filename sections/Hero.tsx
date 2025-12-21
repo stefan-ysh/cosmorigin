@@ -30,7 +30,7 @@ const Hero = (): JSX.Element => (
         <div className="absolute w-full h-[300px] hero-gradient rounded-tl-[140px] z-[0] sm:-top-[20px] -top-[10px]" />
         <div className="w-full sm:h-[500px] h-[350px] rounded-tl-[140px] z-10 relative overflow-hidden">
           <Image
-            src="/cover.png"
+            src="/cover.jpg"
             alt="高性能发光材料"
             fill
             className="object-cover"
