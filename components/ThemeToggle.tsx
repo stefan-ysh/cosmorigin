@@ -56,7 +56,7 @@ const ThemeToggle = () => {
       className="group relative inline-flex items-center justify-center rounded-full border-none px-3 py-2 text-sm font-semibold text-black transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black dark:border-white/30  dark:text-white dark:hover:border-white/60 dark:focus-visible:outline-white"
     >
       <span className="sr-only">{label}</span>
-      {mounted && (theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />)}
+      {mounted && (theme === "light" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />)}
       {!mounted && <Sun className="h-5 w-5" />}
     </button>
   );

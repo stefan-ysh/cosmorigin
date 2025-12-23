@@ -107,7 +107,7 @@ const ModeSwitch = ({
       className={`absolute inset-y-0 flex items-center text-xs font-semibold uppercase tracking-[0.3em] transition ${checked ? "left-3 text-teal-400" : "right-3 text-foreground/70"
         }`}
     >
-      {checked ? "OFF" : "ON"}
+      {!checked ? <Sun /> : <Moon />}
     </span>
   </button>
 );
@@ -154,28 +154,17 @@ const PlaygroundSurface = () => {
           实时预览
         </p>
         <p className="mx-auto max-w-4xl text-lg text-foreground/80">
-          点击下方 开灯 / 关灯
-          按钮，查看材料在不同光环境下的状态。所有图像均为宇元新材的发光材料制品实拍。
+          点击下方按钮{mode === "light"  ? "关灯" : "开灯"} ，查看材料在不同光环境下的状态。所有图像均为宇元新材的发光材料制品实拍。
         </p>
       </div>
 
       <div className="mx-auto flex items-center justify-center gap-4  text-sm font-semibold backdrop-blur">
-        <span
-          className={`text-xs uppercase tracking-[0.4em] ${mode === "light" ? "text-foreground" : "text-foreground/50"}`}
-        >
-          开灯
-        </span>
         <ModeSwitch
           checked={mode === "dark"}
           onToggle={(event) =>
             handleModeChange(mode === "dark" ? "light" : "dark", event)
           }
         />
-        <span
-          className={`text-xs uppercase tracking-[0.4em] ${mode === "dark" ? "text-foreground" : "text-foreground/50"}`}
-        >
-          关灯
-        </span>
       </div>
 
       <div className="grid gap-10 lg:grid-cols-3">
@@ -187,9 +176,6 @@ const PlaygroundSurface = () => {
               className="group flex flex-col gap-6 rounded-3xl border border-foreground/10 bg-card/70 p-6 shadow-xl shadow-black/5 transition"
             >
               <div className="space-y-3">
-                <p className="text-xs uppercase tracking-[0.4em] text-foreground/50">
-                  {mode === "light" ? "开灯" : "关灯"}
-                </p>
                 <h2 className="text-2xl font-semibold text-foreground">
                   {pair.label}
                 </h2>
@@ -239,7 +225,7 @@ const PlaygroundSurface = () => {
           }
           className={`${styles.floatingFab} fixed bottom-28 right-6 z-[65]`}
         >
-          {mode === "dark" ? <Sun className="h-6 w-6" /> : <Moon className="h-6 w-6" />}
+          {mode === "light" ? <Sun className="h-6 w-6" /> : <Moon className="h-6 w-6" />}
           <span className="sr-only">切换明暗模式</span>
         </motion.button>
       )}

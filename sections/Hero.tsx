@@ -1,13 +1,16 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import styles from '@/styles';
 import { slideIn, staggerContainer, textVariant } from '@/utils/motion';
 
 import Image from 'next/image';
 
-const Hero = (): JSX.Element => (
-  <section className={`${styles.yPaddings} sm:pl-16 pl-6`}>
+const Hero = (): JSX.Element => {
+  const shouldReduceMotion = useReducedMotion();
+
+  return (
+    <section className={`${styles.yPaddings} sm:pl-16 pl-6`}>
     <motion.div
       variants={staggerContainer()}
       initial="hidden"
@@ -42,8 +45,8 @@ const Hero = (): JSX.Element => (
         <a href="#explore">
           <div className="w-full flex justify-end sm:-mt-[70px] -mt-[50px] pr-[40px] relative z-10 2xl:-ml-[100px]">
             <motion.div
-              animate={{ rotate: 360 }}
-              transition={{ repeat: Infinity, duration: 7, repeatType: 'loop' }}
+              whileHover={shouldReduceMotion ? undefined : { rotate: 360 }}
+              transition={{ duration: 0.9, ease: 'easeInOut' }}
               className="sm:w-[155px] w-[100px] sm:h-[155px] h-[100px] relative"
             >
               <Image
@@ -58,6 +61,7 @@ const Hero = (): JSX.Element => (
       </motion.div>
     </motion.div>
   </section>
-);
+  );
+};
 
 export default Hero;

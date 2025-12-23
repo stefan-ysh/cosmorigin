@@ -198,6 +198,22 @@
     .theme-transitioning--dark::view-transition-old(root) {
       animation-name: theme-clip-out;
     }
+
+    .theme-fading::view-transition-new(root),
+    .theme-fading::view-transition-old(root) {
+      animation-duration: var(--theme-transition-duration, 0.35s);
+      animation-timing-function: var(--transition-timing,
+          cubic-bezier(0.4, 0, 0.2, 1));
+      animation-fill-mode: both;
+    }
+
+    .theme-fading::view-transition-new(root) {
+      animation-name: theme-fade-in;
+    }
+
+    .theme-fading::view-transition-old(root) {
+      animation-name: theme-fade-out;
+    }
   }
 }
 
@@ -283,7 +299,7 @@
 
 @layer components {
   .about-floating-card {
-    animation: aboutGentleSway 8s ease-in-out infinite;
+    /* base styles live here; animation is gated below */
   }
 
   .about-snowflake {
@@ -293,7 +309,18 @@
     height: 6px;
     border-radius: 9999px;
     background: rgba(255, 255, 255, 0.7);
-    animation: aboutSnowFall 12s linear infinite;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @layer components {
+    .about-floating-card {
+      animation: aboutGentleSway 8s ease-in-out infinite;
+    }
+
+    .about-snowflake {
+      animation: aboutSnowFall 12s linear infinite;
+    }
   }
 }
 
