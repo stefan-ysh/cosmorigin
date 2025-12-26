@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 
-import { Footer, TechShowcase, EnhancedWorld, StructuredData } from '@/components/index';
+import { TechShowcase, EnhancedWorld, StructuredData } from '@/components/index';
 import { About, Explore, Feedback, GetStarted, Hero, Insights, WhatsNew, World } from '@/sections';
 import { absoluteUrl, buildOpenGraph, buildTwitter, defaultRobots } from '@/lib/seo';
 

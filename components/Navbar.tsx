@@ -137,14 +137,14 @@ const Navbar = () => {
             {theme === "dark" ? (
               <Image
                 src="/dark-logo.png"
-                alt="COSMORIGIN Logo"
+                alt="扬州宇元新材有限公司 cosmorigin Logo"
                 width={150}
                 height={100}
               />
             ) : (
               <Image
                 src="/light-logo.png"
-                alt="COSMORIGIN Logo"
+                alt="扬州宇元新材有限公司 cosmorigin Logo"
                 width={150}
                 height={100}
               />
