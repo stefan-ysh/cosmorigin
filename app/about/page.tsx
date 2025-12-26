@@ -14,7 +14,7 @@ import {
 const pagePath = "/about";
 const pageTitle = "关于宇元新材 | 公司概览与技术底座";
 const pageDescription =
-  "了解宇元新材的使命、团队与研发体系。我们专注柔性发光材料的原创技术，持续投入中试产线与联合实验室建设。";
+  "了解宇元新材的使命、团队与研发体系。专注柔性发光材料的原创技术，持续投入中试产线与联合实验室建设。";
 const canonicalUrl = absoluteUrl(pagePath);
 
 export const metadata: Metadata = {

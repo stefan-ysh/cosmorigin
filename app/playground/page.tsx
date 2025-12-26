@@ -10,9 +10,9 @@ import {
 } from "@/lib/seo";
 
 const pagePath = "/playground";
-const pageTitle = "效果查看 Playground | 开灯/关灯实时模拟";
+const pageTitle = "宇元新材发光材料效果展示";
 const pageDescription =
-  "在 Playground 中预览宇元新材发光材料的开灯/关灯表现，辅助快速评估灯效。";
+  "预览宇元新材发光材料的直观表现，辅助快速评估灯效。";
 const canonicalUrl = absoluteUrl(pagePath);
 
 export const metadata: Metadata = {

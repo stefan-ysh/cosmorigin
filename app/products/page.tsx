@@ -8,7 +8,7 @@ import PagePlaceholder from '@/components/PagePlaceholder';
 import { absoluteUrl, buildOpenGraph, buildTwitter, defaultRobots } from '@/lib/seo';
 
 const pagePath = '/products';
-const pageTitle = '产品 | 发光油漆、纤维丝、薄膜与 3D 打印辅材';
+const pageTitle = '宇元新材产品 | 发光油漆、纤维丝、薄膜与 3D 打印辅材等';
 const pageDescription =
   '浏览宇元新材的核心产品：发光油漆、发光纤维丝、发光膜以及 3D 打印辅材，支持定制光谱与多场景应用。';
 const canonicalUrl = absoluteUrl(pagePath);

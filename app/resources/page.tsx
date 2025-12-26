@@ -7,7 +7,7 @@ import PagePlaceholder from '@/components/PagePlaceholder';
 import { absoluteUrl, buildOpenGraph, buildTwitter, defaultRobots } from '@/lib/seo';
 
 const pagePath = '/resources';
-const pageTitle = '资料中心 | 白皮书与检测报告';
+const pageTitle = '宇元新材资料中心 | 白皮书与检测报告';
 const pageDescription =
   '集中发布产品手册、性能测试、认证证书、品牌素材与协议文档，方便合作伙伴快速下载并评估发光材料能力。';
 const canonicalUrl = absoluteUrl(pagePath);
