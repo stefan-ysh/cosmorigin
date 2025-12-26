@@ -5,6 +5,13 @@ import { createPortal } from "react-dom";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import Image from "next/image";
+import {
+  Theme,
+  applyTheme,
+  resolveInitialTheme,
+  subscribeToThemeChanges,
+} from "@/lib/theme";
 
 import ThemeToggle from "@/components/ThemeToggle";
 import styles from "@/styles";
@@ -21,9 +28,19 @@ const navLinks = [
 const Navbar = () => {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
+  const [theme, setThemeState] = useState<Theme>("light");
 
   useEffect(() => {
     setIsMounted(true);
+    const initialTheme = resolveInitialTheme();
+    applyTheme(initialTheme);
+    setThemeState(initialTheme);
+
+    const unsubscribe = subscribeToThemeChanges((nextTheme) => {
+      setThemeState(nextTheme);
+    });
+
+    return unsubscribe;
   }, []);
 
   useEffect(() => {
@@ -114,9 +131,24 @@ const Navbar = () => {
         >
           <Link
             href="/"
-            className="font-extrabold text-[24px] leading-[30px] text-foreground"
+            className="font-extrabold text-[24px] leading-[30px] text-foreground opacity-80 hover:opacity-100 transition-all duration-700"
           >
-            COSMORIGIN
+            {/* 注释：根据主题色切换图标  */}
+            {theme === "dark" ? (
+              <Image
+                src="/dark-logo.png"
+                alt="COSMORIGIN Logo"
+                width={150}
+                height={100}
+              />
+            ) : (
+              <Image
+                src="/light-logo.png"
+                alt="COSMORIGIN Logo"
+                width={150}
+                height={100}
+              />
+            )}
           </Link>
 
           <div className="hidden flex-1 items-center justify-center gap-5 lg:flex">
