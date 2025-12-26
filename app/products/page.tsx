@@ -233,7 +233,7 @@ const ProductsPage = (): JSX.Element => (
 
             <div className="mt-6 grid gap-6 lg:grid-cols-[320px,minmax(0,1fr)]">
               <div className="overflow-hidden rounded-3xl border border-white/5 bg-primary-black/30 flex items-center justify-center p-4">
-                <div className="relative aspect-square w-full rounded-xl bg-[#0a0d1b] dark:bg-transparent transition-all duration-1000">
+                <div className="relative aspect-square w-full overflow-hidden rounded-xl bg-[#0a0d1b] dark:bg-transparent transition-all duration-1000">
                   <Image
                     src={product.image}
                     alt={product.imageAlt}
