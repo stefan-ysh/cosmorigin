@@ -77,7 +77,22 @@ const Navbar = () => {
                 onClick={() => setIsMobileOpen(false)}
                 className="text-lg font-bold tracking-[0.3em]"
               >
-                COSMORIGIN
+                {/* 注释：根据主题色切换图标  */}
+                {theme === "dark" ? (
+                  <Image
+                    src="/dark-logo.png"
+                    alt="扬州宇元新材有限公司 cosmorigin Logo"
+                    width={150}
+                    height={100}
+                  />
+                ) : (
+                  <Image
+                    src="/light-logo.png"
+                    alt="扬州宇元新材有限公司 cosmorigin Logo"
+                    width={150}
+                    height={100}
+                  />
+                )}
               </Link>
               <button
                 type="button"
