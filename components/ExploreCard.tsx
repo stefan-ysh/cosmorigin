@@ -1,7 +1,7 @@
 'use client';
 
+import Image from 'next/image';
 import { motion } from 'framer-motion';
-import styles from '@/styles';
 import { fadeIn } from '@/utils/motion';
 
 interface ExploreCardProps {
@@ -13,8 +13,6 @@ interface ExploreCardProps {
   active: string;
   handleClick: (id: string) => void;
 }
-
-import Image from 'next/image';
 
 const ExploreCard = ({ id, imgUrl, title, alt, index, active, handleClick }: ExploreCardProps) => (
   <motion.div

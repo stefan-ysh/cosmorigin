@@ -4,7 +4,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import JsonLd from '@/components/JsonLd';
-import PagePlaceholder from '@/components/PagePlaceholder';
 import { socialChannels } from '@/constants';
 import { absoluteUrl, buildOpenGraph, buildTwitter, defaultRobots } from '@/lib/seo';
 

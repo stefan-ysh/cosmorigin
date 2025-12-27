@@ -1,9 +1,11 @@
 'use client';
 
+import Image from 'next/image';
 import { motion } from 'framer-motion';
+
 import styles from '@/styles';
 import { TitleText, TypingText } from '@/components/CustomTexts';
-import { staggerContainer, fadeIn } from '@/utils/motion';
+import { fadeIn, staggerContainer } from '@/utils/motion';
 
 const applications = [
   {
@@ -32,9 +34,7 @@ const applications = [
   },
 ];
 
-import Image from 'next/image';
-
-const EnhancedWorld = () => (
+const Applications = () => (
   <section className={`${styles.paddings} relative`}>
     <motion.div
       variants={staggerContainer()}
@@ -57,34 +57,20 @@ const EnhancedWorld = () => (
         textStyles="text-center"
       />
 
-      {/* 应用场景网格 */}
       <div className="mt-[50px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {applications.map((app, index) => (
-          <motion.div
-            key={index}
-            variants={fadeIn('up', 'spring', index * 0.2, 1)}
-            className="group relative"
-          >
+          <motion.div key={app.title} variants={fadeIn('up', 'spring', index * 0.2, 1)} className="group relative">
             <div className="relative h-full p-8 bg-card border border-border rounded-3xl overflow-hidden transition-all duration-300 hover:border-emerald-500/50 hover:shadow-lg">
-              {/* 图标 */}
-              <div className="text-6xl mb-4 transform group-hover:scale-110 transition-transform duration-300">
-                {app.icon}
-              </div>
+              <div className="text-6xl mb-4 transform group-hover:scale-110 transition-transform duration-300">{app.icon}</div>
 
-              {/* 标题 */}
-              <h3 className="text-2xl font-bold text-primary mb-2">
-                {app.title}
-              </h3>
+              <h3 className="text-2xl font-bold text-primary mb-2">{app.title}</h3>
 
-              {/* 描述 */}
               <p className="text-muted-foreground">{app.description}</p>
 
-              {/* 装饰性渐变 */}
               <div
                 className={`absolute -top-20 -right-20 w-40 h-40 bg-gradient-to-br ${app.color} rounded-full blur-3xl opacity-0 group-hover:opacity-20 transition-opacity duration-500`}
               />
 
-              {/* 底部装饰线 */}
               <motion.div
                 className={`absolute bottom-0 left-0 h-1 bg-gradient-to-r ${app.color}`}
                 initial={{ width: 0 }}
@@ -97,7 +83,6 @@ const EnhancedWorld = () => (
         ))}
       </div>
 
-      {/* 全球地图背景 */}
       <motion.div
         variants={fadeIn('up', 'tween', 0.8, 1)}
         className="relative mt-[100px] h-[500px] rounded-3xl overflow-hidden"
@@ -110,18 +95,10 @@ const EnhancedWorld = () => (
           sizes="(max-width: 1280px) 100vw, 1280px"
         />
 
-        {/* 覆盖层 */}
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
 
-        {/* 统计数据 */}
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            {/* <div>
-              <div className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">
-                50+
-              </div>
-              <div className="text-gray-400 mt-2">意向客户</div>
-            </div> */}
             <div>
               <div className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">
                 100+
@@ -139,10 +116,9 @@ const EnhancedWorld = () => (
       </motion.div>
     </motion.div>
 
-    {/* 背景装饰 */}
     <div className="absolute top-1/2 left-0 w-96 h-96 bg-emerald-500/10 rounded-full blur-[150px] -z-10" />
     <div className="absolute bottom-0 right-0 w-96 h-96 bg-cyan-500/10 rounded-full blur-[150px] -z-10" />
   </section>
 );
 
-export default EnhancedWorld;
+export default Applications;

@@ -3,7 +3,9 @@ import About from './About';
 import Explore from './Explore';
 import GetStarted from './GetStarted';
 import WhatsNew from './WhatsNew';
-import World from './World';
+import TechShowcase from './TechShowcase';
+import Applications from './Applications';
+import GlobalNetwork from './GlobalNetwork';
 import Insights from './Insights';
 import Feedback from './Feedback';
 
@@ -13,7 +15,9 @@ export {
   Explore,
   GetStarted,
   WhatsNew,
-  World,
+  TechShowcase,
+  Applications,
+  GlobalNetwork,
   Insights,
   Feedback,
 };

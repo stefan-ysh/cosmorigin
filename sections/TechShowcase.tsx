@@ -8,9 +8,10 @@ import {
   ShieldCheckIcon,
   SparklesIcon,
 } from '@heroicons/react/24/outline';
+
 import styles from '@/styles';
 import { staggerContainer } from '@/utils/motion';
-import { TypingText } from './CustomTexts';
+import { TypingText } from '@/components/CustomTexts';
 
 interface TechFeature {
   icon: ReactNode;
@@ -46,9 +47,7 @@ const techFeatures: TechFeature[] = [
   },
 ];
 
-const colorMap: {
-  [key: string]: { from: string; to: string; shadow: string };
-} = {
+const colorMap: Record<string, { from: string; to: string; shadow: string }> = {
   emerald: {
     from: 'from-emerald-500',
     to: 'to-emerald-600',
@@ -88,17 +87,15 @@ const TechShowcase = () => {
             },
           },
     }),
-    [shouldReduceMotion]
+    [shouldReduceMotion],
   );
 
   return (
     <section className="relative w-full py-20 overflow-hidden sm:p-16 xs:p-8 px-6">
-      {/* 背景装饰 */}
       <div className="absolute inset-0 " />
       <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10" />
 
       <div className="relative z-10 max-w-7xl mx-auto">
-        {/* 标题区域 */}
         <motion.div
           variants={staggerContainer()}
           initial="hidden"
@@ -121,13 +118,12 @@ const TechShowcase = () => {
           </p>
         </motion.div>
 
-        {/* 技术特性网格 */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           {techFeatures.map((feature, index) => {
             const colors = colorMap[feature.color];
             return (
               <motion.div
-                key={index}
+                key={feature.title}
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -136,7 +132,6 @@ const TechShowcase = () => {
                 className="group relative"
               >
                 <div className="relative h-full p-6 bg-card border border-border rounded-2xl overflow-hidden transition-all duration-300 group-hover:border-emerald-500/50 group-hover:shadow-lg">
-                  {/* 图标 */}
                   <motion.div
                     className={`inline-flex items-center justify-center w-16 h-16 mb-4 bg-gradient-to-br ${colors.from} ${colors.to} rounded-xl ${colors.shadow} shadow-lg`}
                     whileHover={shouldReduceMotion ? undefined : { rotate: 360 }}
@@ -145,17 +140,10 @@ const TechShowcase = () => {
                     <div className="text-foreground">{feature.icon}</div>
                   </motion.div>
 
-                  {/* 标题 */}
-                  <h3 className="text-xl font-bold text-muted-foreground mb-3">
-                    {feature.title}
-                  </h3>
+                  <h3 className="text-xl font-bold text-muted-foreground mb-3">{feature.title}</h3>
 
-                  {/* 描述 */}
-                  <p className="text-gray-400 text-sm leading-relaxed">
-                    {feature.description}
-                  </p>
+                  <p className="text-gray-400 text-sm leading-relaxed">{feature.description}</p>
 
-                  {/* 悬停光效 */}
                   <motion.div
                     className={`absolute -top-20 -right-20 w-40 h-40 bg-gradient-to-br ${colors.from} ${colors.to} rounded-full blur-3xl opacity-0 group-hover:opacity-20 transition-opacity duration-500`}
                   />
@@ -165,7 +153,6 @@ const TechShowcase = () => {
           })}
         </div>
 
-        {/* 技术数据可视化 */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -173,13 +160,11 @@ const TechShowcase = () => {
           transition={{ duration: 0.8 }}
           className="relative p-8 bg-card border border-border rounded-3xl overflow-hidden shadow-lg"
         >
-          {/* 背景网格（静态，避免常驻 repaint） */}
           <div className="absolute inset-0 opacity-5">
             <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent_0%,rgba(0,255,136,0.3)_50%,transparent_100%)]" />
           </div>
 
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {/* 性能参数 */}
             <div className="text-center">
               <motion.div
                 className="text-5xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400"
@@ -264,27 +249,23 @@ const TechShowcase = () => {
               </motion.div>
             </div>
           </div>
+
+          <motion.div
+            variants={glowVariants}
+            initial="idle"
+            animate="active"
+            className="absolute -top-32 -left-32 w-64 h-64 bg-gradient-to-br from-emerald-500 to-cyan-500 rounded-full blur-3xl"
+          />
+          <motion.div
+            variants={glowVariants}
+            initial="idle"
+            animate="active"
+            className="absolute -bottom-32 -right-32 w-64 h-64 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full blur-3xl"
+          />
         </motion.div>
       </div>
-
-      {/* 装饰性发光球：仅在可视区运行；reduced-motion 下保持静态 */}
-      <motion.div
-        className="absolute top-20 right-20 w-64 h-64 bg-emerald-500/20 rounded-full blur-[100px]"
-        variants={glowVariants}
-        initial="idle"
-        whileInView="active"
-        viewport={{ amount: 0.2, once: false }}
-        transition={shouldReduceMotion ? undefined : { duration: 5 }}
-      />
-      <motion.div
-        className="absolute bottom-20 left-20 w-64 h-64 bg-cyan-500/20 rounded-full blur-[100px]"
-        variants={glowVariants}
-        initial="idle"
-        whileInView="active"
-        viewport={{ amount: 0.2, once: false }}
-        transition={shouldReduceMotion ? undefined : { duration: 7 }}
-      />
     </section>
   );
 };
+
 export default TechShowcase;

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
-import { TechShowcase, EnhancedWorld, StructuredData } from '@/components/index';
-import { About, Explore, Feedback, GetStarted, Hero, Insights, WhatsNew, World } from '@/sections';
+import { SiteStructuredData } from '@/components/index';
+import { About, Applications, Explore, Feedback, GetStarted, GlobalNetwork, Hero, Insights, TechShowcase, WhatsNew } from '@/sections';
 import { absoluteUrl, buildOpenGraph, buildTwitter, defaultRobots } from '@/lib/seo';
 
 const pagePath = '/';
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 
 const Page = () => (
   <section className="bg-primary-black overflow-hidden">
-    <StructuredData />
+    <SiteStructuredData />
     <Hero />
     <div className="relative">
       <About />
@@ -33,7 +33,7 @@ const Page = () => (
     <div className="relative">
       <TechShowcase />
       <div className="gradient-03 z-0" />
-      <EnhancedWorld />
+      <Applications />
     </div>
 
     <div className="relative">
@@ -41,7 +41,7 @@ const Page = () => (
       <div className="gradient-04 z-0" />
       <WhatsNew />
     </div>
-    <World />
+    <GlobalNetwork />
     <div className="relative">
       <Insights />
       <div className="gradient-04 z-0" />
