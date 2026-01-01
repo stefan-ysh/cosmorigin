@@ -99,7 +99,7 @@ const Footer = () => {
           </div>
         </div>
         <p className="w-full text-center font-normal text-[14px] opacity-50">
-          Copyright © 2025 Cosmorigin. All rights reserved.
+          Copyright © {new Date().getFullYear()} Cosmorigin. All rights reserved.
         </p>
       </div>
       <p className="w-full text-center font-normal text-[12px] opacity-50 flex items-center justify-center gap-2 mt-5">
@@ -108,8 +108,8 @@ const Footer = () => {
           src="/备案图标.png"
           width={16}
           height={16}
-          className="w-4 h-4"
-        />{" "}
+          className="w-4 h-4 mr-1"
+        />
         <a
           href="https://beian.mps.gov.cn/#/query/webSearch?code=32100302011598"
           rel="noreferrer"
