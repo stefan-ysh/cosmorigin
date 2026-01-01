@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 
 import { Analytics } from '@vercel/analytics/next';
+import Script from 'next/script';
 import { ReactNode } from 'react';
 
 import BackToTop from '@/components/BackToTop';
@@ -76,7 +77,15 @@ export const metadata: Metadata = {
 
 const RootLayout = ({ children }: RootLayoutProps): JSX.Element => (
   <html lang="zh-CN">
-    <script defer src="https://umami.tiantian.group/script.js" data-website-id="173ffae6-87f9-48f1-a7c9-082da809eecc"></script>
+    <head>
+      {process.env.NODE_ENV === 'production' && (
+        <Script
+          src="https://umami.tiantian.group/script.js"
+          data-website-id="173ffae6-87f9-48f1-a7c9-082da809eecc"
+          strategy="afterInteractive"
+        />
+      )}
+    </head>
     <body className="bg-background text-foreground antialiased">
       <Navbar />
       {children}
