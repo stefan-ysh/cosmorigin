@@ -25,10 +25,10 @@ export const metadata: Metadata = {
 
 const downloads = [
   {
-    title: '宇元新材产品手册（2025）',
+    title: '宇元新材产品手册（2026）',
     description: '涵盖油漆、纤维丝、发光膜与 3D 打印辅材的核心参数与应用指南。',
     type: 'PDF · 7.3 MB',
-    href: '/扬州宇元新材产品手册202512_01.pdf',
+    href: '/扬州宇元新材产品手册.pdf',
   },
   {
     title: '水下稳定性与盐雾测试摘要',
