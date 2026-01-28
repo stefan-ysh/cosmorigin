@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 const Page = () => (
   <section className="bg-primary-black overflow-hidden">
     <SiteStructuredData />
-    <Hero />
+    {/* <Hero /> */}
     <div className="relative">
       <About />
       <div className="gradient-03 z-0" />
