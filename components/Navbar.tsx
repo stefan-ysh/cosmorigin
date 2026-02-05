@@ -83,8 +83,9 @@ const Navbar = () => {
           <Link
             href="/contact"
             onClick={() => setIsMobileOpen(false)}
-            className="inline-flex items-center justify-center rounded-md border border-white/30 px-5 py-3 text-sm font-semibold text-white"
+            className="site-contact-button inline-flex items-center justify-center rounded-md border border-white/30 px-5 py-3 text-sm font-semibold text-white"
           >
+            <span className="contact-button-icon" aria-hidden="true">☎</span>
             联系我们
           </Link>
         </div>
@@ -94,8 +95,8 @@ const Navbar = () => {
 
   return (
     <>
-      <header className="site-header sticky top-0 z-[80]">
-        <nav className={`${styles.xPaddings} site-nav py-6 border-b border-border/60`}>
+      <header className="site-header  top-0 z-[80]">
+        <nav className={`${styles.xPaddings} site-nav py-3`}>
           <div
             className={`${styles.innerWidth} mx-auto flex items-center justify-between gap-8`}
           >
@@ -129,8 +130,9 @@ const Navbar = () => {
             <div className="flex items-center gap-4">
               <Link
                 href="/contact"
-                className="hidden rounded-md border border-border bg-white px-5 py-2 text-sm font-semibold text-foreground md:inline-flex"
+                className="site-contact-button hidden rounded-md border border-border bg-white px-5 py-2 text-sm font-semibold text-foreground md:inline-flex"
               >
+                <span className="contact-button-icon" aria-hidden="true">☎</span>
                 联系我们
               </Link>
               <button

@@ -27,7 +27,7 @@ export const metadata: Metadata = {
 };
 
 const Page = () => (
-  <main className="bg-[hsl(var(--surface-strong))] text-foreground">
+  <main className="site-main bg-[hsl(var(--surface-strong))] text-foreground">
     <SiteStructuredData />
 
     <HomeBannerCarousel
@@ -77,6 +77,7 @@ const Page = () => (
           <h1>携手点亮可持续未来</h1>
           <h3>欢迎预约材料样品、技术研讨或联合研发</h3>
           <a href="/contact" className="home-contact-button">
+            <span className="contact-button-icon" aria-hidden="true">☎</span>
             联系我们
           </a>
         </div>

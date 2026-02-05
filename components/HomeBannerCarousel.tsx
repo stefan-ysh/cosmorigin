@@ -39,7 +39,7 @@ const HomeBannerCarousel = ({
         </div>
       ))}
       <div className="home-banner-overlay">
-        <div className={`${styles.innerWidth} mx-auto text-center`}>
+        <div className={`${styles.innerWidth} home-banner-text mx-auto text-center`}>
           <h1>{title}</h1>
           <p>{description}</p>
         </div>

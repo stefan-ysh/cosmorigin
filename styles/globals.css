@@ -559,7 +559,14 @@ body {
   }
 
   .site-header {
-    background: #f4f4f4;
+    background: #000000b3;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 80;
   }
 
   .site-topbar {
@@ -579,12 +586,21 @@ body {
   }
 
   .site-nav {
-    background: #f4f4f4;
+    background: transparent;
+    border-color: rgba(255, 255, 255, 0.25);
+  }
+
+  .site-main {
+    padding-top: 84px;
+  }
+
+  .home-banner {
+    margin-top: -84px;
   }
 
   .site-nav-link {
     position: relative;
-    color: #000;
+    color: #f5f7fb;
     font-weight: 700;
   }
 
@@ -601,7 +617,7 @@ body {
   }
 
   .site-nav-link:hover {
-    color: #1e73be;
+    color: #7fb3ff;
   }
 
   .site-nav-link:hover::after {
@@ -611,7 +627,19 @@ body {
   }
 
   .site-nav-link-active {
-    color: #1e73be;
+    color: #7fb3ff;
+  }
+
+  .site-header .text-foreground {
+    color: #f5f7fb;
+  }
+
+  .site-header .border-border {
+    border-color: rgba(255, 255, 255, 0.35);
+  }
+
+  .site-header .bg-white {
+    background: rgba(255, 255, 255, 0.12);
   }
 
   .site-nav-link-active::after {
@@ -636,7 +664,7 @@ body {
   }
 
   .home-banner {
-    height: 850px;
+    height: 1200px;
     position: relative;
     overflow: hidden;
   }
@@ -664,6 +692,35 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
+  }
+
+  .home-banner-text h1 {
+    animation: banner-fade-up 0.9s ease forwards;
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  .home-banner-text p {
+    animation: banner-fade-up 0.9s ease forwards;
+    animation-delay: 0.18s;
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  @keyframes banner-fade-up {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .home-banner-text h1,
+    .home-banner-text p {
+      animation: none;
+      opacity: 1;
+      transform: none;
+    }
   }
 
   .home-banner-overlay h1 {
@@ -739,7 +796,10 @@ body {
   }
 
   .home-contact-button {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
     margin-top: 24px;
     padding: 10px 32px;
     border: 2px solid #fff;
@@ -751,6 +811,17 @@ body {
   .home-contact-button:hover {
     background: #fff;
     color: #333;
+  }
+  .site-contact-button {
+    gap: 8px;
+  }
+
+  .contact-button-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    line-height: 1;
   }
 
   .home-customer-grid {

@@ -12,14 +12,14 @@ const Footer = () => {
       <div className={`${styles.innerWidth} mx-auto`}>
         <div className="grid gap-8 md:grid-cols-[1.2fr,0.8fr] items-start">
           <div className="flex flex-col gap-3 items-start">
-            <div className="w-[160px]">
+            {/* <div className="w-[160px]">
               <Image
                 src="/light-logo.png"
                 alt="扬州宇元新材有限公司 cosmorigin Logo"
                 width={160}
                 height={80}
               />
-            </div>
+            </div> */}
             <h4 className="font-bold text-[20px] text-white">扬州宇元新材有限公司</h4>
             <p className="text-[14px] text-[#d3d3d3]">地址：江苏省扬州市邢江区开发西路213号609室</p>
             <p className="text-[14px] text-[#d3d3d3]">Tel：+86 185 7841 2005</p>
