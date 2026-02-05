@@ -71,7 +71,6 @@ const contactSchema = {
 const ContactPage = (): JSX.Element => (
   <main className="site-main bg-[hsl(var(--surface-strong))] text-foreground">
     <JsonLd data={contactSchema} />
-    <div className="page-banner page-banner--contact" />
 
     <section className="px-6 py-16">
       <div className="mx-auto max-w-6xl">
