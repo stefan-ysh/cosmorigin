@@ -9,6 +9,7 @@ import GlobalNetwork from './GlobalNetwork';
 import Insights from './Insights';
 import Feedback from './Feedback';
 import ProductGallery from './ProductGallery';
+import LogoClouds from './LogoClouds';
 
 export {
   Hero,
@@ -22,4 +23,5 @@ export {
   Insights,
   Feedback,
   ProductGallery,
+  LogoClouds,
 };

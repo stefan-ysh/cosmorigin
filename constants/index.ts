@@ -31,6 +31,11 @@ export interface SocialChannel {
   qrAlt?: string;
 }
 
+export interface PartnerLogo {
+  name: string;
+  logo?: string;
+}
+
 export const exploreWorlds: ExploreWorld[] = [
   {
     id: 'world-1',
@@ -166,4 +171,12 @@ export const socialChannels: SocialChannel[] = [
     description: '宇元新材国际站，服务全球客户。',
     href: 'https://shop.cosmorigin.com',
   },
+];
+
+export const partnerLogos: PartnerLogo[] = [
+  { name: '中国农业科学院 A', logo: '/partners/中国农业科学院.png' },
+  { name: '中山大学', logo: '/partners/sys.png' },
+  { name: '扬州大学', logo: '/partners/yzu.png' },
+  { name: '江苏大学', logo: '/partners/jsu.png' },
+  { name: '中国一汽', logo: '/partners/faw.png' },
 ];

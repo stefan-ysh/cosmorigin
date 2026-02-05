@@ -4,6 +4,7 @@ import Image from 'next/image';
 
 import HomeBannerCarousel from '@/components/HomeBannerCarousel';
 import { SiteStructuredData } from '@/components/index';
+import { LogoClouds } from '@/sections';
 import { insights, newFeatures } from '@/constants';
 import styles from '@/styles';
 import { absoluteUrl, buildOpenGraph, buildTwitter, defaultRobots } from '@/lib/seo';
@@ -67,6 +68,8 @@ const Page = () => (
         </div>
       </div>
     </section>
+
+    <LogoClouds />
 
     <section id="contactUs" className="home-contact">
       <div className={`${styles.innerWidth} mx-auto text-center`}>
