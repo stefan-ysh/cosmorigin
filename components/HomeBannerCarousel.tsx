@@ -16,7 +16,7 @@ const HomeBannerCarousel = ({
   title,
   description,
   images,
-  intervalMs = 5000,
+  intervalMs = 2000,
 }: HomeBannerCarouselProps) => {
   const [activeIndex, setActiveIndex] = useState(0);
 

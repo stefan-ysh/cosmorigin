@@ -37,6 +37,7 @@ const Page = () => (
         '/images/banner/2.png',
         '/images/banner/3.png',
         '/images/banner/4.png',
+        '/images/banner/未命名.jpeg',
       ]}
     />
 
@@ -44,7 +45,7 @@ const Page = () => (
       <div className={`${styles.innerWidth} mx-auto grid gap-8 lg:grid-cols-2 items-center`}>
         <div className="home-section-image">
           <Image
-            src="/宇元新材发光材料母粒.png"
+            src="/宇元新材发光材料制成的3D打印辅材.jpg"
             alt="柔性发光材料"
             width={620}
             height={520}
