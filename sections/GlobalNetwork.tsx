@@ -1,28 +1,19 @@
-'use client';
-
 import Image from 'next/image';
-import { motion } from 'framer-motion';
 
 import styles from '@/styles';
-import { TypingText } from '@/components/index';
-import { fadeIn, staggerContainer } from '@/utils/motion';
 
 const GlobalNetwork = () => (
   <section className={`${styles.paddings} relative z-10`}>
-    <motion.div
-      variants={staggerContainer()}
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: true, amount: 0.25 }}
-      className={`${styles.innerWidth} mx-auto flex flex-col`}
-    >
-      <TypingText title="| 全球交付网络" textStyles="text-center" />
-      <h2 className="text-4xl lg:text-6xl font-bold text-foreground mb-6 text-center mt-[8px]">
-        我们的发光材料解决方案
-        <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">{' '}服务全球创新伙伴</span>
-      </h2>
+    <div className={`${styles.innerWidth} mx-auto flex flex-col`}>
+      <div className="section-title text-center">
+        <h3>全球交付网络</h3>
+        <p>GLOBAL NETWORK</p>
+      </div>
+      <p className="text-center text-sm text-muted-foreground">
+        我们的发光材料解决方案服务全球创新伙伴
+      </p>
 
-      <motion.div variants={fadeIn('up', 'tween', 0.3, 1)} className="relative mt-[69px] flex w-full h-[550px]">
+      <div className="panel hover-card relative mt-[69px] flex w-full h-[550px] overflow-hidden">
         <Image src="/map.png" alt="map" fill className="object-cover" sizes="(max-width: 1280px) 100vw, 1280px" />
 
         <div className="absolute top-[32%] left-[62%] w-[88px] p-[6px] rounded-full bg-[#5d6680] flex flex-col items-center">
@@ -38,8 +29,8 @@ const GlobalNetwork = () => (
           </div>
           <p className="mt-[2px] text-[10px] text-white">上海销售团队</p>
         </div>
-      </motion.div>
-    </motion.div>
+      </div>
+    </div>
   </section>
 );
 

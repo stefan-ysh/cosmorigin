@@ -185,37 +185,31 @@ const productCollectionSchema = {
 };
 
 const ProductsPage = (): JSX.Element => (
-  <main className="bg-background text-foreground">
+  <main className="bg-[hsl(var(--surface-strong))] text-foreground">
     <JsonLd data={productCollectionSchema} />
-    <section className="px-6 py-20">
+    <div className="page-banner page-banner--products" />
+
+    <section className="px-6 py-16">
       <div className="mx-auto max-w-6xl">
-        <p className="text-sm uppercase tracking-[0.3em] text-muted-foreground">PRODUCTS</p>
-        <h1 className="mt-4 text-4xl font-semibold leading-tight sm:text-5xl">
-          模块化产品，适配从探索到量产的全周期
-        </h1>
-        <p className="mt-6 text-lg text-muted-foreground">
+        <p className="text-center text-sm text-muted-foreground">
           每一款材料都可按光谱、亮度、封装方式定制。通过标准化验证包与快速打样体系，确保 6-8 周内完成项目首批交付。
         </p>
       </div>
     </section>
 
     <section className="px-6 pb-20">
-      <div className="mx-auto max-w-6xl space-y-6">
-        <div className="flex flex-col gap-3">
-          <p className="text-xs uppercase tracking-[0.4em] text-muted-foreground/50">全部产品</p>
-          <div className="h-[1px] w-full bg-card" />
-        </div>
+      <div className="mx-auto max-w-6xl space-y-8">
         {productDetails.map((product) => (
-          <article key={product.name} className="rounded-3xl border border-border bg-card/50 p-8">
+          <article key={product.name} className="panel hover-card p-8">
             <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
               <div>
-                <p className="text-sm uppercase tracking-[0.3em] text-muted-foreground">{product.status}</p>
-                <h2 className="text-3xl font-semibold">{product.name}</h2>
+                <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">{product.status}</p>
+                <h2 className="text-2xl font-semibold">{product.name}</h2>
               </div>
               <div className="flex flex-wrap gap-3">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center rounded-full border border-border px-5 py-2 text-sm font-semibold text-foreground transition hover:border-foreground"
+                  className="inline-flex items-center justify-center rounded-md border border-border bg-white px-5 py-2 text-sm font-semibold text-foreground"
                 >
                   联系顾问
                 </Link>
@@ -223,22 +217,22 @@ const ProductsPage = (): JSX.Element => (
                   href="https://m.tb.cn/h.7Xxt7HwwRy9u8k8"
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center justify-center rounded-full bg-primary px-5 py-2 text-sm font-semibold text-primary-foreground transition hover:bg-primary/90"
+                  className="inline-flex items-center justify-center rounded-md bg-primary px-5 py-2 text-sm font-semibold text-primary-foreground"
                 >
                   询价
                 </a>
               </div>
             </div>
 
-            <div className="mt-6 grid gap-6 lg:grid-cols-[320px,minmax(0,1fr)]">
-              <div className="overflow-hidden rounded-3xl border border-white/5 bg-primary-black/30 flex items-center justify-center p-4">
-                <div className="relative aspect-square w-full overflow-hidden rounded-xl bg-[#0a0d1b] dark:bg-transparent transition-all duration-1000">
+            <div className="mt-6 grid gap-6 lg:grid-cols-[300px,minmax(0,1fr)]">
+              <div className="panel-soft flex items-center justify-center p-4">
+                <div className="relative aspect-square w-full overflow-hidden rounded-md bg-white">
                   <Image
                     src={product.image}
                     alt={product.imageAlt}
                     fill
-                    className="object-scale-down"
-                    sizes="(min-width: 1024px) 320px, 100vw"
+                    className="object-contain"
+                    sizes="(min-width: 1024px) 300px, 100vw"
                     priority={product.name === '发光油漆系列'}
                   />
                 </div>
@@ -247,12 +241,12 @@ const ProductsPage = (): JSX.Element => (
               <div className="space-y-6">
                 <div className="grid gap-4 md:grid-cols-2">
                   <div>
-                    <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground/50">核心参数</p>
-                    <p className="mt-2 text-foreground/80">{product.overview}</p>
+                    <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground/70">核心参数</p>
+                    <p className="mt-2 text-sm text-muted-foreground">{product.overview}</p>
                   </div>
                   <div>
-                    <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground/50">典型应用</p>
-                    <p className="mt-2 text-foreground/80">{product.applications}</p>
+                    <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground/70">典型应用</p>
+                    <p className="mt-2 text-sm text-muted-foreground">{product.applications}</p>
                   </div>
                 </div>
 
@@ -273,15 +267,15 @@ const ProductsPage = (): JSX.Element => (
                     label: '关键参数',
                     value: product.keyParameters,
                   }].map((item) => (
-                    <div key={`${product.name}-${item.label}`} className="rounded-2xl border border-border bg-card/50 p-4">
-                      <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground/50">{item.label}</p>
-                      <p className="mt-2 text-sm text-foreground/80">{item.value}</p>
+                    <div key={`${product.name}-${item.label}`} className="panel-soft p-4">
+                      <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground/70">{item.label}</p>
+                      <p className="mt-2 text-sm text-muted-foreground">{item.value}</p>
                     </div>
                   ))}
                 </div>
 
-                <div className="overflow-x-auto rounded-2xl border border-border bg-primary-black/30">
-                  <table className="min-w-full text-left text-sm text-foreground/80">
+                <div className="overflow-x-auto rounded-md border border-border bg-white">
+                  <table className="min-w-full text-left text-sm text-muted-foreground">
                     <thead>
                       <tr className="text-foreground">
                         <th className="px-5 py-3">规格/型号</th>

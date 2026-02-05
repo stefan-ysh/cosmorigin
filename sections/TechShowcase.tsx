@@ -1,7 +1,4 @@
-'use client';
-
-import { motion, useReducedMotion } from 'framer-motion';
-import { ReactNode, useMemo } from 'react';
+import { ReactNode } from 'react';
 import {
   BeakerIcon,
   BoltIcon,
@@ -10,14 +7,11 @@ import {
 } from '@heroicons/react/24/outline';
 
 import styles from '@/styles';
-import { staggerContainer } from '@/utils/motion';
-import { TypingText } from '@/components/CustomTexts';
 
 interface TechFeature {
   icon: ReactNode;
   title: string;
   description: string;
-  color: string;
 }
 
 const techFeatures: TechFeature[] = [
@@ -25,244 +19,75 @@ const techFeatures: TechFeature[] = [
     icon: <SparklesIcon className="w-8 h-8" />,
     title: '稀土激活体系',
     description: '采用高纯度稀土元素激活，发光效率提升150%',
-    color: 'emerald',
   },
   {
     icon: <BoltIcon className="w-8 h-8" />,
     title: '长效余辉',
     description: '余辉持续8小时以上，在黑暗中持续发光',
-    color: 'cyan',
   },
   {
     icon: <BeakerIcon className="w-8 h-8" />,
     title: '纳米晶粒技术',
     description: '精密控制晶粒尺寸，确保发光均匀性',
-    color: 'blue',
   },
   {
     icon: <ShieldCheckIcon className="w-8 h-8" />,
     title: '环保认证',
     description: '符合RoHS标准，无有害重金属',
-    color: 'purple',
   },
 ];
 
-const colorMap: Record<string, { from: string; to: string; shadow: string }> = {
-  emerald: {
-    from: 'from-emerald-500',
-    to: 'to-emerald-600',
-    shadow: 'shadow-emerald-500/50',
-  },
-  cyan: {
-    from: 'from-cyan-500',
-    to: 'to-cyan-600',
-    shadow: 'shadow-cyan-500/50',
-  },
-  blue: {
-    from: 'from-blue-500',
-    to: 'to-blue-600',
-    shadow: 'shadow-blue-500/50',
-  },
-  purple: {
-    from: 'from-purple-500',
-    to: 'to-purple-600',
-    shadow: 'shadow-purple-500/50',
-  },
-};
-
 const TechShowcase = () => {
-  const shouldReduceMotion = useReducedMotion();
-
-  const glowVariants = useMemo(
-    () => ({
-      idle: { scale: 1, opacity: 0.25 },
-      active: shouldReduceMotion
-        ? { scale: 1, opacity: 0.25 }
-        : {
-            scale: [1, 1.2, 1],
-            opacity: [0.3, 0.5, 0.3],
-            transition: {
-              ease: 'easeInOut',
-              repeat: Infinity,
-            },
-          },
-    }),
-    [shouldReduceMotion],
-  );
-
   return (
     <section className="relative w-full py-20 overflow-hidden sm:p-16 xs:p-8 px-6">
-      <div className="absolute inset-0 " />
-      <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10" />
-
       <div className="relative z-10 max-w-7xl mx-auto">
-        <motion.div
-          variants={staggerContainer()}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.25 }}
-          className={`${styles.innerWidth} mx-auto flex flex-col`}
-        >
-          <TypingText title="| 核心技术" textStyles="text-center" />
-
-          <h2 className="text-4xl lg:text-6xl font-bold text-foreground mb-6 text-center mt-[8px]">
-            领先的
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">
-              {' '}
-              发光技术
-            </span>
-          </h2>
-
-          <p className="text-lg text-gray-400 max-w-2xl mx-auto mb-10">
+        <div className={`${styles.innerWidth} mx-auto flex flex-col`}>
+          <div className="section-title text-center">
+            <h3>核心技术</h3>
+            <p>CORE TECHNOLOGY</p>
+          </div>
+          <p className="text-center text-sm text-muted-foreground mb-10">
             通过稀土激活和纳米晶粒调控技术，实现高效、持久、环保的发光性能
           </p>
-        </motion.div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-          {techFeatures.map((feature, index) => {
-            const colors = colorMap[feature.color];
-            return (
-              <motion.div
-                key={feature.title}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                whileHover={{ y: -10 }}
-                className="group relative"
-              >
-                <div className="relative h-full p-6 bg-card border border-border rounded-2xl overflow-hidden transition-all duration-300 group-hover:border-emerald-500/50 group-hover:shadow-lg">
-                  <motion.div
-                    className={`inline-flex items-center justify-center w-16 h-16 mb-4 bg-gradient-to-br ${colors.from} ${colors.to} rounded-xl ${colors.shadow} shadow-lg`}
-                    whileHover={shouldReduceMotion ? undefined : { rotate: 360 }}
-                    transition={{ duration: 0.6 }}
-                  >
-                    <div className="text-foreground">{feature.icon}</div>
-                  </motion.div>
-
-                  <h3 className="text-xl font-bold text-muted-foreground mb-3">{feature.title}</h3>
-
-                  <p className="text-gray-400 text-sm leading-relaxed">{feature.description}</p>
-
-                  <motion.div
-                    className={`absolute -top-20 -right-20 w-40 h-40 bg-gradient-to-br ${colors.from} ${colors.to} rounded-full blur-3xl opacity-0 group-hover:opacity-20 transition-opacity duration-500`}
-                  />
-                </div>
-              </motion.div>
-            );
-          })}
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="relative p-8 bg-card border border-border rounded-3xl overflow-hidden shadow-lg"
-        >
-          <div className="absolute inset-0 opacity-5">
-            <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent_0%,rgba(0,255,136,0.3)_50%,transparent_100%)]" />
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+          {techFeatures.map((feature) => (
+            <div key={feature.title} className="relative">
+              <div className="panel hover-card relative h-full p-6 overflow-hidden">
+                <div className="inline-flex items-center justify-center w-16 h-16 mb-4 bg-muted rounded-xl">
+                  <div className="text-foreground">{feature.icon}</div>
+                </div>
 
+                <h3 className="text-xl font-bold text-foreground mb-3">{feature.title}</h3>
+
+                <p className="text-muted-foreground text-sm leading-relaxed">{feature.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="relative p-8 bg-card border border-border rounded-2xl overflow-hidden">
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-3 gap-8">
             <div className="text-center">
-              <motion.div
-                className="text-5xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400"
-                initial={{ opacity: 0, scale: 0 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.3, type: 'spring' }}
-              >
-                8小时+
-              </motion.div>
-              <div className="text-gray-400">余辉持续时间</div>
-              <motion.div
-                className="mt-4 h-2 bg-secondary rounded-full overflow-hidden"
-                initial={{ width: 0 }}
-                whileInView={{ width: '100%' }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.5, duration: 1 }}
-              >
-                <motion.div
-                  className="h-full bg-gradient-to-r from-emerald-500 to-cyan-500"
-                  initial={{ x: '-100%' }}
-                  whileInView={{ x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.7, duration: 1 }}
-                />
-              </motion.div>
+              <div className="text-5xl font-bold mb-2 text-foreground">8小时+</div>
+              <div className="text-muted-foreground">余辉持续时间</div>
+              <div className="mt-4 h-2 bg-muted rounded-full" />
             </div>
 
             <div className="text-center">
-              <motion.div
-                className="text-5xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400"
-                initial={{ opacity: 0, scale: 0 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.4, type: 'spring' }}
-              >
-                150%
-              </motion.div>
-              <div className="text-gray-400">发光效率提升</div>
-              <motion.div
-                className="mt-4 h-2 bg-secondary rounded-full overflow-hidden"
-                initial={{ width: 0 }}
-                whileInView={{ width: '100%' }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.6, duration: 1 }}
-              >
-                <motion.div
-                  className="h-full bg-gradient-to-r from-cyan-500 to-blue-500"
-                  initial={{ x: '-100%' }}
-                  whileInView={{ x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.8, duration: 1 }}
-                />
-              </motion.div>
+              <div className="text-5xl font-bold mb-2 text-foreground">150%</div>
+              <div className="text-muted-foreground">发光效率提升</div>
+              <div className="mt-4 h-2 bg-muted rounded-full" />
             </div>
 
             <div className="text-center">
-              <motion.div
-                className="text-5xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400"
-                initial={{ opacity: 0, scale: 0 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.5, type: 'spring' }}
-              >
-                100%
-              </motion.div>
-              <div className="text-gray-400">环保标准达标</div>
-              <motion.div
-                className="mt-4 h-2 bg-secondary rounded-full overflow-hidden"
-                initial={{ width: 0 }}
-                whileInView={{ width: '100%' }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.7, duration: 1 }}
-              >
-                <motion.div
-                  className="h-full bg-gradient-to-r from-blue-500 to-purple-500"
-                  initial={{ x: '-100%' }}
-                  whileInView={{ x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.9, duration: 1 }}
-                />
-              </motion.div>
+              <div className="text-5xl font-bold mb-2 text-foreground">100%</div>
+              <div className="text-muted-foreground">环保标准达标</div>
+              <div className="mt-4 h-2 bg-muted rounded-full" />
             </div>
           </div>
-
-          <motion.div
-            variants={glowVariants}
-            initial="idle"
-            animate="active"
-            className="absolute -top-32 -left-32 w-64 h-64 bg-gradient-to-br from-emerald-500 to-cyan-500 rounded-full blur-3xl"
-          />
-          <motion.div
-            variants={glowVariants}
-            initial="idle"
-            animate="active"
-            className="absolute -bottom-32 -right-32 w-64 h-64 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full blur-3xl"
-          />
-        </motion.div>
+        </div>
       </div>
     </section>
   );

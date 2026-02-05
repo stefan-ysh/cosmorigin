@@ -125,42 +125,64 @@ const aboutSchemas = [
 ];
 
 const AboutPage = (): JSX.Element => (
-  <main className="bg-background text-foreground">
+  <main className="bg-[hsl(var(--surface-strong))] text-foreground">
     <JsonLd data={aboutSchemas} />
-    <section className="px-6 py-20">
-      <div className="mx-auto flex max-w-6xl flex-col gap-10 lg:flex-row">
-        <div className="flex-1">
-          <p className="text-sm uppercase tracking-[0.3em] text-muted-foreground">
-            ABOUT
-          </p>
-          <h1 className="mt-4 text-4xl font-semibold leading-tight sm:text-5xl">
-            以原创材料技术点亮更高效的光环境
-          </h1>
-          <p className="mt-6 text-lg text-muted-foreground">
-            宇元新材，品牌名取意“Cosmos +
-            Origin”，象征“宇宙的源头”，寓意探索光之本源，开启无限可能。
-            <br />
-            <br />
-            宇元新材公司植根于历史文化名城扬州，专注于柔性发光材料的研发与规模化制造，致力于以低能耗、高自由度的新一代光源形态，赋能智慧交通、现代农业、公共安全、文化旅游等多个关键领域。
-            依托自建的材料实验室、智能化生产基地和行业联合创新中心，宇元新材已构建起从核心配方、器件结构、制程工艺到系统集成的一体化技术闭环，具备全链条自主研发与产业化落地能力。
-            <br />
-            <br />
-            我们坚持以创新为驱动，持续推动柔性发光技术的突破与应用拓展，为全球客户提供高效、低碳、可定制化的光电解决方案，让光更自由、更智能、更融合。
-          </p>
+    <div className="page-banner page-banner--about" />
+
+    <section className="px-6 py-16">
+      <div className="mx-auto max-w-6xl">
+        <div className="grid gap-8 lg:grid-cols-2 items-center">
+          <div className="panel hover-card p-6 flex items-center justify-center">
+            <Image
+              src="/宇元新材发光材料制成的圣诞树.png"
+              alt="宇元新材产线"
+              width={520}
+              height={520}
+              className="h-[320px] w-auto object-contain"
+            />
+          </div>
+          <div className="panel p-6">
+            <h3 className="text-xl font-semibold text-foreground">扬州宇元新材有限公司</h3>
+            <p className="mt-4 text-sm leading-7 text-muted-foreground">
+              宇元新材，品牌名取意“Cosmos + Origin”，象征“宇宙的源头”，寓意探索光之本源，开启无限可能。
+              我们植根于历史文化名城扬州，专注于柔性发光材料的研发与规模化制造，致力于以低能耗、高自由度的新一代光源形态，赋能智慧交通、现代农业、公共安全、文化旅游等多个关键领域。
+            </p>
+            <p className="mt-4 text-sm leading-7 text-muted-foreground">
+              依托自建的材料实验室、智能化生产基地和行业联合创新中心，我们构建起从核心配方、器件结构、制程工艺到系统集成的一体化技术闭环，具备全链条自主研发与产业化落地能力。
+            </p>
+          </div>
         </div>
-        <div className="flex w-full flex-1 items-center justify-center rounded-3xl border border-border bg-card/50 p-8">
-          <div className="grid w-full grid-cols-2 gap-6">
-            {[
-              { label: "研发投入策略", value: "持续高占比投入（数据更新中）" },
-              { label: "核心知识产权", value: "多项专利与软著（敬请期待）" },
-              { label: "生态合作", value: "面向汽车/文旅/公共安全多行业" },
-              { label: "交付版图", value: "服务国内外多个重点城市" },
-            ].map((item) => (
-              <div key={item.label}>
-                <p className="text-2xl font-semibold text-foreground/80">
-                  {item.value}
-                </p>
-                <p className="mt-1 text-sm text-muted-foreground">{item.label}</p>
+      </div>
+    </section>
+
+    <section className="px-6 pb-12">
+      <div className="mx-auto max-w-6xl grid gap-6 md:grid-cols-2">
+        {[
+          { label: "研发投入策略", value: "持续高占比投入（数据更新中）" },
+          { label: "核心知识产权", value: "多项专利与软著（敬请期待）" },
+          { label: "生态合作", value: "面向汽车/文旅/公共安全多行业" },
+          { label: "交付版图", value: "服务国内外多个重点城市" },
+        ].map((item) => (
+          <div key={item.label} className="panel hover-card p-6">
+            <p className="text-lg font-semibold text-foreground">{item.value}</p>
+            <p className="mt-2 text-sm text-muted-foreground">{item.label}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section className="px-6 pb-16">
+      <div className="mx-auto max-w-6xl">
+        <div className="section-title">
+          <h3>发展里程碑</h3>
+          <p>Milestones</p>
+        </div>
+        <div className="panel p-6">
+          <div className="grid gap-6 md:grid-cols-2">
+            {milestones.map((item) => (
+              <div key={item.year} className="panel-soft p-5">
+                <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground/70">{item.year}</p>
+                <p className="mt-3 text-sm text-muted-foreground">{item.content}</p>
               </div>
             ))}
           </div>
@@ -168,57 +190,35 @@ const AboutPage = (): JSX.Element => (
       </div>
     </section>
 
-    <section className="px-6 pb-20">
-      <div className="mx-auto max-w-6xl rounded-3xl border border-border bg-card/50 p-10">
-        <h2 className="text-2xl font-semibold">发展里程碑</h2>
-        <div className="mt-8 grid gap-8 md:grid-cols-2">
-          {milestones.map((item) => (
-            <div
-              key={item.year}
-              className="rounded-2xl border border-border p-6"
-            >
-              <p className="text-sm uppercase tracking-[0.2em] text-muted-foreground/50">
-                {item.year}
-              </p>
-              <p className="mt-3 text-lg text-foreground/80">{item.content}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    <section className="px-6 pb-20">
-      <div className="mx-auto max-w-6xl grid gap-10 lg:grid-cols-2">
-        <div className="rounded-3xl border border-border bg-card/50 p-8">
-          <h3 className="text-2xl font-semibold">团队与治理</h3>
-          <p className="mt-4 text-muted-foreground">
+    <section className="px-6 pb-16">
+      <div className="mx-auto max-w-6xl grid gap-8 lg:grid-cols-2">
+        <div className="panel p-6">
+          <h3 className="text-xl font-semibold">团队与治理</h3>
+          <p className="mt-4 text-sm text-muted-foreground">
             多学科团队覆盖材料、结构、电控与供应链管理，并由产业顾问委员会持续迭代技术路线与行业策略。
           </p>
-          <div className="mt-8 space-y-6">
+          <div className="mt-6 space-y-4">
             {leadership.map((item) => (
               <div key={item.title}>
-                <p className="text-lg font-semibold">{item.title}</p>
+                <p className="text-base font-semibold">{item.title}</p>
                 <p className="text-sm text-muted-foreground">{item.detail}</p>
               </div>
             ))}
           </div>
         </div>
-        <div className="rounded-3xl border border-border bg-card/50 p-8">
-          <h3 className="text-2xl font-semibold">产研基地</h3>
-          <p className="mt-4 text-muted-foreground">
+        <div className="panel p-6">
+          <h3 className="text-xl font-semibold">产研基地</h3>
+          <p className="mt-4 text-sm text-muted-foreground">
             扬州智能制造中心负责卷对卷涂布、纤维编织与模块封装，南京应用实验室聚焦材料验证与联合研发，海外服务中心负责小批量交付与培训。
           </p>
-          <div className="mt-8 grid gap-4">
+          <div className="mt-6 grid gap-4">
             {[
               "卷对卷连续产线（宽幅 1.2m）",
               "恒温恒湿配方实验室与可靠性实验室",
               "行业联合创新中心（交通、农业、公共安全）",
               "全链路质量追溯系统 + 数字化仓储",
             ].map((capability) => (
-              <div
-                key={capability}
-                className="rounded-2xl border border-dashed border-border/50 p-4 text-sm text-muted-foreground"
-              >
+              <div key={capability} className="panel-soft p-4 text-sm text-muted-foreground">
                 {capability}
               </div>
             ))}
@@ -227,32 +227,23 @@ const AboutPage = (): JSX.Element => (
       </div>
     </section>
 
-    <section className="px-6 pb-32">
+    <section className="px-6 pb-20">
       <div className="mx-auto max-w-6xl grid gap-8 lg:grid-cols-2">
-        <div className="rounded-3xl border border-border bg-card/50 p-8">
-          <h3 className="text-2xl font-semibold">社会责任与可持续</h3>
-          <ul className="mt-6 space-y-4 text-sm text-muted-foreground">
-            <li>
-              •
-              低能耗光源：与传统照明相比更高效，助力户外装置延长寿命（详细数据上线中）。
-            </li>
-            <li>
-              •
-              可循环材料体系：核心材料支持回收与环保认证，后续将发布完整检测报告。
-            </li>
-            <li>
-              •
-              安全共建：持续与公共交通、景区合作优化夜间引导，为城市安全提供参考案例。
-            </li>
+        <div className="panel p-6">
+          <h3 className="text-xl font-semibold">社会责任与可持续</h3>
+          <ul className="mt-6 space-y-3 text-sm text-muted-foreground">
+            <li>• 低能耗光源：与传统照明相比更高效，助力户外装置延长寿命（详细数据上线中）。</li>
+            <li>• 可循环材料体系：核心材料支持回收与环保认证，后续将发布完整检测报告。</li>
+            <li>• 安全共建：持续与公共交通、景区合作优化夜间引导，为城市安全提供参考案例。</li>
           </ul>
         </div>
-        <div className="overflow-hidden rounded-3xl border border-border bg-card/50 flex items-center justify-center">
+        <div className="panel hover-card flex items-center justify-center p-6">
           <Image
-            src="/宇元新材发光材料制成的圣诞树.png"
-            alt="宇元新材产线"
-            width={700}
-            height={700}
-            className="h-4/5 w-4/5 object-contain"
+            src="/宇元新材发光材料制成的3D打印辅材.jpg"
+            alt="宇元新材产品展示"
+            width={520}
+            height={520}
+            className="h-[320px] w-auto object-contain"
           />
         </div>
       </div>

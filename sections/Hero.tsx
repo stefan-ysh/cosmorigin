@@ -1,66 +1,48 @@
-'use client';
-
-import { motion, useReducedMotion } from 'framer-motion';
 import styles from '@/styles';
-import { slideIn, staggerContainer, textVariant } from '@/utils/motion';
 
 import Image from 'next/image';
 
 const Hero = (): JSX.Element => {
-  const shouldReduceMotion = useReducedMotion();
-
   return (
     <section className={`${styles.yPaddings} sm:pl-16 pl-6`}>
-    <motion.div
-      variants={staggerContainer()}
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: true, amount: 0.25 }}
-      className={`${styles.innerWidth2} mx-auto flex flex-col`}
-    >
-      <div className="relative z-10 flex flex-col items-center justify-center">
-        <motion.h1 variants={textVariant(1.1)} className={styles.heroHeading}>
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-slate-500 via-slate-700 to-blue-500 dark:from-white dark:via-cyan-200 dark:to-cyan-400 drop-shadow-[0_12px_45px_rgba(15,23,42,0.35)] dark:drop-shadow-[0_20px_60px_rgba(4,167,255,0.35)]">
-            宇元新材 点亮未来
-          </span>
-        </motion.h1>
-      </div>
-
-      <motion.div
-        variants={slideIn('right', 'tween', 0.2, 1)}
-        className="relative w-full lg:-mt-[30px] md:-mt-[18px] -mt-[15px]  2xl:pl-[280px]"
-      >
-        <div className="absolute w-full h-[300px] hero-gradient rounded-tl-[140px] z-[0] sm:-top-[20px] -top-[10px]" />
-        <div className="w-full sm:h-[500px] h-[350px] rounded-tl-[140px] z-10 relative overflow-hidden">
-          <Image
-            src="/cover.jpg"
-            alt="高性能发光材料"
-            fill
-            className="object-cover"
-            priority
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
-          />
-        </div>
-
-        <a href="#explore">
-          <div className="w-full flex justify-end sm:-mt-[70px] -mt-[50px] pr-[40px] relative z-10 2xl:-ml-[100px]">
-            <motion.div
-              whileHover={shouldReduceMotion ? undefined : { rotate: 360 }}
-              transition={{ duration: 0.9, ease: 'easeInOut' }}
-              className="sm:w-[155px] w-[100px] sm:h-[155px] h-[100px] relative"
-            >
-              <Image
-                src="/stamp.png"
-                alt="stamp"
-                fill
-                className="object-contain"
-              />
-            </motion.div>
+      <div className={`${styles.innerWidth2} mx-auto flex flex-col`}>
+        <div className="relative w-full">
+          <div className="w-full sm:h-[520px] h-[360px] rounded-[8px] z-10 relative overflow-hidden border border-border/60">
+            <Image
+              src="/cover.jpg"
+              alt="高性能发光材料"
+              fill
+              className="object-cover"
+              priority
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
+            />
+            <div className="absolute inset-0 bg-black/35" />
+            <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-6">
+              <p className="text-[12px] uppercase tracking-[0.3em] text-white/80">Cosmorigin</p>
+              <h1 className="mt-4 font-bold lg:text-[56px] md:text-[48px] sm:text-[36px] text-[28px] leading-tight">
+                宇元新材 点亮未来
+              </h1>
+              <p className="mt-4 max-w-2xl text-[16px] text-white/90">
+                专注柔性发光材料研发与制造，提供稳定可靠的发光解决方案
+              </p>
+            </div>
           </div>
-        </a>
-      </motion.div>
-    </motion.div>
-  </section>
+
+          <a href="#explore">
+            <div className="w-full flex justify-end sm:-mt-[60px] -mt-[40px] pr-[40px] relative z-10">
+              <div className="sm:w-[120px] w-[90px] sm:h-[120px] h-[90px] relative">
+                <Image
+                  src="/stamp.png"
+                  alt="stamp"
+                  fill
+                  className="object-contain"
+                />
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
   );
 };
 

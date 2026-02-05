@@ -1,40 +1,26 @@
-'use client';
-
-import { motion } from 'framer-motion';
-
 import styles from '@/styles';
 import { newFeatures } from '@/constants';
-import { NewFeatures, TitleText, TypingText } from '@/components/index';
-import { planetVariants, staggerContainer, fadeIn } from '@/utils/motion';
+import { NewFeatures } from '@/components/index';
 
 import Image from 'next/image';
 
 const WhatsNew = (): JSX.Element => (
   <section className={`${styles.paddings} relative z-10`}>
-    <motion.div
-      variants={staggerContainer()}
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: true, amount: 0.25 }}
-      className={`${styles.innerWidth} mx-auto flex lg:flex-row flex-col gap-8`}
-    >
-      <motion.div
-        variants={fadeIn('right', 'tween', 0.2, 1)}
-        className="flex-[0.95] flex justify-center flex-col"
-      >
-        <TypingText title="| 最新动态" />
-        <TitleText title={<>宇元新材的最新进展</>} />
+    <div className={`${styles.innerWidth} mx-auto flex lg:flex-row flex-col gap-8`}>
+      <div className="flex-[0.95] flex justify-center flex-col">
+        <div className="section-title text-left">
+          <h3>最新动态</h3>
+          <p>WHAT'S NEW</p>
+        </div>
+        <p className="text-sm text-muted-foreground mb-6">宇元新材的最新进展</p>
         <div className="mt-[48px] flex flex-wrap justify-between gap-[24px]">
           {newFeatures.map((feature) => (
             <NewFeatures key={feature.title} {...feature} />
           ))}
         </div>
-      </motion.div>
+      </div>
 
-      <motion.div
-        variants={planetVariants('right')}
-        className={`flex-1 ${styles.flexCenter}`}
-      >
+      <div className={`flex-1 ${styles.flexCenter}`}>
         <div className="w-[90%] h-[90%] relative aspect-square">
           <Image
             src="/宇元新材发光材料制成的圣诞树.png"
@@ -44,8 +30,8 @@ const WhatsNew = (): JSX.Element => (
             sizes="(max-width: 768px) 100vw, 50vw"
           />
         </div>
-      </motion.div>
-    </motion.div>
+      </div>
+    </div>
   </section>
 );
 

@@ -8,7 +8,6 @@ import Footer from './Footer';
 import SiteStructuredData from './SiteStructuredData';
 import PagePlaceholder from './PagePlaceholder';
 import BackToTop from './BackToTop';
-import ThemeToggle from './ThemeToggle';
 
 export {
   Navbar,
@@ -22,5 +21,4 @@ export {
   SiteStructuredData,
   PagePlaceholder,
   BackToTop,
-  ThemeToggle,
 };

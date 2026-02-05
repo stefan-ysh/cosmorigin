@@ -1,8 +1,7 @@
 import type { Metadata } from 'next';
 
-import Link from 'next/link';
-
 import JsonLd from '@/components/JsonLd';
+import NewsTabs from '@/components/NewsTabs';
 import { absoluteUrl, buildOpenGraph, buildTwitter, defaultRobots } from '@/lib/seo';
 
 const pagePath = '/news';
@@ -97,84 +96,30 @@ const newsroomSchema = {
   })),
 };
 
-const NewsPage = (): JSX.Element => (
-  <main className="bg-background text-foreground">
-    <JsonLd data={newsroomSchema} />
-    <section className="px-6 py-20">
-      <div className="mx-auto max-w-6xl">
-        <p className="text-sm uppercase tracking-[0.3em] text-muted-foreground">NEWSROOM</p>
-        <h1 className="mt-4 text-4xl font-semibold leading-tight sm:text-5xl">
-          记录发光技术走向产业的每一步
-        </h1>
-        <p className="mt-6 text-lg text-muted-foreground">
-          我们定期分享产线节点、客户共创、行业发布与技术洞察，也欢迎媒体与合作伙伴引用这些公开信息。
-        </p>
-      </div>
-    </section>
+const NewsPage = (): JSX.Element => {
+  const companyItems = newsItems.filter((item) => !item.category.includes('行业'));
+  const industryItems = newsItems.filter((item) => item.category.includes('行业'));
 
-    <section className="px-6 pb-20">
-      <div className="mx-auto max-w-6xl space-y-6">
-        <div className="flex flex-col gap-3">
-          <p className="text-xs uppercase tracking-[0.4em] text-muted-foreground/50">全部动态</p>
-          <div className="h-[1px] w-full bg-card" />
-        </div>
-        <div className="grid gap-6">
-          {newsItems.map((item) => {
-            const isExternal = item.href?.startsWith('http');
-            return (
-              <article key={`${item.title}-${item.date}`} className="rounded-3xl border border-border bg-card/50 p-6 transition hover:border-border">
-                <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
-                  <div className="flex flex-wrap items-center gap-3 text-muted-foreground">
-                    <span className="text-lg font-semibold text-foreground">{item.date}</span>
-                    <span className="h-1 w-1 rounded-full bg-accent/40" aria-hidden />
-                    <span className="text-xs uppercase tracking-[0.4em] text-muted-foreground">{item.category}</span>
-                    {item.location && (
-                      <span className="rounded-full border border-border px-3 py-1 text-xs text-muted-foreground">{item.location}</span>
-                    )}
-                    {item.highlight && (
-                      <span className="rounded-full border border-border px-3 py-1 text-xs font-semibold text-foreground">
-                        {item.highlight}
-                      </span>
-                    )}
-                  </div>
-                  {item.href ? (
-                    isExternal ? (
-                      <a
-                        href={item.href}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="text-sm font-semibold text-foreground/80 underline-offset-4 hover:text-foreground"
-                      >
-                        查看详情 ↗
-                      </a>
-                    ) : (
-                      <Link
-                        href={item.href}
-                        className="text-sm font-semibold text-foreground/80 underline-offset-4 hover:text-foreground"
-                      >
-                        查看详情 →
-                      </Link>
-                    )
-                  ) : (
-                    <span className="text-sm text-muted-foreground/50">完整稿件整理中</span>
-                  )}
-                </div>
-                <h2 className="mt-4 text-2xl font-semibold text-foreground">{item.title}</h2>
-                <p className="mt-3 text-base text-muted-foreground">{item.summary}</p>
-              </article>
-            );
-          })}
-        </div>
-      </div>
-    </section>
+  return (
+    <main className="bg-[hsl(var(--surface-strong))] text-foreground">
+      <JsonLd data={newsroomSchema} />
+      <div className="page-banner page-banner--news" />
 
-    {/* <PagePlaceholder
-      eyebrow="SUBSCRIBE"
-      title="希望第一时间获知新材料发布？"
-      description="订阅宇元新材的季度简报，获取实验数据、合作案例与行业洞察。"
-      cta={{ label: '联系团队获取简报', href: '/contact' }}
-    /> */}
-  </main>
-);
+      <section className="px-6 py-16">
+        <div className="mx-auto max-w-6xl">
+          <p className="text-center text-sm text-muted-foreground">
+            我们定期分享产线节点、客户共创、行业发布与技术洞察，也欢迎媒体与合作伙伴引用这些公开信息。
+          </p>
+        </div>
+      </section>
+
+      <section className="px-6 pb-20">
+        <div className="mx-auto max-w-6xl">
+          <NewsTabs companyItems={companyItems} industryItems={industryItems} />
+        </div>
+      </section>
+    </main>
+  );
+};
 
 export default NewsPage;

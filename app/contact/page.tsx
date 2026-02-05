@@ -1,8 +1,6 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 
-import Link from 'next/link';
-
 import JsonLd from '@/components/JsonLd';
 import { socialChannels } from '@/constants';
 import { absoluteUrl, buildOpenGraph, buildTwitter, defaultRobots } from '@/lib/seo';
@@ -71,29 +69,59 @@ const contactSchema = {
 };
 
 const ContactPage = (): JSX.Element => (
-  <main className="bg-background text-foreground">
+  <main className="bg-[hsl(var(--surface-strong))] text-foreground">
     <JsonLd data={contactSchema} />
-    <section className="px-6 py-20">
-      <div className="mx-auto max-w-6xl">
-        <p className="text-sm uppercase tracking-[0.3em] text-muted-foreground">CONTACT</p>
-        <h1 className="mt-4 text-4xl font-semibold leading-tight sm:text-5xl">与宇元团队建立联系</h1>
-        <p className="mt-6 text-lg text-muted-foreground">
-          不论是商务合作、技术探讨还是媒体计划，我们都会在 24 小时内响应。您可选择以下渠道跟我们取得联系，我们会安排专属顾问跟进。
-        </p>
-      </div>
-    </section>
+    <div className="page-banner page-banner--contact" />
 
-    <section className="px-6 pb-12">
-      <div className="mx-auto max-w-6xl grid gap-6 md:grid-cols-3">
-        {channels.map((channel) => (
-          <div key={channel.title} className="rounded-3xl border border-border bg-card/50 p-6">
-            <p className="text-sm uppercase tracking-[0.3em] text-muted-foreground">{channel.title}</p>
-            <p className="mt-3 text-sm text-muted-foreground">{channel.description}</p>
-            <a href={`mailto:${channel.contact}`} className="mt-6 block text-lg font-semibold text-foreground hover:text-foreground/80">
-              {channel.contact}
-            </a>
+    <section className="px-6 py-16">
+      <div className="mx-auto max-w-6xl">
+        <div className="grid gap-6 md:grid-cols-2">
+          <div className="panel-soft p-6">
+            <h3 className="text-lg font-semibold text-foreground border-b border-primary pb-3">联系渠道</h3>
+            <div className="mt-6 space-y-4">
+              {channels.map((channel) => (
+                <div key={channel.title} className="panel hover-card p-4">
+                  <p className="text-sm font-semibold text-foreground">{channel.title}</p>
+                  <p className="mt-2 text-xs text-muted-foreground">{channel.description}</p>
+                  <a href={`mailto:${channel.contact}`} className="mt-3 block text-sm font-semibold text-foreground">
+                    {channel.contact}
+                  </a>
+                </div>
+              ))}
+              <div className="panel hover-card p-4">
+                <p className="text-sm font-semibold text-foreground">联系电话</p>
+                <p className="mt-2 text-xs text-muted-foreground">+86 185 7841 2005</p>
+              </div>
+              <div className="panel hover-card p-4">
+                <p className="text-sm font-semibold text-foreground">公司地址</p>
+                <p className="mt-2 text-xs text-muted-foreground">江苏省扬州市邗江区开发西路 213 号 609 室</p>
+              </div>
+            </div>
           </div>
-        ))}
+
+          <div className="panel-soft p-6">
+            <h3 className="text-lg font-semibold text-foreground border-b border-primary pb-3">关注我们</h3>
+            <div className="mt-6 grid gap-6 sm:grid-cols-2">
+              {socialChannels.map((channel) => (
+                <div key={channel.label} className="text-center">
+                  <div className="panel hover-card p-4">
+                    <p className="text-sm font-semibold text-foreground">{channel.label}</p>
+                    <p className="mt-1 text-xs text-muted-foreground">{channel.description}</p>
+                    {channel.qrImage && (
+                      <Image
+                        src={channel.qrImage}
+                        alt={channel.qrAlt ?? `${channel.label} 二维码`}
+                        width={160}
+                        height={160}
+                        className="mx-auto mt-4 h-32 w-32 object-contain"
+                      />
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -123,66 +151,20 @@ const ContactPage = (): JSX.Element => (
       </div>
     </section> */}
 
-    <section className="px-6 pb-24">
-      <div className="mx-auto max-w-6xl grid gap-8 md:grid-cols-3">
-        <div>
-          <p className="text-sm uppercase tracking-[0.3em] text-muted-foreground">地址</p>
-          <p className="mt-3 text-lg font-semibold">江苏省扬州市邗江区开发西路 213 号 609 室</p>
-        </div>
-        <div>
-          <p className="text-sm uppercase tracking-[0.3em] text-muted-foreground">电话</p>
-          <p className="mt-3 text-lg font-semibold">+86 185 7841 2005</p>
-        </div>
-        <div>
-          <p className="text-sm uppercase tracking-[0.3em] text-muted-foreground">社交渠道</p>
-          <div className="mt-4 space-y-3">
-            {socialChannels.map((channel) => {
-              const cardBody = (
-                <>
-                  <p className="text-sm font-semibold text-foreground">{channel.label}</p>
-                  <p className="text-xs text-muted-foreground">{channel.description}</p>
-                  {channel.qrImage && (
-                    <>
-                      <Image
-                        src={channel.qrImage}
-                        alt={channel.qrAlt ?? `${channel.label} 二维码`}
-                        width={200}
-                        height={200}
-                        className="mx-auto w-3/5 rounded-xl border border-border object-contain md:hidden"
-                      />
-                      <div className="pointer-events-none absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 rounded-2xl border border-border bg-popover p-2 opacity-0 transition duration-300 group-hover:opacity-100 md:block">
-                        <Image
-                          src={channel.qrImage}
-                          alt={channel.qrAlt ?? `${channel.label} 二维码`}
-                          width={192}
-                          height={192}
-                          className="h-48 w-48 rounded-lg object-contain"
-                        />
-                      </div>
-                    </>
-                  )}
-                </>
-              );
-
-              if (channel.href) {
-                return (
-                  <Link
-                    key={channel.label}
-                    href={channel.href}
-                    target="_blank"
-                    className="group relative block rounded-2xl border border-border bg-card/50 px-4 py-3 transition hover:border-border focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/60"
-                  >
-                    <div className="flex flex-col gap-2">{cardBody}</div>
-                  </Link>
-                );
-              }
-
-              return (
-                <div key={channel.label} className="group relative flex flex-col gap-2 rounded-2xl border border-border bg-card/50 px-4 py-3">
-                  {cardBody}
-                </div>
-              );
-            })}
+    <section className="px-6 pb-20">
+      <div className="mx-auto max-w-6xl panel p-6">
+        <div className="grid gap-6 md:grid-cols-3 text-sm text-muted-foreground">
+          <div>
+            <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">地址</p>
+            <p className="mt-2 text-sm">江苏省扬州市邗江区开发西路 213 号 609 室</p>
+          </div>
+          <div>
+            <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">电话</p>
+            <p className="mt-2 text-sm">+86 185 7841 2005</p>
+          </div>
+          <div>
+            <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">邮箱</p>
+            <p className="mt-2 text-sm">contact@cosmorigin.com</p>
           </div>
         </div>
       </div>

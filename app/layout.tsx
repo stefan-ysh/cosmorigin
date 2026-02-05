@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     icon: '/cosmorigin-logo.png',
     apple: '/apple-touch-icon.png',
   },
-  themeColor: '#000000',
+  themeColor: '#ffffff',
   applicationName: '宇元新材 - 发光材料专家',
   authors: [{ name: '宇元新材' }],
   creator: '宇元新材',

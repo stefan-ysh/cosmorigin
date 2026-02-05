@@ -1,11 +1,6 @@
-'use client';
-
 import Image from 'next/image';
-import { motion } from 'framer-motion';
 
 import styles from '@/styles';
-import { TitleText, TypingText } from '@/components/CustomTexts';
-import { fadeIn, staggerContainer } from '@/utils/motion';
 
 const applications = [
   {
@@ -36,57 +31,27 @@ const applications = [
 
 const Applications = () => (
   <section className={`${styles.paddings} relative`}>
-    <motion.div
-      variants={staggerContainer()}
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: true, amount: 0.25 }}
-      className={`${styles.innerWidth} mx-auto flex flex-col`}
-    >
-      <TypingText title="| 全球应用" textStyles="text-center" />
-      <TitleText
-        title={(
-          <>
-            赋能
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">
-              {' '}
-              多场景应用
-            </span>
-          </>
-        )}
-        textStyles="text-center"
-      />
+    <div className={`${styles.innerWidth} mx-auto flex flex-col`}>
+      <div className="section-title text-center">
+        <h3>全球应用</h3>
+        <p>APPLICATIONS</p>
+      </div>
 
       <div className="mt-[50px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {applications.map((app, index) => (
-          <motion.div key={app.title} variants={fadeIn('up', 'spring', index * 0.2, 1)} className="group relative">
-            <div className="relative h-full p-8 bg-card border border-border rounded-3xl overflow-hidden transition-all duration-300 hover:border-emerald-500/50 hover:shadow-lg">
-              <div className="text-6xl mb-4 transform group-hover:scale-110 transition-transform duration-300">{app.icon}</div>
+        {applications.map((app) => (
+          <div key={app.title} className="relative">
+            <div className="panel hover-card relative h-full p-8 overflow-hidden">
+              <div className="text-5xl mb-4">{app.icon}</div>
 
               <h3 className="text-2xl font-bold text-primary mb-2">{app.title}</h3>
 
               <p className="text-muted-foreground">{app.description}</p>
-
-              <div
-                className={`absolute -top-20 -right-20 w-40 h-40 bg-gradient-to-br ${app.color} rounded-full blur-3xl opacity-0 group-hover:opacity-20 transition-opacity duration-500`}
-              />
-
-              <motion.div
-                className={`absolute bottom-0 left-0 h-1 bg-gradient-to-r ${app.color}`}
-                initial={{ width: 0 }}
-                whileInView={{ width: '100%' }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 + 0.5, duration: 0.8 }}
-              />
             </div>
-          </motion.div>
+          </div>
         ))}
       </div>
 
-      <motion.div
-        variants={fadeIn('up', 'tween', 0.8, 1)}
-        className="relative mt-[100px] h-[500px] rounded-3xl overflow-hidden"
-      >
+      <div className="relative mt-[100px] h-[500px] rounded-2xl overflow-hidden border border-border/60 transition-transform duration-300 hover:-translate-y-1 hover:shadow-md">
         <Image
           src="/map.png"
           alt="全球应用地图"
@@ -95,29 +60,22 @@ const Applications = () => (
           sizes="(max-width: 1280px) 100vw, 1280px"
         />
 
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
+        <div className="absolute inset-0 bg-background/70" />
 
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             <div>
-              <div className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">
-                100+
-              </div>
-              <div className="text-gray-400 mt-2">应用案例</div>
+              <div className="text-4xl font-bold text-foreground">100+</div>
+              <div className="text-muted-foreground mt-2">应用案例</div>
             </div>
             <div>
-              <div className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">
-                20+
-              </div>
-              <div className="text-gray-400 mt-2">行业领域</div>
+              <div className="text-4xl font-bold text-foreground">20+</div>
+              <div className="text-muted-foreground mt-2">行业领域</div>
             </div>
           </div>
         </div>
-      </motion.div>
-    </motion.div>
-
-    <div className="absolute top-1/2 left-0 w-96 h-96 bg-emerald-500/10 rounded-full blur-[150px] -z-10" />
-    <div className="absolute bottom-0 right-0 w-96 h-96 bg-cyan-500/10 rounded-full blur-[150px] -z-10" />
+      </div>
+    </div>
   </section>
 );
 

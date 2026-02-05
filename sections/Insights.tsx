@@ -1,34 +1,25 @@
-'use client';
-
-import { motion } from 'framer-motion';
-
 import styles from '@/styles';
 import { insights } from '@/constants';
-import { InsightCard, TitleText, TypingText } from '@/components/index';
-import { staggerContainer } from '@/utils/motion';
+import { InsightCard } from '@/components/index';
 
 const Insights = (): JSX.Element => (
   <section className={`${styles.paddings} relative z-10`}>
-    <motion.div
-      variants={staggerContainer()}
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: true, amount: 0.25 }}
-      className={`${styles.innerWidth} mx-auto flex flex-col`}
-    >
-      <TypingText title="| 行业洞察" textStyles="text-center" />
-      <TitleText title="发光材料趋势洞察" textStyles="text-center" />
+    <div className={`${styles.innerWidth} mx-auto flex flex-col`}>
+      <div className="section-title text-center">
+        <h3>行业洞察</h3>
+        <p>INSIGHTS</p>
+      </div>
+      <p className="text-center text-sm text-muted-foreground">发光材料趋势洞察</p>
 
       <div className="mt-[50px] flex flex-col gap-[30px]">
         {insights.map((insight, index) => (
           <InsightCard
             key={`Insight-${index + 1}`}
             {...insight}
-            index={index + 1}
           />
         ))}
       </div>
-    </motion.div>
+    </div>
   </section>
 );
 

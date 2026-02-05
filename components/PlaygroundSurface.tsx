@@ -2,18 +2,9 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import type { MouseEvent } from "react";
-import { motion } from "framer-motion";
 
 import { Sun, Moon } from "lucide-react";
 
-import {
-  Theme,
-  resolveInitialTheme,
-  runThemeViewTransition,
-  setTheme as setGlobalTheme,
-  subscribeToThemeChanges,
-} from "@/lib/theme";
 import styles from "@/styles";
 
 const showcasePairs = [
@@ -89,22 +80,22 @@ const ModeSwitch = ({
   onToggle,
 }: {
   checked: boolean;
-  onToggle: (event: MouseEvent<HTMLButtonElement>) => void;
+  onToggle: () => void;
 }) => (
   <button
     type="button"
     role="switch"
     aria-checked={checked}
     onClick={onToggle}
-    className={`relative h-11 w-24 rounded-full border border-foreground/20 bg-foreground/10 px-0 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground dark:bg-white/5 ${checked ? "bg-foreground hover:bg-foreground" : "hover:bg-foreground/20"
+    className={`relative h-11 w-24 rounded-full border border-foreground/20 bg-foreground/10 px-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground dark:bg-white/5 ${checked ? "bg-foreground" : ""
       }`}
   >
     <span
-      className={`absolute top-1/2 h-8 w-8 -translate-y-1/2 rounded-full bg-background shadow-lg transition-all ${checked ? "right-2" : "left-2"
+      className={`absolute top-1/2 h-8 w-8 -translate-y-1/2 rounded-full bg-background ${checked ? "right-2" : "left-2"
         }`}
     />
     <span
-      className={`absolute inset-y-0 flex items-center text-xs font-semibold uppercase tracking-[0.3em] transition ${checked ? "left-3 text-teal-400" : "right-3 text-foreground/70"
+      className={`absolute inset-y-0 flex items-center text-xs font-semibold ${checked ? "left-3 text-teal-400" : "right-3 text-foreground/70"
         }`}
     >
       {!checked ? <Sun /> : <Moon />}
@@ -112,15 +103,11 @@ const ModeSwitch = ({
   </button>
 );
 
-const PlaygroundSurface = () => {
-  const [mode, setMode] = useState<Theme>("light");
-  const [floatingVisible, setFloatingVisible] = useState(false);
+type PlaygroundMode = "light" | "dark";
 
-  useEffect(() => {
-    setMode(resolveInitialTheme());
-    const unsubscribe = subscribeToThemeChanges(setMode);
-    return unsubscribe;
-  }, []);
+const PlaygroundSurface = () => {
+  const [mode, setMode] = useState<PlaygroundMode>("light");
+  const [floatingVisible, setFloatingVisible] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -132,25 +119,15 @@ const PlaygroundSurface = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleModeChange = (
-    nextMode: Theme,
-    event: MouseEvent<HTMLButtonElement>
-  ) => {
+  const handleModeChange = (nextMode: PlaygroundMode) => {
     if (nextMode === mode) return;
-    runThemeViewTransition({
-      event,
-      nextTheme: nextMode,
-      onApply: () => {
-        setMode(nextMode);
-        setGlobalTheme(nextMode);
-      },
-    });
+    setMode(nextMode);
   };
 
   return (
     <div className="space-y-4">
       <div className="flex flex-col gap-6 text-center">
-        <p className="text-xs uppercase tracking-[0.4em] text-foreground/60">
+        <p className="text-xs text-foreground/60">
           实时预览
         </p>
         <p className="mx-auto max-w-4xl text-lg text-foreground/80">
@@ -158,12 +135,10 @@ const PlaygroundSurface = () => {
         </p>
       </div>
 
-      <div className="mx-auto flex items-center justify-center gap-4  text-sm font-semibold backdrop-blur">
+      <div className="mx-auto flex items-center justify-center gap-4 text-sm font-semibold">
         <ModeSwitch
           checked={mode === "dark"}
-          onToggle={(event) =>
-            handleModeChange(mode === "dark" ? "light" : "dark", event)
-          }
+          onToggle={() => handleModeChange(mode === "dark" ? "light" : "dark")}
         />
       </div>
 
@@ -173,7 +148,7 @@ const PlaygroundSurface = () => {
           return (
             <article
               key={pair.id}
-              className="group flex flex-col gap-6 rounded-3xl border border-foreground/10 bg-card/70 p-6 shadow-xl shadow-black/5 transition"
+              className="panel hover-card flex flex-col gap-6 p-6"
             >
               <div className="space-y-3">
                 <h2 className="text-2xl font-semibold text-foreground">
@@ -188,7 +163,7 @@ const PlaygroundSurface = () => {
                     alt={`${pair.label} 开灯效果`}
                     fill
                     sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
-                    className={`object-cover transition-opacity duration-500 ${mode === "light" ? "opacity-100" : "opacity-0"
+                    className={`object-cover ${mode === "light" ? "opacity-100" : "opacity-0"
                       }`}
                     priority={isHeroCard}
                   />
@@ -197,13 +172,10 @@ const PlaygroundSurface = () => {
                     alt={`${pair.label} 关灯效果`}
                     fill
                     sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
-                    className={`object-cover transition-opacity duration-500 ${mode === "dark" ? "opacity-100" : "opacity-0"
+                    className={`object-cover ${mode === "dark" ? "opacity-100" : "opacity-0"
                       }`}
                     priority={isHeroCard}
                   />
-                </div>
-                <div className="pointer-events-none absolute inset-0 opacity-0 transition">
-                  <div className="h-full w-full bg-gradient-to-br from-transparent via-black/20 to-black/60" />
                 </div>
               </div>
             </article>
@@ -212,22 +184,16 @@ const PlaygroundSurface = () => {
       </div>
 
       {floatingVisible && (
-        <motion.button
+        <button
           key="switch-mode"
           type="button"
           aria-label="切换模式"
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: 40 }}
-          transition={{ type: "spring", stiffness: 260, damping: 25 }}
-          onClick={(event) =>
-            handleModeChange(mode === "dark" ? "light" : "dark", event)
-          }
+          onClick={() => handleModeChange(mode === "dark" ? "light" : "dark")}
           className={`${styles.floatingFab} fixed bottom-28 right-6 z-[65]`}
         >
           {mode === "light" ? <Sun className="h-6 w-6" /> : <Moon className="h-6 w-6" />}
           <span className="sr-only">切换明暗模式</span>
-        </motion.button>
+        </button>
       )}
     </div>
   );

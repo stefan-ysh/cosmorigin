@@ -35,11 +35,14 @@ export const metadata: Metadata = {
 };
 
 const PlaygroundPage = () => (
-  <section className={`${styles.xPaddings} py-24`}>
-    <div className={`${styles.innerWidth} mx-auto`}>
-      <PlaygroundSurface />
-    </div>
-  </section>
+  <main className="bg-[hsl(var(--surface-strong))] text-foreground">
+    <div className="page-banner page-banner--playground" />
+    <section className={`${styles.xPaddings} py-16`}>
+      <div className={`${styles.innerWidth} mx-auto`}>
+        <PlaygroundSurface />
+      </div>
+    </section>
+  </main>
 );
 
 export default PlaygroundPage;

@@ -3,19 +3,11 @@
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import Link from "next/link";
-import { AnimatePresence, motion } from "framer-motion";
+import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
-import {
-  Theme,
-  applyTheme,
-  resolveInitialTheme,
-  subscribeToThemeChanges,
-} from "@/lib/theme";
 
-import ThemeToggle from "@/components/ThemeToggle";
 import styles from "@/styles";
-import { navVariants } from "@/utils/motion";
 
 const navLinks = [
   { label: "首页", href: "/" },
@@ -28,19 +20,11 @@ const navLinks = [
 const Navbar = () => {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
-  const [theme, setThemeState] = useState<Theme>("light");
+  const pathname = usePathname();
 
   useEffect(() => {
     setIsMounted(true);
-    const initialTheme = resolveInitialTheme();
-    applyTheme(initialTheme);
-    setThemeState(initialTheme);
-
-    const unsubscribe = subscribeToThemeChanges((nextTheme) => {
-      setThemeState(nextTheme);
-    });
-
-    return unsubscribe;
+    return () => undefined;
   }, []);
 
   useEffect(() => {
@@ -51,155 +35,118 @@ const Navbar = () => {
     };
   }, [isMobileOpen]);
 
-  const mobileMenu = (
-    <AnimatePresence>
-      {isMobileOpen && (
-        <motion.div
-          key="mobile-nav"
-          id="mobile-nav"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.2 }}
-          className="fixed inset-0 z-[90] bg-background/85 backdrop-blur-xl lg:hidden"
-        >
-          <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-emerald-400/15 via-transparent to-cyan-500/15" />
-          <motion.div
-            initial={{ x: "100%" }}
-            animate={{ x: 0 }}
-            exit={{ x: "100%" }}
-            transition={{ type: "spring", stiffness: 260, damping: 30 }}
-            className="relative flex h-full w-full flex-col gap-6 bg-background px-6 pb-5 pt-5 text-foreground shadow-2xl"
-          >
-            <div className="flex items-center justify-between">
-              <Link
-                href="/"
-                onClick={() => setIsMobileOpen(false)}
-                className="text-lg font-bold tracking-[0.3em]"
-              >
-                {/* 注释：根据主题色切换图标  */}
-                {theme === "dark" ? (
-                  <Image
-                    src="/dark-logo.png"
-                    alt="扬州宇元新材有限公司 cosmorigin Logo"
-                    width={150}
-                    height={100}
-                  />
-                ) : (
-                  <Image
-                    src="/light-logo.png"
-                    alt="扬州宇元新材有限公司 cosmorigin Logo"
-                    width={150}
-                    height={100}
-                  />
-                )}
-              </Link>
-              <button
-                type="button"
-                onClick={() => setIsMobileOpen(false)}
-                className="rounded-full p-2 text-foreground"
-              >
-                <span className="sr-only">关闭导航菜单</span>
-                <X className="w-5 h-5" />
-              </button>
-            </div>
-            <nav className="flex flex-1 flex-col gap-4">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setIsMobileOpen(false)}
-                  className="text-base font-semibold uppercase tracking-[0.25em] text-foreground/80 transition hover:text-foreground"
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </nav>
-            <div className="flex gap-4 border-t border-foreground/10 pt-6 dark:border-white/20 justify-between">
-              <ThemeToggle />
-              <Link
-                href="/contact"
-                onClick={() => setIsMobileOpen(false)}
-                className="inline-flex items-center justify-center rounded-full border border-border px-5 py-3 text-sm font-semibold tracking-[0.3em] text-foreground"
-              >
-                联系我们
-              </Link>
-            </div>
-          </motion.div>
-        </motion.div>
-      )}
-    </AnimatePresence>
-  );
-
-  return (
-    <>
-      <motion.nav
-        variants={navVariants}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, amount: 0.25 }}
-        className={`${styles.xPaddings} py-5 sticky top-0 z-[80] backdrop-blur-xl bg-background/70 border-b border-border/40 dark:bg-background/60`}
-      >
-        {/* <div className="pointer-events-none absolute inset-0 w-[50%] gradient-01" /> */}
-        <div
-          className={`${styles.innerWidth} mx-auto flex items-center justify-between gap-8`}
-        >
+  const mobileMenu = isMobileOpen ? (
+    <div
+      key="mobile-nav"
+      id="mobile-nav"
+      className="fixed inset-0 z-[90] bg-[#474747] lg:hidden"
+    >
+      <div className="relative flex h-full w-full flex-col gap-6 bg-[#474747] px-6 pb-5 pt-5 text-white">
+        <div className="flex items-center justify-between">
           <Link
             href="/"
-            className="font-extrabold text-[24px] leading-[30px] text-foreground opacity-80 hover:opacity-100 transition-all duration-700"
+            onClick={() => setIsMobileOpen(false)}
+            className="text-lg font-bold"
           >
-            {/* 注释：根据主题色切换图标  */}
-            {theme === "dark" ? (
-              <Image
-                src="/dark-logo.png"
-                alt="扬州宇元新材有限公司 cosmorigin Logo"
-                width={150}
-                height={100}
-              />
-            ) : (
               <Image
                 src="/light-logo.png"
                 alt="扬州宇元新材有限公司 cosmorigin Logo"
                 width={150}
                 height={100}
               />
-            )}
-          </Link>
-
-          <div className="hidden flex-1 items-center justify-center gap-5 lg:flex">
-            {navLinks.map((link) => (
+            </Link>
+          <button
+            type="button"
+            onClick={() => setIsMobileOpen(false)}
+            className="rounded-md border border-white/20 p-2 text-white"
+          >
+            <span className="sr-only">关闭导航菜单</span>
+            <X className="w-5 h-5" />
+          </button>
+        </div>
+        <nav className="flex flex-1 flex-col gap-4">
+          {navLinks.map((link) => {
+            const isActive = pathname === link.href && link.href !== "/";
+            return (
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-xs md:text-sm font-semibold uppercase tracking-[0.2em] text-foreground/70 transition hover:text-foreground hover:border-b"
+                onClick={() => setIsMobileOpen(false)}
+                className={`text-base font-semibold text-white/90 ${isActive ? 'text-white' : ''}`}
               >
                 {link.label}
               </Link>
-            ))}
-          </div>
-
-          <div className="flex items-center gap-4">
-            <ThemeToggle />
-            <Link
-              href="/contact"
-              className="hidden rounded-full border border-border px-5 py-2 text-sm font-semibold text-foreground transition hover:border-foreground/60 md:inline-flex"
-            >
-              联系我们
-            </Link>
-            <button
-              type="button"
-              aria-controls="mobile-nav"
-              aria-expanded={isMobileOpen}
-              onClick={() => setIsMobileOpen(true)}
-              className="inline-flex items-center justify-center rounded-full lg:hidden"
-            >
-              <span className="sr-only">打开导航菜单</span>
-              <Menu className="w-5 h-5 text-foreground" />
-              {/* <div className=" w-3 h-3 flex items-center justify-center">···</div> */}
-            </button>
-          </div>
+            );
+          })}
+        </nav>
+        <div className="flex gap-4 border-t border-white/20 pt-6 justify-between">
+          <Link
+            href="/contact"
+            onClick={() => setIsMobileOpen(false)}
+            className="inline-flex items-center justify-center rounded-md border border-white/30 px-5 py-3 text-sm font-semibold text-white"
+          >
+            联系我们
+          </Link>
         </div>
-      </motion.nav>
+      </div>
+    </div>
+  ) : null;
+
+  return (
+    <>
+      <header className="site-header sticky top-0 z-[80]">
+        <nav className={`${styles.xPaddings} site-nav py-6 border-b border-border/60`}>
+          <div
+            className={`${styles.innerWidth} mx-auto flex items-center justify-between gap-8`}
+          >
+            <Link
+              href="/"
+              className="font-extrabold text-[24px] leading-[30px] text-foreground"
+            >
+              <Image
+                src="/light-logo.png"
+                alt="扬州宇元新材有限公司 cosmorigin Logo"
+                width={150}
+                height={100}
+              />
+            </Link>
+
+            <div className="hidden flex-1 items-center justify-center gap-8 lg:flex">
+              {navLinks.map((link) => {
+                const isActive = pathname === link.href && link.href !== "/";
+                return (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className={`site-nav-link text-[15px] ${isActive ? 'site-nav-link-active' : ''}`}
+                  >
+                    {link.label}
+                  </Link>
+                );
+              })}
+            </div>
+
+            <div className="flex items-center gap-4">
+              <Link
+                href="/contact"
+                className="hidden rounded-md border border-border bg-white px-5 py-2 text-sm font-semibold text-foreground md:inline-flex"
+              >
+                联系我们
+              </Link>
+              <button
+                type="button"
+                aria-controls="mobile-nav"
+                aria-expanded={isMobileOpen}
+                onClick={() => setIsMobileOpen(true)}
+                className="inline-flex items-center justify-center rounded-md border border-border bg-white p-2 lg:hidden"
+              >
+                <span className="sr-only">打开导航菜单</span>
+                <Menu className="w-5 h-5 text-foreground" />
+              </button>
+            </div>
+          </div>
+        </nav>
+      </header>
       {isMounted && typeof document !== "undefined"
         ? createPortal(mobileMenu, document.body)
         : null}

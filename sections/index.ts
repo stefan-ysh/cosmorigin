@@ -8,6 +8,7 @@ import Applications from './Applications';
 import GlobalNetwork from './GlobalNetwork';
 import Insights from './Insights';
 import Feedback from './Feedback';
+import ProductGallery from './ProductGallery';
 
 export {
   Hero,
@@ -20,4 +21,5 @@ export {
   GlobalNetwork,
   Insights,
   Feedback,
+  ProductGallery,
 };
