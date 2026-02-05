@@ -72,12 +72,14 @@ const Page = () => (
     <LogoClouds />
 
     <section id="contactUs" className="home-contact">
-      <div className={`${styles.innerWidth} mx-auto text-center`}>
-        <h1>携手点亮可持续未来</h1>
-        <h3>欢迎预约材料样品、技术研讨或联合研发</h3>
-        <a href="/contact" className="home-contact-button">
-          联系我们
-        </a>
+      <div className={`${styles.innerWidth} mx-auto`}>
+        <div className="home-contact-card text-center">
+          <h1>携手点亮可持续未来</h1>
+          <h3>欢迎预约材料样品、技术研讨或联合研发</h3>
+          <a href="/contact" className="home-contact-button">
+            联系我们
+          </a>
+        </div>
       </div>
     </section>
 

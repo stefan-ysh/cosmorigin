@@ -715,11 +715,18 @@ body {
 
   .home-contact {
     color: #fff;
+    padding: 40px 24px 70px;
+    background: #f8f9fa;
+  }
+
+  .home-contact-card {
     height: 320px;
     background: url("/未命名.jpeg") center center no-repeat;
     background-size: cover;
     display: flex;
     align-items: center;
+    justify-content: center;
+    flex-direction: column;
   }
 
   .home-contact h1 {
@@ -907,8 +914,11 @@ body {
     }
 
     .home-contact {
+      padding: 24px 16px 50px;
+    }
+
+    .home-contact-card {
       height: 220px;
-      padding: 0 16px;
     }
 
     .home-customer-grid,
