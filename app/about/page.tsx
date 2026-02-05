@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import Image from "next/image";
+import styles from "@/styles";
 
 import JsonLd from "@/components/JsonLd";
 import PagePlaceholder from "@/components/PagePlaceholder";
@@ -125,12 +126,11 @@ const aboutSchemas = [
 ];
 
 const AboutPage = (): JSX.Element => (
-  <main className="bg-[hsl(var(--surface-strong))] text-foreground">
+  <main className="site-main bg-[hsl(var(--surface-strong))] text-foreground">
     <JsonLd data={aboutSchemas} />
-    <div className="page-banner page-banner--about" />
 
     <section className="px-6 py-16">
-      <div className="mx-auto max-w-6xl">
+      <div className={`${styles.innerWidth} mx-auto`}>
         <div className="grid gap-8 lg:grid-cols-2 items-center">
           <div className="panel hover-card p-6 flex items-center justify-center">
             <Image
@@ -156,7 +156,7 @@ const AboutPage = (): JSX.Element => (
     </section>
 
     <section className="px-6 pb-12">
-      <div className="mx-auto max-w-6xl grid gap-6 md:grid-cols-2">
+      <div className={`${styles.innerWidth} mx-auto grid gap-6 md:grid-cols-2`}>
         {[
           { label: "研发投入策略", value: "持续高占比投入（数据更新中）" },
           { label: "核心知识产权", value: "多项专利与软著（敬请期待）" },
@@ -172,7 +172,7 @@ const AboutPage = (): JSX.Element => (
     </section>
 
     <section className="px-6 pb-16">
-      <div className="mx-auto max-w-6xl">
+      <div className={`${styles.innerWidth} mx-auto`}>
         <div className="section-title">
           <h3>发展里程碑</h3>
           <p>Milestones</p>

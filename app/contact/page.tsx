@@ -69,7 +69,7 @@ const contactSchema = {
 };
 
 const ContactPage = (): JSX.Element => (
-  <main className="bg-[hsl(var(--surface-strong))] text-foreground">
+  <main className="site-main bg-[hsl(var(--surface-strong))] text-foreground">
     <JsonLd data={contactSchema} />
     <div className="page-banner page-banner--contact" />
 

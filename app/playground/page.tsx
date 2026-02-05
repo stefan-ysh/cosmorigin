@@ -35,8 +35,7 @@ export const metadata: Metadata = {
 };
 
 const PlaygroundPage = () => (
-  <main className="bg-[hsl(var(--surface-strong))] text-foreground">
-    <div className="page-banner page-banner--playground" />
+  <main className="site-main bg-[hsl(var(--surface-strong))] text-foreground">
     <section className={`${styles.xPaddings} py-16`}>
       <div className={`${styles.innerWidth} mx-auto`}>
         <PlaygroundSurface />

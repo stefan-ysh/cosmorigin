@@ -72,7 +72,7 @@ const caseStudySchema = {
 };
 
 const CasesPage = (): JSX.Element => (
-  <main className="bg-[hsl(var(--surface-strong))] text-foreground">
+  <main className="site-main bg-[hsl(var(--surface-strong))] text-foreground">
     <JsonLd data={caseStudySchema} />
     <div className="page-banner page-banner--cases" />
 

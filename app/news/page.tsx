@@ -101,7 +101,7 @@ const NewsPage = (): JSX.Element => {
   const industryItems = newsItems.filter((item) => item.category.includes('行业'));
 
   return (
-    <main className="bg-[hsl(var(--surface-strong))] text-foreground">
+    <main className="site-main bg-[hsl(var(--surface-strong))] text-foreground">
       <JsonLd data={newsroomSchema} />
       <div className="page-banner page-banner--news" />
 

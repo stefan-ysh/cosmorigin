@@ -103,9 +103,8 @@ const solutionSchemas = [
 ];
 
 const SolutionsPage = (): JSX.Element => (
-  <main className="bg-[hsl(var(--surface-strong))] text-foreground">
+  <main className="site-main bg-[hsl(var(--surface-strong))] text-foreground">
     <JsonLd data={solutionSchemas} />
-    <div className="page-banner page-banner--solutions" />
 
     <section className="px-6 py-16">
       <div className="mx-auto max-w-6xl">

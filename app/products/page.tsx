@@ -185,9 +185,8 @@ const productCollectionSchema = {
 };
 
 const ProductsPage = (): JSX.Element => (
-  <main className="bg-[hsl(var(--surface-strong))] text-foreground">
+  <main className="site-main bg-[hsl(var(--surface-strong))] text-foreground">
     <JsonLd data={productCollectionSchema} />
-    <div className="page-banner page-banner--products" />
 
     <section className="px-6 py-16">
       <div className="mx-auto max-w-6xl">
