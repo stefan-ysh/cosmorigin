@@ -92,7 +92,7 @@ const productDetails: ProductDetail[] = [
     keyParameters: '涂覆厚度 50-150 μm · 可叠加透明保护层',
     variants: paintVariants,
     extraNote: '橙色基材：红01-04、黄01-05、紫系列；白色基材：绿01-03、蓝01-05 系列',
-    image: '/宇元新材发光油漆产品图无背景.png',
+    image: '/发光油漆.jpg',
     imageAlt: '宇元新材发光油漆样品',
   },
   {
@@ -106,7 +106,7 @@ const productDetails: ProductDetail[] = [
     keyParameters: '-',
     variants: fiberVariants,
     extraNote: '柔性疲劳测试，可多次弯折',
-    image: '/宇元新材发光纤维丝无背景.png',
+    image: '/发光纤维丝.jpg',
     imageAlt: '宇元新材发光纤维丝成品线束',
   },
   {
@@ -134,23 +134,23 @@ const productDetails: ProductDetail[] = [
     keyParameters: 'TPU/PC/复合基材可选 · 可叠加 3M 背胶',
     variants: luminousFilmVariants,
     extraNote: '当前出货幅宽 250 mm，暂不提供宽幅定制；可提供透湿或高阻隔版本',
-    image: '/宇元新材发光膜产品图无背景.png',
+    image: '/发光膜.jpg',
     imageAlt: '宇元新材发光薄膜贴合样张',
   },
-  //   {
-  //     name: '3D 打印辅材（NEW）',
-  //     status: '内测中',
-  //     overview: '兼容 SLA/FDM · 自发光填充粒子 · 耐温 120°C',
-  //     applications: '复杂光效件、小批量功能验证、教育展示',
-  //     brightness: '体发光 4-6 h',
-  //     supply: '线材/树脂',
-  //     certification: '正在申请 UL94/CSA',
-  //     keyParameters: '可与常规耗材混合打印 · 支持回收再造粒',
-  //     variants: additiveVariants,
-  //     extraNote: '报名内测可获得驱动设置与打印参数指导',
-  //     image: '/宇元新材发光材料制成的3D打印辅材.jpg',
-  //     imageAlt: '宇元新材发光 3D 打印辅材样件',
-  //   },
+  {
+    name: '3D 打印辅材',
+    status: '可预订',
+    overview: '兼容 SLA/FDM · 自发光填充粒子 · 耐温 120°C',
+    applications: '复杂光效件、小批量功能验证、教育展示',
+    brightness: '体发光 4-6 h',
+    supply: '线材/树脂',
+    certification: '正在申请 UL94/CSA',
+    keyParameters: '可与常规耗材混合打印 · 支持回收再造粒',
+    variants: additiveVariants,
+    extraNote: '报名内测可获得驱动设置与打印参数指导',
+    image: '/宇元新材发光材料制成的3D打印辅材.jpg',
+    imageAlt: '宇元新材发光 3D 打印辅材样件',
+  },
 ];
 
 const productCollectionSchema = {
@@ -224,7 +224,7 @@ const ProductsPage = (): JSX.Element => (
             </div>
 
             <div className="mt-6 grid gap-6 lg:grid-cols-[300px,minmax(0,1fr)]">
-              <div className="panel-soft flex items-center justify-center p-4 bg-[#0a0d1b]">
+              <div className="panel-soft flex items-center justify-center p-4 bg-[#000]">
                 <div className="relative aspect-square w-full overflow-hidden rounded-md ">
                   <Image
                     src={product.image}

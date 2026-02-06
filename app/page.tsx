@@ -91,7 +91,7 @@ const Page = () => (
           {insights.map((item) => (
             <div key={item.title} className="home-customer-card">
               <div className="home-customer-image">
-                <Image src={item.imgUrl} alt={item.title} fill className="object-cover" sizes="(max-width: 768px) 100vw, 33vw" />
+                <Image src={item.imgUrl} alt={item.title} fill className="object-contain" sizes="(max-width: 768px) 100vw, 33vw" />
               </div>
               <div className="home-customer-content">
                 <p className="home-customer-title">{item.title}</p>

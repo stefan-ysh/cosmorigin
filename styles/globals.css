@@ -664,7 +664,8 @@ body {
   }
 
   .home-banner {
-    height: 1200px;
+    height: 100vh;
+    min-height: 560px;
     position: relative;
     overflow: hidden;
   }
@@ -969,7 +970,8 @@ body {
 
   @media screen and (max-width: 768px) {
     .home-banner {
-      height: 320px;
+      height: 100vh;
+      min-height: 420px;
     }
 
     .home-banner-overlay h1 {
