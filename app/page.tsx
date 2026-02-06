@@ -34,11 +34,11 @@ const Page = () => (
       title="宇元新材 点亮未来"
       description={pageDescription}
       images={[
-        '/images/banner/1.png',
-        '/images/banner/2.png',
-        '/images/banner/3.png',
-        '/images/banner/4.png',
-        '/images/banner/5.jpeg',
+        '/images/banner/1.jpg',
+        '/images/banner/2.jpg',
+        '/images/banner/3.jpg',
+        '/images/banner/4.jpg',
+        '/images/banner/5.jpg',
         '/images/banner/6.jpg',
       ]}
     />
