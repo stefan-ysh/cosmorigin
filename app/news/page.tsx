@@ -32,6 +32,16 @@ interface NewsItem {
 
 const newsItems: NewsItem[] = [
   {
+    title: '【宇元新材×红苹果塑胶】跨领域技术融合探索',
+    date: '2026-01-25',
+    category: '技术交流',
+    summary:
+      '双方围绕TPU薄膜与发光材料的协同创新、智能发光技术场景化应用等议题展开探讨，探索产业链上下游协同创新的新模式。从材料特性到场景应用的深度契合，共同开启关于"材质生命力"的深度实验。',
+    href: 'https://mp.weixin.qq.com/s/WR79T5SFLtKVPxCK6oxn-A',
+    location: '昆山',
+    highlight: '跨界合作',
+  },
+  {
     title: '发布3D 打印全新发光辅材，助力定制化光电解决方案的实现',
     date: '2025-12-08',
     category: '产品发布',
