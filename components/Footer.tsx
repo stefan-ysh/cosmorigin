@@ -58,7 +58,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="mt-6 border-t border-white/10 pt-4 text-[12px] text-[#d3d3d3] flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
+        <div className="mt-6 border-t border-white/10 pt-4 text-[12px] text-[#d3d3d3] flex flex-col gap-2 items-center md:flex-row md:items-center md:justify-between">
           <p>Copyright © {new Date().getFullYear()} Cosmorigin. All rights reserved.</p>
           <p className="flex items-center gap-2">
             <Image
