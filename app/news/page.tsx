@@ -32,6 +32,16 @@ interface NewsItem {
 
 const newsItems: NewsItem[] = [
   {
+    title: '宇元新材赴扬州杨庙镇3D打印工坊考察交流',
+    date: '2026-02-05',
+    category: '技术交流',
+    summary:
+      '我司团队前往扬州市邗江区杨庙镇"小状元3D文创研学工坊"进行技术交流，探索新型发光材料与3D打印技术的融合应用。双方围绕秸秆制PLA原料、发光打印材料、4D智能材料等方向展开深度讨论，共同挖掘在文创产品、科普教具及乡村产业升级中的创新潜力。',
+    href: 'https://mp.weixin.qq.com/s/y6ctVJ6_SCpCVZs76HkMFg',
+    location: '扬州',
+    highlight: '乡村振兴',
+  },
+  {
     title: '宇元新材参与迎春送福活动，为传统文化增添科技魅力',
     date: '2026-01-31',
     category: '公益活动',
