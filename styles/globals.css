@@ -312,36 +312,12 @@ body {
     color: #fff;
   }
 
-  .page-banner--about {
-    background-image: url("/宇元新材发光材料制成的圣诞树.png");
-  }
-
-  .page-banner--products {
-    background-image: url("/发光材料在汽车内外饰中的应用.png");
-  }
-
-  .page-banner--solutions {
-    background-image: url("/发光材料在应急救援中的应用.png");
-  }
-
-  .page-banner--news {
-    background-image: url("/发光材料在农业中的应用.png");
-  }
-
-  .page-banner--contact {
-    background-image: url("/video_offical.jpg");
-  }
-
   .page-banner--cases {
     background-image: url("/宇元新材发光材料制成的3D打印辅材.jpg");
   }
 
   .page-banner--resources {
     background-image: url("/map.png");
-  }
-
-  .page-banner--playground {
-    background-image: url("/cover.jpg");
   }
 
   .page-banner::after {
