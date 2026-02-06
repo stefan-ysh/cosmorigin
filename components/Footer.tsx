@@ -45,7 +45,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="flex flex-col items-start gap-2">
+          <div className="flex flex-col items-end gap-2">
             <p className="text-[12px] text-[#d3d3d3]">微信公众号</p>
             <div className="w-28 h-28 relative bg-white p-1">
               <Image
