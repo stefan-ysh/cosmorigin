@@ -108,7 +108,7 @@ const SolutionsPage = (): JSX.Element => (
 
     <section className="px-6 py-16">
       <div className="mx-auto max-w-6xl">
-        <p className="text-center text-sm text-muted-foreground">
+        <p className="text-center text-lg text-muted-foreground">
           我们将材料、结构、电控与算法打包成行业方案，既能快速验证，也能直连后续量产。
         </p>
       </div>

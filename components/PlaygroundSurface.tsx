@@ -127,7 +127,7 @@ const PlaygroundSurface = () => {
   return (
     <div className="space-y-4">
       <div className="flex flex-col gap-6 text-center">
-        <p className="mx-auto max-w-4xl text-lg text-foreground/80">
+        <p className="mx-auto max-w-4xl text-lg text-muted-foreground">
           点击下方按钮{mode === "light" ? "关灯" : "开灯"} ，查看材料在不同光环境下的状态。所有图像均为宇元新材的发光材料制品实拍。
         </p>
       </div>
@@ -178,17 +178,6 @@ const PlaygroundSurface = () => {
             </article>
           );
         })}
-      </div>
-
-      <div className="flex flex-col gap-6 text-center pt-8">
-        <div className="mx-auto max-w-4xl space-y-4 text-lg text-foreground/80">
-          <p>
-            我们将材料、结构、电控与算法打包成行业方案，既能快速验证，也能直连后续量产。
-          </p>
-          <p>
-            每一款材料都可按光谱、亮度、封装方式定制。通过标准化验证包与快速打样体系，确保 6-8 周内完成项目首批交付。
-          </p>
-        </div>
       </div>
 
       {floatingVisible && (

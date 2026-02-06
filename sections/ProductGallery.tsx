@@ -25,7 +25,7 @@ const galleryItems = [
   {
     title: '应用场景',
     subtitle: '文旅 · 装置',
-    image: '/宇元新材发光材料制成的圣诞树.png',
+    image: '/宇元新材公司.png',
   },
   {
     title: '材料样品',

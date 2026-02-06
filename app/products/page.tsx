@@ -190,7 +190,7 @@ const ProductsPage = (): JSX.Element => (
 
     <section className="px-6 py-16">
       <div className="mx-auto max-w-6xl">
-        <p className="text-center text-sm text-muted-foreground">
+        <p className="text-center text-lg text-muted-foreground">
           每一款材料都可按光谱、亮度、封装方式定制。通过标准化验证包与快速打样体系，确保 6-8 周内完成项目首批交付。
         </p>
       </div>

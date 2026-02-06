@@ -23,7 +23,7 @@ const WhatsNew = (): JSX.Element => (
       <div className={`flex-1 ${styles.flexCenter}`}>
         <div className="w-[90%] h-[90%] relative aspect-square">
           <Image
-            src="/宇元新材发光材料制成的圣诞树.png"
+            src="/宇元新材公司.png"
             alt="最新动态图示"
             fill
             className="object-contain"
