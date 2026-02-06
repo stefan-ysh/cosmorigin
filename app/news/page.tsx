@@ -32,6 +32,16 @@ interface NewsItem {
 
 const newsItems: NewsItem[] = [
   {
+    title: '宇元新材参与迎春送福活动，为传统文化增添科技魅力',
+    date: '2026-01-31',
+    category: '公益活动',
+    summary:
+      '扬州金鹰文昌店"迎春纳福"书法家写春联活动温情上演，宇元新材携自主研发的发光材料文创产品惊喜亮相，为传统年俗盛宴注入科技感的现代光影。活动结合书法家马荣幸老师的「马」字建模制作发光挂件，受到市民热烈欢迎。',
+    href: 'https://mp.weixin.qq.com/s/MtlpjdZMIatHedajQbHyAw',
+    location: '扬州',
+    highlight: '文化融合',
+  },
+  {
     title: '【宇元新材×红苹果塑胶】跨领域技术融合探索',
     date: '2026-01-25',
     category: '技术交流',
@@ -111,8 +121,6 @@ const NewsPage = () => {
   return (
     <main className="site-main bg-[hsl(var(--surface-strong))] text-foreground">
       <JsonLd data={newsroomSchema} />
-      <div className="page-banner page-banner--news" />
-
       <section className="px-6 py-16">
         <div className={`${styles.innerWidth} mx-auto`}>
           <p className="text-center text-lg text-muted-foreground">
