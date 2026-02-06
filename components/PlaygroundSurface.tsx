@@ -139,28 +139,22 @@ const PlaygroundSurface = () => {
         />
       </div>
 
-      <div className="grid gap-10 lg:grid-cols-3">
+      <div className="grid gap-8 lg:grid-cols-3">
         {showcasePairs.map((pair) => {
           const isHeroCard = pair.id === "agriculture";
           return (
             <article
               key={pair.id}
-              className="panel hover-card flex flex-col gap-6 p-6"
+              className="bg-white rounded-2xl border border-black/5 shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden"
             >
-              <div className="space-y-3">
-                <h2 className="text-2xl font-semibold text-foreground">
-                  {pair.label}
-                </h2>
-                <p className="text-sm text-foreground/70">{pair.description}</p>
-              </div>
-              <div className="relative overflow-hidden rounded-2xl border border-foreground/10 bg-black/5">
+              <div className="relative overflow-hidden bg-black/5">
                 <div className="relative aspect-[4/3] w-full">
                   <Image
                     src={pair.light}
                     alt={`${pair.label} 开灯效果`}
                     fill
                     sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
-                    className={`object-cover ${mode === "light" ? "opacity-100" : "opacity-0"
+                    className={`object-cover transition-opacity duration-500 ${mode === "light" ? "opacity-100" : "opacity-0"
                       }`}
                     priority={isHeroCard}
                   />
@@ -169,11 +163,17 @@ const PlaygroundSurface = () => {
                     alt={`${pair.label} 关灯效果`}
                     fill
                     sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
-                    className={`object-cover ${mode === "dark" ? "opacity-100" : "opacity-0"
+                    className={`object-cover transition-opacity duration-500 ${mode === "dark" ? "opacity-100" : "opacity-0"
                       }`}
                     priority={isHeroCard}
                   />
                 </div>
+              </div>
+              <div className="p-6 space-y-2">
+                <h2 className="text-xl font-bold tracking-tight text-foreground">
+                  {pair.label}
+                </h2>
+                <p className="text-sm text-muted-foreground leading-relaxed">{pair.description}</p>
               </div>
             </article>
           );
