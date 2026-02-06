@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 
 import JsonLd from '@/components/JsonLd';
 import NewsTabs from '@/components/NewsTabs';
+import styles from '@/styles';
 import { absoluteUrl, buildOpenGraph, buildTwitter, defaultRobots } from '@/lib/seo';
 
 const pagePath = '/news';
@@ -106,15 +107,15 @@ const NewsPage = (): JSX.Element => {
       <div className="page-banner page-banner--news" />
 
       <section className="px-6 py-16">
-        <div className="mx-auto max-w-6xl">
-          <p className="text-center text-sm text-muted-foreground">
+        <div className={`${styles.innerWidth} mx-auto`}>
+          <p className="text-center text-lg text-muted-foreground">
             我们定期分享产线节点、客户共创、行业发布与技术洞察，也欢迎媒体与合作伙伴引用这些公开信息。
           </p>
         </div>
       </section>
 
       <section className="px-6 pb-20">
-        <div className="mx-auto max-w-6xl">
+        <div className={`${styles.innerWidth} mx-auto`}>
           <NewsTabs companyItems={companyItems} industryItems={industryItems} />
         </div>
       </section>

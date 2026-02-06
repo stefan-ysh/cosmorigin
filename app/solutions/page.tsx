@@ -1,6 +1,9 @@
 import type { Metadata } from 'next';
 
+import { Car, Sprout, Shield, Sparkles } from 'lucide-react';
+
 import JsonLd from '@/components/JsonLd';
+import styles from '@/styles';
 import { absoluteUrl, buildOpenGraph, buildTwitter, defaultRobots } from '@/lib/seo';
 
 const pagePath = '/solutions';
@@ -24,24 +27,28 @@ export const metadata: Metadata = {
 const solutionTracks = [
   {
     title: '智能交通与汽车',
+    icon: Car,
     pain: '夜间行车识别效率低、车内外饰设计周期长。',
     plan: '发光缝线 + 动态提示模组 + 柔性车标系统，结合车规级耐久验证。',
     kpi: '夜间可见距离 +48%，装车验证周期缩短 30%。',
   },
   {
     title: '智慧农业光补偿',
+    icon: Sprout,
     pain: '大棚光照不均，补光成本高，频繁更换灯具。',
     plan: '发光膜与光纤带实现 24 小时循环补光，并结合 RMAF 模型调节谱线。',
     kpi: '叶绿素含量提升 39.4%，单位能耗降低 28%。',
   },
   {
     title: '应急救援与公共安全',
+    icon: Shield,
     pain: '极端环境下传统灯具易受损，视觉警示滞后。',
     plan: '耐水压发光布 + 方向引导标识 + 可穿戴照明模块，形成主动安全网。',
     kpi: '水下亮度保持 85%（3260h），救援布署时间缩短 40%。',
   },
   {
     title: '文旅夜游与艺术装置',
+    icon: Sparkles,
     pain: '创意装置维护成本高、能耗大、造型受限。',
     plan: '大幅面发光膜 + 3D 打印辅材打造轻量化结构，支持任意图案定制。',
     kpi: '整体能耗下降 68%，装置维护周期翻倍。',
@@ -107,7 +114,7 @@ const SolutionsPage = (): JSX.Element => (
     <JsonLd data={solutionSchemas} />
 
     <section className="px-6 py-16">
-      <div className="mx-auto max-w-6xl">
+      <div className={`${styles.innerWidth} mx-auto`}>
         <p className="text-center text-lg text-muted-foreground">
           我们将材料、结构、电控与算法打包成行业方案，既能快速验证，也能直连后续量产。
         </p>
@@ -115,22 +122,27 @@ const SolutionsPage = (): JSX.Element => (
     </section>
 
     <section className="px-6 pb-16">
-      <div className="mx-auto max-w-6xl grid gap-6">
+      <div className={`${styles.innerWidth} mx-auto grid gap-6`}>
         {solutionTracks.map((track) => (
-          <article key={track.title} className="panel hover-card p-8">
-            <h2 className="text-xl font-semibold">{track.title}</h2>
-            <div className="mt-4 grid gap-4 md:grid-cols-3">
-              <div>
-                <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground/70">痛点</p>
-                <p className="mt-2 text-sm text-muted-foreground">{track.pain}</p>
+          <article key={track.title} className="bg-white rounded-2xl border border-black/5 shadow-sm p-8 hover:shadow-md transition-shadow duration-300">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="h-10 w-10 rounded-full bg-blue-50 flex items-center justify-center text-blue-600">
+                <track.icon className="h-5 w-5" />
               </div>
-              <div>
-                <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground/70">解决路径</p>
-                <p className="mt-2 text-sm text-muted-foreground">{track.plan}</p>
+              <h2 className="text-2xl font-bold tracking-tight text-foreground">{track.title}</h2>
+            </div>
+            <div className="grid gap-6 md:grid-cols-3">
+              <div className="space-y-2">
+                <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground/70 font-semibold">痛点</p>
+                <p className="text-sm text-muted-foreground leading-relaxed">{track.pain}</p>
               </div>
-              <div>
-                <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground/70">关键指标</p>
-                <p className="mt-2 text-sm text-muted-foreground">{track.kpi}</p>
+              <div className="space-y-2">
+                <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground/70 font-semibold">解决路径</p>
+                <p className="text-sm text-muted-foreground leading-relaxed">{track.plan}</p>
+              </div>
+              <div className="space-y-2">
+                <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground/70 font-semibold">关键指标</p>
+                <p className="text-sm text-muted-foreground leading-relaxed">{track.kpi}</p>
               </div>
             </div>
           </article>
@@ -138,21 +150,21 @@ const SolutionsPage = (): JSX.Element => (
       </div>
     </section>
 
-    <section className="px-6 pb-20">
-      <div className="mx-auto max-w-6xl">
-        <div className="section-title">
+    <section className="px-6 pb-24">
+      <div className={`${styles.innerWidth} mx-auto`}>
+        <div className="section-title text-center">
           <h3>联合交付流程</h3>
           <p>Workflow</p>
         </div>
-        <div className="panel p-8">
-          <div className="grid gap-6 md:grid-cols-2">
-            {workflow.map((step, index) => (
-              <div key={step} className="panel-soft p-6">
-                <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Step {index + 1}</p>
-                <p className="mt-3 text-sm text-muted-foreground">{step}</p>
-              </div>
-            ))}
-          </div>
+        <div className="grid gap-6 md:grid-cols-2">
+          {workflow.map((step, index) => (
+            <div key={step} className="bg-white rounded-xl border border-black/5 shadow-sm p-6 hover:shadow-md transition-shadow">
+              <span className="inline-block px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-xs font-bold tracking-wide mb-3">
+                Step {index + 1}
+              </span>
+              <p className="text-sm text-foreground/80 leading-relaxed">{step}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>

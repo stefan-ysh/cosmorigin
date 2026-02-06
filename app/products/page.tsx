@@ -2,8 +2,10 @@ import type { Metadata } from 'next';
 
 import Image from 'next/image';
 import Link from 'next/link';
+import { Paintbrush, Cable, Waves, Printer, Sparkles } from 'lucide-react';
 
 import JsonLd from '@/components/JsonLd';
+import styles from '@/styles';
 import { absoluteUrl, buildOpenGraph, buildTwitter, defaultRobots } from '@/lib/seo';
 
 const pagePath = '/products';
@@ -189,7 +191,7 @@ const ProductsPage = (): JSX.Element => (
     <JsonLd data={productCollectionSchema} />
 
     <section className="px-6 py-16">
-      <div className="mx-auto max-w-6xl">
+      <div className={`${styles.innerWidth} mx-auto`}>
         <p className="text-center text-lg text-muted-foreground">
           每一款材料都可按光谱、亮度、封装方式定制。通过标准化验证包与快速打样体系，确保 6-8 周内完成项目首批交付。
         </p>
@@ -197,106 +199,111 @@ const ProductsPage = (): JSX.Element => (
     </section>
 
     <section className="px-6 pb-20">
-      <div className="mx-auto max-w-6xl space-y-8">
-        {productDetails.map((product) => (
-          <article key={product.name} className="panel hover-card p-8">
-            <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
-              <div>
-                <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">{product.status}</p>
-                <h2 className="text-2xl font-semibold">{product.name}</h2>
-              </div>
-              <div className="flex flex-wrap gap-3">
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center justify-center rounded-md border border-border bg-white px-5 py-2 text-sm font-semibold text-foreground"
-                >
-                  联系顾问
-                </Link>
-                <a
-                  href="https://m.tb.cn/h.7Xxt7HwwRy9u8k8"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center justify-center rounded-md bg-primary px-5 py-2 text-sm font-semibold text-primary-foreground"
-                >
-                  询价
-                </a>
-              </div>
-            </div>
+      <div className={`${styles.innerWidth} mx-auto space-y-8`}>
+        {productDetails.map((product) => {
+          const ProductIcon = product.name.includes('油漆') ? Paintbrush
+            : product.name.includes('纤维') ? Cable
+            : product.name.includes('电致') ? Sparkles
+            : product.name.includes('膜') ? Waves
+            : Printer;
 
-            <div className="mt-6 grid gap-6 lg:grid-cols-[300px,minmax(0,1fr)]">
-              <div className="panel-soft flex items-center justify-center p-0 bg-[#000]">
-                <div className="relative aspect-square w-full overflow-hidden rounded-md ">
-                  <Image
-                    src={product.image}
-                    alt={product.imageAlt}
-                    fill
-                    className="object-contain"
-                    sizes="(min-width: 1024px) 300px, 100vw"
-                    priority={product.name === '发光油漆系列'}
-                  />
-                </div>
-              </div>
-
-              <div className="space-y-6">
-                <div className="grid gap-4 md:grid-cols-2">
-                  <div>
-                    <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground/70">核心参数</p>
-                    <p className="mt-2 text-sm text-muted-foreground">{product.overview}</p>
-                  </div>
-                  <div>
-                    <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground/70">典型应用</p>
-                    <p className="mt-2 text-sm text-muted-foreground">{product.applications}</p>
-                  </div>
-                </div>
-
-                <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-                  {[{
-                    label: '亮度区间',
-                    value: product.brightness,
-                  },
-                  {
-                    label: '供货形态',
-                    value: product.supply,
-                  },
-                  {
-                    label: '认证/验证',
-                    value: product.certification,
-                  },
-                  {
-                    label: '关键参数',
-                    value: product.keyParameters,
-                  }].map((item) => (
-                    <div key={`${product.name}-${item.label}`} className="panel-soft p-4">
-                      <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground/70">{item.label}</p>
-                      <p className="mt-2 text-sm text-muted-foreground">{item.value}</p>
+          return (
+            <article key={product.name} className="bg-white rounded-2xl border border-black/5 shadow-sm hover:shadow-md transition-shadow duration-300">
+              <div className="p-8">
+                <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+                  <div className="flex items-center gap-3">
+                    <div className="h-10 w-10 rounded-full bg-blue-50 flex items-center justify-center text-blue-600 shrink-0">
+                      <ProductIcon className="h-5 w-5" />
                     </div>
-                  ))}
+                    <div>
+                      <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">{product.status}</p>
+                      <h2 className="text-2xl font-bold tracking-tight text-foreground">{product.name}</h2>
+                    </div>
+                  </div>
+                  <div className="flex flex-wrap gap-3">
+                    <Link
+                      href="/contact"
+                      className="inline-flex items-center justify-center rounded-md border border-border bg-white px-5 py-2 text-sm font-semibold text-foreground"
+                    >
+                      联系顾问
+                    </Link>
+                    <a
+                      href="https://m.tb.cn/h.7Xxt7HwwRy9u8k8"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center justify-center rounded-md bg-primary px-5 py-2 text-sm font-semibold text-primary-foreground"
+                    >
+                      询价
+                    </a>
+                  </div>
                 </div>
 
-                <div className="overflow-x-auto rounded-md border border-border bg-white">
-                  <table className="min-w-full text-left text-sm text-muted-foreground">
-                    <thead>
-                      <tr className="text-foreground">
-                        <th className="px-5 py-3">规格/型号</th>
-                        <th className="px-5 py-3">关键参数</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {product.variants.map((variant) => (
-                        <tr key={`${product.name}-${variant.model}`} className="border-t border-border">
-                          <td className="px-5 py-3 whitespace-nowrap font-medium text-foreground">{variant.model}</td>
-                          <td className="px-5 py-3">{variant.spec}</td>
-                        </tr>
+                <div className="mt-6 grid gap-6 lg:grid-cols-[300px,minmax(0,1fr)]">
+                  <div className="panel-soft flex items-center justify-center p-0 bg-[#000]">
+                    <div className="relative aspect-square w-full overflow-hidden rounded-md">
+                      <Image
+                        src={product.image}
+                        alt={product.imageAlt}
+                        fill
+                        className="object-contain"
+                        sizes="(min-width: 1024px) 300px, 100vw"
+                        priority={product.name === '发光油漆系列'}
+                      />
+                    </div>
+                  </div>
+
+                  <div className="space-y-6">
+                    <div className="grid gap-4 md:grid-cols-2">
+                      <div>
+                        <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground/70">核心参数</p>
+                        <p className="mt-2 text-sm text-muted-foreground">{product.overview}</p>
+                      </div>
+                      <div>
+                        <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground/70">典型应用</p>
+                        <p className="mt-2 text-sm text-muted-foreground">{product.applications}</p>
+                      </div>
+                    </div>
+
+                    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                      {[
+                        { label: '亮度区间', value: product.brightness },
+                        { label: '供货形态', value: product.supply },
+                        { label: '认证/验证', value: product.certification },
+                        { label: '关键参数', value: product.keyParameters },
+                      ].map((item) => (
+                        <div key={`${product.name}-${item.label}`} className="panel-soft p-4">
+                          <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground/70">{item.label}</p>
+                          <p className="mt-2 text-sm text-muted-foreground">{item.value}</p>
+                        </div>
                       ))}
-                    </tbody>
-                  </table>
-                </div>
+                    </div>
 
-                {product.extraNote && <p className="text-xs text-muted-foreground">{product.extraNote}</p>}
+                    <div className="overflow-x-auto rounded-md border border-border bg-white">
+                      <table className="min-w-full text-left text-sm text-muted-foreground">
+                        <thead>
+                          <tr className="text-foreground">
+                            <th className="px-5 py-3">规格/型号</th>
+                            <th className="px-5 py-3">关键参数</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {product.variants.map((variant) => (
+                            <tr key={`${product.name}-${variant.model}`} className="border-t border-border">
+                              <td className="px-5 py-3 whitespace-nowrap font-medium text-foreground">{variant.model}</td>
+                              <td className="px-5 py-3">{variant.spec}</td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+
+                    {product.extraNote && <p className="text-xs text-muted-foreground">{product.extraNote}</p>}
+                  </div>
+                </div>
               </div>
-            </div>
-          </article>
-        ))}
+            </article>
+          );
+        })}
       </div>
     </section>
 
