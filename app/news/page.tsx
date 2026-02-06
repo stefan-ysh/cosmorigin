@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 
 import JsonLd from '@/components/JsonLd';
-import NewsTabs from '@/components/NewsTabs';
 import styles from '@/styles';
 import { absoluteUrl, buildOpenGraph, buildTwitter, defaultRobots } from '@/lib/seo';
 
@@ -97,10 +97,7 @@ const newsroomSchema = {
   })),
 };
 
-const NewsPage = (): JSX.Element => {
-  const companyItems = newsItems.filter((item) => !item.category.includes('行业'));
-  const industryItems = newsItems.filter((item) => item.category.includes('行业'));
-
+const NewsPage = () => {
   return (
     <main className="site-main bg-[hsl(var(--surface-strong))] text-foreground">
       <JsonLd data={newsroomSchema} />
@@ -116,7 +113,72 @@ const NewsPage = (): JSX.Element => {
 
       <section className="px-6 pb-20">
         <div className={`${styles.innerWidth} mx-auto`}>
-          <NewsTabs companyItems={companyItems} industryItems={industryItems} />
+          <div className="relative">
+            <div className="absolute top-6 bottom-6 left-[19px] w-0.5 bg-gradient-to-b from-blue-500/20 via-blue-500/50 to-blue-500/20 md:left-1/2 md:-ml-px hidden md:block"></div>
+            <div className="space-y-8 relative">
+              {newsItems.map((item, index) => {
+                const [year, month, day] = item.date.split('-');
+                const isExternal = item.href?.startsWith('http');
+                
+                return (
+                  <div key={`${item.title}-${item.date}`} className={`md:flex items-start justify-between gap-8 ${index % 2 === 0 ? 'flex-row-reverse' : ''}`}>
+                    <div className="hidden md:block w-5/12" />
+                    <div className="absolute left-[13px] md:left-1/2 md:-ml-1.5 w-3 h-3 rounded-full bg-blue-600 ring-4 ring-white shadow-sm z-10 hidden md:block" />
+                    
+                    <div className="md:w-5/12 bg-white rounded-xl border border-border/50 p-6 shadow-sm hover:shadow-md transition-shadow relative ml-8 md:ml-0">
+                      {/* Mobile dot */}
+                      <div className="absolute -left-[39px] top-6 w-3 h-3 rounded-full bg-blue-600 ring-4 ring-[hsl(var(--surface-strong))] md:hidden" />
+                      <div className="absolute -left-[33px] top-[34px] bottom-[-40px] w-0.5 bg-border/50 md:hidden last:hidden"></div>
+                      
+                      <div className="flex items-center gap-2 mb-3">
+                        <span className="inline-block px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-xs font-bold tracking-wide">
+                          {year}-{month}-{day}
+                        </span>
+                        <span className="text-xs text-muted-foreground">{item.category}</span>
+                        {item.location && <span className="text-xs text-muted-foreground">· {item.location}</span>}
+                        {item.highlight && (
+                          <span className="inline-block px-2 py-0.5 rounded bg-green-50 text-green-700 text-xs font-semibold">
+                            {item.highlight}
+                          </span>
+                        )}
+                      </div>
+                      
+                      {item.href ? (
+                        isExternal ? (
+                          <a href={item.href} target="_blank" rel="noreferrer" className="block group">
+                            <h3 className="text-lg font-bold text-foreground mb-2 group-hover:text-blue-600 transition-colors">
+                              {item.title}
+                            </h3>
+                            <p className="text-sm text-muted-foreground leading-relaxed">
+                              {item.summary}
+                            </p>
+                          </a>
+                        ) : (
+                          <Link href={item.href} className="block group">
+                            <h3 className="text-lg font-bold text-foreground mb-2 group-hover:text-blue-600 transition-colors">
+                              {item.title}
+                            </h3>
+                            <p className="text-sm text-muted-foreground leading-relaxed">
+                              {item.summary}
+                            </p>
+                          </Link>
+                        )
+                      ) : (
+                        <>
+                          <h3 className="text-lg font-bold text-foreground mb-2">
+                            {item.title}
+                          </h3>
+                          <p className="text-sm text-muted-foreground leading-relaxed">
+                            {item.summary}
+                          </p>
+                        </>
+                      )}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
         </div>
       </section>
     </main>
