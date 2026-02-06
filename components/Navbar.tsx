@@ -15,6 +15,7 @@ const navLinks = [
   { label: "产品矩阵", href: "/products" },
   { label: "解决方案", href: "/solutions" },
   { label: "光效体验", href: "/playground" },
+  { label: "新闻动态", href: "/news" },
 ];
 
 const Navbar = () => {
