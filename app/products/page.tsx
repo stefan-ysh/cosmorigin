@@ -224,7 +224,7 @@ const ProductsPage = (): JSX.Element => (
             </div>
 
             <div className="mt-6 grid gap-6 lg:grid-cols-[300px,minmax(0,1fr)]">
-              <div className="panel-soft flex items-center justify-center p-4 bg-[#000]">
+              <div className="panel-soft flex items-center justify-center p-0 bg-[#000]">
                 <div className="relative aspect-square w-full overflow-hidden rounded-md ">
                   <Image
                     src={product.image}

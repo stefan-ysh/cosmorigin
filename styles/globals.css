@@ -747,6 +747,18 @@ body {
     background: #efefef;
   }
 
+  .home-section-label {
+    font-size: 22px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 26px;
+    letter-spacing: 0.06em;
+  }
+  .home-section p {
+    font-size: 14px;
+    color: #333;
+    line-height: 2rem;
+  }
   .home-section-title {
     padding-bottom: 10px;
     border-bottom: 1px solid #ccc;
@@ -759,11 +771,7 @@ body {
     color: #666;
   }
 
-  .home-section p {
-    font-size: 14px;
-    color: #333;
-    line-height: 2rem;
-  }
+
 
   .home-section-highlight {
     margin: 40px 0 0;
@@ -832,28 +840,51 @@ body {
   }
 
   .home-customer-card {
-    background: #fff;
-    border: 1px solid #e6e6e6;
-    padding: 16px;
-  }
-
-  .home-customer-image {
     position: relative;
-    width: 100%;
-    height: 160px;
-    margin-bottom: 12px;
+    background: #fff;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #0e1016;
+    border: 1px solid #e6e6e6;
+    min-height: 240px;
+    display: flex;
+    align-items: flex-end;
+    border-radius: 8px;
+    overflow: hidden;
   }
 
-  .home-customer-title {
-    font-size: 16px;
-    color: #333;
+  .home-customer-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.78) 70%, rgba(0, 0, 0, 0.9) 100%);
+  }
+
+  .home-customer-card .home-customer-title {
+    font-size: 20px;
+    color: #fff;
+    line-height: 1.5;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+    margin-bottom: 10px;
   }
 
   .home-customer-content small {
-    color: #666;
+    color: rgba(255, 255, 255, 0.85);
     line-height: 1.6;
     display: block;
     margin-top: 8px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+  }
+
+  .home-customer-content {
+    position: relative;
+    z-index: 1;
+    padding: 18px 18px 16px;
+    background: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    width: 100%;
   }
 
   .home-feature-grid {

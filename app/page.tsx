@@ -38,7 +38,8 @@ const Page = () => (
         '/images/banner/2.png',
         '/images/banner/3.png',
         '/images/banner/4.png',
-        '/images/banner/未命名.jpeg',
+        '/images/banner/5.jpeg',
+        '/images/banner/6.jpg',
       ]}
     />
 
@@ -64,35 +65,25 @@ const Page = () => (
           <p>
             依托材料实验室、智能化生产基地与行业联合创新中心，我们构建起从核心配方、器件结构、制程工艺到系统集成的一体化技术闭环，支撑高效、低碳、可定制化的光电交付。
           </p>
-          <h3 className="home-section-highlight">柔性发光一体化解决方案提供商</h3>
         </div>
       </div>
     </section>
 
     <LogoClouds />
 
-    <section id="contactUs" className="home-contact">
-      <div className={`${styles.innerWidth} mx-auto`}>
-        <div className="home-contact-card text-center">
-          <h1>携手点亮可持续未来</h1>
-          <h3>欢迎预约材料样品、技术研讨或联合研发</h3>
-          <a href="/contact" className="home-contact-button">
-            <span className="contact-button-icon" aria-hidden="true">☎</span>
-            联系我们
-          </a>
-        </div>
-      </div>
-    </section>
-
     <section id="customer" className="home-section home-section-muted">
       <div className={`${styles.innerWidth} mx-auto`}>
-        <p className="home-section-label text-center">行业洞察</p>
+        <div className="section-title text-center">
+          <h3>行业洞察</h3>
+          <p>INDUSTRY INSIGHTS</p>
+        </div>
         <div className="home-customer-grid">
           {insights.map((item) => (
-            <div key={item.title} className="home-customer-card">
-              <div className="home-customer-image">
-                <Image src={item.imgUrl} alt={item.title} fill className="object-contain" sizes="(max-width: 768px) 100vw, 33vw" />
-              </div>
+            <div
+              key={item.title}
+              className="home-customer-card"
+              style={{ backgroundImage: `url(${item.imgUrl})` }}
+            >
               <div className="home-customer-content">
                 <p className="home-customer-title">{item.title}</p>
                 <small>{item.subtitle}</small>
@@ -116,6 +107,19 @@ const Page = () => (
               <div className="home-feature-content">{feature.subtitle}</div>
             </div>
           ))}
+        </div>
+      </div>
+    </section>
+
+    <section id="contactUs" className="home-contact">
+      <div className={`${styles.innerWidth} mx-auto`}>
+        <div className="home-contact-card text-center">
+          <h1>携手点亮可持续未来</h1>
+          <h3>欢迎预约材料样品、技术研讨或联合研发</h3>
+          <a href="/contact" className="home-contact-button">
+            <span className="contact-button-icon" aria-hidden="true">☎</span>
+            联系我们
+          </a>
         </div>
       </div>
     </section>
