@@ -1,0 +1,40 @@
+# cosmorigin.com | LLMS Extended Index
+
+Generated (UTC): 2026-03-24 15:41:16Z
+Base URL: https://cosmorigin.com
+
+## 1. 宇元新材 | 柔性发光材料与原创解决方案
+URL: https://cosmorigin.com/
+Summary: 宇元新材专注柔性发光材料研发，提供发光油漆、发光纤维丝、发光膜及行业解决方案，覆盖交通、农业、应急与文旅场景。
+
+## 2. 关于宇元新材 | 公司概览与技术底座
+URL: https://cosmorigin.com/about
+Summary: 了解宇元新材的使命、团队与研发体系。专注柔性发光材料的原创技术，持续投入中试产线与联合实验室建设。
+
+## 3. 宇元新材产品 | 发光油漆、纤维丝、薄膜与 3D 打印辅材等
+URL: https://cosmorigin.com/products
+Summary: 浏览宇元新材的核心产品：发光油漆、发光纤维丝、发光膜以及 3D 打印辅材，支持定制光谱与多场景应用。
+
+## 4. 行业解决方案 | 交通、农业、应急与文旅应用
+URL: https://cosmorigin.com/solutions
+Summary: 宇元新材面向交通出行、智慧农业、应急救援与文旅艺术等行业提供发光材料解决方案，整合材料、结构、电控与交付流程。
+
+## 5. 案例展示与合作实绩
+URL: https://cosmorigin.com/cases
+Summary: 沉淀汽车、农业、应急、文旅等真实案例，呈现目标、材料方案与阶段性数据，帮助合作伙伴评估发光材料落地可行性。
+
+## 6. 宇元新材资料中心 | 白皮书与检测报告
+URL: https://cosmorigin.com/resources
+Summary: 集中发布产品手册、性能测试、认证证书、品牌素材与协议文档，方便合作伙伴快速下载并评估发光材料能力。
+
+## 7. 联系宇元新材 | 商务与技术支持
+URL: https://cosmorigin.com/contact
+Summary: 通过电话、邮箱或表单与宇元新材取得联系，预约材料样品、技术研讨或联合研发。
+
+## 8. 新闻动态 | 宇元新材最新进展
+URL: https://cosmorigin.com/news
+Summary: 关注宇元新材的产品发布、合作签约与实验室里程碑，第一时间掌握柔性发光材料的产业化动态。
+
+## 9. 宇元新材发光材料效果展示
+URL: https://cosmorigin.com/playground
+Summary: 预览宇元新材发光材料的直观表现，辅助快速评估灯效。

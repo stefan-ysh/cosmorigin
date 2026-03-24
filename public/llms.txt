@@ -1,0 +1,17 @@
+# cosmorigin.com | LLMS Content Index
+
+Generated (UTC): 2026-03-24 15:41:16Z
+Base URL: https://cosmorigin.com
+Source URLs discovered: 10
+Included high-value URLs: 9
+
+## High-value pages
+- 宇元新材 | 柔性发光材料与原创解决方案 - https://cosmorigin.com/
+- 关于宇元新材 | 公司概览与技术底座 - https://cosmorigin.com/about
+- 宇元新材产品 | 发光油漆、纤维丝、薄膜与 3D 打印辅材等 - https://cosmorigin.com/products
+- 行业解决方案 | 交通、农业、应急与文旅应用 - https://cosmorigin.com/solutions
+- 案例展示与合作实绩 - https://cosmorigin.com/cases
+- 宇元新材资料中心 | 白皮书与检测报告 - https://cosmorigin.com/resources
+- 联系宇元新材 | 商务与技术支持 - https://cosmorigin.com/contact
+- 新闻动态 | 宇元新材最新进展 - https://cosmorigin.com/news
+- 宇元新材发光材料效果展示 - https://cosmorigin.com/playground
