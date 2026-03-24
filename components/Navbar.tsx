@@ -1,21 +1,22 @@
-"use client";
+'use client';
 
-import { useEffect, useState } from "react";
-import { createPortal } from "react-dom";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { Menu, X } from "lucide-react";
-import Image from "next/image";
+import { useEffect, useState } from 'react';
+import { createPortal } from 'react-dom';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { Menu, X } from 'lucide-react';
+import Image from 'next/image';
 
-import styles from "@/styles";
+import styles from '@/styles';
 
 const navLinks = [
-  { label: "首页", href: "/" },
-  { label: "关于我们", href: "/about" },
-  { label: "产品矩阵", href: "/products" },
-  { label: "解决方案", href: "/solutions" },
-  { label: "光效体验", href: "/playground" },
-  { label: "新闻动态", href: "/news" },
+  { label: '首页', href: '/' },
+  { label: '关于我们', href: '/about' },
+  { label: '产品矩阵', href: '/products' },
+  { label: '解决方案', href: '/solutions' },
+  { label: '光效体验', href: '/playground' },
+  { label: '新闻动态', href: '/news' },
+  { label: '资料中心', href: '/resources' },
 ];
 
 const Navbar = () => {
@@ -29,10 +30,10 @@ const Navbar = () => {
   }, []);
 
   useEffect(() => {
-    if (typeof document === "undefined") return;
-    document.body.classList.toggle("overflow-hidden", isMobileOpen);
+    if (typeof document === 'undefined') return;
+    document.body.classList.toggle('overflow-hidden', isMobileOpen);
     return () => {
-      document.body.classList.remove("overflow-hidden");
+      document.body.classList.remove('overflow-hidden');
     };
   }, [isMobileOpen]);
 
@@ -49,13 +50,13 @@ const Navbar = () => {
             onClick={() => setIsMobileOpen(false)}
             className="text-lg font-bold"
           >
-              <Image
-                src="/light-logo.png"
-                alt="扬州宇元新材有限公司 cosmorigin Logo"
-                width={150}
-                height={100}
-              />
-            </Link>
+            <Image
+              src="/light-logo.png"
+              alt="扬州宇元新材有限公司 cosmorigin Logo"
+              width={150}
+              height={100}
+            />
+          </Link>
           <button
             type="button"
             onClick={() => setIsMobileOpen(false)}
@@ -67,7 +68,7 @@ const Navbar = () => {
         </div>
         <nav className="flex flex-1 flex-col gap-4">
           {navLinks.map((link) => {
-            const isActive = pathname === link.href && link.href !== "/";
+            const isActive = pathname === link.href && link.href !== '/';
             return (
               <Link
                 key={link.href}
@@ -115,7 +116,7 @@ const Navbar = () => {
 
             <div className="hidden flex-1 items-center justify-center gap-8 lg:flex">
               {navLinks.map((link) => {
-                const isActive = pathname === link.href && link.href !== "/";
+                const isActive = pathname === link.href && link.href !== '/';
                 return (
                   <Link
                     key={link.href}
@@ -150,7 +151,7 @@ const Navbar = () => {
           </div>
         </nav>
       </header>
-      {isMounted && typeof document !== "undefined"
+      {isMounted && typeof document !== 'undefined'
         ? createPortal(mobileMenu, document.body)
         : null}
     </>
