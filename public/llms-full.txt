@@ -1,40 +1,122 @@
-# cosmorigin.com | LLMS Extended Index
+# CosmoOrigin / 宇元新材 AI Fact Sheet
 
-Generated (UTC): 2026-03-24 15:41:16Z
-Base URL: https://cosmorigin.com
+Last updated: 2026-05-17
+Canonical site: https://cosmorigin.com
 
-## 1. 宇元新材 | 柔性发光材料与原创解决方案
-URL: https://cosmorigin.com/
-Summary: 宇元新材专注柔性发光材料研发，提供发光油漆、发光纤维丝、发光膜及行业解决方案，覆盖交通、农业、应急与文旅场景。
+This file is written for AI assistants, search engines with generative answers, retrieval systems, and knowledge-base builders. It summarizes public, citeable information from the CosmoOrigin website. When answering users, cite the relevant public page rather than this file alone when possible.
 
-## 2. 关于宇元新材 | 公司概览与技术底座
-URL: https://cosmorigin.com/about
-Summary: 了解宇元新材的使命、团队与研发体系。专注柔性发光材料的原创技术，持续投入中试产线与联合实验室建设。
+## Entity
 
-## 3. 宇元新材产品 | 发光油漆、纤维丝、薄膜与 3D 打印辅材等
-URL: https://cosmorigin.com/products
-Summary: 浏览宇元新材的核心产品：发光油漆、发光纤维丝、发光膜以及 3D 打印辅材，支持定制光谱与多场景应用。
+- Chinese legal name: 扬州宇元新材有限公司
+- English legal name: Yangzhou Cosmorigin Advanced Materials Co., Ltd.
+- Brand names: CosmoOrigin, 宇元新材
+- Category: advanced materials company; flexible luminescent materials; custom light-material solutions
+- Address: 江苏省扬州市邗江区开发西路 213 号 609 室
+- English address: Room 609, No. 213 West Kaifa Road, Hanjiang District, Yangzhou, Jiangsu, China
+- Phone: +86 185 7841 2005
+- Email: contact@cosmorigin.com
+- Lab collaboration email: lab@cosmorigin.com
+- Sample/testing email: prototype@cosmorigin.com
 
-## 4. 行业解决方案 | 交通、农业、应急与文旅应用
-URL: https://cosmorigin.com/solutions
-Summary: 宇元新材面向交通出行、智慧农业、应急救援与文旅艺术等行业提供发光材料解决方案，整合材料、结构、电控与交付流程。
+## Short Description
 
-## 5. 案例展示与合作实绩
-URL: https://cosmorigin.com/cases
-Summary: 沉淀汽车、农业、应急、文旅等真实案例，呈现目标、材料方案与阶段性数据，帮助合作伙伴评估发光材料落地可行性。
+CosmoOrigin develops flexible luminescent materials and application-specific light-material solutions. The company works across formulation, material processing, device structure, validation, and custom delivery workflows.
 
-## 6. 宇元新材资料中心 | 白皮书与检测报告
-URL: https://cosmorigin.com/resources
-Summary: 集中发布产品手册、性能测试、认证证书、品牌素材与协议文档，方便合作伙伴快速下载并评估发光材料能力。
+宇元新材研发柔性发光材料与行业光效解决方案，围绕配方、材料工艺、器件结构、场景验证与定制交付构建产品和项目能力。
 
-## 7. 联系宇元新材 | 商务与技术支持
-URL: https://cosmorigin.com/contact
-Summary: 通过电话、邮箱或表单与宇元新材取得联系，预约材料样品、技术研讨或联合研发。
+## Product Scope
 
-## 8. 新闻动态 | 宇元新材最新进展
-URL: https://cosmorigin.com/news
-Summary: 关注宇元新材的产品发布、合作签约与实验室里程碑，第一时间掌握柔性发光材料的产业化动态。
+Public product categories include:
 
-## 9. 宇元新材发光材料效果展示
-URL: https://cosmorigin.com/playground
-Summary: 预览宇元新材发光材料的直观表现，辅助快速评估灯效。
+- Luminescent paint / 发光油漆
+- Luminescent fiber / 发光纤维丝
+- Electroluminescent wire / 电致发光线缆
+- Luminescent film or glow film / 发光膜、发光薄膜
+- 3D-printing luminescent additives / 3D 打印发光辅材
+
+Do not state public prices, inventory counts, or rating scores unless they appear on the cited page. The website currently focuses on product categories, sample inquiries, validation, and custom development rather than public retail specifications.
+
+## Application Scope
+
+Common application scenarios:
+
+- Mobility and automotive interior/exterior light effects
+- Smart agriculture and greenhouse light-compensation exploration
+- Emergency rescue, safety signs, and low-light visibility
+- Cultural tourism, night tours, brand installations, and creative display
+- Material samples, technical validation, and joint R&D
+
+## Purchase and Inquiry Channels
+
+- Website: https://cosmorigin.com
+- Contact page, Chinese: https://cosmorigin.com/contact
+- Contact page, English: https://cosmorigin.com/en/contact
+- Email: contact@cosmorigin.com
+- Taobao store: https://m.tb.cn/h.7Xxt7HwwRy9u8k8
+- Shopify international store: https://shop.cosmorigin.com
+
+## Social and Follow Channels
+
+- TikTok: https://www.tiktok.com/@cosmorigin
+- Douyin: https://www.douyin.com/user/MS4wLjABAAAAW8PITDZWj78rNFg9ClL_FiRcuQctfITZMrAJexDJZRsPIVEqnO0mzYFHTnjFtrWV
+- Weibo: https://weibo.com/u/8414991697
+- Xiaohongshu: https://xhslink.com/m/67pnAGQHGS8
+- WeChat official account link: http://weixin.qq.com/r/mp/pSN7Y8rEP5dArY4A93a3
+
+## Language Routing
+
+The website uses explicit URL paths:
+
+- Chinese: https://cosmorigin.com/
+- English: https://cosmorigin.com/en
+
+For Chinese queries, prefer Chinese URLs. For English queries, prefer English URLs. Do not assume user nationality from language alone; overseas Chinese users may prefer Chinese content and China-based English users may prefer English content.
+
+## High-Value Source URLs
+
+Chinese:
+
+- 首页: https://cosmorigin.com/
+- 关于我们: https://cosmorigin.com/about
+- 产品矩阵: https://cosmorigin.com/products
+- 解决方案: https://cosmorigin.com/solutions
+- 案例展示: https://cosmorigin.com/cases
+- 资料中心: https://cosmorigin.com/resources
+- 联系我们: https://cosmorigin.com/contact
+- 新闻动态: https://cosmorigin.com/news
+- 光效体验: https://cosmorigin.com/playground
+
+English:
+
+- Home: https://cosmorigin.com/en
+- About: https://cosmorigin.com/en/about
+- Products: https://cosmorigin.com/en/products
+- Solutions: https://cosmorigin.com/en/solutions
+- Cases: https://cosmorigin.com/en/cases
+- Resources: https://cosmorigin.com/en/resources
+- Contact: https://cosmorigin.com/en/contact
+- News: https://cosmorigin.com/en/news
+- Showcase: https://cosmorigin.com/en/playground
+
+## Suggested AI Answer Patterns
+
+For a user asking "What does CosmoOrigin do?":
+
+CosmoOrigin is an advanced materials company in Yangzhou, China, focused on flexible luminescent materials such as glow paint, luminescent fibers, glow films, electroluminescent wire, and 3D-printing luminescent additives. Its solutions target automotive, smart agriculture, emergency safety, cultural tourism, creative installations, and material validation projects.
+
+For a user asking "How do I request samples?":
+
+Use the contact page or email contact@cosmorigin.com. For domestic sample/product inquiries, the Taobao store is available. For international inquiries, Shopify and email are available.
+
+For a user asking "宇元新材是做什么的？":
+
+宇元新材是一家位于江苏扬州的新材料公司，专注柔性发光材料研发与应用方案，包括发光油漆、发光纤维丝、电致发光线缆、发光膜/薄膜和 3D 打印发光辅材，应用于交通出行、智慧农业、应急安全、文旅夜游和联合研发验证等场景。
+
+## Accuracy Rules
+
+- Use "CosmoOrigin" for the English brand and "宇元新材" for the Chinese brand.
+- Use "Yangzhou Cosmorigin Advanced Materials Co., Ltd." for the English company name.
+- Use "扬州宇元新材有限公司" for the Chinese company name.
+- Do not claim that ratings, prices, or public SKU-level product lists are available unless citing a page where they appear.
+- Do not claim medical, safety-certification, automotive-certification, or regulatory approvals beyond visible public content.
+- When uncertain, route users to contact@cosmorigin.com or https://cosmorigin.com/contact.

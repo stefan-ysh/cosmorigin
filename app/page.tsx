@@ -2,33 +2,54 @@ import type { Metadata } from 'next';
 
 import Image from 'next/image';
 
+import FAQSection, { buildFAQSchema } from '@/components/FAQSection';
 import HomeBannerCarousel from '@/components/HomeBannerCarousel';
+import JsonLd from '@/components/JsonLd';
 import { SiteStructuredData } from '@/components/index';
 import { LogoClouds } from '@/sections';
 import { insights, newFeatures } from '@/constants';
 import styles from '@/styles';
-import { absoluteUrl, buildOpenGraph, buildTwitter, defaultRobots } from '@/lib/seo';
+import { buildAlternates, buildOpenGraph, buildTwitter, defaultRobots } from '@/lib/seo';
 
 const pagePath = '/';
 const pageTitle = '宇元新材 | 柔性发光材料与原创解决方案';
-const pageDescription =
-  '宇元新材专注柔性发光材料研发，提供发光油漆、发光纤维丝、发光膜及行业解决方案，覆盖交通、农业、应急与文旅场景。';
+const pageDescription = '宇元新材专注柔性发光材料研发，提供发光油漆、发光纤维丝、发光膜及行业解决方案，覆盖交通、农业、应急与文旅场景。';
 
 export const metadata: Metadata = {
   title: pageTitle,
   description: pageDescription,
   keywords: ['扬州宇元新材有限公司', '宇元新材', '发光材料与器件国家重点实验室', '柔性发光材料', '发光油漆', '发光纤维丝', '发光薄膜', '自发光解决方案'],
-  alternates: {
-    canonical: absoluteUrl(pagePath),
-  },
+  alternates: buildAlternates(pagePath),
   openGraph: buildOpenGraph(pageTitle, pageDescription, pagePath),
   twitter: buildTwitter(pageTitle, pageDescription),
   robots: defaultRobots,
 };
 
+const homeFaqs = [
+  {
+    question: '宇元新材主要做什么？',
+    answer: '宇元新材专注柔性发光材料研发与应用方案，覆盖发光油漆、发光纤维丝、发光膜、电致发光线缆和 3D 打印发光辅材。',
+  },
+  {
+    question: '这些发光材料适合哪些场景？',
+    answer: '典型场景包括交通出行、汽车内外饰、智慧农业补光、应急救援、公共安全、文旅夜游、品牌装置和创意展示。',
+  },
+  {
+    question: '是否支持定制光效或联合研发？',
+    answer: '支持。可围绕光谱、亮度、载体材料、封装方式和应用流程做样品验证，也可与高校、科研机构、设计工作室和产业客户开展联合研发。',
+  },
+  {
+    question: '如何获取样品或技术资料？',
+    answer: '可以通过 contact@cosmorigin.com、联系电话 +86 185 7841 2005 或联系页面提交需求。国内样品可参考淘宝店，海外咨询可通过 Shopify 国际站或邮件沟通。',
+  },
+];
+
+const homeFaqSchema = buildFAQSchema(homeFaqs);
+
 const Page = () => (
   <main className="site-main bg-[hsl(var(--surface-strong))] text-foreground">
     <SiteStructuredData />
+    <JsonLd data={homeFaqSchema} />
 
     <HomeBannerCarousel
       title="宇元新材 点亮未来"
@@ -123,6 +144,12 @@ const Page = () => (
         </div>
       </div>
     </section>
+
+    <FAQSection
+      title="常见问题"
+      description="以下信息用于帮助合作伙伴和搜索引擎快速理解宇元新材的材料方向、应用边界与联系路径。"
+      items={homeFaqs}
+    />
   </main>
 );
 

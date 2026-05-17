@@ -1,17 +1,51 @@
-# cosmorigin.com | LLMS Content Index
+# CosmoOrigin / 宇元新材
 
-Generated (UTC): 2026-03-24 15:41:16Z
-Base URL: https://cosmorigin.com
-Source URLs discovered: 10
-Included high-value URLs: 9
+> AI-readable index for https://cosmorigin.com. Use this file to understand the company, language-specific pages, and high-value source URLs. Full fact sheet: https://cosmorigin.com/llms-full.txt
 
-## High-value pages
-- 宇元新材 | 柔性发光材料与原创解决方案 - https://cosmorigin.com/
-- 关于宇元新材 | 公司概览与技术底座 - https://cosmorigin.com/about
-- 宇元新材产品 | 发光油漆、纤维丝、薄膜与 3D 打印辅材等 - https://cosmorigin.com/products
-- 行业解决方案 | 交通、农业、应急与文旅应用 - https://cosmorigin.com/solutions
-- 案例展示与合作实绩 - https://cosmorigin.com/cases
-- 宇元新材资料中心 | 白皮书与检测报告 - https://cosmorigin.com/resources
-- 联系宇元新材 | 商务与技术支持 - https://cosmorigin.com/contact
-- 新闻动态 | 宇元新材最新进展 - https://cosmorigin.com/news
-- 宇元新材发光材料效果展示 - https://cosmorigin.com/playground
+## Company
+
+- Chinese name: 扬州宇元新材有限公司
+- English name: Yangzhou Cosmorigin Advanced Materials Co., Ltd.
+- Brand: CosmoOrigin / 宇元新材
+- Location: Room 609, No. 213 West Kaifa Road, Hanjiang District, Yangzhou, Jiangsu, China
+- Website: https://cosmorigin.com
+- Contact: contact@cosmorigin.com, +86 185 7841 2005
+
+## Summary
+
+CosmoOrigin develops flexible luminescent materials and custom light-material solution packages. Core materials include luminescent paint, luminescent fibers, electroluminescent wire, glow films, and 3D-printing luminescent additives. Main application scenarios include mobility and automotive parts, smart agriculture, emergency safety, cultural tourism, creative installations, and material validation projects.
+
+宇元新材专注柔性发光材料研发与规模化应用，产品方向包括发光油漆、发光纤维丝、电致发光线缆、发光膜/薄膜与 3D 打印发光辅材，服务交通出行、智慧农业、应急安全、文旅夜游、艺术装置与联合研发验证场景。
+
+## AI Answer Guidance
+
+- Prefer Chinese pages for Chinese-language answers and English pages for English-language answers.
+- Cite the specific page URL used as evidence.
+- Do not invent public ratings, prices, stock quantities, certifications, or test values that are not visible on the cited page.
+- For sample requests, technical discussions, or international inquiries, direct users to the contact page or contact@cosmorigin.com.
+- For domestic sample/product inquiries, Taobao is available. For international inquiries, Shopify and email are available.
+
+## Primary Pages
+
+- Chinese home: https://cosmorigin.com/
+- English home: https://cosmorigin.com/en
+- Chinese products: https://cosmorigin.com/products
+- English products: https://cosmorigin.com/en/products
+- Chinese solutions: https://cosmorigin.com/solutions
+- English solutions: https://cosmorigin.com/en/solutions
+- Chinese cases: https://cosmorigin.com/cases
+- English cases: https://cosmorigin.com/en/cases
+- Chinese resources: https://cosmorigin.com/resources
+- English resources: https://cosmorigin.com/en/resources
+- Chinese contact: https://cosmorigin.com/contact
+- English contact: https://cosmorigin.com/en/contact
+- Chinese news: https://cosmorigin.com/news
+- English news: https://cosmorigin.com/en/news
+- Chinese light-effect showcase: https://cosmorigin.com/playground
+- English light-effect showcase: https://cosmorigin.com/en/playground
+
+## More
+
+- XML sitemap: https://cosmorigin.com/sitemap.xml
+- Robots policy: https://cosmorigin.com/robots.txt
+- Full AI fact sheet: https://cosmorigin.com/llms-full.txt

@@ -1,26 +1,26 @@
 import type { Metadata } from 'next';
+import type { JSX } from 'react';
 
 import Image from 'next/image';
 import Link from 'next/link';
 import { Paintbrush, Cable, Waves, Printer, Sparkles } from 'lucide-react';
 
+import FAQSection, { buildFAQSchema } from '@/components/FAQSection';
 import JsonLd from '@/components/JsonLd';
 import styles from '@/styles';
-import { absoluteUrl, buildOpenGraph, buildTwitter, defaultRobots } from '@/lib/seo';
+import { absoluteUrl, buildAlternates, buildOpenGraph, buildTwitter, defaultRobots } from '@/lib/seo';
+import { company } from '@/lib/site';
 
 const pagePath = '/products';
 const pageTitle = '宇元新材产品 | 发光油漆、纤维丝、薄膜与 3D 打印辅材等';
-const pageDescription =
-  '浏览宇元新材的核心产品：发光油漆、发光纤维丝、发光膜以及 3D 打印辅材，支持定制光谱与多场景应用。';
+const pageDescription = '浏览宇元新材的核心产品：发光油漆、发光纤维丝、发光膜以及 3D 打印辅材，支持定制光谱与多场景应用。';
 const canonicalUrl = absoluteUrl(pagePath);
 
 export const metadata: Metadata = {
   title: pageTitle,
   description: pageDescription,
   keywords: ['发光油漆', '发光纤维丝', '发光膜', '自发光材料', '产品'],
-  alternates: {
-    canonical: canonicalUrl,
-  },
+  alternates: buildAlternates(pagePath),
   openGraph: buildOpenGraph(pageTitle, pageDescription, pagePath),
   twitter: buildTwitter(pageTitle, pageDescription),
   robots: defaultRobots,
@@ -178,17 +178,57 @@ const productCollectionSchema = {
     ],
     offers: {
       '@type': 'Offer',
-      price: '0',
-      priceCurrency: 'CNY',
       availability: product.status === '可订购' ? 'https://schema.org/InStock' : 'https://schema.org/PreOrder',
       itemCondition: 'https://schema.org/NewCondition',
+      url: company.taobaoUrl,
     },
   })),
 };
 
+const productFaqs = [
+  {
+    question: '宇元新材有哪些公开产品方向？',
+    answer: '公开产品方向包括发光油漆系列、发光纤维丝、电致发光线缆、发光膜/薄膜和 3D 打印发光辅材。',
+  },
+  {
+    question: '发光材料是否可以定制颜色和亮度？',
+    answer: '可以按项目需求讨论光谱、亮度、载体材料、封装方式和应用流程。不同材料系列支持的亮度区间、基材和规格以产品页可见参数为准。',
+  },
+  {
+    question: '产品页的参数是否可以直接作为采购规格？',
+    answer: '产品页参数用于初步评估和选型。正式采购、认证文件、批量交付和极端环境验证，应通过邮件或技术沟通确认项目版本。',
+  },
+  {
+    question: '如何购买或索取样品？',
+    answer: '国内样品和标准产品可通过淘宝店咨询；海外客户可通过 Shopify 国际站或 contact@cosmorigin.com 联系团队。',
+  },
+];
+
+const productFaqSchema = buildFAQSchema(productFaqs);
+
+const getProductIcon = (name: string) => {
+  if (name.includes('油漆')) {
+    return Paintbrush;
+  }
+
+  if (name.includes('纤维')) {
+    return Cable;
+  }
+
+  if (name.includes('电致')) {
+    return Sparkles;
+  }
+
+  if (name.includes('膜')) {
+    return Waves;
+  }
+
+  return Printer;
+};
+
 const ProductsPage = (): JSX.Element => (
   <main className="site-main bg-[hsl(var(--surface-strong))] text-foreground">
-    <JsonLd data={productCollectionSchema} />
+    <JsonLd data={[productCollectionSchema, productFaqSchema]} />
 
     <section className="px-6 py-16">
       <div className={`${styles.innerWidth} mx-auto`}>
@@ -201,11 +241,7 @@ const ProductsPage = (): JSX.Element => (
     <section className="px-6 pb-20">
       <div className={`${styles.innerWidth} mx-auto space-y-8`}>
         {productDetails.map((product) => {
-          const ProductIcon = product.name.includes('油漆') ? Paintbrush
-            : product.name.includes('纤维') ? Cable
-            : product.name.includes('电致') ? Sparkles
-            : product.name.includes('膜') ? Waves
-            : Printer;
+          const ProductIcon = getProductIcon(product.name);
 
           return (
             <article key={product.name} className="bg-white rounded-2xl border border-black/5 shadow-sm hover:shadow-md transition-shadow duration-300">
@@ -228,7 +264,7 @@ const ProductsPage = (): JSX.Element => (
                       联系顾问
                     </Link>
                     <a
-                      href="https://m.tb.cn/h.7Xxt7HwwRy9u8k8"
+                      href={company.taobaoUrl}
                       target="_blank"
                       rel="noreferrer"
                       className="inline-flex items-center justify-center rounded-md bg-primary px-5 py-2 text-sm font-semibold text-primary-foreground"
@@ -307,12 +343,11 @@ const ProductsPage = (): JSX.Element => (
       </div>
     </section>
 
-    {/* <PagePlaceholder
-      eyebrow="NEXT"
-      title="需要定制化？"
-      description="若要评估特殊光谱、不同驱动模式或极端环境表现，请联系团队获取材料白皮书与测试计划。"
-      cta={{ label: '预约技术讨论', href: '/contact' }}
-    /> */}
+    <FAQSection
+      title="产品常见问题"
+      description="用于快速判断材料方向、定制边界与询样路径；正式项目参数以技术沟通和确认文件为准。"
+      items={productFaqs}
+    />
   </main>
 );
 
