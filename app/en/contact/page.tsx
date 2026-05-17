@@ -5,20 +5,19 @@ import { ExternalLink, FlaskConical, Globe2, Handshake, MapPin, PackageCheck, Ph
 import type { LucideProps } from 'lucide-react';
 
 import JsonLd from '@/components/JsonLd';
-import { socialChannels } from '@/constants';
 import { absoluteUrl, buildAlternates, buildOpenGraph, buildTwitter, defaultRobots } from '@/lib/seo';
 import { company } from '@/lib/site';
 
-const pagePath = '/contact';
-const pageTitle = '联系宇元新材 | 商务与技术支持';
-const pageDescription = '通过电话、邮箱或表单与宇元新材取得联系，预约材料样品、技术研讨或联合研发。';
+const pagePath = '/en/contact';
+const pageTitle = 'Contact CosmoOrigin | Sales and Technical Support';
+const pageDescription = 'Contact CosmoOrigin by email, phone, WeChat, Taobao or Shopify for luminescent material samples, technical discussions and international inquiries.';
 const canonicalUrl = absoluteUrl(pagePath);
 type ContactIcon = ComponentType<LucideProps>;
 
 export const metadata: Metadata = {
   title: pageTitle,
   description: pageDescription,
-  keywords: ['联系宇元新材', '发光材料咨询', '发光材料专家', '商务对接', '技术支持'],
+  keywords: ['contact CosmoOrigin', 'luminescent material samples', 'glow material supplier China', 'technical support'],
   alternates: buildAlternates(pagePath),
   openGraph: buildOpenGraph(pageTitle, pageDescription, pagePath),
   twitter: buildTwitter(pageTitle, pageDescription),
@@ -27,28 +26,28 @@ export const metadata: Metadata = {
 
 const channels = [
   {
-    title: '商务合作',
-    description: '提交项目背景、时间节点与批量预估，1 个工作日内由商务顾问跟进。',
-    contact: 'contact@cosmorigin.com',
+    title: 'Business Cooperation',
+    description: 'Share your project background, timeline and estimated volume. Our sales team will follow up within one business day.',
+    contact: company.email,
     icon: Handshake,
   },
   {
-    title: '联合研发',
-    description: '高校、科研机构与设计工作室可申请材料样品与共创实验。',
-    contact: 'lab@cosmorigin.com',
+    title: 'Joint R&D',
+    description: 'Universities, research institutes and design studios can request material samples and co-development discussions.',
+    contact: company.labEmail,
     icon: FlaskConical,
   },
   {
-    title: '样品/测试',
-    description: '说明应用场景、规格需求、验证指标，我们将提供样品或安排测试。',
-    contact: 'prototype@cosmorigin.com',
+    title: 'Samples / Testing',
+    description: 'Tell us your application scenario, specification needs and validation metrics so we can arrange samples or testing.',
+    contact: company.prototypeEmail,
     icon: PackageCheck,
   },
 ];
 
 const contactItems = [
   {
-    title: '联系电话',
+    title: 'Phone',
     icon: Phone,
     content: (
       <a href={`tel:${company.phoneHref}`} className="text-sm font-semibold text-foreground">
@@ -57,25 +56,83 @@ const contactItems = [
     ),
   },
   {
-    title: '公司地址',
+    title: 'Company Address',
     icon: MapPin,
-    content: <p className="text-sm text-muted-foreground">{company.addressZh}</p>,
+    content: <p className="text-sm text-muted-foreground">{company.addressEn}</p>,
   },
   {
-    title: '在线购买 / 海外咨询',
+    title: 'Online Purchase / International Inquiries',
     icon: Store,
     content: (
       <div className="flex flex-wrap gap-3">
         <a href={company.taobaoUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 text-sm font-semibold text-foreground">
           <Store className="h-4 w-4 text-primary" aria-hidden="true" />
-          淘宝店
+          Taobao Store
         </a>
         <a href={company.shopifyUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 text-sm font-semibold text-foreground">
           <Globe2 className="h-4 w-4 text-primary" aria-hidden="true" />
-          Shopify 国际站
+          Shopify International Store
         </a>
       </div>
     ),
+  },
+];
+
+const socialChannels = [
+  {
+    label: 'Douyin',
+    description: 'Search for “宇元新材” on Douyin for lab updates and live demos.',
+    href: company.douyinUrl,
+    qrImage: company.douyinQr,
+    qrAlt: 'CosmoOrigin Douyin QR code',
+  },
+  {
+    label: 'TikTok',
+    description: '@cosmorigin shares material updates and application stories for global audiences.',
+    href: company.tiktokUrl,
+    qrImage: company.tiktokQr,
+    qrAlt: 'CosmoOrigin TikTok QR code',
+  },
+  {
+    label: 'WeChat Official Account',
+    description: 'Follow the official account for technical notes, documents and event updates.',
+    href: company.wechatUrl,
+    qrImage: company.wechatQr,
+    qrAlt: 'CosmoOrigin WeChat official account QR code',
+  },
+  {
+    label: 'WeChat Video Account',
+    description: 'Watch short demos and live material showcases through the video account.',
+    qrImage: company.videoQr,
+    qrAlt: 'CosmoOrigin WeChat video account QR code',
+  },
+  {
+    label: 'Weibo',
+    description: '@宇元新材 shares industry notes and exhibition updates.',
+    href: company.weiboUrl,
+    qrImage: company.weiboQr,
+    qrAlt: 'CosmoOrigin Weibo QR code',
+  },
+  {
+    label: 'Xiaohongshu',
+    description: '@宇元新材 records material inspiration and application cases.',
+    href: company.xiaohongshuUrl,
+    qrImage: company.xiaohongshuQr,
+    qrAlt: 'CosmoOrigin Xiaohongshu QR code',
+  },
+  {
+    label: 'Shopify',
+    description: 'CosmoOrigin international store for global inquiries.',
+    href: company.shopifyUrl,
+    qrImage: company.shopifyQr,
+    qrAlt: 'CosmoOrigin Shopify store QR code',
+  },
+  {
+    label: 'Taobao Store',
+    description: 'Domestic samples, consumables and standard products are available through Taobao.',
+    href: company.taobaoUrl,
+    qrImage: company.taobaoQr,
+    qrAlt: 'CosmoOrigin Taobao store QR code',
   },
 ];
 
@@ -87,12 +144,12 @@ const contactSchema = {
   description: pageDescription,
   mainEntity: {
     '@type': 'Organization',
-    name: company.zhName,
+    name: company.enName,
     address: {
       '@type': 'PostalAddress',
-      streetAddress: company.addressZh,
-      addressLocality: '扬州',
-      addressRegion: '江苏省',
+      streetAddress: company.addressEn,
+      addressLocality: 'Yangzhou',
+      addressRegion: 'Jiangsu',
       postalCode: '225000',
       addressCountry: 'CN',
     },
@@ -102,7 +159,7 @@ const contactSchema = {
       contactType: channel.title,
       description: channel.description,
       email: channel.contact,
-      availableLanguage: ['zh-CN'],
+      availableLanguage: ['en', 'zh-CN'],
     })),
   },
 };
@@ -116,14 +173,14 @@ const IconTitle = ({ icon: Icon, title }: { icon: ContactIcon; title: string }):
   </div>
 );
 
-const ContactPage = (): JSX.Element => (
+const ContactEnPage = (): JSX.Element => (
   <main className="site-main bg-[hsl(var(--surface-strong))] text-foreground">
     <JsonLd data={contactSchema} />
 
     <section className="px-6 py-16">
       <div className="mx-auto grid max-w-6xl gap-6">
         <div className="panel-soft p-6">
-          <h3 className="border-b border-primary pb-3 text-lg font-semibold text-foreground">联系渠道</h3>
+          <h3 className="border-b border-primary pb-3 text-lg font-semibold text-foreground">Contact Channels</h3>
           <div className="mt-6 grid gap-4 lg:grid-cols-3">
             {channels.map((channel) => (
               <div key={channel.title} className="panel hover-card flex h-full flex-col p-4">
@@ -146,11 +203,11 @@ const ContactPage = (): JSX.Element => (
         </div>
 
         <div className="panel-soft p-6">
-          <h3 className="border-b border-primary pb-3 text-lg font-semibold text-foreground">关注我们</h3>
+          <h3 className="border-b border-primary pb-3 text-lg font-semibold text-foreground">Follow Us</h3>
           <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {socialChannels.map((channel) => (
               <div key={channel.label} className="text-center">
-                <div className="panel hover-card grid h-full min-h-[270px] grid-rows-[auto_56px_1fr] p-4">
+                <div className="panel hover-card grid h-full min-h-[270px] grid-rows-[auto_72px_1fr] p-4">
                   <div className="flex items-center justify-center gap-2">
                     <p className="text-sm font-semibold text-foreground">{channel.label}</p>
                     {channel.href && (
@@ -158,7 +215,7 @@ const ContactPage = (): JSX.Element => (
                         href={channel.href}
                         target="_blank"
                         rel="noreferrer"
-                        aria-label={`打开${channel.label}`}
+                        aria-label={`Open ${channel.label}`}
                         className="inline-flex h-6 w-6 items-center justify-center rounded-full text-foreground transition hover:bg-muted focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
                       >
                         <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
@@ -170,7 +227,7 @@ const ContactPage = (): JSX.Element => (
                     <div className="flex items-end justify-center">
                       <Image
                         src={channel.qrImage}
-                        alt={channel.qrAlt ?? `${channel.label} 二维码`}
+                        alt={channel.qrAlt}
                         width={160}
                         height={160}
                         className="h-32 w-32 object-contain"
@@ -187,4 +244,4 @@ const ContactPage = (): JSX.Element => (
   </main>
 );
 
-export default ContactPage;
+export default ContactEnPage;

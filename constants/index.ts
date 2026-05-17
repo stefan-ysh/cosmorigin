@@ -1,3 +1,5 @@
+import { company } from '@/lib/site';
+
 export interface ExploreWorld {
   id: string;
   imgUrl: string;
@@ -137,39 +139,57 @@ export const socialChannels: SocialChannel[] = [
   {
     label: '抖音',
     description: '打开抖音搜索“宇元新材”获取实验日常与路演直播。',
-    href: 'https://www.douyin.com/user/MS4wLjABAAAAW8PITDZWj78rNFg9ClL_FiRcuQctfITZMrAJexDJZRsPIVEqnO0mzYFHTnjFtrWV',
+    href: company.douyinUrl,
+    qrImage: company.douyinQr,
+    qrAlt: '宇元新材抖音二维码',
   },
   {
     label: 'TikTok',
     description: '@cosmorigin，面向海外的材料动态与案例拆解。',
-    href: 'https://www.tiktok.com/@cosmorigin',
+    href: company.tiktokUrl,
+    qrImage: company.tiktokQr,
+    qrAlt: 'CosmoOrigin TikTok 二维码',
   },
   {
     label: '微信公众号',
     description: '宇元新材材料研究院——每月推送技术白皮书与活动预约。',
-    qrImage: '/wechat_official.jpg',
+    href: company.wechatUrl,
+    qrImage: company.wechatQr,
     qrAlt: '宇元新材微信公众号二维码',
   },
   {
     label: '微信视频号',
     description: '宇元新材官方视频号，跟进新材料 Demo 直播。',
-    qrImage: '/video_offical.jpg',
+    qrImage: company.videoQr,
     qrAlt: '宇元新材微信视频号二维码',
   },
   {
     label: '微博',
     description: '@宇元新材，关注行业观点与展会快讯。',
-    href: 'https://weibo.com/u/8414991697',
+    href: company.weiboUrl,
+    qrImage: company.weiboQr,
+    qrAlt: '宇元新材微博二维码',
   },
   {
     label: '小红书',
     description: '@宇元新材，记录材料灵感与落地案例。',
-    href: 'https://xhslink.com/m/67pnAGQHGS8',
+    href: company.xiaohongshuUrl,
+    qrImage: company.xiaohongshuQr,
+    qrAlt: '宇元新材小红书二维码',
   },
   {
     label: 'Shopify',
     description: '宇元新材国际站，服务全球客户。',
-    href: 'https://shop.cosmorigin.com',
+    href: company.shopifyUrl,
+    qrImage: company.shopifyQr,
+    qrAlt: '宇元新材 Shopify 国际站二维码',
+  },
+  {
+    label: '淘宝店',
+    description: '国内样品、耗材与标准品可通过淘宝店咨询。',
+    href: company.taobaoUrl,
+    qrImage: company.taobaoQr,
+    qrAlt: '宇元新材淘宝店二维码',
   },
 ];
 
