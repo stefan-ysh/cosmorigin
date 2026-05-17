@@ -1,14 +1,22 @@
 import styles from '@/styles';
 import { partnerLogos } from '@/constants';
 
-const LogoClouds = () => {
+interface LogoCloudsProps {
+  title?: string;
+  description?: string;
+}
+
+const LogoClouds = ({
+  title = '信赖我们的合作伙伴',
+  description = '与行业客户、科研机构及供应链伙伴共同推动发光材料落地。',
+}: LogoCloudsProps) => {
   const row = partnerLogos;
 
   return (
     <section className="logo-clouds">
       <div className={`${styles.innerWidth} mx-auto text-center`}>
-        <h3>信赖我们的合作伙伴</h3>
-        <p>与行业客户、科研机构及供应链伙伴共同推动发光材料落地。</p>
+        <h3>{title}</h3>
+        <p>{description}</p>
       </div>
 
       <div className={`${styles.innerWidth} mx-auto logo-clouds-rows`}>

@@ -1,12 +1,15 @@
-﻿'use client';
-
-import { MapPin, Mail, Phone } from 'lucide-react';
+'use client';
 
 import { socials } from '@/constants';
+import { company } from '@/lib/site';
 import styles from '@/styles';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 
 const Footer = () => {
+  const pathname = usePathname() ?? '';
+  const isEnglish = pathname.startsWith('/en');
+
   return (
     <div className={`site-footer ${styles.xPaddings} py-10 relative border-none`}>
       <div className={`${styles.innerWidth} mx-auto`}>
@@ -20,10 +23,12 @@ const Footer = () => {
                 height={80}
               />
             </div> */}
-            <h4 className="font-bold text-[20px] text-white">扬州宇元新材有限公司</h4>
-            <p className="text-[14px] text-[#d3d3d3]">地址：江苏省扬州市邢江区开发西路213号609室</p>
-            <p className="text-[14px] text-[#d3d3d3]">Tel：+86 185 7841 2005</p>
-            <p className="text-[14px] text-[#d3d3d3]">邮箱：contact@cosmorigin.com</p>
+            <h4 className="font-bold text-[20px] text-white">{isEnglish ? company.enName : company.zhName}</h4>
+            <p className="text-[14px] text-[#d3d3d3]">
+              {isEnglish ? `Address: ${company.addressEn}` : `地址：${company.addressZh}`}
+            </p>
+            <p className="text-[14px] text-[#d3d3d3]">Tel：{company.phone}</p>
+            <p className="text-[14px] text-[#d3d3d3]">{isEnglish ? 'Email' : '邮箱'}：{company.email}</p>
             <div className="flex items-center gap-4 pt-2">
               {socials.map((social) => (
                 <a
@@ -46,10 +51,10 @@ const Footer = () => {
           </div>
 
           <div className="flex flex-col items-start md:items-end gap-2">
-            <p className="text-[12px] text-[#d3d3d3]">微信公众号</p>
+            <p className="text-[12px] text-[#d3d3d3]">{isEnglish ? 'WeChat Official Account' : '微信公众号'}</p>
             <div className="w-28 h-28 relative bg-white p-1">
               <Image
-                src="/wechat_official_light.png"
+                src={company.wechatQr}
                 alt="扬州宇元新材有限公司微信公众号二维码"
                 fill
                 className="object-contain"

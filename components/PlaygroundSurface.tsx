@@ -10,66 +10,66 @@ import styles from "@/styles";
 const showcasePairs = [
   {
     id: "agriculture",
-    label: "3D 打印辅材",
+    label: { zh: "3D 打印辅材", en: "3D Printing Additive" },
     light: "/playground/1.jpg",
     dark: "/playground/2.jpg",
-    description: "适用于3D打印机，DIY爱好者及教育场景。",
+    description: { zh: "适用于3D打印机，DIY爱好者及教育场景。", en: "For 3D printers, DIY users and education scenarios." },
   },
   {
     id: "architecture",
-    label: "3D 打印辅材",
+    label: { zh: "3D 打印辅材", en: "3D Printing Additive" },
     light: "/playground/3.jpg",
     dark: "/playground/4.jpg",
-    description: "适用于快消品等快速验证与小批量定制场景。",
+    description: { zh: "适用于快消品等快速验证与小批量定制场景。", en: "For rapid validation and small-batch custom product scenarios." },
   },
   {
     id: "6",
-    label: "发光装饰",
+    label: { zh: "发光装饰", en: "Luminescent Decoration" },
     light: "/playground/11.jpg",
     dark: "/playground/12.jpg",
-    description: "节日氛围营造，提升空间趣味性与互动性。",
+    description: { zh: "节日氛围营造，提升空间趣味性与互动性。", en: "Creates festive atmosphere and adds playful interaction to spaces." },
   },
   {
     id: "7",
-    label: "发光漆",
+    label: { zh: "发光漆", en: "Luminescent Paint" },
     light: "/playground/13.jpg",
     dark: "/playground/14.jpg",
-    description: "驾驶者可自定义光色，营造沉浸式情绪灯光。",
+    description: { zh: "驾驶者可自定义光色，营造沉浸式情绪灯光。", en: "Supports custom light colors for immersive ambient surfaces." },
   },
   {
     id: "mobility",
-    label: "3D 打印辅材",
+    label: { zh: "3D 打印辅材", en: "3D Printing Additive" },
     light: "/playground/5.jpg",
     dark: "/playground/6.jpg",
-    description: "低功耗流光饰面，兼顾艺术感与导视功能。",
+    description: { zh: "低功耗流光饰面，兼顾艺术感与导视功能。", en: "Low-power glowing surfaces with both visual and wayfinding value." },
   },
   {
     id: "5",
-    label: "发光彩带",
+    label: { zh: "发光彩带", en: "Luminescent Ribbon" },
     light: "/playground/9.jpg",
     dark: "/playground/10.jpg",
-    description: "柔性材质，适用于曲面及复杂造型表面。",
+    description: { zh: "柔性材质，适用于曲面及复杂造型表面。", en: "Flexible material for curved and complex surface applications." },
   },
   {
     id: "4",
-    label: "发光膜",
+    label: { zh: "发光膜", en: "Luminescent Film" },
     light: "/playground/7.jpg",
     dark: "/playground/8.jpg",
-    description: "柔性材质，适用于曲面及复杂造型表面。",
+    description: { zh: "柔性材质，适用于曲面及复杂造型表面。", en: "Flexible film for curved and complex surface applications." },
   },
   {
     id: "8",
-    label: "发光膜",
+    label: { zh: "发光膜", en: "Luminescent Film" },
     light: "/playground/15.jpg",
     dark: "/playground/16.jpg",
-    description: " 发光膜制成的花束，营造温馨浪漫氛围。",
+    description: { zh: "发光膜制成的花束，营造温馨浪漫氛围。", en: "A luminescent-film bouquet for warm and romantic ambience." },
   },
   {
     id: "9",
-    label: "发光圣诞装饰",
+    label: { zh: "发光圣诞装饰", en: "Luminescent Holiday Decoration" },
     light: "/playground/17.jpg",
     dark: "/playground/18.jpg",
-    description: "宇元新材发光材料打印出的节日装饰。",
+    description: { zh: "宇元新材发光材料打印出的节日装饰。", en: "Holiday decoration printed with CosmoOrigin luminescent material." },
   },
 ] as const;
 
@@ -104,8 +104,13 @@ const ModeSwitch = ({
 );
 
 type PlaygroundMode = "light" | "dark";
+type PlaygroundLocale = "zh" | "en";
 
-const PlaygroundSurface = () => {
+interface PlaygroundSurfaceProps {
+  locale?: PlaygroundLocale;
+}
+
+const PlaygroundSurface = ({ locale = "zh" }: PlaygroundSurfaceProps) => {
   const [mode, setMode] = useState<PlaygroundMode>("light");
   const [floatingVisible, setFloatingVisible] = useState(false);
 
@@ -124,11 +129,28 @@ const PlaygroundSurface = () => {
     setMode(nextMode);
   };
 
+  const copy = {
+    zh: {
+      intro: `点击下方按钮${mode === "light" ? "关灯" : "开灯"} ，查看材料在不同光环境下的状态。所有图像均为宇元新材的发光材料制品实拍。`,
+      lightAlt: "开灯效果",
+      darkAlt: "关灯效果",
+      switchLabel: "切换模式",
+      switchSr: "切换明暗模式",
+    },
+    en: {
+      intro: `Use the switch below to turn the lights ${mode === "light" ? "off" : "on"} and compare each material under different lighting conditions. All images show real CosmoOrigin material samples.`,
+      lightAlt: "lights-on view",
+      darkAlt: "lights-off view",
+      switchLabel: "Switch mode",
+      switchSr: "Switch light and dark mode",
+    },
+  }[locale];
+
   return (
     <div className="space-y-4">
       <div className="flex flex-col gap-6 text-center">
         <p className="mx-auto max-w-4xl text-lg text-muted-foreground">
-          点击下方按钮{mode === "light" ? "关灯" : "开灯"} ，查看材料在不同光环境下的状态。所有图像均为宇元新材的发光材料制品实拍。
+          {copy.intro}
         </p>
       </div>
 
@@ -151,7 +173,7 @@ const PlaygroundSurface = () => {
                 <div className="relative aspect-[4/3] w-full">
                   <Image
                     src={pair.light}
-                    alt={`${pair.label} 开灯效果`}
+                    alt={`${pair.label[locale]} ${copy.lightAlt}`}
                     fill
                     sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
                     className={`object-cover transition-opacity duration-500 ${mode === "light" ? "opacity-100" : "opacity-0"
@@ -160,7 +182,7 @@ const PlaygroundSurface = () => {
                   />
                   <Image
                     src={pair.dark}
-                    alt={`${pair.label} 关灯效果`}
+                    alt={`${pair.label[locale]} ${copy.darkAlt}`}
                     fill
                     sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
                     className={`object-cover transition-opacity duration-500 ${mode === "dark" ? "opacity-100" : "opacity-0"
@@ -171,9 +193,9 @@ const PlaygroundSurface = () => {
               </div>
               <div className="p-6 space-y-2">
                 <h2 className="text-xl font-bold tracking-tight text-foreground">
-                  {pair.label}
+                  {pair.label[locale]}
                 </h2>
-                <p className="text-sm text-muted-foreground leading-relaxed">{pair.description}</p>
+                <p className="text-sm text-muted-foreground leading-relaxed">{pair.description[locale]}</p>
               </div>
             </article>
           );
@@ -184,12 +206,12 @@ const PlaygroundSurface = () => {
         <button
           key="switch-mode"
           type="button"
-          aria-label="切换模式"
+          aria-label={copy.switchLabel}
           onClick={() => handleModeChange(mode === "dark" ? "light" : "dark")}
           className={`${styles.floatingFab} fixed bottom-28 right-6 z-[65]`}
         >
           {mode === "light" ? <Sun className="h-6 w-6" /> : <Moon className="h-6 w-6" />}
-          <span className="sr-only">切换明暗模式</span>
+          <span className="sr-only">{copy.switchSr}</span>
         </button>
       )}
     </div>

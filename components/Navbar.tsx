@@ -19,10 +19,24 @@ const navLinks = [
   { label: '资料中心', href: '/resources' },
 ];
 
+const enNavLinks = [
+  { label: 'Home', href: '/en' },
+  { label: 'About', href: '/en/about' },
+  { label: 'Products', href: '/en/products' },
+  { label: 'Solutions', href: '/en/solutions' },
+  { label: 'Showcase', href: '/en/playground' },
+  { label: 'News', href: '/en/news' },
+  { label: 'Resources', href: '/en/resources' },
+];
+
 const Navbar = () => {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
-  const pathname = usePathname();
+  const pathname = usePathname() ?? '';
+  const isEnglish = pathname.startsWith('/en');
+  const links = isEnglish ? enNavLinks : navLinks;
+  const contactHref = isEnglish ? '/en/contact' : '/contact';
+  const alternateHref = isEnglish ? '/' : '/en';
 
   useEffect(() => {
     setIsMounted(true);
@@ -67,7 +81,7 @@ const Navbar = () => {
           </button>
         </div>
         <nav className="flex flex-1 flex-col gap-4">
-          {navLinks.map((link) => {
+          {links.map((link) => {
             const isActive = pathname === link.href && link.href !== '/';
             return (
               <Link
@@ -83,12 +97,19 @@ const Navbar = () => {
         </nav>
         <div className="flex gap-4 border-t border-white/20 pt-6 justify-between">
           <Link
-            href="/contact"
+            href={contactHref}
             onClick={() => setIsMobileOpen(false)}
             className="site-contact-button inline-flex items-center justify-center rounded-md border border-white/30 px-5 py-3 text-sm font-semibold text-white"
           >
             <span className="contact-button-icon" aria-hidden="true">☎</span>
-            联系我们
+            {isEnglish ? 'Contact' : '联系我们'}
+          </Link>
+          <Link
+            href={alternateHref}
+            onClick={() => setIsMobileOpen(false)}
+            className="inline-flex items-center justify-center rounded-md border border-white/30 px-4 py-3 text-sm font-semibold text-white"
+          >
+            {isEnglish ? '中文' : 'EN'}
           </Link>
         </div>
       </div>
@@ -115,7 +136,7 @@ const Navbar = () => {
             </Link>
 
             <div className="hidden flex-1 items-center justify-center gap-8 lg:flex">
-              {navLinks.map((link) => {
+              {links.map((link) => {
                 const isActive = pathname === link.href && link.href !== '/';
                 return (
                   <Link
@@ -131,11 +152,17 @@ const Navbar = () => {
 
             <div className="flex items-center gap-4">
               <Link
-                href="/contact"
+                href={contactHref}
                 className="site-contact-button hidden rounded-md border border-border bg-white px-5 py-2 text-sm font-semibold text-foreground md:inline-flex"
               >
                 <span className="contact-button-icon" aria-hidden="true">☎</span>
-                联系我们
+                {isEnglish ? 'Contact' : '联系我们'}
+              </Link>
+              <Link
+                href={alternateHref}
+                className="hidden rounded-md border border-border bg-white px-4 py-2 text-sm font-semibold text-foreground md:inline-flex"
+              >
+                {isEnglish ? '中文' : 'EN'}
               </Link>
               <button
                 type="button"
