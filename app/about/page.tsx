@@ -8,10 +8,12 @@ import JsonLd from "@/components/JsonLd";
 
 import {
   absoluteUrl,
+  buildAlternates,
   buildOpenGraph,
   buildTwitter,
   defaultRobots,
 } from "@/lib/seo";
+import { company } from '@/lib/site';
 
 const pagePath = "/about";
 const pageTitle = "关于宇元新材 | 公司概览与技术底座";
@@ -29,9 +31,7 @@ export const metadata: Metadata = {
     "材料实验室",
     "扬州发光企业",
   ],
-  alternates: {
-    canonical: canonicalUrl,
-  },
+  alternates: buildAlternates(pagePath),
   openGraph: buildOpenGraph(pageTitle, pageDescription, pagePath),
   twitter: buildTwitter(pageTitle, pageDescription),
   robots: defaultRobots,
@@ -92,12 +92,12 @@ const aboutSchemas = [
     },
     mainEntity: {
       "@type": "Organization",
-      name: "扬州宇元新材有限公司",
+      name: company.zhName,
       foundingDate: "2014",
       numberOfEmployees: "50+",
       address: {
         "@type": "PostalAddress",
-        streetAddress: "江苏省扬州市邗江区开发西路 213 号 609 室",
+        streetAddress: company.addressZh,
         addressLocality: "扬州",
         addressRegion: "江苏省",
         postalCode: "225000",
@@ -105,8 +105,8 @@ const aboutSchemas = [
       },
       contactPoint: {
         "@type": "ContactPoint",
-        telephone: "+86-185-7841-2005",
-        email: "contact@cosmorigin.com",
+        telephone: company.phoneHref,
+        email: company.email,
         contactType: "sales",
         areaServed: "CN",
         availableLanguage: ["zh-CN", "en"],

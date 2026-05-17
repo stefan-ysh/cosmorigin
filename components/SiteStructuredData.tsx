@@ -1,18 +1,23 @@
 import JsonLd from '@/components/JsonLd';
+import { company, sameAs } from '@/lib/site';
 
 const SiteStructuredData = () => {
   const organizationSchema = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    name: '扬州宇元新材有限公司',
-    alternateName: '宇元新材',
+    name: company.zhName,
+    legalName: company.zhName,
+    alternateName: ['宇元新材', company.brandName, company.enName],
     description: '专注新型柔性发光材料研发与生产，全球首个纳米级连续生产自发光材料',
     url: 'https://cosmorigin.com',
-    logo: 'https://cosmorigin.com/logo.png',
+    logo: 'https://cosmorigin.com/cosmorigin-logo.png',
     foundingDate: '2014',
+    areaServed: ['CN', 'Global'],
+    knowsLanguage: ['zh-CN', 'en'],
+    slogan: '柔性发光材料与原创解决方案',
     address: {
       '@type': 'PostalAddress',
-      streetAddress: '江苏省扬州市邢江区开发西路213号609室',
+      streetAddress: company.addressZh,
       addressLocality: '扬州',
       addressRegion: '江苏省',
       postalCode: '225000',
@@ -20,21 +25,30 @@ const SiteStructuredData = () => {
     },
     contactPoint: {
       '@type': 'ContactPoint',
-      telephone: '+86-185-7841-2005',
+      telephone: company.phoneHref,
       contactType: '技术咨询',
-      email: 'contact@cosmorigin.com',
+      email: company.email,
       areaServed: 'CN',
       availableLanguage: ['zh-CN', 'en'],
     },
-    sameAs: ['https://www.tiktok.com/@cosmorigin'],
+    sameAs,
     knowsAbout: [
       '柔性发光材料',
       '发光油漆',
       '发光纤维丝',
       '发光膜',
+      '电致发光线缆',
+      '3D 打印发光辅材',
       '汽车发光应用',
       '智慧农业发光',
       '应急救援发光',
+      '文旅夜游发光装置',
+      'flexible luminescent materials',
+      'luminescent paint',
+      'luminescent fiber',
+      'glow film',
+      'electroluminescent wire',
+      '3D-printing luminescent additives',
     ],
   };
 
@@ -44,11 +58,6 @@ const SiteStructuredData = () => {
     name: '宇元新材 - 发光材料专家',
     description: '发光材料研发与生产专家',
     url: 'https://cosmorigin.com',
-    potentialAction: {
-      '@type': 'SearchAction',
-      target: 'https://cosmorigin.com/search?q={search_term_string}',
-      'query-input': 'required name=search_term_string',
-    },
   };
 
   const researchServiceSchema = {
@@ -58,7 +67,7 @@ const SiteStructuredData = () => {
     description: '提供发光油漆、发光纤维丝、发光膜的定制化解决方案',
     provider: {
       '@type': 'Organization',
-      name: '扬州宇元新材有限公司',
+      name: company.zhName,
     },
     areaServed: 'CN',
     serviceType: '材料研发与生产',
@@ -80,8 +89,6 @@ const SiteStructuredData = () => {
     offers: {
       '@type': 'Offer',
       availability: 'https://schema.org/InStock',
-      price: '50',
-      priceCurrency: 'CNY',
       url: 'https://cosmorigin.com/products',
     },
     hasVariant: [
@@ -101,11 +108,6 @@ const SiteStructuredData = () => {
         url: 'https://cosmorigin.com/products',
       },
     ],
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.8',
-      reviewCount: '150',
-    },
   };
 
   const navSchemaItems = [

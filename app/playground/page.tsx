@@ -4,6 +4,7 @@ import PlaygroundSurface from "@/components/PlaygroundSurface";
 import styles from "@/styles";
 import {
   absoluteUrl,
+  buildAlternates,
   buildOpenGraph,
   buildTwitter,
   defaultRobots,
@@ -26,9 +27,7 @@ export const metadata: Metadata = {
     "宇元新材 playground",
     "发光材料 demo",
   ],
-  alternates: {
-    canonical: canonicalUrl,
-  },
+  alternates: buildAlternates(pagePath),
   openGraph: buildOpenGraph(pageTitle, pageDescription, pagePath),
   twitter: buildTwitter(pageTitle, pageDescription),
   robots: defaultRobots,

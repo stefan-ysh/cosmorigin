@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 import JsonLd from '@/components/JsonLd';
 import styles from '@/styles';
-import { absoluteUrl, buildOpenGraph, buildTwitter, defaultRobots } from '@/lib/seo';
+import { absoluteUrl, buildAlternates, buildOpenGraph, buildTwitter, defaultRobots } from '@/lib/seo';
 import ResourcesClient from './ResourcesClient';
 
 const pagePath = '/resources';
@@ -16,9 +16,7 @@ export const metadata: Metadata = {
   title: pageTitle,
   description: pageDescription,
   keywords: ['发光材料白皮书', '检测报告下载', '宇元新材资料中心', '产品手册', '品牌素材'],
-  alternates: {
-    canonical: canonicalUrl,
-  },
+  alternates: buildAlternates(pagePath),
   openGraph: buildOpenGraph(pageTitle, pageDescription, pagePath),
   twitter: buildTwitter(pageTitle, pageDescription),
   robots: defaultRobots,

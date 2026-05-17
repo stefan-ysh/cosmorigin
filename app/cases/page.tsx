@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 import JsonLd from '@/components/JsonLd';
-import { absoluteUrl, buildOpenGraph, buildTwitter, defaultRobots } from '@/lib/seo';
+import { absoluteUrl, buildAlternates, buildOpenGraph, buildTwitter, defaultRobots } from '@/lib/seo';
 
 const pagePath = '/cases';
 const pageTitle = '案例展示与合作实绩';
@@ -13,9 +13,7 @@ export const metadata: Metadata = {
   title: pageTitle,
   description: pageDescription,
   keywords: ['发光材料案例', '汽车发光项目', '智慧农业案例', '应急照明案例', '文旅发光案例'],
-  alternates: {
-    canonical: canonicalUrl,
-  },
+  alternates: buildAlternates(pagePath),
   openGraph: buildOpenGraph(pageTitle, pageDescription, pagePath),
   twitter: buildTwitter(pageTitle, pageDescription),
   robots: defaultRobots,

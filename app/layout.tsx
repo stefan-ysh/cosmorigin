@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 
 import { Analytics } from '@vercel/analytics/next';
 import Script from 'next/script';
@@ -8,6 +8,7 @@ import BackToTop from '@/components/BackToTop';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import { buildOpenGraph, buildTwitter, defaultRobots } from '@/lib/seo';
+import { company } from '@/lib/site';
 
 import '@/styles/globals.css';
 
@@ -43,6 +44,10 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: '/',
+    languages: {
+      'zh-CN': '/',
+      en: '/en',
+    },
   },
   openGraph: buildOpenGraph(siteTitle, siteDescription, '/'),
   twitter: buildTwitter(siteTitle, siteDescription),
@@ -50,9 +55,8 @@ export const metadata: Metadata = {
   manifest: '/manifest.json',
   icons: {
     icon: '/cosmorigin-logo.png',
-    apple: '/apple-touch-icon.png',
+    apple: '/cosmorigin-logo.png',
   },
-  themeColor: '#ffffff',
   applicationName: '宇元新材 - 发光材料专家',
   authors: [{ name: '宇元新材' }],
   creator: '宇元新材',
@@ -62,17 +66,23 @@ export const metadata: Metadata = {
       'baidu-site-verification': 'codeva-da22ppmgjE',
     },
   },
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 5,
-  },
   other: {
     'geo.region': 'CN-32',
     'geo.placename': '扬州,江苏',
     'geo.position': '32.3912;119.4249',
     ICBM: '32.3912, 119.4249',
+    'business:contact_data:street_address': company.addressZh,
+    'business:contact_data:locality': '扬州',
+    'business:contact_data:region': '江苏',
+    'business:contact_data:country_name': '中国',
   },
+};
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: '#ffffff',
 };
 
 const RootLayout = ({ children }: RootLayoutProps): JSX.Element => (

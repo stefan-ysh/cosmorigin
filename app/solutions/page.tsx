@@ -4,7 +4,7 @@ import { Car, Sprout, Shield, Sparkles } from 'lucide-react';
 
 import JsonLd from '@/components/JsonLd';
 import styles from '@/styles';
-import { absoluteUrl, buildOpenGraph, buildTwitter, defaultRobots } from '@/lib/seo';
+import { absoluteUrl, buildAlternates, buildOpenGraph, buildTwitter, defaultRobots } from '@/lib/seo';
 
 const pagePath = '/solutions';
 const pageTitle = '行业解决方案 | 交通、农业、应急与文旅应用';
@@ -16,9 +16,7 @@ export const metadata: Metadata = {
   title: pageTitle,
   description: pageDescription,
   keywords: ['行业发光方案', '交通发光解决方案', '智慧农业补光', '应急照明材料', '文旅夜游发光'],
-  alternates: {
-    canonical: canonicalUrl,
-  },
+  alternates: buildAlternates(pagePath),
   openGraph: buildOpenGraph(pageTitle, pageDescription, pagePath),
   twitter: buildTwitter(pageTitle, pageDescription),
   robots: defaultRobots,

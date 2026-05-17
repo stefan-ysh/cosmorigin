@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 import JsonLd from '@/components/JsonLd';
 import styles from '@/styles';
-import { absoluteUrl, buildOpenGraph, buildTwitter, defaultRobots } from '@/lib/seo';
+import { absoluteUrl, buildAlternates, buildOpenGraph, buildTwitter, defaultRobots } from '@/lib/seo';
 
 const pagePath = '/news';
 const pageTitle = '新闻动态 | 宇元新材最新进展';
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   title: pageTitle,
   description: pageDescription,
   keywords: ['宇元新材新闻', '发光材料动态', 'Cosmorigin 新闻', '发光材料发布', '产业快讯'],
-  alternates: { canonical: canonicalUrl },
+  alternates: buildAlternates(pagePath),
   openGraph: buildOpenGraph(pageTitle, pageDescription, pagePath),
   twitter: buildTwitter(pageTitle, pageDescription),
   robots: defaultRobots,

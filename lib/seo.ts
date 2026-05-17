@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 
 export const SITE_URL = 'https://cosmorigin.com';
 export const SITE_NAME = '宇元新材 CosmoOrigin';
-export const DEFAULT_OG_IMAGE = `${SITE_URL}/og-image.jpg`;
+export const DEFAULT_OG_IMAGE = `${SITE_URL}/cover.jpg`;
 
 const normalizePath = (path: string): string => (path.startsWith('/') ? path : `/${path}`);
 
@@ -47,6 +47,14 @@ export const buildTwitter = (
   site: '@cosmorigin',
   creator: '@cosmorigin',
   images: [absoluteUrl(image)],
+});
+
+export const buildAlternates = (path = '/') => ({
+  canonical: absoluteUrl(path),
+  languages: {
+    'zh-CN': absoluteUrl(path === '/en' ? '/' : path.replace(/^\/en/, '') || '/'),
+    en: absoluteUrl(path.startsWith('/en') ? path : `/en${path === '/' ? '' : path}`),
+  },
 });
 
 export const defaultRobots: Metadata['robots'] = {

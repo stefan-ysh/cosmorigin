@@ -3,9 +3,8 @@ User-agent: *
 Allow: /
 Crawl-delay: 1
 
-# 禁止爬取 API 路径
+# 禁止爬取 API 与后台路径
 Disallow: /api/
-Disallow: /_next/
 Disallow: /admin/
 
 # 特别针对百度爬虫

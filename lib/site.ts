@@ -1,0 +1,38 @@
+export const company = {
+  zhName: '扬州宇元新材有限公司',
+  enName: 'Yangzhou Cosmorigin Advanced Materials Co., Ltd.',
+  shortName: '宇元新材',
+  brandName: 'CosmoOrigin',
+  addressZh: '江苏省扬州市邗江区开发西路 213 号 609 室',
+  addressEn: 'Room 609, No. 213 West Kaifa Road, Hanjiang District, Yangzhou, Jiangsu, China',
+  phone: '+86 185 7841 2005',
+  phoneHref: '+8618578412005',
+  email: 'contact@cosmorigin.com',
+  labEmail: 'lab@cosmorigin.com',
+  prototypeEmail: 'prototype@cosmorigin.com',
+  taobaoUrl: 'https://m.tb.cn/h.7Xxt7HwwRy9u8k8',
+  shopifyUrl: 'https://shop.cosmorigin.com',
+  tiktokUrl: 'https://www.tiktok.com/@cosmorigin',
+  weiboUrl: 'https://weibo.com/u/8414991697',
+  wechatUrl: 'http://weixin.qq.com/r/mp/pSN7Y8rEP5dArY4A93a3',
+  xiaohongshuUrl: 'https://xhslink.com/m/67pnAGQHGS8',
+  douyinUrl:
+    'https://www.douyin.com/user/MS4wLjABAAAAW8PITDZWj78rNFg9ClL_FiRcuQctfITZMrAJexDJZRsPIVEqnO0mzYFHTnjFtrWV',
+  websiteQr: '/images/qrcode/cosmorigin.com.jpg',
+  douyinQr: '/images/qrcode/douyin.jpg',
+  shopifyQr: '/images/qrcode/shopify.png',
+  taobaoQr: '/images/qrcode/taobao.jpg',
+  tiktokQr: '/images/qrcode/tiktok.jpg',
+  weiboQr: '/images/qrcode/weibo.png',
+  wechatQr: '/images/qrcode/wechat_acount.jpg',
+  videoQr: '/images/qrcode/wechat_video_account.jpg',
+  xiaohongshuQr: '/images/qrcode/xiaohongshu.jpg',
+} as const;
+
+export const sameAs = [
+  company.tiktokUrl,
+  company.shopifyUrl,
+  company.weiboUrl,
+  company.xiaohongshuUrl,
+  company.douyinUrl,
+];

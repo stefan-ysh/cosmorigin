@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path');
 
 /** @type {import('next').NextConfig} */
@@ -5,7 +6,9 @@ const nextConfig = {
   // SEO优化：启用压缩
   compress: true,
   // Turbopack 配置（Next.js 16+ 默认使用 Turbopack）
-  turbopack: {},
+  turbopack: {
+    root: path.resolve(__dirname),
+  },
   // 生成 robots.txt 和 sitemap
   async headers() {
     return [
