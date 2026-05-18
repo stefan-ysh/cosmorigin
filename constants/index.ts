@@ -194,7 +194,7 @@ export const socialChannels: SocialChannel[] = [
 ];
 
 export const partnerLogos: PartnerLogo[] = [
-  { name: '中国农业科学院 A', logo: '/partners/中国农业科学院.png' },
+  { name: '中国农业科学院', logo: '/partners/中国农业科学院.png' },
   { name: '中山大学', logo: '/partners/sys.png' },
   { name: '扬州大学', logo: '/partners/yzu.png' },
   { name: '江苏大学', logo: '/partners/jsu.png' },
