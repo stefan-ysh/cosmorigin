@@ -61,6 +61,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between">
           <Link
             href="/"
+            prefetch={false}
             onClick={() => setIsMobileOpen(false)}
             className="text-lg font-bold"
           >
@@ -87,6 +88,7 @@ const Navbar = () => {
               <Link
                 key={link.href}
                 href={link.href}
+                prefetch={false}
                 onClick={() => setIsMobileOpen(false)}
                 className={`text-base font-semibold text-white/90 ${isActive ? 'text-white' : ''}`}
               >
@@ -98,6 +100,7 @@ const Navbar = () => {
         <div className="flex gap-4 border-t border-white/20 pt-6 justify-between">
           <Link
             href={contactHref}
+            prefetch={false}
             onClick={() => setIsMobileOpen(false)}
             className="site-contact-button inline-flex items-center justify-center rounded-md border border-white/30 px-5 py-3 text-sm font-semibold text-white"
           >
@@ -106,6 +109,7 @@ const Navbar = () => {
           </Link>
           <Link
             href={alternateHref}
+            prefetch={false}
             onClick={() => setIsMobileOpen(false)}
             className="inline-flex items-center justify-center rounded-md border border-white/30 px-4 py-3 text-sm font-semibold text-white"
           >
@@ -125,6 +129,7 @@ const Navbar = () => {
           >
             <Link
               href="/"
+              prefetch={false}
               className="font-extrabold text-[24px] leading-[30px] text-foreground"
             >
               <Image
@@ -142,6 +147,7 @@ const Navbar = () => {
                   <Link
                     key={link.href}
                     href={link.href}
+                    prefetch={false}
                     className={`site-nav-link text-[15px] ${isActive ? 'site-nav-link-active' : ''}`}
                   >
                     {link.label}
@@ -153,6 +159,7 @@ const Navbar = () => {
             <div className="flex items-center gap-4">
               <Link
                 href={contactHref}
+                prefetch={false}
                 className="site-contact-button hidden rounded-md border border-border bg-white px-5 py-2 text-sm font-semibold text-foreground md:inline-flex"
               >
                 <span className="contact-button-icon" aria-hidden="true">☎</span>
@@ -160,6 +167,7 @@ const Navbar = () => {
               </Link>
               <Link
                 href={alternateHref}
+                prefetch={false}
                 className="hidden rounded-md border border-border bg-white px-4 py-2 text-sm font-semibold text-foreground md:inline-flex"
               >
                 {isEnglish ? '中文' : 'EN'}

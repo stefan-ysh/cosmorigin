@@ -103,8 +103,15 @@ const Page = () => (
             <div
               key={item.title}
               className="home-customer-card"
-              style={{ backgroundImage: `url(${item.imgUrl})` }}
             >
+              <Image
+                src={item.imgUrl}
+                alt=""
+                fill
+                className="home-customer-image object-cover"
+                sizes="(max-width: 767px) calc(100vw - 48px), (max-width: 1279px) calc(33vw - 32px), 380px"
+                quality={72}
+              />
               <div className="home-customer-content">
                 <p className="home-customer-title">{item.title}</p>
                 <small>{item.subtitle}</small>
@@ -135,12 +142,22 @@ const Page = () => (
     <section id="contactUs" className="home-contact">
       <div className={`${styles.innerWidth} mx-auto`}>
         <div className="home-contact-card text-center">
-          <h1>携手点亮可持续未来</h1>
-          <h3>欢迎预约材料样品、技术研讨或联合研发</h3>
-          <a href="/contact" className="home-contact-button">
-            <span className="contact-button-icon" aria-hidden="true">☎</span>
-            联系我们
-          </a>
+          <Image
+            src="/未命名.jpeg"
+            alt=""
+            fill
+            className="home-contact-image object-cover"
+            sizes="(max-width: 1280px) calc(100vw - 48px), 1200px"
+            quality={72}
+          />
+          <div className="home-contact-content">
+            <h1>携手点亮可持续未来</h1>
+            <h3>欢迎预约材料样品、技术研讨或联合研发</h3>
+            <a href="/contact" className="home-contact-button">
+              <span className="contact-button-icon" aria-hidden="true">☎</span>
+              联系我们
+            </a>
+          </div>
         </div>
       </div>
     </section>

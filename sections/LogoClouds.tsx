@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 import styles from '@/styles';
 import { partnerLogos } from '@/constants';
 
@@ -27,8 +29,15 @@ const LogoClouds = ({
                 {row.map((logo) => (
                   <div key={`${logo.name}-${groupIndex}`} className="logo-cloud">
                     {logo.logo ? (
-                      // eslint-disable-next-line @next/next/no-img-element
-                      <img src={logo.logo} alt={logo.name} />
+                      <Image
+                        src={logo.logo}
+                        alt={groupIndex === 0 ? logo.name : ''}
+                        width={120}
+                        height={32}
+                        loading="lazy"
+                        quality={75}
+                        sizes="120px"
+                      />
                     ) : (
                       <span>{logo.name}</span>
                     )}

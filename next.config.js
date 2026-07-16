@@ -1,6 +1,17 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path');
 
+const publicImageCacheHeaders = ['avif', 'gif', 'ico', 'jpeg', 'jpg', 'png', 'svg', 'webp']
+  .map((extension) => ({
+    source: `/:path*.${extension}`,
+    headers: [
+      {
+        key: 'Cache-Control',
+        value: 'public, max-age=604800, stale-while-revalidate=2592000',
+      },
+    ],
+  }));
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   // SEO优化：启用压缩
@@ -12,6 +23,7 @@ const nextConfig = {
   // 生成 robots.txt 和 sitemap
   async headers() {
     return [
+      ...publicImageCacheHeaders,
       {
         source: '/:path*',
         headers: [
@@ -38,7 +50,8 @@ const nextConfig = {
   // 图片优化
   images: {
     formats: ['image/avif', 'image/webp'],
-    minimumCacheTTL: 60,
+    qualities: [72, 75],
+    minimumCacheTTL: 2592000,
   },
 };
 

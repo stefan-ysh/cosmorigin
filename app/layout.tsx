@@ -1,8 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 
-import { Analytics } from '@vercel/analytics/next';
 import Script from 'next/script';
-import { ReactNode } from 'react';
+import { JSX, ReactNode } from 'react';
 
 import BackToTop from '@/components/BackToTop';
 import Footer from '@/components/Footer';
@@ -17,8 +16,7 @@ interface RootLayoutProps {
 }
 
 const siteTitle = '宇元新材 - 发光材料专家 | 发光材料研发与生产';
-const siteDescription =
-  '扬州宇元新材专注新型柔性发光材料研发与生产，提供发光油漆、发光纤维丝、发光膜等产品。全球首个纳米级连续生产自发光材料，3260小时水下稳定性认证。产品广泛应用于汽车内外饰、智慧农业、应急救援、公共交通等领域。支持任意图案定制与多色光谱调节。';
+const siteDescription = '扬州宇元新材专注新型柔性发光材料研发与生产，提供发光油漆、发光纤维丝、发光膜等产品。全球首个纳米级连续生产自发光材料，3260小时水下稳定性认证。产品广泛应用于汽车内外饰、智慧农业、应急救援、公共交通等领域。支持任意图案定制与多色光谱调节。';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://cosmorigin.com'),
@@ -92,7 +90,7 @@ const RootLayout = ({ children }: RootLayoutProps): JSX.Element => (
         <Script
           src="https://umami.tiantian.group/script.js"
           data-website-id="173ffae6-87f9-48f1-a7c9-082da809eecc"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
       )}
     </head>
@@ -100,7 +98,6 @@ const RootLayout = ({ children }: RootLayoutProps): JSX.Element => (
       <Navbar />
       {children}
       <BackToTop />
-      <Analytics />
       <Footer />
     </body>
   </html>

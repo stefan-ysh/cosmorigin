@@ -16,26 +16,48 @@ const HomeBannerCarousel = ({
   title,
   description,
   images,
-  intervalMs = 2000,
+  intervalMs = 5000,
 }: HomeBannerCarouselProps) => {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [{ activeIndex, previousIndex }, setSlideState] = useState({
+    activeIndex: 0,
+    previousIndex: null as number | null,
+  });
 
   useEffect(() => {
     if (images.length <= 1) return () => undefined;
     const timer = setInterval(() => {
-      setActiveIndex((prev) => (prev + 1) % images.length);
+      setSlideState((current) => ({
+        activeIndex: (current.activeIndex + 1) % images.length,
+        previousIndex: current.activeIndex,
+      }));
     }, intervalMs);
     return () => clearInterval(timer);
   }, [images.length, intervalMs]);
 
+  const nextIndex = images.length > 1 ? (activeIndex + 1) % images.length : null;
+  const visibleIndexes = [previousIndex, activeIndex, nextIndex].filter(
+    (index, position, indexes): index is number => (
+      index !== null && indexes.indexOf(index) === position
+    ),
+  );
+
   return (
     <section id="swiper" className="home-banner">
-      {images.map((src, index) => (
+      {visibleIndexes.map((index) => (
         <div
-          key={src}
+          key={images[index]}
           className={`home-banner-slide ${index === activeIndex ? 'is-active' : ''}`}
         >
-          <Image src={src} alt={title} fill className="object-cover" priority={index === 0} sizes="100vw" />
+          <Image
+            src={images[index]}
+            alt={index === activeIndex ? title : ''}
+            fill
+            className="object-cover"
+            priority={index === 0}
+            fetchPriority={index === 0 ? 'high' : 'low'}
+            quality={72}
+            sizes="100vw"
+          />
         </div>
       ))}
       <div className="home-banner-overlay">
