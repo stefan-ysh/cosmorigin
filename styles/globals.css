@@ -892,7 +892,7 @@ body {
   .home-feature-grid {
     display: grid;
     gap: 20px;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .home-feature-card {
@@ -919,6 +919,129 @@ body {
     color: #666;
     line-height: 1.8;
     font-size: 14px;
+  }
+
+  .radiation-shielding-section {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    background: #f8f9fa;
+  }
+
+  .radiation-shielding-card {
+    position: relative;
+    min-height: 520px;
+    overflow: hidden;
+    border-radius: 18px;
+    background: #18232d;
+    box-shadow: 0 24px 70px rgba(20, 38, 52, 0.2);
+  }
+
+  .radiation-shielding-image {
+    object-position: center center;
+  }
+
+  .radiation-shielding-scrim {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(10, 24, 34, 0.96) 0%, rgba(10, 24, 34, 0.9) 30%, rgba(10, 24, 34, 0.46) 58%, rgba(10, 24, 34, 0.05) 82%);
+  }
+
+  .radiation-shielding-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    min-height: 520px;
+    width: min(56%, 650px);
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 54px 58px;
+    color: #fff;
+  }
+
+  .radiation-shielding-eyebrow {
+    margin: 0 0 18px;
+    color: #7dd3fc;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+  }
+
+  .radiation-shielding-content h2 {
+    margin: 0;
+    max-width: 620px;
+    font-size: clamp(30px, 4vw, 48px);
+    font-weight: 650;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    white-space: pre-line;
+  }
+
+  .radiation-shielding-description {
+    margin: 22px 0 0;
+    max-width: 590px;
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 15px;
+    line-height: 1.85;
+  }
+
+  .radiation-shielding-content ul {
+    display: grid;
+    gap: 10px;
+    margin: 24px 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .radiation-shielding-content li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .radiation-shielding-content li svg {
+    width: 17px;
+    height: 17px;
+    margin-top: 2px;
+    flex: none;
+    color: #67e8f9;
+  }
+
+  .radiation-shielding-disclaimer {
+    margin: 20px 0 0;
+    max-width: 590px;
+    color: rgba(255, 255, 255, 0.56);
+    font-size: 11px;
+    line-height: 1.65;
+  }
+
+  .radiation-shielding-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.38);
+    border-radius: 999px;
+    padding: 11px 18px;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: border-color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+  }
+
+  .radiation-shielding-cta:hover {
+    border-color: rgba(255, 255, 255, 0.72);
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-1px);
+  }
+
+  .radiation-shielding-cta svg {
+    width: 16px;
+    height: 16px;
   }
 
   .logo-clouds {
@@ -1017,6 +1140,48 @@ body {
 
     .home-section {
       padding: 40px 16px;
+    }
+
+    .radiation-shielding-section {
+      padding: 48px 16px;
+    }
+
+    .radiation-shielding-card {
+      min-height: 640px;
+      border-radius: 14px;
+    }
+
+    .radiation-shielding-image {
+      object-position: 66% center;
+    }
+
+    .radiation-shielding-scrim {
+      background: linear-gradient(0deg, rgba(8, 22, 32, 0.98) 0%, rgba(8, 22, 32, 0.91) 46%, rgba(8, 22, 32, 0.24) 78%, rgba(8, 22, 32, 0.08) 100%);
+    }
+
+    .radiation-shielding-content {
+      min-height: 640px;
+      width: 100%;
+      justify-content: flex-end;
+      padding: 34px 24px;
+    }
+
+    .radiation-shielding-content h2 {
+      font-size: 30px;
+    }
+
+    .radiation-shielding-description {
+      margin-top: 16px;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .radiation-shielding-content ul {
+      margin-top: 18px;
+    }
+
+    .radiation-shielding-disclaimer {
+      margin-top: 16px;
     }
 
     .home-contact {

@@ -3,7 +3,7 @@ import type { JSX } from 'react';
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { Paintbrush, Cable, Waves, Printer, Sparkles } from 'lucide-react';
+import { Paintbrush, Cable, Waves, Printer, Sparkles, ShieldCheck } from 'lucide-react';
 
 import FAQSection, { buildFAQSchema } from '@/components/FAQSection';
 import JsonLd from '@/components/JsonLd';
@@ -12,14 +12,14 @@ import { absoluteUrl, buildAlternates, buildOpenGraph, buildTwitter, defaultRobo
 import { company } from '@/lib/site';
 
 const pagePath = '/products';
-const pageTitle = '宇元新材产品 | 发光油漆、纤维丝、薄膜与 3D 打印辅材等';
-const pageDescription = '浏览宇元新材的核心产品：发光油漆、发光纤维丝、发光膜以及 3D 打印辅材，支持定制光谱与多场景应用。';
+const pageTitle = '宇元新材产品 | 发光材料与轻量化防辐射复合材料';
+const pageDescription = '浏览宇元新材的发光油漆、发光纤维丝、发光膜、3D 打印辅材及面向传统铅衣减重替代的轻量化防辐射复合材料。';
 const canonicalUrl = absoluteUrl(pagePath);
 
 export const metadata: Metadata = {
   title: pageTitle,
   description: pageDescription,
-  keywords: ['发光油漆', '发光纤维丝', '发光膜', '自发光材料', '产品'],
+  keywords: ['发光油漆', '发光纤维丝', '发光膜', '自发光材料', '轻量化防辐射材料', '辐射屏蔽复合材料', '铅衣替代材料'],
   alternates: buildAlternates(pagePath),
   openGraph: buildOpenGraph(pageTitle, pageDescription, pagePath),
   twitter: buildTwitter(pageTitle, pageDescription),
@@ -41,10 +41,11 @@ interface ProductDetail {
   supply: string;
   certification: string;
   keyParameters: string;
+  metricLabel?: string;
   variants: ProductVariant[];
   extraNote?: string;
-  image: string;
-  imageAlt: string;
+  image?: string;
+  imageAlt?: string;
 }
 
 const luminousFilmVariants: ProductVariant[] = [
@@ -80,6 +81,12 @@ const additiveVariants: ProductVariant[] = [
   { model: 'FDM 1.75 mm 线材', spec: '发光填充 15% · 喷嘴 230°C · 发光 4-6 h' },
   { model: 'FDM 2.85 mm 线材', spec: '耐温 120°C · 支持高速打印 · 透光外壳' },
   { model: 'SLA 405 nm 树脂', spec: '低粘度 · 固化能量 6-8 mJ/cm² · DIN 53455 抗拉 38 MPa' },
+];
+
+const radiationShieldingVariants: ProductVariant[] = [
+  { model: '柔性屏蔽片材/卷材', spec: '厚度、面密度与目标屏蔽性能按射线能量和应用场景联合设计' },
+  { model: '防护服复合层', spec: '面向医用防护围裙、围领及局部防护件的轻量化结构开发' },
+  { model: '定制验证样件', spec: '支持材料配方、层间结构、弯折耐久与穿戴结构联合验证' },
 ];
 
 const productDetails: ProductDetail[] = [
@@ -153,6 +160,21 @@ const productDetails: ProductDetail[] = [
     image: '/宇元新材发光材料制成的3D打印辅材.jpg',
     imageAlt: '宇元新材发光 3D 打印辅材样件',
   },
+  {
+    name: '轻量化防辐射复合材料',
+    status: '联合验证',
+    overview: '柔性轻量 · 面向传统铅衣减重与替代研发 · 支持多层复合',
+    applications: '医疗影像防护、介入操作防护、工业无损检测与辐射作业',
+    brightness: '轻量 / 柔性 / 可复合',
+    metricLabel: '性能方向',
+    supply: '片材/卷材/复合层/定制样件',
+    certification: '按目标铅当量及适用标准开展第三方检测',
+    keyParameters: '屏蔽性能、厚度、面密度与弯折耐久按项目确认',
+    variants: radiationShieldingVariants,
+    extraNote: '本方向处于项目联合验证阶段；医疗用途需结合具体产品完成第三方检测、设计验证及适用的注册认证。',
+    image: '/radiation-shielding-lightweight-apron.jpg',
+    imageAlt: '轻量化辐射屏蔽复合材料医疗防护服应用示意',
+  },
 ];
 
 const productCollectionSchema = {
@@ -165,22 +187,22 @@ const productCollectionSchema = {
     '@type': 'Product',
     name: product.name,
     description: product.overview,
-    category: '发光材料',
     brand: {
       '@type': 'Brand',
       name: '宇元新材',
     },
-    image: absoluteUrl(product.image),
+    ...(product.image ? { image: absoluteUrl(product.image) } : {}),
+    category: product.name.includes('防辐射') ? '辐射防护材料' : '发光材料',
     additionalProperty: [
       { '@type': 'PropertyValue', name: '典型应用', value: product.applications },
-      { '@type': 'PropertyValue', name: '亮度区间', value: product.brightness },
+      { '@type': 'PropertyValue', name: product.metricLabel ?? '亮度区间', value: product.brightness },
       { '@type': 'PropertyValue', name: '供货形态', value: product.supply },
     ],
     offers: {
       '@type': 'Offer',
       availability: product.status === '可订购' ? 'https://schema.org/InStock' : 'https://schema.org/PreOrder',
       itemCondition: 'https://schema.org/NewCondition',
-      url: company.taobaoUrl,
+      url: product.name.includes('防辐射') ? absoluteUrl('/contact') : company.taobaoUrl,
     },
   })),
 };
@@ -188,7 +210,11 @@ const productCollectionSchema = {
 const productFaqs = [
   {
     question: '宇元新材有哪些公开产品方向？',
-    answer: '公开产品方向包括发光油漆系列、发光纤维丝、电致发光线缆、发光膜/薄膜和 3D 打印发光辅材。',
+    answer: '公开产品方向包括发光油漆系列、发光纤维丝、电致发光线缆、发光膜/薄膜、3D 打印发光辅材，以及面向传统铅衣减重替代的轻量化防辐射复合材料。',
+  },
+  {
+    question: '轻量化防辐射材料是否可以直接用于医疗场景？',
+    answer: '不能仅依据网站信息直接用于临床。项目需要根据射线类型与能量、目标铅当量、厚度、面密度、弯折耐久和穿戴结构完成第三方检测与产品验证，并满足具体用途对应的法规、注册和认证要求。',
   },
   {
     question: '发光材料是否可以定制颜色和亮度？',
@@ -207,6 +233,10 @@ const productFaqs = [
 const productFaqSchema = buildFAQSchema(productFaqs);
 
 const getProductIcon = (name: string) => {
+  if (name.includes('防辐射')) {
+    return ShieldCheck;
+  }
+
   if (name.includes('油漆')) {
     return Paintbrush;
   }
@@ -233,7 +263,7 @@ const ProductsPage = (): JSX.Element => (
     <section className="px-6 py-16">
       <div className={`${styles.innerWidth} mx-auto`}>
         <p className="text-center text-lg text-muted-foreground">
-          每一款材料都可按光谱、亮度、封装方式定制。通过标准化验证包与快速打样体系，确保 6-8 周内完成项目首批交付。
+          可围绕光谱、亮度、屏蔽性能、载体材料与封装结构开展定制，并根据具体应用制定样品、测试与联合验证方案。
         </p>
       </div>
     </section>
@@ -242,6 +272,7 @@ const ProductsPage = (): JSX.Element => (
       <div className={`${styles.innerWidth} mx-auto space-y-8`}>
         {productDetails.map((product) => {
           const ProductIcon = getProductIcon(product.name);
+          const isRadiationMaterial = product.name.includes('防辐射');
 
           return (
             <article key={product.name} className="bg-white rounded-2xl border border-black/5 shadow-sm hover:shadow-md transition-shadow duration-300">
@@ -261,30 +292,40 @@ const ProductsPage = (): JSX.Element => (
                       href="/contact"
                       className="inline-flex items-center justify-center rounded-md border border-border bg-white px-5 py-2 text-sm font-semibold text-foreground"
                     >
-                      联系顾问
+                      {isRadiationMaterial ? '预约材料验证' : '联系顾问'}
                     </Link>
-                    <a
-                      href={company.taobaoUrl}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="inline-flex items-center justify-center rounded-md bg-primary px-5 py-2 text-sm font-semibold text-primary-foreground"
-                    >
-                      询价
-                    </a>
+                    {!isRadiationMaterial && (
+                      <a
+                        href={company.taobaoUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center justify-center rounded-md bg-primary px-5 py-2 text-sm font-semibold text-primary-foreground"
+                      >
+                        询价
+                      </a>
+                    )}
                   </div>
                 </div>
 
                 <div className="mt-6 grid gap-6 lg:grid-cols-[300px,minmax(0,1fr)]">
                   <div className="panel-soft flex items-center justify-center p-0 bg-[#000]">
                     <div className="relative aspect-square w-full overflow-hidden rounded-md">
-                      <Image
-                        src={product.image}
-                        alt={product.imageAlt}
-                        fill
-                        className="object-contain"
-                        sizes="(min-width: 1024px) 300px, 100vw"
-                        priority={product.name === '发光油漆系列'}
-                      />
+                      {product.image ? (
+                        <Image
+                          src={product.image}
+                          alt={product.imageAlt ?? product.name}
+                          fill
+                          className={isRadiationMaterial ? 'object-cover' : 'object-contain'}
+                          sizes="(min-width: 1024px) 300px, 100vw"
+                          priority={product.name === '发光油漆系列'}
+                        />
+                      ) : (
+                        <div className="flex h-full flex-col items-center justify-center gap-4 bg-slate-950 px-8 text-center text-white">
+                          <ShieldCheck className="h-16 w-16 text-cyan-300" aria-hidden="true" />
+                          <p className="text-base font-semibold">轻量、柔性、可复合</p>
+                          <p className="text-xs leading-6 text-white/65">材料结构与防护样件按应用目标联合设计</p>
+                        </div>
+                      )}
                     </div>
                   </div>
 
@@ -302,7 +343,7 @@ const ProductsPage = (): JSX.Element => (
 
                     <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                       {[
-                        { label: '亮度区间', value: product.brightness },
+                        { label: product.metricLabel ?? '亮度区间', value: product.brightness },
                         { label: '供货形态', value: product.supply },
                         { label: '认证/验证', value: product.certification },
                         { label: '关键参数', value: product.keyParameters },

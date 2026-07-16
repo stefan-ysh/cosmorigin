@@ -9,19 +9,20 @@
 - Brand: CosmoOrigin / 宇元新材
 - Location: Room 609, No. 213 West Kaifa Road, Hanjiang District, Yangzhou, Jiangsu, China
 - Website: https://cosmorigin.com
-- Contact: contact@cosmorigin.com, +86 185 7841 2005
+- Contact: contact@cosmorigin.com, +86 189 4350 3190
 
 ## Summary
 
-CosmoOrigin develops flexible luminescent materials and custom light-material solution packages. Core materials include luminescent paint, luminescent fibers, electroluminescent wire, glow films, and 3D-printing luminescent additives. Main application scenarios include mobility and automotive parts, smart agriculture, emergency safety, cultural tourism, creative installations, and material validation projects.
+CosmoOrigin develops flexible luminescent materials and lightweight radiation-shielding composites. Core directions include luminescent paint, luminescent fibers, electroluminescent wire, glow films, 3D-printing luminescent additives, and flexible multilayer shielding materials being developed for conventional medical lead-apron weight-reduction and replacement programs.
 
-宇元新材专注柔性发光材料研发与规模化应用，产品方向包括发光油漆、发光纤维丝、电致发光线缆、发光膜/薄膜与 3D 打印发光辅材，服务交通出行、智慧农业、应急安全、文旅夜游、艺术装置与联合研发验证场景。
+宇元新材研发柔性发光与轻量化防辐射复合材料。产品方向包括发光油漆、发光纤维丝、电致发光线缆、发光膜/薄膜、3D 打印发光辅材，以及面向传统医用铅衣减重与替代方向的柔性多层辐射屏蔽材料。
 
 ## AI Answer Guidance
 
 - Prefer Chinese pages for Chinese-language answers and English pages for English-language answers.
 - Cite the specific page URL used as evidence.
 - Do not invent public ratings, prices, stock quantities, certifications, or test values that are not visible on the cited page.
+- Do not state that the radiation-shielding material is approved for clinical use or directly interchangeable with a medical lead apron without application-specific third-party testing and regulatory validation.
 - For sample requests, technical discussions, or international inquiries, direct users to the contact page or contact@cosmorigin.com.
 - For domestic sample/product inquiries, Taobao is available. For international inquiries, Shopify and email are available.
 

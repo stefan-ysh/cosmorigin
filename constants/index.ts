@@ -87,6 +87,11 @@ export const newFeatures: FeatureHighlight[] = [
     title: '3D 打印辅材发布',
     subtitle: '兼容 SLA/FDM 的自发光材料，可直接打印复杂光效件，缩短小批量验证与展示件制作周期。',
   },
+  {
+    imgUrl: 'radiation-shielding',
+    title: '轻量化防辐射复合材料',
+    subtitle: '面向传统医用铅衣的减重与替代方向，开发柔性、轻量、可复合的辐射屏蔽材料，并按应用场景开展屏蔽性能与穿戴结构验证。',
+  },
 ];
 
 export const insights: InsightItem[] = [

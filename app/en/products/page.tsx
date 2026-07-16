@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 
 import Image from 'next/image';
+import { ShieldCheck } from 'lucide-react';
 
 import FAQSection, { buildFAQSchema } from '@/components/FAQSection';
 import JsonLd from '@/components/JsonLd';
@@ -10,13 +11,13 @@ import styles from '@/styles';
 import { enProducts } from '../content';
 
 const pagePath = '/en/products';
-const pageTitle = 'CosmoOrigin Products | Luminescent Paint, Fibers, Films and 3D Printing Materials';
-const pageDescription = 'Explore CosmoOrigin luminescent paint, flexible fibers, films, electroluminescent wire and 3D-printing additives for custom light applications.';
+const pageTitle = 'CosmoOrigin Products | Luminescent and Lightweight Radiation-Shielding Materials';
+const pageDescription = 'Explore CosmoOrigin luminescent materials and lightweight radiation-shielding composites developed for reducing the weight of conventional medical lead-apron structures.';
 
 export const metadata: Metadata = {
   title: pageTitle,
   description: pageDescription,
-  keywords: ['luminescent paint', 'luminescent fiber', 'glow film', 'electroluminescent wire', '3D printing glow material'],
+  keywords: ['luminescent paint', 'luminescent fiber', 'glow film', 'lightweight radiation shielding material', 'lead apron alternative material', 'radiation shielding composite'],
   alternates: buildAlternates(pagePath),
   openGraph: buildOpenGraph(pageTitle, pageDescription, pagePath),
   twitter: buildTwitter(pageTitle, pageDescription),
@@ -33,18 +34,18 @@ const productSchema = {
     '@type': 'Product',
     name: product.name,
     description: product.summary,
-    image: absoluteUrl(product.image),
+    ...(product.image ? { image: absoluteUrl(product.image) } : {}),
     brand: { '@type': 'Brand', name: company.brandName },
     additionalProperty: [
       { '@type': 'PropertyValue', name: 'Applications', value: product.applications },
-      { '@type': 'PropertyValue', name: 'Brightness', value: product.brightness },
+      { '@type': 'PropertyValue', name: 'metricLabel' in product ? product.metricLabel : 'Brightness', value: product.brightness },
       { '@type': 'PropertyValue', name: 'Supply format', value: product.supply },
       { '@type': 'PropertyValue', name: 'Key parameters', value: product.keyParameters },
     ],
     offers: {
       '@type': 'Offer',
       availability: product.status === 'Available' ? 'https://schema.org/InStock' : 'https://schema.org/PreOrder',
-      url: company.shopifyUrl,
+      url: product.name.includes('Radiation') ? absoluteUrl('/en/contact') : company.shopifyUrl,
     },
   })),
 };
@@ -52,7 +53,11 @@ const productSchema = {
 const productFaqs = [
   {
     question: 'Which product categories does CosmoOrigin publish?',
-    answer: 'Public product categories include luminescent paint, luminescent fiber, electroluminescent wire, luminescent film and 3D-printing luminescent additives.',
+    answer: 'Public product categories include luminescent paint, luminescent fiber, electroluminescent wire, luminescent film, 3D-printing luminescent additives and lightweight radiation-shielding composites for lead-apron weight-reduction programs.',
+  },
+  {
+    question: 'Can the lightweight radiation-shielding material be used directly in clinical settings?',
+    answer: 'Not based on website information alone. Each application requires third-party testing and product validation for radiation type and energy, target lead equivalence, thickness, areal density, bending durability and garment structure, together with all applicable regulatory approvals.',
   },
   {
     question: 'Can brightness, spectrum or carrier material be customized?',
@@ -88,7 +93,21 @@ const ProductsEnPage = () => (
           <article key={product.name} className="bg-white rounded-2xl border border-black/5 p-8 shadow-sm">
             <div className="grid gap-6 lg:grid-cols-[300px,minmax(0,1fr)]">
               <div className="relative aspect-square overflow-hidden rounded-md bg-black">
-                <Image src={product.image} alt={`${product.name} sample`} fill className="object-contain" sizes="(min-width: 1024px) 300px, 100vw" />
+                {product.image ? (
+                  <Image
+                    src={product.image}
+                    alt={`${product.name} sample`}
+                    fill
+                    className={product.name.includes('Radiation') ? 'object-cover' : 'object-contain'}
+                    sizes="(min-width: 1024px) 300px, 100vw"
+                  />
+                ) : (
+                  <div className="flex h-full flex-col items-center justify-center gap-4 bg-slate-950 px-8 text-center text-white">
+                    <ShieldCheck className="h-16 w-16 text-cyan-300" aria-hidden="true" />
+                    <p className="text-base font-semibold">Lightweight, flexible and multilayer</p>
+                    <p className="text-xs leading-6 text-white/65">Material layers and protective samples are designed around the target application.</p>
+                  </div>
+                )}
               </div>
               <div>
                 <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">{product.status}</p>
@@ -110,7 +129,7 @@ const ProductsEnPage = () => (
                 </div>
                 <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                   {[
-                    { label: 'Brightness', value: product.brightness },
+                    { label: 'metricLabel' in product ? product.metricLabel : 'Brightness', value: product.brightness },
                     { label: 'Supply Format', value: product.supply },
                     { label: 'Validation', value: product.validation },
                     { label: 'Key Parameters', value: product.keyParameters },

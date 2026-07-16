@@ -5,19 +5,20 @@ import Image from 'next/image';
 import FAQSection, { buildFAQSchema } from '@/components/FAQSection';
 import HomeBannerCarousel from '@/components/HomeBannerCarousel';
 import JsonLd from '@/components/JsonLd';
+import RadiationShieldingSection from '@/components/RadiationShieldingSection';
 import { LogoClouds } from '@/sections';
 import { buildAlternates, buildOpenGraph, buildTwitter, defaultRobots } from '@/lib/seo';
 import { company } from '@/lib/site';
 import styles from '@/styles';
 
 const pagePath = '/en';
-const pageTitle = 'CosmoOrigin | Flexible Luminescent Materials and Custom Light Solutions';
-const pageDescription = 'CosmoOrigin develops flexible luminescent paint, fibers, films and 3D-printing additives for mobility, agriculture, safety and creative installations.';
+const pageTitle = 'CosmoOrigin | Flexible Luminescent and Lightweight Radiation-Shielding Materials';
+const pageDescription = 'CosmoOrigin develops flexible luminescent materials and lightweight radiation-shielding composites for mobility, agriculture, safety and medical protection applications.';
 
 export const metadata: Metadata = {
   title: pageTitle,
   description: pageDescription,
-  keywords: ['luminescent materials', 'glow paint', 'luminescent fiber', 'luminescent film', 'CosmoOrigin'],
+  keywords: ['luminescent materials', 'glow paint', 'luminescent fiber', 'lightweight radiation shielding', 'lead apron alternative material', 'CosmoOrigin'],
   alternates: buildAlternates(pagePath),
   openGraph: buildOpenGraph(pageTitle, pageDescription, pagePath),
   twitter: buildTwitter(pageTitle, pageDescription),
@@ -55,6 +56,10 @@ const features = [
     title: '3D-printing luminescent additives',
     subtitle: 'SLA/FDM-compatible materials shorten small-batch validation and complex light-effect sample production.',
   },
+  {
+    title: 'Lightweight radiation-shielding composites',
+    subtitle: 'Flexible multilayer materials are being developed for weight reduction and potential replacement of conventional medical lead-apron structures.',
+  },
 ];
 
 const homeSchema = {
@@ -81,7 +86,11 @@ const homeSchema = {
 const homeFaqs = [
   {
     question: 'What does CosmoOrigin do?',
-    answer: 'CosmoOrigin develops flexible luminescent materials and custom light-material solutions, including glow paint, luminescent fibers, films, electroluminescent wire and 3D-printing luminescent additives.',
+    answer: 'CosmoOrigin develops flexible luminescent materials and lightweight radiation-shielding composites, including glow paint, luminescent fibers, films, electroluminescent wire, 3D-printing additives and materials for lead-apron weight-reduction programs.',
+  },
+  {
+    question: 'Can CosmoOrigin radiation-shielding material directly replace a medical lead apron?',
+    answer: 'The material is being developed toward weight reduction and potential replacement of conventional lead-apron structures. A specific medical use requires third-party testing and product validation for target lead equivalence, radiation energy, thickness, areal density, durability and all applicable regulatory requirements.',
   },
   {
     question: 'Which applications are CosmoOrigin materials designed for?',
@@ -129,16 +138,16 @@ const EnglishHomePage = () => (
         </div>
         <div>
           <h2 className="home-section-title">
-            CosmoOrigin Flexible Luminescent Materials
-            <small> / Flexible Luminescent Materials</small>
+            CosmoOrigin Advanced Functional Materials
+            <small> / Advanced Functional Materials</small>
           </h2>
           <p>
-            Based in Yangzhou, CosmoOrigin focuses on the R&D and scalable production of flexible luminescent materials,
-            including glow paint, luminescent fibers, films and custom solution packages.
+            Based in Yangzhou, CosmoOrigin develops flexible luminescent materials and lightweight radiation-shielding
+            composites, including materials for reducing the weight of conventional medical lead-apron structures.
           </p>
           <p>
-            Our work connects formulation, device structure, processing and system integration, supporting low-power,
-            customizable and validation-ready light material applications.
+            Our work connects formulation, multilayer structure, processing and application validation for mobility,
+            agriculture, emergency safety, creative installations and medical protection programs.
           </p>
         </div>
       </div>
@@ -147,6 +156,20 @@ const EnglishHomePage = () => (
     <LogoClouds
       title="Trusted by Our Partners"
       description="Working with industry customers, research institutions and supply-chain partners to advance luminescent materials."
+    />
+
+    <RadiationShieldingSection
+      eyebrow="MEDICAL RADIATION PROTECTION · JOINT R&D"
+      title="Radiation protection that feels lighter and moves better"
+      description="CosmoOrigin is developing flexible, lightweight and multilayer radiation-shielding composites toward reducing the weight of conventional medical lead-apron structures."
+      points={[
+        'Sheets, rolls, composite layers and custom protective samples',
+        'Joint design around target lead equivalence, areal density and thickness',
+        'Bending durability, wearing comfort and garment integration validation',
+      ]}
+      disclaimer="Medical use requires product-specific third-party testing, design validation and all applicable regulatory approvals."
+      ctaLabel="Discuss a validation program"
+      ctaHref="/en/contact"
     />
 
     <section id="customer" className="home-section home-section-muted">
@@ -160,8 +183,15 @@ const EnglishHomePage = () => (
             <div
               key={item.title}
               className="home-customer-card"
-              style={{ backgroundImage: `url(${item.imgUrl})` }}
             >
+              <Image
+                src={item.imgUrl}
+                alt=""
+                fill
+                className="home-customer-image object-cover"
+                sizes="(max-width: 767px) calc(100vw - 48px), (max-width: 1279px) calc(33vw - 32px), 380px"
+                quality={72}
+              />
               <div className="home-customer-content">
                 <p className="home-customer-title">{item.title}</p>
                 <small>{item.subtitle}</small>
@@ -192,12 +222,22 @@ const EnglishHomePage = () => (
     <section id="contactUs" className="home-contact">
       <div className={`${styles.innerWidth} mx-auto`}>
         <div className="home-contact-card text-center">
-          <h1>Build a Sustainable Future With Light</h1>
-          <h3>Request samples, technical discussions or joint development</h3>
-          <a href="/en/contact" className="home-contact-button">
-            <span className="contact-button-icon" aria-hidden="true">☎</span>
-            Contact Us
-          </a>
+          <Image
+            src="/未命名.jpeg"
+            alt=""
+            fill
+            className="home-contact-image object-cover"
+            sizes="(max-width: 1280px) calc(100vw - 48px), 1200px"
+            quality={72}
+          />
+          <div className="home-contact-content">
+            <h1>Build the Next Generation of Functional Materials</h1>
+            <h3>Request samples, technical discussions or joint development</h3>
+            <a href="/en/contact" className="home-contact-button">
+              <span className="contact-button-icon" aria-hidden="true">☎</span>
+              Contact Us
+            </a>
+          </div>
         </div>
       </div>
     </section>

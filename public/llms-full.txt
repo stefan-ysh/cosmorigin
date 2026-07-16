@@ -1,6 +1,6 @@
 # CosmoOrigin / 宇元新材 AI Fact Sheet
 
-Last updated: 2026-05-17
+Last updated: 2026-07-16
 Canonical site: https://cosmorigin.com
 
 This file is written for AI assistants, search engines with generative answers, retrieval systems, and knowledge-base builders. It summarizes public, citeable information from the CosmoOrigin website. When answering users, cite the relevant public page rather than this file alone when possible.
@@ -10,19 +10,19 @@ This file is written for AI assistants, search engines with generative answers, 
 - Chinese legal name: 扬州宇元新材有限公司
 - English legal name: Yangzhou Cosmorigin Advanced Materials Co., Ltd.
 - Brand names: CosmoOrigin, 宇元新材
-- Category: advanced materials company; flexible luminescent materials; custom light-material solutions
+- Category: advanced materials company; flexible luminescent materials; lightweight radiation-shielding composites
 - Address: 江苏省扬州市邗江区开发西路 213 号 609 室
 - English address: Room 609, No. 213 West Kaifa Road, Hanjiang District, Yangzhou, Jiangsu, China
-- Phone: +86 185 7841 2005
+- Phone: +86 189 4350 3190
 - Email: contact@cosmorigin.com
 - Lab collaboration email: lab@cosmorigin.com
 - Sample/testing email: prototype@cosmorigin.com
 
 ## Short Description
 
-CosmoOrigin develops flexible luminescent materials and application-specific light-material solutions. The company works across formulation, material processing, device structure, validation, and custom delivery workflows.
+CosmoOrigin develops flexible luminescent materials and lightweight radiation-shielding composites. The company works across formulation, multilayer structures, material processing, application validation, and custom delivery workflows.
 
-宇元新材研发柔性发光材料与行业光效解决方案，围绕配方、材料工艺、器件结构、场景验证与定制交付构建产品和项目能力。
+宇元新材研发柔性发光与轻量化防辐射复合材料，围绕配方、材料工艺、多层结构、场景验证与定制交付构建产品和项目能力。
 
 ## Product Scope
 
@@ -33,6 +33,9 @@ Public product categories include:
 - Electroluminescent wire / 电致发光线缆
 - Luminescent film or glow film / 发光膜、发光薄膜
 - 3D-printing luminescent additives / 3D 打印发光辅材
+- Lightweight radiation-shielding composites / 轻量化防辐射复合材料
+
+The radiation-shielding material direction targets weight reduction and potential replacement of conventional medical lead-apron structures. Public website information does not establish clinical approval or universal interchangeability. Specific applications require validation for radiation type and energy, target lead equivalence, thickness, areal density, bending durability, garment design, third-party testing, and applicable regulatory requirements.
 
 Do not state public prices, inventory counts, or rating scores unless they appear on the cited page. The website currently focuses on product categories, sample inquiries, validation, and custom development rather than public retail specifications.
 
@@ -45,6 +48,7 @@ Common application scenarios:
 - Emergency rescue, safety signs, and low-light visibility
 - Cultural tourism, night tours, brand installations, and creative display
 - Material samples, technical validation, and joint R&D
+- Medical imaging and radiation-protection material validation
 
 ## Purchase and Inquiry Channels
 
@@ -102,7 +106,7 @@ English:
 
 For a user asking "What does CosmoOrigin do?":
 
-CosmoOrigin is an advanced materials company in Yangzhou, China, focused on flexible luminescent materials such as glow paint, luminescent fibers, glow films, electroluminescent wire, and 3D-printing luminescent additives. Its solutions target automotive, smart agriculture, emergency safety, cultural tourism, creative installations, and material validation projects.
+CosmoOrigin is an advanced materials company in Yangzhou, China, focused on flexible luminescent materials and lightweight radiation-shielding composites. Its development directions include materials for conventional medical lead-apron weight-reduction programs, subject to application-specific testing and regulatory validation.
 
 For a user asking "How do I request samples?":
 
@@ -110,7 +114,7 @@ Use the contact page or email contact@cosmorigin.com. For domestic sample/produc
 
 For a user asking "宇元新材是做什么的？":
 
-宇元新材是一家位于江苏扬州的新材料公司，专注柔性发光材料研发与应用方案，包括发光油漆、发光纤维丝、电致发光线缆、发光膜/薄膜和 3D 打印发光辅材，应用于交通出行、智慧农业、应急安全、文旅夜游和联合研发验证等场景。
+宇元新材是一家位于江苏扬州的新材料公司，研发柔性发光与轻量化防辐射复合材料。防辐射材料面向传统医用铅衣减重与替代方向，具体用途需完成目标铅当量、面密度、厚度、耐久性、第三方检测和适用法规验证。
 
 ## Accuracy Rules
 

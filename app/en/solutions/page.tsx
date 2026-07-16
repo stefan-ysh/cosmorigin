@@ -6,13 +6,13 @@ import styles from '@/styles';
 import { enSolutions } from '../content';
 
 const pagePath = '/en/solutions';
-const pageTitle = 'CosmoOrigin Solutions | Mobility, Agriculture, Safety and Creative Installations';
-const pageDescription = 'CosmoOrigin provides luminescent material solution packages for automotive, smart agriculture, emergency safety and cultural installation scenarios.';
+const pageTitle = 'CosmoOrigin Solutions | Mobility, Agriculture, Radiation Protection and Safety';
+const pageDescription = 'CosmoOrigin provides functional material solutions for automotive, agriculture, medical radiation protection, emergency safety and creative installations.';
 
 export const metadata: Metadata = {
   title: pageTitle,
   description: pageDescription,
-  keywords: ['luminescent material solutions', 'automotive lighting material', 'smart agriculture light material', 'safety glow material'],
+  keywords: ['functional material solutions', 'automotive lighting material', 'smart agriculture light material', 'lightweight radiation shielding', 'lead apron alternative material', 'safety glow material'],
   alternates: buildAlternates(pagePath),
   openGraph: buildOpenGraph(pageTitle, pageDescription, pagePath),
   twitter: buildTwitter(pageTitle, pageDescription),

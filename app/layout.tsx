@@ -15,8 +15,8 @@ interface RootLayoutProps {
   children: ReactNode;
 }
 
-const siteTitle = '宇元新材 - 发光材料专家 | 发光材料研发与生产';
-const siteDescription = '扬州宇元新材专注新型柔性发光材料研发与生产，提供发光油漆、发光纤维丝、发光膜等产品。全球首个纳米级连续生产自发光材料，3260小时水下稳定性认证。产品广泛应用于汽车内外饰、智慧农业、应急救援、公共交通等领域。支持任意图案定制与多色光谱调节。';
+const siteTitle = '宇元新材 - 柔性发光与轻量化防辐射材料';
+const siteDescription = '扬州宇元新材研发柔性发光与轻量化防辐射复合材料，提供发光油漆、发光纤维丝、发光膜，以及面向传统医用铅衣减重替代的材料与结构方案。';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://cosmorigin.com'),
@@ -39,6 +39,9 @@ export const metadata: Metadata = {
     '扬州发光材料',
     '水下发光',
     '防水发光织物',
+    '轻量化防辐射材料',
+    '辐射屏蔽复合材料',
+    '铅衣替代材料',
   ],
   alternates: {
     canonical: '/',

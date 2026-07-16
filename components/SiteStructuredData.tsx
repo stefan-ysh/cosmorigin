@@ -8,13 +8,13 @@ const SiteStructuredData = () => {
     name: company.zhName,
     legalName: company.zhName,
     alternateName: ['宇元新材', company.brandName, company.enName],
-    description: '专注新型柔性发光材料研发与生产，全球首个纳米级连续生产自发光材料',
+    description: '研发柔性发光与轻量化防辐射复合材料，提供材料配方、复合结构、样件与应用验证服务',
     url: 'https://cosmorigin.com',
     logo: 'https://cosmorigin.com/cosmorigin-logo.png',
     foundingDate: '2014',
     areaServed: ['CN', 'Global'],
     knowsLanguage: ['zh-CN', 'en'],
-    slogan: '柔性发光材料与原创解决方案',
+    slogan: '先进功能材料与原创解决方案',
     address: {
       '@type': 'PostalAddress',
       streetAddress: company.addressZh,
@@ -43,12 +43,17 @@ const SiteStructuredData = () => {
       '智慧农业发光',
       '应急救援发光',
       '文旅夜游发光装置',
+      '轻量化防辐射材料',
+      '辐射屏蔽复合材料',
+      '医用铅衣减重替代材料',
       'flexible luminescent materials',
       'luminescent paint',
       'luminescent fiber',
       'glow film',
       'electroluminescent wire',
       '3D-printing luminescent additives',
+      'lightweight radiation-shielding composites',
+      'lead apron alternative materials',
     ],
   };
 
@@ -63,14 +68,14 @@ const SiteStructuredData = () => {
   const researchServiceSchema = {
     '@context': 'https://schema.org',
     '@type': 'Service',
-    name: '发光材料定制服务',
-    description: '提供发光油漆、发光纤维丝、发光膜的定制化解决方案',
+    name: '先进功能材料定制服务',
+    description: '提供柔性发光与轻量化防辐射复合材料的配方、结构、样件和联合验证服务',
     provider: {
       '@type': 'Organization',
       name: company.zhName,
     },
     areaServed: 'CN',
-    serviceType: '材料研发与生产',
+    serviceType: '先进功能材料研发与验证',
   };
 
   const productSchema = {

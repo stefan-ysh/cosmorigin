@@ -1,21 +1,21 @@
 import type { Metadata } from 'next';
+import type { JSX } from 'react';
 
-import { Car, Sprout, Shield, Sparkles } from 'lucide-react';
+import { Car, Sprout, Shield, Sparkles, Radiation } from 'lucide-react';
 
 import JsonLd from '@/components/JsonLd';
 import styles from '@/styles';
 import { absoluteUrl, buildAlternates, buildOpenGraph, buildTwitter, defaultRobots } from '@/lib/seo';
 
 const pagePath = '/solutions';
-const pageTitle = '行业解决方案 | 交通、农业、应急与文旅应用';
-const pageDescription =
-  '宇元新材面向交通出行、智慧农业、应急救援与文旅艺术等行业提供发光材料解决方案，整合材料、结构、电控与交付流程。';
+const pageTitle = '行业解决方案 | 交通、农业、医疗防护、应急与文旅';
+const pageDescription = '宇元新材面向交通、农业、医疗辐射防护、应急救援与文旅艺术提供功能材料方案，包括面向传统铅衣减重替代的轻量化防辐射复合材料。';
 const canonicalUrl = absoluteUrl(pagePath);
 
 export const metadata: Metadata = {
   title: pageTitle,
   description: pageDescription,
-  keywords: ['行业发光方案', '交通发光解决方案', '智慧农业补光', '应急照明材料', '文旅夜游发光'],
+  keywords: ['行业功能材料方案', '交通发光解决方案', '智慧农业补光', '轻量化防辐射材料', '医用铅衣替代材料', '应急照明材料', '文旅夜游发光'],
   alternates: buildAlternates(pagePath),
   openGraph: buildOpenGraph(pageTitle, pageDescription, pagePath),
   twitter: buildTwitter(pageTitle, pageDescription),
@@ -43,6 +43,13 @@ const solutionTracks = [
     pain: '极端环境下传统灯具易受损，视觉警示滞后。',
     plan: '耐水压发光布 + 方向引导标识 + 可穿戴照明模块，形成主动安全网。',
     kpi: '水下亮度保持 85%（3260h），救援布署时间缩短 40%。',
+  },
+  {
+    title: '医疗影像与辐射防护',
+    icon: Radiation,
+    pain: '传统医用铅衣厚重，长时间穿戴容易增加医护人员的肩颈、腰背负担，也限制动作灵活性。',
+    plan: '以柔性轻量辐射屏蔽复合材料开发防护围裙、围领和局部防护件，围绕传统铅衣减重与替代目标联合设计材料层和穿戴结构。',
+    kpi: '围绕目标铅当量、面密度、厚度、弯折耐久与穿着舒适性开展第三方检测和应用验证。',
   },
   {
     title: '文旅夜游与艺术装置',
@@ -114,7 +121,7 @@ const SolutionsPage = (): JSX.Element => (
     <section className="px-6 py-16">
       <div className={`${styles.innerWidth} mx-auto`}>
         <p className="text-center text-lg text-muted-foreground">
-          我们将材料、结构、电控与算法打包成行业方案，既能快速验证，也能直连后续量产。
+          我们将材料配方、复合结构、器件设计与验证流程组合成行业方案，支持从样件评估、第三方测试到后续量产导入。
         </p>
       </div>
     </section>

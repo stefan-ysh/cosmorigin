@@ -84,6 +84,23 @@ export const enProducts = [
     ],
     image: '/宇元新材发光材料制成的3D打印辅材.jpg',
   },
+  {
+    name: 'Lightweight Radiation-Shielding Composite',
+    status: 'Joint validation',
+    summary: 'A flexible, lightweight, multilayer composite under development for reducing the weight of conventional medical lead-apron structures.',
+    applications: 'Medical imaging protection, interventional procedures, industrial radiography and localized shielding components',
+    brightness: 'Lightweight / flexible / multilayer',
+    metricLabel: 'Performance Direction',
+    supply: 'Sheets / rolls / composite layers / validation samples',
+    validation: 'Third-party testing against target lead equivalence and applicable standards',
+    keyParameters: 'Shielding performance, thickness, areal density and bending durability are confirmed per project',
+    variants: [
+      { model: 'Flexible shielding sheet / roll', spec: 'Layer structure tailored to radiation energy and target shielding performance' },
+      { model: 'Protective-garment composite layer', spec: 'Lightweight structures for aprons, collars and localized protective components' },
+      { model: 'Custom validation sample', spec: 'Formulation, layer structure, bending durability and garment integration validation' },
+    ],
+    image: '/radiation-shielding-lightweight-apron.jpg',
+  },
 ];
 
 export const enSolutions = [
@@ -104,6 +121,12 @@ export const enSolutions = [
     pain: 'Traditional lighting can fail in water, smoke, impact or low-power rescue scenarios.',
     plan: 'Water-resistant luminescent fabrics, directional signage and wearable marker modules.',
     kpi: 'Focus: passive visibility, deployment speed and environmental durability.',
+  },
+  {
+    title: 'Medical Imaging and Radiation Protection',
+    pain: 'Conventional medical lead aprons are heavy, increasing shoulder, neck and back strain during extended procedures.',
+    plan: 'Develop flexible, lightweight radiation-shielding composites for aprons, collars and localized protection, targeting weight reduction and potential replacement of conventional lead-based structures.',
+    kpi: 'Validation focus: target lead equivalence, areal density, thickness, bending durability, wearing comfort and applicable regulatory requirements.',
   },
   {
     title: 'Culture, Tourism and Installations',
