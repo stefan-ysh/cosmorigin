@@ -25,7 +25,8 @@ export const buildOpenGraph = (
   title,
   description,
   siteName: SITE_NAME,
-  locale: 'zh_CN',
+  // 英文页面自动使用 en_US locale
+  locale: path.startsWith('/en') ? 'en_US' : 'zh_CN',
   images: [
     {
       url: absoluteUrl(image),

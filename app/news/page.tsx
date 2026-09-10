@@ -202,7 +202,8 @@ const NewsPage = () => (
     <JsonLd data={newsroomSchema} />
     <section className="px-6 py-16">
       <div className={`${styles.innerWidth} mx-auto`}>
-        <p className="text-center text-lg text-muted-foreground">
+        <h1 className="text-center text-3xl font-bold tracking-tight text-foreground md:text-4xl">新闻动态</h1>
+        <p className="mt-4 text-center text-lg text-muted-foreground">
           我们定期分享产线节点、客户共创、行业发布与技术洞察，也欢迎媒体与合作伙伴引用这些公开信息。
         </p>
       </div>

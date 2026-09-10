@@ -176,11 +176,68 @@ export const enCases = [
 
 export const enNews = [
   {
+    title: 'CosmoOrigin presented at the 3rd Asia Advanced Film Materials Conference',
+    date: '2026-06-27',
+    category: 'Exhibition',
+    summary:
+      'CTO Prof. Tian Tian delivered a talk on luminescent energy-storage films, covering active glow safety signage for low-altitude economy, zero-energy agricultural light-conversion films and medical nuclear-safety protection.',
+    href: 'https://mp.weixin.qq.com/s/uC-P4ajaRP94_XjgNLjgPw',
+  },
+  {
+    title: 'Delegation from Wulian County, Rizhao visited CosmoOrigin',
+    date: '2026-06-03',
+    category: 'Government visit',
+    summary:
+      'A county delegation led by Magistrate Sun Li explored collaboration on the self-luminescent agricultural dimming film and industrial-chain innovation for automotive, traffic safety and emergency applications.',
+    href: 'https://mp.weixin.qq.com/s/CdgIg60bJH_qKNInVdoZQQ',
+  },
+  {
+    title: 'Yangtze-Delta investment delegation from Wulian County visited CosmoOrigin',
+    date: '2026-04-09',
+    category: 'Government visit',
+    summary:
+      'Discussions covered OEM intellectual-property protection, in-house capacity for quality assurance and local investment policies for industrializing the luminescent material production line.',
+    href: 'https://mp.weixin.qq.com/s/2JZlCCkb7wxIG49Yq5CaTA',
+  },
+  {
+    title: 'Workshop on fluorescent tracing and regulation technologies in agricultural research',
+    date: '2026-03-24',
+    category: 'Technical exchange',
+    summary:
+      'With Yangzhou University researchers, the team aligned on supplementary-light film design for peony flowering control, live fluorescent tracing of insect heavy-metal transport and fluorescent antibacterial flower packaging.',
+    href: 'https://mp.weixin.qq.com/s/pn5-NewME5ZmGqHQYBW6Ww',
+  },
+  {
+    title: 'Expert meeting with Yangzhou University on luminescent films for agriculture',
+    date: '2026-03-20',
+    category: 'Technical exchange',
+    summary:
+      'Discussions with horticulture experts focused on the self-luminescent light-conversion film: night-time active light compensation, zero energy consumption and spectral customization for high-value greenhouse crops.',
+    href: 'https://mp.weixin.qq.com/s/9UOQ7Mqff05OKsgsfvJxWg',
+  },
+  {
+    title: 'New Yang Village and Zhuangyuan Workshop leaders visited CosmoOrigin',
+    date: '2026-03-14',
+    category: 'Technical exchange',
+    summary:
+      'Guests explored high-toughness custom-color 3D-printing materials and how glow filament can empower cultural-creative products based on local Zhuangyuan culture.',
+    href: 'https://mp.weixin.qq.com/s/PH4rq4BbVrjltvBBgIbAvQ',
+  },
+  {
+    title: 'Party delegation of Yangzhou University School of Chemistry visited CosmoOrigin',
+    date: '2026-03-14',
+    category: 'University collaboration',
+    summary:
+      'The visit covered 3D/4D printing materials, functional films and luminescent coatings, and discussed deeper university-enterprise collaboration in R&D and talent development.',
+    href: 'https://mp.weixin.qq.com/s/_DlKHm3NINgowJf9yKclgw',
+  },
+  {
     title: 'CosmoOrigin visited a Yangzhou 3D-printing workshop for technical exchange',
     date: '2026-02-05',
     category: 'Technical exchange',
     summary:
       'The team explored luminescent materials, PLA-based creative products and educational applications with a local 3D-printing workshop.',
+    href: 'https://mp.weixin.qq.com/s/y6ctVJ6_SCpCVZs76HkMFg',
   },
   {
     title: 'Luminescent cultural products appeared at a Spring Festival calligraphy event',
@@ -188,6 +245,7 @@ export const enNews = [
     category: 'Public event',
     summary:
       'CosmoOrigin combined traditional calligraphy with luminescent materials to create modern festive light products.',
+    href: 'https://mp.weixin.qq.com/s/MtlpjdZMIatHedajQbHyAw',
   },
   {
     title: 'Cross-material exploration with Red Apple Plastics',
@@ -195,6 +253,7 @@ export const enNews = [
     category: 'Collaboration',
     summary:
       'Both teams discussed TPU films, smart luminescent applications and upstream-downstream material innovation.',
+    href: 'https://mp.weixin.qq.com/s/WR79T5SFLtKVPxCK6oxn-A',
   },
   {
     title: 'New luminescent 3D-printing additives released',

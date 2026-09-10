@@ -29,11 +29,11 @@ export const metadata: Metadata = {
 const homeFaqs = [
   {
     question: '宇元新材主要做什么？',
-    answer: '宇元新材专注柔性发光材料研发与应用方案，覆盖发光油漆、发光纤维丝、发光膜、电致发光线缆和 3D 打印发光辅材。',
+    answer: '宇元新材专注柔性发光材料研发与应用方案，覆盖发光油漆、发光纤维丝、发光膜、电致发光线缆、Glow PLA 夜光/TC 温变 3D 打印线材和 3D 打印发光辅材，另设轻量化防辐射复合材料方向。',
   },
   {
     question: '这些发光材料适合哪些场景？',
-    answer: '典型场景包括交通出行、汽车内外饰、智慧农业补光、应急救援、公共安全、文旅夜游、品牌装置和创意展示。',
+    answer: '典型场景包括交通出行、汽车内外饰、智慧农业补光、应急救援、公共安全、文旅夜游、品牌装置、创意礼品与 3D 打印创作。夜光/温变线材可用电子色卡在线选色（/color-card）。',
   },
   {
     question: '是否支持定制光效或联合研发？',
@@ -162,8 +162,8 @@ const Page = () => (
       <div className={`${styles.innerWidth} mx-auto`}>
         <div className="home-contact-card text-center">
           <Image
-            src="/未命名.jpeg"
-            alt=""
+            src="/images/smart-road-glow-concept.jpg"
+            alt="宇元新材智慧道路发光材料概念图：夜间城市道路上主动发光的交通标识与导光线条"
             fill
             className="home-contact-image object-cover"
             sizes="(max-width: 1280px) calc(100vw - 48px), 1200px"

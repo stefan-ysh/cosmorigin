@@ -76,7 +76,8 @@ const CasesPage = (): JSX.Element => (
 
     <section className="px-6 py-16">
       <div className="mx-auto max-w-6xl">
-        <p className="text-center text-sm text-muted-foreground">
+        <h1 className="text-center text-3xl font-bold tracking-tight text-foreground md:text-4xl">案例展示与合作实绩</h1>
+        <p className="mt-4 text-center text-sm text-muted-foreground">
           我们以“材料 + 方案 + 交付”三位一体的方式服务客户，以下项目均处在验证/试装阶段，持续记录目标、执行路径与阶段性指标。
         </p>
       </div>

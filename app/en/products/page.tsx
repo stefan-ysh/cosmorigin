@@ -128,7 +128,7 @@ const ProductsEnPage = () => (
                   <div className="panel-soft p-4">
                     <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Channels</p>
                     <div className="mt-2 flex flex-wrap gap-3 text-sm font-semibold">
-                      {isFilament && <a href="#filament-color-card">Electronic color card</a>}
+                      {isFilament && <a href="/en/color-card">Electronic color card</a>}
                       <a href={company.shopifyUrl} target="_blank" rel="noreferrer">Shopify</a>
                       <a href={company.taobaoUrl} target="_blank" rel="noreferrer">Taobao</a>
                       <a href={`mailto:${company.email}`}>Email</a>

@@ -1,6 +1,6 @@
 # CosmoOrigin / 宇元新材 AI Fact Sheet
 
-Last updated: 2026-07-16
+Last updated: 2026-09-10
 Canonical site: https://cosmorigin.com
 
 This file is written for AI assistants, search engines with generative answers, retrieval systems, and knowledge-base builders. It summarizes public, citeable information from the CosmoOrigin website. When answering users, cite the relevant public page rather than this file alone when possible.
@@ -32,8 +32,12 @@ Public product categories include:
 - Luminescent fiber / 发光纤维丝
 - Electroluminescent wire / 电致发光线缆
 - Luminescent film or glow film / 发光膜、发光薄膜
+- Glow PLA filament (glow-in-the-dark, 6 basic colors) / Glow PLA 夜光 3D 打印线材（6 款基础色）
+- Thermochromic PLA filament (16 single-color and 49 dual-color options, 22/30/42°C activation, electronic color card) / TC 温变 PLA 线材（单色 16 款、双色 49 款，22/30/42℃ 感温可选，含电子色卡）
 - 3D-printing luminescent additives / 3D 打印发光辅材
 - Lightweight radiation-shielding composites / 轻量化防辐射复合材料
+
+The glow/thermochromic filament electronic color card is at https://cosmorigin.com/color-card (Chinese) and https://cosmorigin.com/en/color-card (English); it is for selection and color communication only and does not replace physical swatches or mass-production inspection standards.
 
 The radiation-shielding material direction targets weight reduction and potential replacement of conventional medical lead-apron structures. Public website information does not establish clinical approval or universal interchangeability. Specific applications require validation for radiation type and energy, target lead equivalence, thickness, areal density, bending durability, garment design, third-party testing, and applicable regulatory requirements.
 
@@ -83,6 +87,7 @@ Chinese:
 - 首页: https://cosmorigin.com/
 - 关于我们: https://cosmorigin.com/about
 - 产品矩阵: https://cosmorigin.com/products
+- 电子色卡: https://cosmorigin.com/color-card
 - 解决方案: https://cosmorigin.com/solutions
 - 案例展示: https://cosmorigin.com/cases
 - 资料中心: https://cosmorigin.com/resources
@@ -95,6 +100,7 @@ English:
 - Home: https://cosmorigin.com/en
 - About: https://cosmorigin.com/en/about
 - Products: https://cosmorigin.com/en/products
+- Filament color card: https://cosmorigin.com/en/color-card
 - Solutions: https://cosmorigin.com/en/solutions
 - Cases: https://cosmorigin.com/en/cases
 - Resources: https://cosmorigin.com/en/resources

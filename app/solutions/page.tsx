@@ -120,7 +120,8 @@ const SolutionsPage = (): JSX.Element => (
 
     <section className="px-6 py-16">
       <div className={`${styles.innerWidth} mx-auto`}>
-        <p className="text-center text-lg text-muted-foreground">
+        <h1 className="text-center text-3xl font-bold tracking-tight text-foreground md:text-4xl">行业解决方案</h1>
+        <p className="mt-4 text-center text-lg text-muted-foreground">
           我们将材料配方、复合结构、器件设计与验证流程组合成行业方案，支持从样件评估、第三方测试到后续量产导入。
         </p>
       </div>

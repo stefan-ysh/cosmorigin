@@ -83,6 +83,11 @@ export const newFeatures: FeatureHighlight[] = [
     subtitle: '支持个性化图案定制与多色光谱调节，灵活匹配交通警示、艺术装饰、品牌LOGO等多元场景需求。',
   },
   {
+    imgUrl: 'filament',
+    title: '夜光/温变 3D 打印线材',
+    subtitle: 'Glow PLA 夜光 6 色 + TC 温变 65 色（单色 16 / 双色 49），22/30/42℃ 感温可选，电子色卡在线选色。',
+  },
+  {
     imgUrl: '3D',
     title: '3D 打印辅材发布',
     subtitle: '兼容 SLA/FDM 的自发光材料，可直接打印复杂光效件，缩短小批量验证与展示件制作周期。',

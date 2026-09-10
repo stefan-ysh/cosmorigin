@@ -292,7 +292,8 @@ const ProductsPage = (): JSX.Element => (
 
     <section className="px-6 py-16">
       <div className={`${styles.innerWidth} mx-auto`}>
-        <p className="text-center text-lg text-muted-foreground">
+        <h1 className="text-center text-3xl font-bold tracking-tight text-foreground md:text-4xl">产品矩阵</h1>
+        <p className="mt-4 text-center text-lg text-muted-foreground">
           可围绕光谱、亮度、屏蔽性能、载体材料与封装结构开展定制，并根据具体应用制定样品、测试与联合验证方案。
         </p>
       </div>
@@ -327,7 +328,7 @@ const ProductsPage = (): JSX.Element => (
                     </Link>
                     {!isRadiationMaterial && (
                       <a
-                        href={isFilament ? '#filament-color-card' : company.taobaoUrl}
+                        href={isFilament ? '/color-card' : company.taobaoUrl}
                         target={isFilament ? undefined : '_blank'}
                         rel={isFilament ? undefined : 'noreferrer'}
                         className="inline-flex items-center justify-center rounded-md bg-primary px-5 py-2 text-sm font-semibold text-primary-foreground"

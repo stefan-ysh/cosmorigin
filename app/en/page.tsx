@@ -53,6 +53,10 @@ const features = [
     subtitle: 'Custom graphics and spectrum tuning can support traffic warnings, art installations, brand marks and product details.',
   },
   {
+    title: 'Glow and thermochromic PLA filaments',
+    subtitle: 'Glow PLA (6 colors) and thermochromic filaments (16 single-color, 49 dual-color, 22/30/42°C) with an online electronic color card.',
+  },
+  {
     title: '3D-printing luminescent additives',
     subtitle: 'SLA/FDM-compatible materials shorten small-batch validation and complex light-effect sample production.',
   },
@@ -86,7 +90,7 @@ const homeSchema = {
 const homeFaqs = [
   {
     question: 'What does CosmoOrigin do?',
-    answer: 'CosmoOrigin develops flexible luminescent materials and lightweight radiation-shielding composites, including glow paint, luminescent fibers, films, electroluminescent wire, 3D-printing additives and materials for lead-apron weight-reduction programs.',
+    answer: 'CosmoOrigin develops flexible luminescent materials and lightweight radiation-shielding composites, including glow paint, luminescent fibers, films, electroluminescent wire, glow/thermochromic PLA filaments, 3D-printing additives and materials for lead-apron weight-reduction programs.',
   },
   {
     question: 'Can CosmoOrigin radiation-shielding material directly replace a medical lead apron?',
@@ -223,8 +227,8 @@ const EnglishHomePage = () => (
       <div className={`${styles.innerWidth} mx-auto`}>
         <div className="home-contact-card text-center">
           <Image
-            src="/未命名.jpeg"
-            alt=""
+            src="/images/smart-road-glow-concept.jpg"
+            alt="CosmoOrigin concept art: actively glowing traffic lines and signage on a smart road at night"
             fill
             className="home-contact-image object-cover"
             sizes="(max-width: 1280px) calc(100vw - 48px), 1200px"

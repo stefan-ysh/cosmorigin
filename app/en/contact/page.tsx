@@ -5,6 +5,7 @@ import { ExternalLink, FlaskConical, Globe2, Handshake, MapPin, PackageCheck, Ph
 import type { LucideProps } from 'lucide-react';
 
 import JsonLd from '@/components/JsonLd';
+import ContactForm from '../../contact/ContactForm';
 import { absoluteUrl, buildAlternates, buildOpenGraph, buildTwitter, defaultRobots } from '@/lib/seo';
 import { company } from '@/lib/site';
 
@@ -201,6 +202,8 @@ const ContactEnPage = (): JSX.Element => (
             ))}
           </div>
         </div>
+
+        <ContactForm locale="en" />
 
         <div className="panel-soft p-6">
           <h3 className="border-b border-primary pb-3 text-lg font-semibold text-foreground">Follow Us</h3>

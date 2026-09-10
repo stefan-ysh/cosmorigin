@@ -64,7 +64,8 @@ const ResourcesPage = () => (
 
     <section className="px-6 py-16">
       <div className={`${styles.innerWidth} mx-auto`}>
-        <p className="text-center text-lg text-muted-foreground">
+        <h1 className="text-center text-3xl font-bold tracking-tight text-foreground md:text-4xl">资料中心</h1>
+        <p className="mt-4 text-center text-lg text-muted-foreground">
           这里提供产品手册、性能测试与开发文档，帮助合作伙伴快速了解材料能力或开展二次设计。
         </p>
 
