@@ -196,6 +196,13 @@ export const enResources = [
     href: '/扬州宇元新材产品手册.pdf',
   },
   {
+    title: 'Glow & Thermochromic Filament Color Card',
+    description:
+      'Electronic color card for Glow PLA (6 colors) and thermochromic PLA filaments: 16 single-color and 49 dual-color options, 22/30/42°C activation.',
+    type: 'PDF',
+    href: '/宇元新材-夜光温变系列色卡.pdf',
+  },
+  {
     title: 'Material Property Sheet 2026',
     description: 'ASTM-based property data for PE, PLA and TPU luminescent material series.',
     type: 'DOC',

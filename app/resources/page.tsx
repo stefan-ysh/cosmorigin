@@ -30,6 +30,12 @@ const downloads = [
     href: '/扬州宇元新材产品手册.pdf',
   },
   {
+    title: '夜光/温变系列电子色卡',
+    description: 'PLA 夜光线材 6 款基础色，温变线材 22/30/42℃ 感温可选：单色 16 款、双色 49 款（黄橙/红/紫/蓝/青绿系）。',
+    type: 'PDF · 0.5 MB',
+    href: '/宇元新材-夜光温变系列色卡.pdf',
+  },
+  {
     title: '宇元新材物性表（2026）',
     description: '详细列出 PE、PLA、TPU 等系列发光材料的 ASTM 标准测试数据。',
     type: 'DOC · 124 KB',

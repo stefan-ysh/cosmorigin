@@ -3,23 +3,24 @@ import type { JSX } from 'react';
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { Paintbrush, Cable, Waves, Printer, Sparkles, ShieldCheck } from 'lucide-react';
+import { Paintbrush, Cable, Waves, Printer, Sparkles, ShieldCheck, Palette } from 'lucide-react';
 
 import FAQSection, { buildFAQSchema } from '@/components/FAQSection';
 import JsonLd from '@/components/JsonLd';
+import FilamentColorCards from './FilamentColorCards';
 import styles from '@/styles';
 import { absoluteUrl, buildAlternates, buildOpenGraph, buildTwitter, defaultRobots } from '@/lib/seo';
 import { company } from '@/lib/site';
 
 const pagePath = '/products';
-const pageTitle = '宇元新材产品 | 发光材料与轻量化防辐射复合材料';
-const pageDescription = '浏览宇元新材的发光油漆、发光纤维丝、发光膜、3D 打印辅材及面向传统铅衣减重替代的轻量化防辐射复合材料。';
+const pageTitle = '宇元新材产品 | 发光材料、夜光温变线材与防辐射复合材料';
+const pageDescription = '浏览宇元新材的发光油漆、发光纤维丝、发光膜、PLA 夜光/温变 3D 打印线材、3D 打印辅材及面向传统铅衣减重替代的轻量化防辐射复合材料，附夜光温变系列电子色卡。';
 const canonicalUrl = absoluteUrl(pagePath);
 
 export const metadata: Metadata = {
   title: pageTitle,
   description: pageDescription,
-  keywords: ['发光油漆', '发光纤维丝', '发光膜', '自发光材料', '轻量化防辐射材料', '辐射屏蔽复合材料', '铅衣替代材料'],
+  keywords: ['发光油漆', '发光纤维丝', '发光膜', 'PLA 夜光线材', '温变线材', '3D 打印线材色卡', '自发光材料', '轻量化防辐射材料', '辐射屏蔽复合材料', '铅衣替代材料'],
   alternates: buildAlternates(pagePath),
   openGraph: buildOpenGraph(pageTitle, pageDescription, pagePath),
   twitter: buildTwitter(pageTitle, pageDescription),
@@ -87,6 +88,12 @@ const radiationShieldingVariants: ProductVariant[] = [
   { model: '柔性屏蔽片材/卷材', spec: '厚度、面密度与目标屏蔽性能按射线能量和应用场景联合设计' },
   { model: '防护服复合层', spec: '面向医用防护围裙、围领及局部防护件的轻量化结构开发' },
   { model: '定制验证样件', spec: '支持材料配方、层间结构、弯折耐久与穿戴结构联合验证' },
+];
+
+const filamentVariants: ProductVariant[] = [
+  { model: 'Glow PLA 夜光线材', spec: '6 款基础色 · 线径 1.75 mm · 吸光后暗处持续余辉' },
+  { model: 'TC 单色温变线材', spec: '16 款 · 22/30/42℃ 感温可选 · 受热后趋近基材本色' },
+  { model: 'TC 双色温变线材', spec: '49 款 · 黄橙/红/紫/蓝/青绿系 · 冷热双态变色' },
 ];
 
 const productDetails: ProductDetail[] = [
@@ -161,6 +168,21 @@ const productDetails: ProductDetail[] = [
     imageAlt: '宇元新材发光 3D 打印辅材样件',
   },
   {
+    name: 'PLA 夜光/温变线材',
+    status: '可订购',
+    overview: 'Glow PLA 夜光 + TC 温变两大色系 · 线径 1.75 mm · FDM 适配打印稳定',
+    applications: '创意礼品、潮玩手办、教育展示、功能原型与配色验证',
+    brightness: '夜光余辉 + 冷热变色',
+    metricLabel: '光效类型',
+    supply: '1.75 mm 线材 · 盘装',
+    certification: 'PLA 环保材料 · 附电子色卡',
+    keyParameters: '夜光：吸光后暗处持续余辉；温变：22/30/42℃ 感温可选',
+    variants: filamentVariants,
+    extraNote: '下方电子色卡可直接选色；显示器与打印工艺可能造成色差，正式打样请以实物色板确认。',
+    image: '/images/filament/glow-pla-green.png',
+    imageAlt: '宇元新材 Glow PLA 夜光线材料盘实物图',
+  },
+  {
     name: '轻量化防辐射复合材料',
     status: '联合验证',
     overview: '柔性轻量 · 面向传统铅衣减重与替代研发 · 支持多层复合',
@@ -225,6 +247,10 @@ const productFaqs = [
     answer: '产品页参数用于初步评估和选型。正式采购、认证文件、批量交付和极端环境验证，应通过邮件或技术沟通确认项目版本。',
   },
   {
+    question: '夜光/温变线材如何选色？',
+    answer: '可在产品页电子色卡中初选颜色：夜光系列 6 款基础色；单色温变 16 款；双色温变 49 款，按黄橙/红/紫/蓝/青绿五大色系划分，并提供 22/30/42℃ 感温温度可选。电子色卡存在色差，正式打样请以实物色板为准，完整色卡 PDF 可在资料中心下载。',
+  },
+  {
     question: '如何购买或索取样品？',
     answer: '国内样品和标准产品可通过淘宝店咨询；海外客户可通过 Shopify 国际站或 contact@cosmorigin.com 联系团队。',
   },
@@ -235,6 +261,10 @@ const productFaqSchema = buildFAQSchema(productFaqs);
 const getProductIcon = (name: string) => {
   if (name.includes('防辐射')) {
     return ShieldCheck;
+  }
+
+  if (name.includes('线材')) {
+    return Palette;
   }
 
   if (name.includes('油漆')) {
@@ -273,6 +303,7 @@ const ProductsPage = (): JSX.Element => (
         {productDetails.map((product) => {
           const ProductIcon = getProductIcon(product.name);
           const isRadiationMaterial = product.name.includes('防辐射');
+          const isFilament = product.name.includes('线材');
 
           return (
             <article key={product.name} className="bg-white rounded-2xl border border-black/5 shadow-sm hover:shadow-md transition-shadow duration-300">
@@ -296,12 +327,12 @@ const ProductsPage = (): JSX.Element => (
                     </Link>
                     {!isRadiationMaterial && (
                       <a
-                        href={company.taobaoUrl}
-                        target="_blank"
-                        rel="noreferrer"
+                        href={isFilament ? '#filament-color-card' : company.taobaoUrl}
+                        target={isFilament ? undefined : '_blank'}
+                        rel={isFilament ? undefined : 'noreferrer'}
                         className="inline-flex items-center justify-center rounded-md bg-primary px-5 py-2 text-sm font-semibold text-primary-foreground"
                       >
-                        询价
+                        {isFilament ? '查看电子色卡' : '询价'}
                       </a>
                     )}
                   </div>
@@ -377,6 +408,12 @@ const ProductsPage = (): JSX.Element => (
                     {product.extraNote && <p className="text-xs text-muted-foreground">{product.extraNote}</p>}
                   </div>
                 </div>
+
+                {isFilament && (
+                  <div className="mt-8">
+                    <FilamentColorCards />
+                  </div>
+                )}
               </div>
             </article>
           );
