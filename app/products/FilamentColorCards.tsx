@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import Image from 'next/image';
 import { Thermometer, Moon, Download, ArrowRight } from 'lucide-react';
@@ -20,7 +20,7 @@ type TabId = 'glow' | 'single' | 'dual';
 const texts = {
   zh: {
     title: '线材电子色卡',
-    intro: '单色温变与双色温变均提供 22 ℃ / 30 ℃ / 42 ℃ 感温温度可选；双色温变色块悬停可预览受热后的热态参考色。',
+    intro: '单色温变与双色温变均提供 22 ℃ / 30 ℃ / 42 ℃ 感温温度可选；色块悬停或点击可预览受热后的热态参考色。',
     download: '下载完整色卡 PDF',
     tabs: [
       { id: 'glow' as TabId, label: '夜光系列' },
@@ -29,8 +29,10 @@ const texts = {
     ],
     hints: {
       glow: '吸收自然光、紫外光或普通 LED 灯光后，可在暗光环境中持续释放柔和余辉 · 线径 1.75 mm',
-      single: '冷态显示目标颜色，受热后颜色趋近 PLA 基材本色（将鼠标悬停在色块上预览）',
-      dual: '左侧为冷态电子参考色，悬停预览受热后的热态参考色',
+      singleHover: '冷态显示目标颜色，受热后颜色趋近 PLA 基材本色（将鼠标悬停在色块上预览）',
+      singleTap: '冷态显示目标颜色，受热后颜色趋近 PLA 基材本色（点击色块预览热态，再点恢复）',
+      dualHover: '左侧为冷态电子参考色，悬停预览受热后的热态参考色',
+      dualTap: '左侧为冷态电子参考色，点击色块预览受热后的热态参考色，再点恢复',
     },
     glowNamePrefix: '',
     singleHexLabel: (cold: string) => `${cold} → 基材本色`,
@@ -42,7 +44,7 @@ const texts = {
   },
   en: {
     title: 'Filament Electronic Color Card',
-    intro: 'Single-color and dual-color thermochromic filaments are available with 22 °C / 30 °C / 42 °C activation. Hover a dual-color swatch to preview its hot-state reference color.',
+    intro: 'Single-color and dual-color thermochromic filaments are available with 22 °C / 30 °C / 42 °C activation. Hover or tap a swatch to preview its hot-state reference color.',
     download: 'Download full color card (PDF)',
     tabs: [
       { id: 'glow' as TabId, label: 'Glow Series' },
@@ -51,8 +53,10 @@ const texts = {
     ],
     hints: {
       glow: 'Absorbs daylight, UV or ordinary LED light, then releases a soft afterglow in the dark · 1.75 mm diameter',
-      single: 'Shows the target color when cold and fades toward the natural PLA base color when heated (hover to preview)',
-      dual: 'Left is the cold-state reference color; hover to preview the hot-state color',
+      singleHover: 'Shows the target color when cold and fades toward the natural PLA base color when heated (hover to preview)',
+      singleTap: 'Shows the target color when cold and fades toward the natural PLA base color when heated (tap a swatch to preview, tap again to revert)',
+      dualHover: 'Left is the cold-state reference color; hover to preview the hot-state color',
+      dualTap: 'Left is the cold-state reference color; tap a swatch to preview the hot-state color, tap again to revert',
     },
     glowNamePrefix: 'Glow ',
     singleHexLabel: (cold: string) => `${cold} → PLA base`,
@@ -72,6 +76,7 @@ const SwatchCard = ({
   hexLabel,
   coldChip,
   hotChip,
+  canHover,
 }: {
   code: string;
   name: string;
@@ -80,14 +85,35 @@ const SwatchCard = ({
   hexLabel: string;
   coldChip: string;
   hotChip: string;
+  canHover: boolean;
 }) => {
-  const [heated, setHeated] = useState(false);
+  const [hovered, setHovered] = useState(false);
+  const [pinned, setPinned] = useState(false);
+  // 桌面端悬停预览；移动端点击切换热态/冷态（悬停仅在支持 hover 的设备生效，避免触屏合成鼠标事件干扰）
+  const heated = hovered || pinned;
+
+  const togglePinned = () => setPinned((prev) => !prev);
 
   return (
     <div
-      className="group overflow-hidden rounded-xl border border-border bg-white shadow-sm transition-shadow hover:shadow-md"
-      onMouseEnter={() => setHeated(true)}
-      onMouseLeave={() => setHeated(false)}
+      role="button"
+      tabIndex={0}
+      aria-pressed={pinned}
+      aria-label={`${code} ${name}`}
+      className="group cursor-pointer select-none overflow-hidden rounded-xl border border-border bg-white shadow-sm transition-shadow hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary/50 touch-manipulation"
+      onMouseEnter={() => {
+        if (canHover) setHovered(true);
+      }}
+      onMouseLeave={() => {
+        if (canHover) setHovered(false);
+      }}
+      onClick={togglePinned}
+      onKeyDown={(event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          togglePinned();
+        }
+      }}
     >
       <div
         className="relative flex h-24 items-end justify-end p-2 transition-colors duration-700 ease-in-out"
@@ -111,6 +137,15 @@ const FilamentColorCards = ({ locale = 'zh' }: { locale?: 'zh' | 'en' }): JSX.El
   const t = texts[locale];
   const [activeTab, setActiveTab] = useState<TabId>('glow');
   const [activeFamily, setActiveFamily] = useState(dualThermochromicFamilies[0].id);
+  // 无悬停能力的设备（触屏）用点击交互，提示文案随之切换
+  const [isTouch, setIsTouch] = useState(false);
+  useEffect(() => {
+    const query = window.matchMedia('(hover: none), (pointer: coarse)');
+    setIsTouch(query.matches);
+    const listener = (event: MediaQueryListEvent) => setIsTouch(event.matches);
+    query.addEventListener('change', listener);
+    return () => query.removeEventListener('change', listener);
+  }, []);
   const activeDualFamily = dualThermochromicFamilies.find((family) => family.id === activeFamily) ?? dualThermochromicFamilies[0];
 
   return (
@@ -178,7 +213,7 @@ const FilamentColorCards = ({ locale = 'zh' }: { locale?: 'zh' | 'en' }): JSX.El
           <div className="space-y-4">
             <p className="flex items-center gap-2 text-xs text-muted-foreground">
               <Thermometer className="h-3.5 w-3.5" aria-hidden="true" />
-              {t.hints.single}
+              {isTouch ? t.hints.singleTap : t.hints.singleHover}
             </p>
             <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
               {singleThermochromicColors.map((color) => (
@@ -191,6 +226,7 @@ const FilamentColorCards = ({ locale = 'zh' }: { locale?: 'zh' | 'en' }): JSX.El
                   hexLabel={t.singleHexLabel(color.cold)}
                   coldChip={t.coldChip}
                   hotChip={t.hotChip}
+                  canHover={!isTouch}
                 />
               ))}
             </div>
@@ -218,7 +254,7 @@ const FilamentColorCards = ({ locale = 'zh' }: { locale?: 'zh' | 'en' }): JSX.El
             </div>
             <p className="flex items-center gap-2 text-xs text-muted-foreground">
               <Thermometer className="h-3.5 w-3.5" aria-hidden="true" />
-              {t.hints.dual}
+              {isTouch ? t.hints.dualTap : t.hints.dualHover}
             </p>
             <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
               {activeDualFamily.colors.map((color) => (
@@ -231,6 +267,7 @@ const FilamentColorCards = ({ locale = 'zh' }: { locale?: 'zh' | 'en' }): JSX.El
                   hexLabel={`${color.cold} → ${color.hot}`}
                   coldChip={t.coldChip}
                   hotChip={t.hotChip}
+                  canHover={!isTouch}
                 />
               ))}
             </div>
