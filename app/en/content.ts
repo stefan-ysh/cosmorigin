@@ -85,6 +85,23 @@ export const enProducts = [
     image: '/宇元新材发光材料制成的3D打印辅材.jpg',
   },
   {
+    name: 'Glow & Thermochromic PLA Filament',
+    status: 'Available',
+    summary: 'Glow PLA glow-in-the-dark and TC thermochromic filament families in one 1.75 mm PLA format; stable FDM printing and an electronic color card for selection.',
+    applications: 'Creative gifts, collectibles, educational models, functional prototypes and color validation',
+    brightness: 'Afterglow + cold-to-hot color change',
+    metricLabel: 'Light Effect',
+    supply: '1.75 mm filament · spools',
+    validation: 'PLA eco material · electronic color card provided',
+    keyParameters: 'Glow: sustained afterglow after light charging; TC: 22/30/42°C activation options',
+    variants: [
+      { model: 'Glow PLA filament', spec: '6 basic colors · 1.75 mm · sustained afterglow in the dark' },
+      { model: 'TC single-color filament', spec: '16 colors · 22/30/42°C activation · fades to PLA base color when heated' },
+      { model: 'TC dual-color filament', spec: '49 colors · yellow-orange/red/purple/blue/teal families · cold/hot dual state' },
+    ],
+    image: '/images/filament/glow-pla-green.png',
+  },
+  {
     name: 'Lightweight Radiation-Shielding Composite',
     status: 'Joint validation',
     summary: 'A flexible, lightweight, multilayer composite under development for reducing the weight of conventional medical lead-apron structures.',

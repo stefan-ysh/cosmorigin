@@ -5,19 +5,20 @@ import { ShieldCheck } from 'lucide-react';
 
 import FAQSection, { buildFAQSchema } from '@/components/FAQSection';
 import JsonLd from '@/components/JsonLd';
+import FilamentColorCards from '../../products/FilamentColorCards';
 import { absoluteUrl, buildAlternates, buildOpenGraph, buildTwitter, defaultRobots } from '@/lib/seo';
 import { company } from '@/lib/site';
 import styles from '@/styles';
 import { enProducts } from '../content';
 
 const pagePath = '/en/products';
-const pageTitle = 'CosmoOrigin Products | Luminescent and Lightweight Radiation-Shielding Materials';
-const pageDescription = 'Explore CosmoOrigin luminescent materials and lightweight radiation-shielding composites developed for reducing the weight of conventional medical lead-apron structures.';
+const pageTitle = 'CosmoOrigin Products | Luminescent Materials, Glow & Thermochromic Filaments';
+const pageDescription = 'Explore CosmoOrigin luminescent materials, glow-in-the-dark and thermochromic PLA filaments with an electronic color card, and lightweight radiation-shielding composites for lead-apron weight reduction.';
 
 export const metadata: Metadata = {
   title: pageTitle,
   description: pageDescription,
-  keywords: ['luminescent paint', 'luminescent fiber', 'glow film', 'lightweight radiation shielding material', 'lead apron alternative material', 'radiation shielding composite'],
+  keywords: ['luminescent paint', 'luminescent fiber', 'glow film', 'glow PLA filament', 'thermochromic filament color card', 'lightweight radiation shielding material', 'lead apron alternative material', 'radiation shielding composite'],
   alternates: buildAlternates(pagePath),
   openGraph: buildOpenGraph(pageTitle, pageDescription, pagePath),
   twitter: buildTwitter(pageTitle, pageDescription),
@@ -53,7 +54,11 @@ const productSchema = {
 const productFaqs = [
   {
     question: 'Which product categories does CosmoOrigin publish?',
-    answer: 'Public product categories include luminescent paint, luminescent fiber, electroluminescent wire, luminescent film, 3D-printing luminescent additives and lightweight radiation-shielding composites for lead-apron weight-reduction programs.',
+    answer: 'Public product categories include luminescent paint, luminescent fiber, electroluminescent wire, luminescent film, glow-in-the-dark and thermochromic PLA filaments, 3D-printing luminescent additives and lightweight radiation-shielding composites for lead-apron weight-reduction programs.',
+  },
+  {
+    question: 'How do I choose a glow or thermochromic filament color?',
+    answer: 'Use the electronic color card on this page: the Glow PLA series offers 6 basic colors; single-color thermochromic options cover 16 colors and dual-color options cover 49 colors grouped into yellow-orange, red, purple, blue and teal families, with 22/30/42°C activation. Electronic colors may deviate from physical swatches; confirm final colors with samples. The full color card PDF is available in the resources center.',
   },
   {
     question: 'Can the lightweight radiation-shielding material be used directly in clinical settings?',
@@ -89,7 +94,9 @@ const ProductsEnPage = () => (
     </section>
     <section className="px-6 pb-20">
       <div className={`${styles.innerWidth} mx-auto grid gap-8`}>
-        {enProducts.map((product) => (
+        {enProducts.map((product) => {
+          const isFilament = product.name.includes('Filament');
+          return (
           <article key={product.name} className="bg-white rounded-2xl border border-black/5 p-8 shadow-sm">
             <div className="grid gap-6 lg:grid-cols-[300px,minmax(0,1fr)]">
               <div className="relative aspect-square overflow-hidden rounded-md bg-black">
@@ -121,6 +128,7 @@ const ProductsEnPage = () => (
                   <div className="panel-soft p-4">
                     <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Channels</p>
                     <div className="mt-2 flex flex-wrap gap-3 text-sm font-semibold">
+                      {isFilament && <a href="#filament-color-card">Electronic color card</a>}
                       <a href={company.shopifyUrl} target="_blank" rel="noreferrer">Shopify</a>
                       <a href={company.taobaoUrl} target="_blank" rel="noreferrer">Taobao</a>
                       <a href={`mailto:${company.email}`}>Email</a>
@@ -160,8 +168,14 @@ const ProductsEnPage = () => (
                 </div>
               </div>
             </div>
+            {isFilament && (
+              <div className="mt-6">
+                <FilamentColorCards locale="en" />
+              </div>
+            )}
           </article>
-        ))}
+          );
+        })}
       </div>
     </section>
     <FAQSection
