@@ -94,8 +94,7 @@ const aboutSchemas = [
     mainEntity: {
       "@type": "Organization",
       name: company.zhName,
-      foundingDate: "2014",
-      numberOfEmployees: "50+",
+      foundingDate: "2025-10-29",
       address: {
         "@type": "PostalAddress",
         streetAddress: company.addressZh,

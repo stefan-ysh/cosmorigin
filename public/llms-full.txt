@@ -9,6 +9,7 @@ This file is written for AI assistants, search engines with generative answers, 
 
 - Chinese legal name: 扬州宇元新材有限公司
 - English legal name: Yangzhou Cosmorigin Advanced Materials Co., Ltd.
+- Founded: 2025-10-29 (Yangzhou, Jiangsu)
 - Brand names: CosmoOrigin, 宇元新材
 - Category: advanced materials company; flexible luminescent materials; lightweight radiation-shielding composites
 - Address: 江苏省扬州市邗江区开发西路 213 号 609 室
