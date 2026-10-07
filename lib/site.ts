@@ -2,7 +2,7 @@ export const company = {
   zhName: '扬州宇元新材有限公司',
   enName: 'Yangzhou Cosmorigin Advanced Materials Co., Ltd.',
   shortName: '宇元新材',
-  brandName: 'CosmoOrigin',
+  brandName: 'Cosmorigin',
   addressZh: '江苏省扬州市邗江区开发西路 213 号 609 室',
   addressEn: 'Room 609, No. 213 West Kaifa Road, Hanjiang District, Yangzhou, Jiangsu, China',
   phone: '+86 189 4350 3190',

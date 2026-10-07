@@ -8,13 +8,13 @@ import { company } from '@/lib/site';
 import styles from '@/styles';
 
 const pagePath = '/en/about';
-const pageTitle = 'About CosmoOrigin | Company and Technology Platform';
-const pageDescription = 'Learn about CosmoOrigin, a Yangzhou-based advanced materials company focused on flexible luminescent materials, pilot production and joint application development.';
+const pageTitle = 'About Cosmorigin | Company and Technology Platform';
+const pageDescription = 'Learn about Cosmorigin, a Yangzhou-based advanced materials company focused on flexible luminescent materials, pilot production and joint application development.';
 
 export const metadata: Metadata = {
   title: pageTitle,
   description: pageDescription,
-  keywords: ['CosmoOrigin', 'luminescent materials company', 'flexible glow materials', 'Yangzhou advanced materials'],
+  keywords: ['Cosmorigin', 'luminescent materials company', 'flexible glow materials', 'Yangzhou advanced materials'],
   alternates: buildAlternates(pagePath),
   openGraph: buildOpenGraph(pageTitle, pageDescription, pagePath),
   twitter: buildTwitter(pageTitle, pageDescription),
@@ -42,13 +42,13 @@ const AboutEnPage = () => (
     <section className="px-6 py-16 lg:py-24">
       <div className={`${styles.innerWidth} mx-auto grid gap-12 lg:grid-cols-2 items-center`}>
         <div className="relative aspect-square overflow-hidden rounded-2xl border border-black/5 bg-gray-50 shadow-2xl shadow-blue-900/5">
-          <Image src="/宇元新材公司.png" alt="CosmoOrigin facility and team environment" fill className="object-cover" priority />
+          <Image src="/宇元新材公司.png" alt="Cosmorigin facility and team environment" fill className="object-cover" priority />
         </div>
         <div>
           <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">Company</p>
           <h1 className="mt-4 text-4xl font-bold tracking-tight text-foreground">{company.enName}</h1>
           <p className="mt-6 text-base leading-8 text-muted-foreground">
-            Based in Yangzhou, CosmoOrigin develops flexible luminescent materials that support low-power,
+            Based in Yangzhou, Cosmorigin develops flexible luminescent materials that support low-power,
             customizable light effects across mobility, agriculture, public safety and cultural installations.
           </p>
           <p className="mt-4 text-base leading-8 text-muted-foreground">

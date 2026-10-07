@@ -176,7 +176,7 @@ export const enCases = [
 
 export const enNews = [
   {
-    title: 'CosmoOrigin presented at the 3rd Asia Advanced Film Materials Conference',
+    title: 'Cosmorigin presented at the 3rd Asia Advanced Film Materials Conference',
     date: '2026-06-27',
     category: 'Exhibition',
     summary:
@@ -184,7 +184,7 @@ export const enNews = [
     href: 'https://mp.weixin.qq.com/s/uC-P4ajaRP94_XjgNLjgPw',
   },
   {
-    title: 'Delegation from Wulian County, Rizhao visited CosmoOrigin',
+    title: 'Delegation from Wulian County, Rizhao visited Cosmorigin',
     date: '2026-06-03',
     category: 'Government visit',
     summary:
@@ -192,7 +192,7 @@ export const enNews = [
     href: 'https://mp.weixin.qq.com/s/CdgIg60bJH_qKNInVdoZQQ',
   },
   {
-    title: 'Yangtze-Delta investment delegation from Wulian County visited CosmoOrigin',
+    title: 'Yangtze-Delta investment delegation from Wulian County visited Cosmorigin',
     date: '2026-04-09',
     category: 'Government visit',
     summary:
@@ -216,7 +216,7 @@ export const enNews = [
     href: 'https://mp.weixin.qq.com/s/9UOQ7Mqff05OKsgsfvJxWg',
   },
   {
-    title: 'New Yang Village and Zhuangyuan Workshop leaders visited CosmoOrigin',
+    title: 'New Yang Village and Zhuangyuan Workshop leaders visited Cosmorigin',
     date: '2026-03-14',
     category: 'Technical exchange',
     summary:
@@ -224,7 +224,7 @@ export const enNews = [
     href: 'https://mp.weixin.qq.com/s/PH4rq4BbVrjltvBBgIbAvQ',
   },
   {
-    title: 'Party delegation of Yangzhou University School of Chemistry visited CosmoOrigin',
+    title: 'Party delegation of Yangzhou University School of Chemistry visited Cosmorigin',
     date: '2026-03-14',
     category: 'University collaboration',
     summary:
@@ -232,7 +232,7 @@ export const enNews = [
     href: 'https://mp.weixin.qq.com/s/_DlKHm3NINgowJf9yKclgw',
   },
   {
-    title: 'CosmoOrigin visited a Yangzhou 3D-printing workshop for technical exchange',
+    title: 'Cosmorigin visited a Yangzhou 3D-printing workshop for technical exchange',
     date: '2026-02-05',
     category: 'Technical exchange',
     summary:
@@ -244,7 +244,7 @@ export const enNews = [
     date: '2026-01-31',
     category: 'Public event',
     summary:
-      'CosmoOrigin combined traditional calligraphy with luminescent materials to create modern festive light products.',
+      'Cosmorigin combined traditional calligraphy with luminescent materials to create modern festive light products.',
     href: 'https://mp.weixin.qq.com/s/MtlpjdZMIatHedajQbHyAw',
   },
   {
@@ -266,7 +266,7 @@ export const enNews = [
 
 export const enResources = [
   {
-    title: 'CosmoOrigin Product Brochure 2026',
+    title: 'Cosmorigin Product Brochure 2026',
     description: 'Product overview for luminescent paint, fibers, films and 3D-printing materials.',
     type: 'PDF',
     href: '/扬州宇元新材产品手册.pdf',

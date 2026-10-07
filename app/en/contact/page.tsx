@@ -10,15 +10,15 @@ import { absoluteUrl, buildAlternates, buildOpenGraph, buildTwitter, defaultRobo
 import { company } from '@/lib/site';
 
 const pagePath = '/en/contact';
-const pageTitle = 'Contact CosmoOrigin | Sales and Technical Support';
-const pageDescription = 'Contact CosmoOrigin by email, phone, WeChat, Taobao or Shopify for luminescent material samples, technical discussions and international inquiries.';
+const pageTitle = 'Contact Cosmorigin | Sales and Technical Support';
+const pageDescription = 'Contact Cosmorigin by email, phone, WeChat, Taobao or Shopify for luminescent material samples, technical discussions and international inquiries.';
 const canonicalUrl = absoluteUrl(pagePath);
 type ContactIcon = ComponentType<LucideProps>;
 
 export const metadata: Metadata = {
   title: pageTitle,
   description: pageDescription,
-  keywords: ['contact CosmoOrigin', 'luminescent material samples', 'glow material supplier China', 'technical support'],
+  keywords: ['contact Cosmorigin', 'luminescent material samples', 'glow material supplier China', 'technical support'],
   alternates: buildAlternates(pagePath),
   openGraph: buildOpenGraph(pageTitle, pageDescription, pagePath),
   twitter: buildTwitter(pageTitle, pageDescription),
@@ -85,55 +85,55 @@ const socialChannels = [
     description: 'Search for “宇元新材” on Douyin for lab updates and live demos.',
     href: company.douyinUrl,
     qrImage: company.douyinQr,
-    qrAlt: 'CosmoOrigin Douyin QR code',
+    qrAlt: 'Cosmorigin Douyin QR code',
   },
   {
     label: 'TikTok',
     description: '@cosmorigin shares material updates and application stories for global audiences.',
     href: company.tiktokUrl,
     qrImage: company.tiktokQr,
-    qrAlt: 'CosmoOrigin TikTok QR code',
+    qrAlt: 'Cosmorigin TikTok QR code',
   },
   {
     label: 'WeChat Official Account',
     description: 'Follow the official account for technical notes, documents and event updates.',
     href: company.wechatUrl,
     qrImage: company.wechatQr,
-    qrAlt: 'CosmoOrigin WeChat official account QR code',
+    qrAlt: 'Cosmorigin WeChat official account QR code',
   },
   {
     label: 'WeChat Video Account',
     description: 'Watch short demos and live material showcases through the video account.',
     qrImage: company.videoQr,
-    qrAlt: 'CosmoOrigin WeChat video account QR code',
+    qrAlt: 'Cosmorigin WeChat video account QR code',
   },
   {
     label: 'Weibo',
     description: '@宇元新材 shares industry notes and exhibition updates.',
     href: company.weiboUrl,
     qrImage: company.weiboQr,
-    qrAlt: 'CosmoOrigin Weibo QR code',
+    qrAlt: 'Cosmorigin Weibo QR code',
   },
   {
     label: 'Xiaohongshu',
     description: '@宇元新材 records material inspiration and application cases.',
     href: company.xiaohongshuUrl,
     qrImage: company.xiaohongshuQr,
-    qrAlt: 'CosmoOrigin Xiaohongshu QR code',
+    qrAlt: 'Cosmorigin Xiaohongshu QR code',
   },
   {
     label: 'Shopify',
-    description: 'CosmoOrigin international store for global inquiries.',
+    description: 'Cosmorigin international store for global inquiries.',
     href: company.shopifyUrl,
     qrImage: company.shopifyQr,
-    qrAlt: 'CosmoOrigin Shopify store QR code',
+    qrAlt: 'Cosmorigin Shopify store QR code',
   },
   {
     label: 'Taobao Store',
     description: 'Domestic samples, consumables and standard products are available through Taobao.',
     href: company.taobaoUrl,
     qrImage: company.taobaoQr,
-    qrAlt: 'CosmoOrigin Taobao store QR code',
+    qrAlt: 'Cosmorigin Taobao store QR code',
   },
 ];
 

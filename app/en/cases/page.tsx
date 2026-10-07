@@ -6,8 +6,8 @@ import styles from '@/styles';
 import { enCases } from '../content';
 
 const pagePath = '/en/cases';
-const pageTitle = 'CosmoOrigin Cases | Validation Programs and Collaboration Progress';
-const pageDescription = 'Review CosmoOrigin validation programs across automotive interiors, smart agriculture and luminescent 3D-printing applications.';
+const pageTitle = 'Cosmorigin Cases | Validation Programs and Collaboration Progress';
+const pageDescription = 'Review Cosmorigin validation programs across automotive interiors, smart agriculture and luminescent 3D-printing applications.';
 
 export const metadata: Metadata = {
   title: pageTitle,

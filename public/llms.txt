@@ -1,4 +1,4 @@
-# CosmoOrigin / 宇元新材
+# Cosmorigin / 宇元新材
 
 > AI-readable index for https://cosmorigin.com. Use this file to understand the company, language-specific pages, and high-value source URLs. Full fact sheet: https://cosmorigin.com/llms-full.txt
 
@@ -6,14 +6,14 @@
 
 - Chinese name: 扬州宇元新材有限公司
 - English name: Yangzhou Cosmorigin Advanced Materials Co., Ltd.
-- Brand: CosmoOrigin / 宇元新材
+- Brand: Cosmorigin / 宇元新材
 - Location: Room 609, No. 213 West Kaifa Road, Hanjiang District, Yangzhou, Jiangsu, China
 - Website: https://cosmorigin.com
 - Contact: contact@cosmorigin.com, +86 189 4350 3190
 
 ## Summary
 
-CosmoOrigin develops flexible luminescent materials and lightweight radiation-shielding composites. Core directions include luminescent paint, luminescent fibers, electroluminescent wire, glow films, glow-in-the-dark and thermochromic PLA 3D-printing filaments (with an online electronic color card), 3D-printing luminescent additives, and flexible multilayer shielding materials being developed for conventional medical lead-apron weight-reduction and replacement programs.
+Cosmorigin develops flexible luminescent materials and lightweight radiation-shielding composites. Core directions include luminescent paint, luminescent fibers, electroluminescent wire, glow films, glow-in-the-dark and thermochromic PLA 3D-printing filaments (with an online electronic color card), 3D-printing luminescent additives, and flexible multilayer shielding materials being developed for conventional medical lead-apron weight-reduction and replacement programs.
 
 宇元新材研发柔性发光与轻量化防辐射复合材料。产品方向包括发光油漆、发光纤维丝、电致发光线缆、发光膜/薄膜、Glow PLA 夜光与 TC 温变 3D 打印线材（含在线电子色卡）、3D 打印发光辅材，以及面向传统医用铅衣减重与替代方向的柔性多层辐射屏蔽材料。
 

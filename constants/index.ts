@@ -158,7 +158,7 @@ export const socialChannels: SocialChannel[] = [
     description: '@cosmorigin，面向海外的材料动态与案例拆解。',
     href: company.tiktokUrl,
     qrImage: company.tiktokQr,
-    qrAlt: 'CosmoOrigin TikTok 二维码',
+    qrAlt: 'Cosmorigin TikTok 二维码',
   },
   {
     label: '微信公众号',

@@ -12,13 +12,13 @@ import { company } from '@/lib/site';
 import styles from '@/styles';
 
 const pagePath = '/en';
-const pageTitle = 'CosmoOrigin | Flexible Luminescent and Lightweight Radiation-Shielding Materials';
-const pageDescription = 'CosmoOrigin develops flexible luminescent materials and lightweight radiation-shielding composites for mobility, agriculture, safety and medical protection applications.';
+const pageTitle = 'Cosmorigin | Flexible Luminescent and Lightweight Radiation-Shielding Materials';
+const pageDescription = 'Cosmorigin develops flexible luminescent materials and lightweight radiation-shielding composites for mobility, agriculture, safety and medical protection applications.';
 
 export const metadata: Metadata = {
   title: pageTitle,
   description: pageDescription,
-  keywords: ['luminescent materials', 'glow paint', 'luminescent fiber', 'lightweight radiation shielding', 'lead apron alternative material', 'CosmoOrigin'],
+  keywords: ['luminescent materials', 'glow paint', 'luminescent fiber', 'lightweight radiation shielding', 'lead apron alternative material', 'Cosmorigin'],
   alternates: buildAlternates(pagePath),
   openGraph: buildOpenGraph(pageTitle, pageDescription, pagePath),
   twitter: buildTwitter(pageTitle, pageDescription),
@@ -46,7 +46,7 @@ const insights = [
 const features = [
   {
     title: 'Continuous luminescent material processing',
-    subtitle: 'Moving beyond batch-only workflows, CosmoOrigin focuses on scalable flexible materials and validation-ready samples.',
+    subtitle: 'Moving beyond batch-only workflows, Cosmorigin focuses on scalable flexible materials and validation-ready samples.',
   },
   {
     title: 'Patterned and multi-color light effects',
@@ -89,19 +89,19 @@ const homeSchema = {
 
 const homeFaqs = [
   {
-    question: 'What does CosmoOrigin do?',
-    answer: 'CosmoOrigin develops flexible luminescent materials and lightweight radiation-shielding composites, including glow paint, luminescent fibers, films, electroluminescent wire, glow/thermochromic PLA filaments, 3D-printing additives and materials for lead-apron weight-reduction programs.',
+    question: 'What does Cosmorigin do?',
+    answer: 'Cosmorigin develops flexible luminescent materials and lightweight radiation-shielding composites, including glow paint, luminescent fibers, films, electroluminescent wire, glow/thermochromic PLA filaments, 3D-printing additives and materials for lead-apron weight-reduction programs.',
   },
   {
-    question: 'Can CosmoOrigin radiation-shielding material directly replace a medical lead apron?',
+    question: 'Can Cosmorigin radiation-shielding material directly replace a medical lead apron?',
     answer: 'The material is being developed toward weight reduction and potential replacement of conventional lead-apron structures. A specific medical use requires third-party testing and product validation for target lead equivalence, radiation energy, thickness, areal density, durability and all applicable regulatory requirements.',
   },
   {
-    question: 'Which applications are CosmoOrigin materials designed for?',
+    question: 'Which applications are Cosmorigin materials designed for?',
     answer: 'Typical applications include mobility and automotive parts, smart agriculture, emergency safety, public visibility, cultural tourism, creative installations and material validation projects.',
   },
   {
-    question: 'Can CosmoOrigin support custom light effects or joint development?',
+    question: 'Can Cosmorigin support custom light effects or joint development?',
     answer: 'Yes. The team can discuss spectrum, brightness, carrier material, encapsulation and application workflow for samples, validation programs and joint R&D.',
   },
   {
@@ -117,7 +117,7 @@ const EnglishHomePage = () => (
     <JsonLd data={[homeSchema, homeFaqSchema]} />
 
     <HomeBannerCarousel
-      title="CosmoOrigin Lights the Future"
+      title="Cosmorigin Lights the Future"
       description={pageDescription}
       images={[
         '/images/banner/1.jpg',
@@ -142,11 +142,11 @@ const EnglishHomePage = () => (
         </div>
         <div>
           <h2 className="home-section-title">
-            CosmoOrigin Advanced Functional Materials
+            Cosmorigin Advanced Functional Materials
             <small> / Advanced Functional Materials</small>
           </h2>
           <p>
-            Based in Yangzhou, CosmoOrigin develops flexible luminescent materials and lightweight radiation-shielding
+            Based in Yangzhou, Cosmorigin develops flexible luminescent materials and lightweight radiation-shielding
             composites, including materials for reducing the weight of conventional medical lead-apron structures.
           </p>
           <p>
@@ -165,7 +165,7 @@ const EnglishHomePage = () => (
     <RadiationShieldingSection
       eyebrow="MEDICAL RADIATION PROTECTION · JOINT R&D"
       title="Radiation protection that feels lighter and moves better"
-      description="CosmoOrigin is developing flexible, lightweight and multilayer radiation-shielding composites toward reducing the weight of conventional medical lead-apron structures."
+      description="Cosmorigin is developing flexible, lightweight and multilayer radiation-shielding composites toward reducing the weight of conventional medical lead-apron structures."
       points={[
         'Sheets, rolls, composite layers and custom protective samples',
         'Joint design around target lead equivalence, areal density and thickness',
@@ -228,7 +228,7 @@ const EnglishHomePage = () => (
         <div className="home-contact-card text-center">
           <Image
             src="/images/smart-road-glow-concept.jpg"
-            alt="CosmoOrigin concept art: actively glowing traffic lines and signage on a smart road at night"
+            alt="Cosmorigin concept art: actively glowing traffic lines and signage on a smart road at night"
             fill
             className="home-contact-image object-cover"
             sizes="(max-width: 1280px) calc(100vw - 48px), 1200px"
@@ -248,7 +248,7 @@ const EnglishHomePage = () => (
 
     <FAQSection
       title="Frequently Asked Questions"
-      description="Concise answers for buyers, partners and AI search systems evaluating CosmoOrigin materials."
+      description="Concise answers for buyers, partners and AI search systems evaluating Cosmorigin materials."
       items={homeFaqs}
     />
   </main>

@@ -12,8 +12,8 @@ import styles from '@/styles';
 import { enProducts } from '../content';
 
 const pagePath = '/en/products';
-const pageTitle = 'CosmoOrigin Products | Luminescent Materials, Glow & Thermochromic Filaments';
-const pageDescription = 'Explore CosmoOrigin luminescent materials, glow-in-the-dark and thermochromic PLA filaments with an electronic color card, and lightweight radiation-shielding composites for lead-apron weight reduction.';
+const pageTitle = 'Cosmorigin Products | Luminescent Materials, Glow & Thermochromic Filaments';
+const pageDescription = 'Explore Cosmorigin luminescent materials, glow-in-the-dark and thermochromic PLA filaments with an electronic color card, and lightweight radiation-shielding composites for lead-apron weight reduction.';
 
 export const metadata: Metadata = {
   title: pageTitle,
@@ -53,7 +53,7 @@ const productSchema = {
 
 const productFaqs = [
   {
-    question: 'Which product categories does CosmoOrigin publish?',
+    question: 'Which product categories does Cosmorigin publish?',
     answer: 'Public product categories include luminescent paint, luminescent fiber, electroluminescent wire, luminescent film, glow-in-the-dark and thermochromic PLA filaments, 3D-printing luminescent additives and lightweight radiation-shielding composites for lead-apron weight-reduction programs.',
   },
   {
@@ -66,7 +66,7 @@ const productFaqs = [
   },
   {
     question: 'Can brightness, spectrum or carrier material be customized?',
-    answer: 'Yes. CosmoOrigin can discuss spectrum, brightness, carrier material, encapsulation and application workflow for samples, validation programs and custom development.',
+    answer: 'Yes. Cosmorigin can discuss spectrum, brightness, carrier material, encapsulation and application workflow for samples, validation programs and custom development.',
   },
   {
     question: 'Are the listed parameters final procurement specifications?',

@@ -6,13 +6,13 @@ import styles from '@/styles';
 import { enResources } from '../content';
 
 const pagePath = '/en/resources';
-const pageTitle = 'CosmoOrigin Resources | Brochures and Material Property Sheets';
-const pageDescription = 'Download CosmoOrigin product brochures and material property sheets for luminescent paint, fibers, films and 3D-printing materials.';
+const pageTitle = 'Cosmorigin Resources | Brochures and Material Property Sheets';
+const pageDescription = 'Download Cosmorigin product brochures and material property sheets for luminescent paint, fibers, films and 3D-printing materials.';
 
 export const metadata: Metadata = {
   title: pageTitle,
   description: pageDescription,
-  keywords: ['CosmoOrigin brochure', 'luminescent material data sheet', 'glow material property sheet'],
+  keywords: ['Cosmorigin brochure', 'luminescent material data sheet', 'glow material property sheet'],
   alternates: buildAlternates(pagePath),
   openGraph: buildOpenGraph(pageTitle, pageDescription, pagePath),
   twitter: buildTwitter(pageTitle, pageDescription),

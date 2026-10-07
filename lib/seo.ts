@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const SITE_URL = 'https://cosmorigin.com';
-export const SITE_NAME = '宇元新材 CosmoOrigin';
+export const SITE_NAME = '宇元新材 Cosmorigin';
 export const DEFAULT_OG_IMAGE = `${SITE_URL}/cover.jpg`;
 
 const normalizePath = (path: string): string => (path.startsWith('/') ? path : `/${path}`);

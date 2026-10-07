@@ -69,7 +69,7 @@ const showcasePairs = [
     label: { zh: "发光圣诞装饰", en: "Luminescent Holiday Decoration" },
     light: "/playground/17.jpg",
     dark: "/playground/18.jpg",
-    description: { zh: "宇元新材发光材料打印出的节日装饰。", en: "Holiday decoration printed with CosmoOrigin luminescent material." },
+    description: { zh: "宇元新材发光材料打印出的节日装饰。", en: "Holiday decoration printed with Cosmorigin luminescent material." },
   },
 ] as const;
 
@@ -138,7 +138,7 @@ const PlaygroundSurface = ({ locale = "zh" }: PlaygroundSurfaceProps) => {
       switchSr: "切换明暗模式",
     },
     en: {
-      intro: `Use the switch below to turn the lights ${mode === "light" ? "off" : "on"} and compare each material under different lighting conditions. All images show real CosmoOrigin material samples.`,
+      intro: `Use the switch below to turn the lights ${mode === "light" ? "off" : "on"} and compare each material under different lighting conditions. All images show real Cosmorigin material samples.`,
       lightAlt: "lights-on view",
       darkAlt: "lights-off view",
       switchLabel: "Switch mode",

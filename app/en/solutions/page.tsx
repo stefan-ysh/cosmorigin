@@ -6,8 +6,8 @@ import styles from '@/styles';
 import { enSolutions } from '../content';
 
 const pagePath = '/en/solutions';
-const pageTitle = 'CosmoOrigin Solutions | Mobility, Agriculture, Radiation Protection and Safety';
-const pageDescription = 'CosmoOrigin provides functional material solutions for automotive, agriculture, medical radiation protection, emergency safety and creative installations.';
+const pageTitle = 'Cosmorigin Solutions | Mobility, Agriculture, Radiation Protection and Safety';
+const pageDescription = 'Cosmorigin provides functional material solutions for automotive, agriculture, medical radiation protection, emergency safety and creative installations.';
 
 export const metadata: Metadata = {
   title: pageTitle,

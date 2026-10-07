@@ -6,13 +6,13 @@ import styles from '@/styles';
 import { enNews } from '../content';
 
 const pagePath = '/en/news';
-const pageTitle = 'CosmoOrigin News | Product Updates and Collaboration Notes';
-const pageDescription = 'Follow CosmoOrigin product updates, collaboration notes, technical exchanges and public activities around flexible luminescent materials.';
+const pageTitle = 'Cosmorigin News | Product Updates and Collaboration Notes';
+const pageDescription = 'Follow Cosmorigin product updates, collaboration notes, technical exchanges and public activities around flexible luminescent materials.';
 
 export const metadata: Metadata = {
   title: pageTitle,
   description: pageDescription,
-  keywords: ['CosmoOrigin news', 'luminescent materials updates', 'glow material product news'],
+  keywords: ['Cosmorigin news', 'luminescent materials updates', 'glow material product news'],
   alternates: buildAlternates(pagePath),
   openGraph: buildOpenGraph(pageTitle, pageDescription, pagePath),
   twitter: buildTwitter(pageTitle, pageDescription),
@@ -40,7 +40,7 @@ const NewsEnPage = () => (
       <div className={`${styles.innerWidth} mx-auto text-center`}>
         <h1 className="text-4xl font-bold tracking-tight">News</h1>
         <p className="mx-auto mt-4 max-w-3xl text-base leading-8 text-muted-foreground">
-          Product updates, technical exchanges and collaboration moments from the CosmoOrigin team.
+          Product updates, technical exchanges and collaboration moments from the Cosmorigin team.
         </p>
       </div>
     </section>

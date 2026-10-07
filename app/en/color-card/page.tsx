@@ -6,14 +6,14 @@ import FilamentColorCards from '../../products/FilamentColorCards';
 import { absoluteUrl, buildAlternates, buildOpenGraph, buildTwitter, defaultRobots } from '@/lib/seo';
 
 const pagePath = '/en/color-card';
-const pageTitle = 'Glow & Thermochromic PLA Filament Color Card | CosmoOrigin';
+const pageTitle = 'Glow & Thermochromic PLA Filament Color Card | Cosmorigin';
 const pageDescription = 'Electronic color card: 6 Glow PLA colors, 16 single-color and 49 dual-color thermochromic options with 22/30/42°C activation. Preview hot-state colors and download the full PDF.';
 const canonicalUrl = absoluteUrl(pagePath);
 
 export const metadata: Metadata = {
   title: pageTitle,
   description: pageDescription,
-  keywords: ['glow PLA filament colors', 'thermochromic filament color card', 'PLA 3D printing filament colors', 'color changing filament', 'CosmoOrigin color card'],
+  keywords: ['glow PLA filament colors', 'thermochromic filament color card', 'PLA 3D printing filament colors', 'color changing filament', 'Cosmorigin color card'],
   alternates: buildAlternates(pagePath),
   openGraph: buildOpenGraph(pageTitle, pageDescription, pagePath),
   twitter: buildTwitter(pageTitle, pageDescription),
@@ -31,19 +31,19 @@ const colorCardSchema = {
       '@type': 'Product',
       name: 'Glow PLA filament',
       description: 'PLA glow-in-the-dark 3D printing filament in 6 basic colors; charges from daylight, UV or LED light and glows in the dark. 1.75 mm diameter.',
-      brand: { '@type': 'Brand', name: 'CosmoOrigin' },
+      brand: { '@type': 'Brand', name: 'Cosmorigin' },
     },
     {
       '@type': 'Product',
       name: 'TC single-color thermochromic filament',
       description: '16 single-color thermochromic PLA filaments with 22/30/42°C activation; shows the target color when cold and fades toward the PLA base color when heated.',
-      brand: { '@type': 'Brand', name: 'CosmoOrigin' },
+      brand: { '@type': 'Brand', name: 'Cosmorigin' },
     },
     {
       '@type': 'Product',
       name: 'TC dual-color thermochromic filament',
       description: '49 dual-color thermochromic PLA filaments grouped into yellow-orange, red, purple, blue and teal families with cold/hot reference colors.',
-      brand: { '@type': 'Brand', name: 'CosmoOrigin' },
+      brand: { '@type': 'Brand', name: 'Cosmorigin' },
     },
   ],
 };

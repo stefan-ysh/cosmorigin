@@ -5,13 +5,13 @@ import { buildAlternates, buildOpenGraph, buildTwitter, defaultRobots } from '@/
 import styles from '@/styles';
 
 const pagePath = '/en/playground';
-const pageTitle = 'CosmoOrigin Showcase | Luminescent Material Light Effects';
-const pageDescription = 'Preview CosmoOrigin luminescent material samples under lights-on and lights-off conditions.';
+const pageTitle = 'Cosmorigin Showcase | Luminescent Material Light Effects';
+const pageDescription = 'Preview Cosmorigin luminescent material samples under lights-on and lights-off conditions.';
 
 export const metadata: Metadata = {
   title: pageTitle,
   description: pageDescription,
-  keywords: ['luminescent material showcase', 'glow material demo', 'CosmoOrigin light effect'],
+  keywords: ['luminescent material showcase', 'glow material demo', 'Cosmorigin light effect'],
   alternates: buildAlternates(pagePath),
   openGraph: buildOpenGraph(pageTitle, pageDescription, pagePath),
   twitter: buildTwitter(pageTitle, pageDescription),
