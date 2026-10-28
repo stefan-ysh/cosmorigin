@@ -74,7 +74,7 @@ export const startingFeatures: string[] = [
 export const newFeatures: FeatureHighlight[] = [
   {
     imgUrl: 'first',
-    title: '全球首个纳米级连续生产自发光材料',
+    title: '纳米级连续生产自发光材料',
     subtitle: '突破传统间歇生产模式，3260小时水下稳定性认证，荧光强度保持85%以上，铅泄漏远低于安全标准。',
   },
   {

@@ -56,7 +56,7 @@ const solutionTracks = [
     icon: Sparkles,
     pain: '创意装置维护成本高、能耗大、造型受限。',
     plan: '大幅面发光膜 + 3D 打印辅材打造轻量化结构，支持任意图案定制。',
-    kpi: '整体能耗下降 68%，装置维护周期翻倍。',
+    kpi: '整体能耗下降约 68%，装置维护周期延长约一倍。',
   },
 ];
 
@@ -153,6 +153,9 @@ const SolutionsPage = (): JSX.Element => (
             </div>
           </article>
         ))}
+        <p className="mt-4 text-xs leading-relaxed text-muted-foreground/70">
+          注：页面中的量化数据来自内部实测或与合作伙伴的联合验证，实际效果因应用场景、工况与安装方式不同可能有所差异。
+        </p>
       </div>
     </section>
 

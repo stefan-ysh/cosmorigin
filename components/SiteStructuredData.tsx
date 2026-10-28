@@ -84,7 +84,7 @@ const SiteStructuredData = () => {
     '@type': 'Product',
     name: '柔性发光材料系列',
     description:
-      '全球首个米级连续生产自发光材料，包括发光油漆、发光纤维丝、发光膜，3260小时水下稳定性认证，支持多色定制',
+      '纳米级连续生产自发光材料，包括发光油漆、发光纤维丝、发光膜，3260小时水下稳定性认证，支持多色定制',
     image: 'https://cosmorigin.com/cosmorigin-logo.png',
     brand: {
       '@type': 'Brand',
